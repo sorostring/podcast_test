@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trump’s Taxpayer-Funded Revenge Plan</title>
+  <style>
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --paper: #fffdfa;
+      --ink: #202124;
+      --muted: #6d675f;
+      --line: #e2dacf;
+      --accent: #2f6f73;
+      --accent-soft: #e7f2f1;
+      --note: #eef7f0;
+      --note-line: #a6c7ad;
+      --shadow: 0 24px 80px rgba(63, 52, 38, 0.12);
+      --content-width: 76ch;
+      --body-serif: "Times New Roman", Times, "Microsoft YaHei", "微软雅黑", serif;
+      --body-roboto: "Transcript Roboto", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      --body-san-francisco: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-helvetica: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-arial: Arial, Helvetica, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-sans: var(--body-roboto);
+      --cjk-font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --card-sans: Aptos, "Aptos Display", "Segoe UI", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --reader-body-font: var(--body-serif);
+      --reader-body-size: 19px;
+      --reader-body-line: 1.75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(246, 243, 237, 0.94), rgba(246, 243, 237, 1)),
+        radial-gradient(circle at 12% 0%, rgba(47, 111, 115, 0.12), transparent 32%);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+
+    header {
+      margin: 0 auto 28px;
+      padding: 34px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--accent);
+      font: 700 12px/1.2 var(--body-serif);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font: 500 14px/1.4 var(--body-serif);
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(255, 253, 250, 0.72);
+    }
+
+    .reader-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: var(--card-sans);
+    }
+
+    .reader-controls label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .reader-controls select,
+    .reader-controls button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.9);
+      color: var(--ink);
+      font: 650 14px/1 var(--card-sans);
+    }
+
+    .reader-controls select {
+      padding: 0 30px 0 10px;
+    }
+
+    .reader-controls button {
+      min-width: 38px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .audio-panel {
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.86);
+      font-family: var(--card-sans);
+    }
+
+    .audio-label {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+    }
+
+    .audio-file {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(226, 218, 207, 0.72);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 58px);
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-family: var(--reader-body-font);
+      font-size: var(--reader-body-size);
+      line-height: var(--reader-body-line);
+      max-width: var(--content-width);
+      text-align: justify;
+      text-align-last: left;
+      text-justify: auto;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .speaker {
+      width: fit-content;
+      max-width: 100%;
+      margin: 18px 0 8px;
+      padding: 5px 10px 6px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: #214d50;
+      font: 750 13px/1.3 var(--body-serif);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vocab {
+      max-width: calc(var(--content-width) + 42px);
+      margin: 10px 0 12px;
+      padding: 16px 18px 17px;
+      border: 1px solid var(--note-line);
+      border-left: 5px solid #5f8f6b;
+      border-radius: 8px;
+      background: var(--note);
+      font-family: var(--card-sans);
+      line-height: 1.6;
+    }
+
+    .terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .term {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(95, 143, 107, 0.28);
+      color: #2f2f2f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .vocab ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .vocab li {
+      margin: 6px 0;
+      color: #403622;
+      font-size: 15px;
+    }
+
+    .vocab strong {
+      color: #202124;
+    }
+
+    .cjk {
+      font-family: var(--cjk-font);
+    }
+
+    .no-break {
+      white-space: nowrap;
+    }
+
+    .u-dot {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .u-dot::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0.04em;
+      width: 0.11em;
+      height: 0.11em;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --reader-body-font: var(--body-sans);
+        --reader-body-size: 17px;
+        --reader-body-line: 1.68;
+      }
+
+      .page {
+        padding: 22px 14px 46px;
+      }
+
+      header {
+        padding-top: 22px;
+      }
+
+      main {
+        padding: 22px 16px;
+      }
+
+      p {
+        max-width: none;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .vocab {
+        max-width: none;
+        padding: 14px 14px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --reader-body-size: 17px;
+        --reader-body-line: 1.66;
+      }
+
+      .page {
+        padding: 14px 8px 34px;
+      }
+
+      header {
+        margin-bottom: 18px;
+        padding: 18px 4px 18px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      main {
+        padding: 18px 12px;
+      }
+
+      .vocab li {
+        font-size: 14px;
+      }
+
+      .audio-panel {
+        margin-top: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11pt;
+        line-height: 1.55;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      header {
+        padding-top: 0;
+      }
+
+      main {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      p {
+        font-size: 11pt;
+        line-height: 1.55;
+        max-width: none;
+        text-align: justify;
+      }
+
+      .reader-controls {
+        display: none;
+      }
+
+      .audio-panel {
+        display: none;
+      }
+
+      .speaker {
+        break-after: avoid;
+      }
+
+      .vocab {
+        max-width: none;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .vocab li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">Podcast Transcript Notes</div>
+      <h1><span class="no-break">Trump’s</span> Taxpayer-Funded Revenge Plan</h1>
+      <div class="meta">
+        
+        <span>62 vocabulary blocks</span>
+        <span>131 collected terms</span>
+        <span>63 speaker turns</span>
+      </div>
+      <div class="reader-controls" aria-label="正文显示设置">
+        <label for="bodyFontSelect">正文字体
+          <select id="bodyFontSelect">
+            <option value="roboto">Roboto</option>
+            <option value="sanFrancisco">San Francisco</option>
+            <option value="helvetica">Helvetica</option>
+            <option value="arial">Arial</option>
+            <option value="times">Times New Roman</option>
+          </select>
+        </label>
+        <button type="button" id="bodySizeDown" aria-label="减小正文字号">A-</button>
+        <button type="button" id="bodySizeUp" aria-label="增大正文字号">A+</button>
+        <button type="button" id="bodyTextReset">Reset</button>
+      </div>
+      <section class="audio-panel" aria-label="Episode audio">
+        <div class="audio-label">Episode Audio</div>
+        <audio controls preload="metadata">
+          <source src="../audio/Daily_20260520_TrumpsTaxpayer.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="audio-file">Daily_20260520_TrumpsTaxpayer.mp3</div>
+      </section>
+    </header>
+    <main>
+<p>The announcement of the fund has drawn surprise and outrage from both sides of the aisle. 2026-05-20T06:00:14-04:00 This transcript was created using speech recognition software. While it has been reviewed by human transcribers, it may contain errors. Please review the episode audio before quoting from this transcript and email transcripts@nytimes.com with any questions.</p>
+<aside class="vocab"><div class="terms"><span class="term">outrage</span><span class="term">both sides of the aisle</span></div><ul><li><strong>outrage</strong> \ˈa<span class="u-dot">u</span>t-ˌrāj\<span class="cjk">：这里指</span>“<span class="cjk">强烈愤怒；愤慨</span>”<span class="cjk">，强调这项基金安排引发了很大的负面反应。</span></li><li><strong>both sides of the aisle</strong><span class="cjk">：这里指</span>“<span class="cjk">民主党和共和党两边</span>”<span class="cjk">，也就是两党人士都表示惊讶或不满。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>From “The New York Times,” <span class="no-break">I’m</span> Rachel Abrams. And this is “The Daily.”</p>
+<div class="speaker">THEME MUSIC</div>
+<p>In a move that shocked lawmakers on both sides of the aisle —</p>
+<p>archived recording 1 President Trump is dropping his $10 billion lawsuit against the IRS.</p>
+<aside class="vocab"><div class="terms"><span class="term">dropping his $10 billion lawsuit</span></div><ul><li><strong>drop</strong> \ˈdräp\<span class="cjk">：这里是动词，指</span>“<span class="cjk">撤回、放弃（诉讼）</span>”<span class="cjk">。</span><strong>dropping his $10 billion lawsuit</strong> <span class="cjk">就是</span>“<span class="cjk">撤回他那起</span> 100 <span class="cjk">亿美元的诉讼</span>”<span class="cjk">。</span></li></ul></aside>
+<p>archived recording 2 The Democrats and others are crying foul over what his administration plans to do instead.</p>
+<aside class="vocab"><div class="terms"><span class="term">foul</span><span class="term">crying foul over</span></div><ul><li><strong>foul</strong> \ˈfa<span class="u-dot">u</span>l\<span class="cjk">：在这里出现在固定说法里，不是</span>“<span class="cjk">犯规</span>”<span class="cjk">本义，而是指</span>“<span class="cjk">不正当、不公平的事</span>”<span class="cjk">。</span></li><li><strong>cry foul over</strong><span class="cjk">：这里表示</span>“<span class="cjk">指责</span>……<span class="cjk">不公</span>/<span class="cjk">有问题；公开抗议</span>……<span class="cjk">不正当</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>— the Justice Department announced an almost $2 billion fund of taxpayer money to compensate people that the administration claims have been victims of, quote, “weaponization and lawfare.”</p>
+<aside class="vocab"><div class="terms"><span class="term">weaponization</span><span class="term">lawfare</span></div><ul><li><strong>weaponization</strong> \ˌwe-pə-nə-zā-shən\<span class="cjk">：这里指</span>“<span class="cjk">把政府机构当作政治武器来使用</span>”<span class="cjk">。</span></li><li><strong>lawfare</strong><span class="cjk">：这里指</span>“<span class="cjk">利用法律程序去打击政治对手</span>”<span class="cjk">，可理解为</span>“<span class="cjk">法律战</span>”<span class="cjk">。</span></li></ul></aside>
+<p>archived recording 3 Among those who could apply for payouts, the nearly 1,600 rioters charged in connection with the January 6 Capitol insurrection.</p>
+<aside class="vocab"><div class="terms"><span class="term">payouts</span><span class="term">rioters</span><span class="term">insurrection</span></div><ul><li><strong>payout</strong> \ˈpā-ˌa<span class="u-dot">u</span>t\<span class="cjk">：这里指</span>“<span class="cjk">赔付款；发放的钱</span>”<span class="cjk">。</span></li><li><strong>rioter</strong> \ˈrī-ə-tər\<span class="cjk">：这里指</span>“<span class="cjk">参与骚乱的人</span>”<span class="cjk">，本句中特指冲击国会的人。</span></li><li><strong>insurrection</strong> \ˌin-sə-ˈrek-shən\<span class="cjk">：这里指</span>“<span class="cjk">暴乱；叛乱</span>”<span class="cjk">，即</span> 1 <span class="cjk">月</span> 6 <span class="cjk">日国会骚乱事件。</span></li></ul></aside>
+<p>archived recording (donald trump) This is reimbursing people that were horribly treated, horribly treated. <span class="no-break">It’s</span> anti-weaponization, <span class="no-break">they’ve</span> been recognized.</p>
+<aside class="vocab"><div class="terms"><span class="term">reimbursing</span></div><ul><li><strong>reimburse</strong> \ˌrē-əm-ˈbərs\<span class="cjk">：这里指</span>“<span class="cjk">报销；补偿</span>”<span class="cjk">，意思是政府把钱付给那些被认为</span>“<span class="cjk">受了不公对待</span>”<span class="cjk">的人。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Today, my colleague Andy Duehren on the story of how this came about, who might get the money and the bipartisan outrage that has ensued.</p>
+<aside class="vocab"><div class="terms"><span class="term">bipartisan</span><span class="term">outrage</span><span class="term">ensued</span></div><ul><li><strong>bipartisan</strong> \ˌbī-ˈpär-tə-zən\<span class="cjk">：这里指</span>“<span class="cjk">两党的</span>”<span class="cjk">，即民主、共和两党都涉及。</span></li><li><strong>outrage</strong> \ˈa<span class="u-dot">u</span>t-ˌrāj\<span class="cjk">：这里还是</span>“<span class="cjk">愤怒；愤慨</span>”<span class="cjk">。</span></li><li><strong>ensue</strong> \in-ˈsü\<span class="cjk">：这里指</span>“<span class="cjk">接着发生；随之而来</span>”<span class="cjk">，意思是两党愤怒反应随后出现了。</span></li></ul></aside>
+<p>archived recording 4 <span class="no-break">He’s</span> setting up a $1.7 billion political slush fund for the Proud Boys and the Oath Keepers and his other political lieutenants and hangers-on.</p>
+<aside class="vocab"><div class="terms"><span class="term">slush</span><span class="term">Proud Boys</span><span class="term">Oath Keepers</span><span class="term">lieutenants</span><span class="term">hangers-on</span></div><ul><li><strong>slush</strong> \ˈsləsh\<span class="cjk">：这里出现在</span> <strong>slush fund</strong> <span class="cjk">中，指</span>“<span class="cjk">见不得光、可随意支配的资金池</span>”<span class="cjk">。</span></li><li><strong>Proud Boys</strong><span class="cjk">：这里是美国一个极右翼团体名称。</span></li><li><strong>Oath Keepers</strong><span class="cjk">：这里也是美国一个极右翼民兵</span>/<span class="cjk">政治团体名称。</span></li><li><strong>lieutenant</strong> \lef-ˈte-nənt\<span class="cjk">：这里不是军衔本义，而是</span>“<span class="cjk">得力手下；政治亲信</span>”<span class="cjk">。</span></li><li><strong>hangers-on</strong><span class="cjk">：这里指</span>“<span class="cjk">跟班、依附其上的人</span>”<span class="cjk">。</span></li></ul></aside>
+<p>archived recording 5 I think that there are a lot of questions that the administration is going to have to answer.</p>
+<div class="speaker">Rachel Abrams</div>
+<p><span class="no-break">It’s</span> Wednesday, May 20.</p>
+<p>So we have talked a lot on “The Daily” about President <span class="no-break">Trump’s</span> campaign of retribution against his enemies in his second term, how <span class="no-break">he’s</span> wielded the federal government to do that. And this week, it feels like we entered into a new chapter of that story with the creation of this enormous fund. <span class="no-break">We’re</span> going to talk about how the fund works and <span class="no-break">who’s</span> likely to benefit. But before we get into that, you, Andy, have been covering all of this. And I just want to start with you explaining, where did this fund even come from?</p>
+<aside class="vocab"><div class="terms"><span class="term">retribution</span><span class="term">wielded</span><span class="term"><span class="no-break">he’s</span> wielded the federal government</span></div><ul><li><strong>retribution</strong> \ˌre-trə-ˈbyü-shən\<span class="cjk">：这里指</span>“<span class="cjk">报复；清算</span>”<span class="cjk">。</span></li><li><strong>wield</strong> \ˈwēld\<span class="cjk">：这里指</span>“<span class="cjk">运用、操纵（权力</span>/<span class="cjk">政府机器）</span>”<span class="cjk">。</span></li><li><strong><span class="no-break">he’s</span> wielded the federal government</strong><span class="cjk">：这里就是</span>“<span class="cjk">他一直在动用联邦政府作为工具</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>So yeah, this story really starts the first time that President Trump ran for office in 2016. He was unique among presidential candidates at that time, and this was something of a scandal, in that he did not release his tax returns. It was standard practice for presidential candidates to put out some of their tax information as a way to understand their finances, and Trump <span class="no-break">didn’t</span> do that.</p>
+<aside class="vocab"><div class="terms"><span class="term">ran for office</span><span class="term">scandal</span><span class="term">tax returns</span></div><ul><li><strong>run for office</strong><span class="cjk">：这里指</span>“<span class="cjk">竞选公职</span>”<span class="cjk">。</span></li><li><strong>scandal</strong> \ˈskan-dəl\<span class="cjk">：这里指</span>“<span class="cjk">丑闻；引发争议的事</span>”<span class="cjk">。</span></li><li><strong>tax return</strong><span class="cjk">：这里指</span>“<span class="cjk">报税表；纳税申报材料</span>”<span class="cjk">。</span></li></ul></aside>
+<p>And this was a topic of wide interest throughout his first term. There were various attempts to see his tax returns. And that <span class="no-break">didn’t</span> happen until “The New York Times,” in 2020, published a series of stories describing what Trump had been doing on his taxes, and revealing that for many years Trump had been paying little in federal income taxes.</p>
+<aside class="vocab"><div class="terms"><span class="term">first term</span></div><ul><li><strong>first term</strong><span class="cjk">：这里指</span>“<span class="cjk">第一任期</span>”<span class="cjk">，也就是他第一次当总统的那段时间。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>And to be clear, those stories relied on leaked tax returns. I remember this.</p>
+<aside class="vocab"><div class="terms"><span class="term">to be clear</span></div><ul><li><strong>to be clear</strong><span class="cjk">：这里是讲话中的提示语，表示</span>“<span class="cjk">说清楚一点；明确一点说</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>Yes. It <span class="no-break">wasn’t</span> clear how. It <span class="no-break">wasn’t</span> clear where this information came from. It could have maybe come from accountants or lawyers who worked for President Trump or had worked for President Trump or the Trump organization. It <span class="no-break">wasn’t</span> clear what the source of this information was. But reporters for “The Times” had gotten their hands on and reviewed President <span class="no-break">Trump’s</span> tax returns.</p>
+<p>Fast-forward about six months to a year after that and ProPublica, a separate news organization, they start releasing a series of stories about the tax strategies and tax situations of some of the <span class="no-break">world’s</span> wealthiest people, looking at the tax situations of people like Jeff Bezos, Elon Musk, the positions they were taking on their taxes in a lot of detail. And so at that point, it became clear that given the tax information of so many different people, I mean, eventually, <span class="no-break">it’s</span> been disclosed that thousands of individuals and entities had their information released, that somebody within the IRS and with access to internal IRS records must have been the source of these stories.</p>
+<aside class="vocab"><div class="terms"><span class="term">Fast-forward about six months to a year after that</span><span class="term">the positions they were taking on</span><span class="term">in a lot of detail</span></div><ul><li><strong>Fast-forward about six months to a year after that</strong><span class="cjk">：这里表示</span>“<span class="cjk">把时间往后快进到大约半年到一年之后</span>”<span class="cjk">。</span></li><li><strong>the positions they were taking on</strong><span class="cjk">：这里的</span> <strong>position</strong> <span class="cjk">指</span>“<span class="cjk">在税务处理上的立场</span>/<span class="cjk">做法</span>”<span class="cjk">。</span></li><li><strong>in a lot of detail</strong><span class="cjk">：这里指</span>“<span class="cjk">讲得很细；细节很多</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Put another way, it became clear that the IRS had a leaker.</p>
+<aside class="vocab"><div class="terms"><span class="term">Put another way</span></div><ul><li><strong>Put another way</strong><span class="cjk">：这里表示</span>“<span class="cjk">换句话说</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>Yes, that there was somebody in their systems who was providing this information to the press. And in the fall of 2023, somebody was eventually caught, a man named Charles Littlejohn. He had been a contractor for the IRS. And he pled guilty to having provided this information about Trump and then all of these other wealthy individuals to “The Times” and ProPublica. And then he was sentenced to prison in the beginning of 2024.</p>
+<div class="speaker">Rachel Abrams</div>
+<p>Obviously, leaking <span class="no-break">somebody’s</span> tax information is a crime.</p>
+<div class="speaker">Andy Duehren</div>
+<p>Yes, it is a crime. And <span class="no-break">it’s</span> also something that people can sue the IRS for. So <span class="no-break">there’s</span> a civil lawsuit process that exists for people who think that their tax information has been improperly released by the IRS. They can sue the IRS and potentially get damages for that. And so in January, President Trump, two of his sons and the family business demanded at least $10 billion from the IRS for the leak of this information, basically arguing that the IRS should have stopped Charles Littlejohn from being able to do this.</p>
+<aside class="vocab"><div class="terms"><span class="term">lawsuit</span></div><ul><li><strong>lawsuit</strong> \ˈlȯ-ˌsüt\<span class="cjk">：这里指</span>“<span class="cjk">诉讼；官司</span>”<span class="cjk">。</span></li></ul></aside>
+<p>[PENSIVE MUSIC]</p>
+<div class="speaker">Rachel Abrams</div>
+<p>And as you said, people can sue the IRS when their personal tax information is compromised, is leaked. That is what he did. The difference here, though, is that <span class="no-break">he’s</span> not just a private citizen. He is suing a government that he oversees.</p>
+<aside class="vocab"><div class="terms"><span class="term">compromised</span></div><ul><li><strong>compromise</strong> \ˈkäm-prə-ˌmīz\<span class="cjk">：这里作动词，指</span>“<span class="cjk">使（信息）泄露、失去安全性</span>”<span class="cjk">。</span><strong>compromised</strong> <span class="cjk">在这里就是</span>“<span class="cjk">被泄露了</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>Yes, I mean, this was and is an extremely unusual situation, if not unprecedented entirely. I mean, not only does the president control the leader of the Internal Revenue Service, the agency that he is suing, and the Treasury Department, which was also named in the suit, you know, he chooses many of the people who lead those agencies and is involved in their decision-making, he has also played an enormous role in reshaping the Justice Department and kind of molding it in his image in a variety of ways. And the Justice Department is supposed to be the <span class="no-break">IRS’s</span> lawyer in this case. But there have been all sorts of things that the Justice Department has done in <span class="no-break">Trump’s</span> second term that are far beyond what a historically independent Justice Department would do.</p>
+<aside class="vocab"><div class="terms"><span class="term">unprecedented</span><span class="term">suit</span><span class="term">molding</span></div><ul><li><strong>unprecedented</strong> \ˌən-ˈpre-sə-ˌden-təd\<span class="cjk">：这里指</span>“<span class="cjk">前所未有的</span>”<span class="cjk">。</span></li><li><strong>suit</strong> \ˈsüt\<span class="cjk">：这里是法律语境，指</span>“<span class="cjk">诉讼</span>”<span class="cjk">。</span></li><li><strong>mold</strong> \ˈmōld\<span class="cjk">：这里指</span>“<span class="cjk">塑造、按自己的样子改造</span>”<span class="cjk">。</span><strong>molding it in his image</strong> <span class="cjk">就是</span>“<span class="cjk">把它塑造成符合他自己风格</span>/<span class="cjk">意志的样子</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Right. <span class="no-break">He’s</span> publicly called on the Justice Department to prosecute those that he considers his political enemies. Democratic lawmakers have faced federal investigation under his administration.</p>
+<aside class="vocab"><div class="terms"><span class="term">called on</span><span class="term">prosecute</span></div><ul><li><strong>call on</strong><span class="cjk">：这里指</span>“<span class="cjk">公开要求；呼吁</span>”<span class="cjk">。</span></li><li><strong>prosecute</strong> \ˈprä-si-ˌkyüt\<span class="cjk">：这里指</span>“<span class="cjk">起诉；追究刑事责任</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>Exactly. And the idea that this Justice Department, which is now led by Todd Blanche, the acting attorney general, who was also President <span class="no-break">Trump’s</span> personal lawyer before he returned to the White House, would be making decisions about how to defend a lawsuit that the president had brought immediately, just raised all sorts of questions about the conflict of interest inherent in such a situation, where President Trump is obviously controlling the private lawyers that he hired to bring this suit against the government. But he is also, to a very unusual degree, controlling the lawyers who are supposed to respond to this suit.</p>
+<aside class="vocab"><div class="terms"><span class="term">acting</span><span class="term">attorney general</span><span class="term">interest inherent</span><span class="term">inherent</span></div><ul><li><strong>acting</strong><span class="cjk">：这里指</span>“<span class="cjk">代理的；暂代的</span>”<span class="cjk">。</span></li><li><strong>attorney general</strong><span class="cjk">：这里指</span>“<span class="cjk">司法部长</span> / <span class="cjk">总检察长</span>”<span class="cjk">。</span></li><li><strong>interest inherent</strong><span class="cjk">：这里的整体意思是</span>“<span class="cjk">这种情况内在就带有利益冲突问题</span>”<span class="cjk">。</span></li><li><strong>inherent</strong> \in-ˈhir-ənt\<span class="cjk">：指</span>“<span class="cjk">内在的；固有的</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>I feel like you almost need a whiteboard to map out all of these conflicts.</p>
+<div class="speaker">Andy Duehren</div>
+<p>Yeah, I mean, <span class="no-break">it’s</span> just there are two sides to the case. But Donald Trump sits on top of both parties in this lawsuit. And so in that sense, while federal law does allow for people to bring these types of lawsuits against the IRS, this case raises profound questions about what the outcome would be and whether there would be a real defense of the suit and whether the Justice Department would contest what President Trump was claiming in his lawsuit against the IRS.</p>
+<aside class="vocab"><div class="terms"><span class="term">contest</span></div><ul><li><strong>contest</strong> \kən-ˈtest\<span class="cjk">：这里指</span>“<span class="cjk">反驳；对</span>……<span class="cjk">提出异议</span>”<span class="cjk">，即司法部是否会真正去反对特朗普的主张。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>So how does all this play out in court?</p>
+<aside class="vocab"><div class="terms"><span class="term">play out</span></div><ul><li><strong>play out</strong><span class="cjk">：这里指</span>“<span class="cjk">事情如何发展；最后会变成什么样</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>Basically, given all of these tangled web of conflicts between President Trump and the Justice Department and the conflict of interest between lawyers who are working for the president in a private capacity and the lawyers who are working for him under the federal government, the judge starts to worry that this lawsuit <span class="no-break">can’t</span> proceed. <span class="no-break">There’s</span> a legal principle that the two sides in a lawsuit have to actually be in conflict with each other, that you <span class="no-break">can’t</span> sue yourself or sue your friend and hope to go manufacture a favorable legal ruling from a judge that will benefit both sides, that there has to be a genuine tension between the two parties in a lawsuit or else the judge has to throw it out.</p>
+<aside class="vocab"><div class="terms"><span class="term">tangled web</span><span class="term">conflict of interest</span><span class="term">private capacity</span><span class="term">genuine tension</span><span class="term">throw it out</span></div><ul><li><strong>tangled web</strong><span class="cjk">：这里比喻</span>“<span class="cjk">错综复杂的一团关系</span>/<span class="cjk">问题</span>”<span class="cjk">。</span></li><li><strong>conflict of interest</strong><span class="cjk">：这里指</span>“<span class="cjk">利益冲突</span>”<span class="cjk">。</span></li><li><strong>private capacity</strong><span class="cjk">：这里指</span>“<span class="cjk">以私人身份</span>”<span class="cjk">，不是代表政府。</span></li><li><strong>genuine tension</strong><span class="cjk">：这里指</span>“<span class="cjk">真实存在的对立</span>/<span class="cjk">冲突</span>”<span class="cjk">。</span></li><li><strong>throw it out</strong><span class="cjk">：这里指</span>“<span class="cjk">把案子驳回</span>”<span class="cjk">。</span></li></ul></aside>
+<p>The judge can say, I <span class="no-break">can’t</span> rule on this because <span class="no-break">it’s</span> not a real lawsuit, essentially. And so the judge was questioning whether a real lawsuit even existed here. And so she asked the Justice Department and President <span class="no-break">Trump’s</span> lawyers to write briefs — they were supposed to be due today — explaining themselves and telling her, are you actually fighting with each other or is this kind of all a charade and you have filed this lawsuit essentially under false pretenses, in which case the judge could have dismissed it. And she was indicating that she was certainly considering just throwing it out entirely.</p>
+<aside class="vocab"><div class="terms"><span class="term">rule on this</span><span class="term">charade</span><span class="term">filed this lawsuit</span><span class="term">pretenses</span></div><ul><li><strong>rule on this</strong><span class="cjk">：这里指</span>“<span class="cjk">对此作出裁定</span>”<span class="cjk">。</span></li><li><strong>charade</strong> \shə-ˈrād\<span class="cjk">：这里指</span>“<span class="cjk">做戏；假把式</span>”<span class="cjk">。</span></li><li><strong>filed this lawsuit</strong><span class="cjk">：这里指</span>“<span class="cjk">提起了这场诉讼</span>”<span class="cjk">。</span></li><li><strong>pretenses</strong> \pri-ˈten(t)-səz\<span class="cjk">：这里在</span> <strong>under false pretenses</strong> <span class="cjk">中表示</span>“<span class="cjk">以虚假的名义</span>/<span class="cjk">借口</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>It was looking like this was not going in the <span class="no-break">president’s</span> favor, in other words.</p>
+<aside class="vocab"><div class="terms"><span class="term">going in the <span class="no-break">president’s</span> favor</span></div><ul><li><strong>going in the <span class="no-break">president’s</span> favor</strong><span class="cjk">：这里指</span>“<span class="cjk">朝着对总统有利的方向发展</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>Yes. And the Justice Department was going to have to explain that and doing so would have potentially been very awkward. Because for them to say that this lawsuit should exist, they would have had to show their face in this case and say, here I am to oppose the <span class="no-break">president’s</span> claims, which people at the Justice Department, especially this Justice Department, <span class="no-break">didn’t</span> want to do.</p>
+<div class="speaker">Rachel Abrams</div>
+<p>Where people have gotten fired for opposing the president.</p>
+<div class="speaker">Andy Duehren</div>
+<p>Yes, exactly. And so folks within the administration were working feverishly last week to avoid that scenario and to avoid a potentially embarrassing ruling from the judge. And what they arrived at was that President Trump would drop his lawsuit entirely and, in exchange, the Joseph Department would create this unprecedented, gigantic pot of taxpayer money that the Justice Department will control to compensate victims of, quote unquote, “weaponization.”</p>
+<aside class="vocab"><div class="terms"><span class="term">feverishly</span><span class="term">unprecedented</span><span class="term">gigantic</span></div><ul><li><strong>feverishly</strong> \ˈfē-və-rish-lē\<span class="cjk">：这里指</span>“<span class="cjk">非常急切地、拼命地</span>”<span class="cjk">。</span></li><li><strong>unprecedented</strong> \ˌən-ˈpre-sə-ˌden-təd\<span class="cjk">：这里仍是</span>“<span class="cjk">前所未有的</span>”<span class="cjk">。</span></li><li><strong>gigantic</strong> \jī-ˈgan-tik\<span class="cjk">：这里指</span>“<span class="cjk">巨大的</span>”<span class="cjk">。</span></li></ul></aside>
+<p>[CONTEMPLATIVE MUSIC]</p>
+<div class="speaker">Rachel Abrams</div>
+<p><span class="no-break">We’ll</span> be right back.</p>
+<p>OK. So Andy, talk to us about this gigantic pot of money. What do we about it? How is it supposed to work?</p>
+<div class="speaker">Andy Duehren</div>
+<p>Yeah. So we <span class="no-break">don’t</span> everything yet. But what we do is that this will be 1,000,776 million.</p>
+<div class="speaker">Rachel Abrams</div>
+<p>1776, year of our <span class="no-break">nation’s</span> founding.</p>
+<div class="speaker">Andy Duehren</div>
+<p>Exactly. Which I do not think is a coincidence, obviously. But yeah, this is a huge amount of money that will be drawn from an account called the Judgment Fund, which is basically a pot of money that the Justice Department can use to settle legal claims against the United States. So anytime the government is sued and they want to settle, they can use money from this fund.</p>
+<aside class="vocab"><div class="terms"><span class="term">coincidence</span></div><ul><li><strong>coincidence</strong> \kō-ˈin(t)-sə-dən(t)s\<span class="cjk">：这里指</span>“<span class="cjk">巧合</span>”<span class="cjk">。这里说</span> 1776 <span class="cjk">这个数字</span>“<span class="cjk">显然不是巧合</span>”<span class="cjk">。</span></li></ul></aside>
+<p><span class="no-break">It’s</span> not usually quite this much <span class="no-break">that’s</span> taken out of it at a time. But they will be withdrawing money from that account, depositing it in a separate account, which will be controlled by five people appointed by the attorney general. And they will consider claims from people who say that they have been victimized by the federal government and pay them for it.</p>
+<aside class="vocab"><div class="terms"><span class="term">at a time</span></div><ul><li><strong>at a time</strong><span class="cjk">：这里接在金额后面，表示</span>“<span class="cjk">一次就这么多；单次就取出这么大一笔</span>”<span class="cjk">。</span></li></ul></aside>
+<p><span class="no-break">There’s</span> a lot that we still <span class="no-break">don’t</span> know and are hoping to find out about this money, including exactly how claims for payment will be evaluated, what “weaponization” means exactly when the Justice Department says that, and how <span class="no-break">they’ll</span> decide how much money they should be paid. We still <span class="no-break">don’t</span> even who these five people are that will be controlling this money and making these decisions. And obviously, <span class="no-break">they’ll</span> play a huge role in all of this. So there are a lot of questions across Washington right now about what this could ultimately look like.</p>
+<aside class="vocab"><div class="terms"><span class="term">play a huge role</span><span class="term">what this could ultimately look like</span></div><ul><li><strong>play a huge role</strong><span class="cjk">：这里指</span>“<span class="cjk">起很大的作用</span>”<span class="cjk">。</span></li><li><strong>what this could ultimately look like</strong><span class="cjk">：这里指</span>“<span class="cjk">这件事最后究竟会变成什么样子</span>”<span class="cjk">。</span></li></ul></aside>
+<p>[INTROSPECTIVE MUSIC]</p>
+<div class="speaker">Rachel Abrams</div>
+<p>Has something like this ever happened before?</p>
+<div class="speaker">Andy Duehren</div>
+<p>I mean, I think <span class="no-break">it’s</span> safe to say that while the Justice Department does settle other lawsuits, <span class="no-break">they’ve</span> never done something quite like this before.</p>
+<aside class="vocab"><div class="terms"><span class="term"><span class="no-break">it’s</span> safe to say</span><span class="term">settle other lawsuits</span></div><ul><li><strong><span class="no-break">it’s</span> safe to say</strong><span class="cjk">：这里表示</span>“<span class="cjk">可以比较肯定地说</span>”<span class="cjk">。</span></li><li><strong>settle other lawsuits</strong><span class="cjk">：这里指</span>“<span class="cjk">和其他诉讼达成和解</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Can you just talk a little bit, Andy, about the types of people that theoretically could be eligible to apply for this fund? Like, who are we talking about here?</p>
+<aside class="vocab"><div class="terms"><span class="term">theoretically</span></div><ul><li><strong>theoretically</strong> \ˌthē-ə-ˈre-ti-k(ə-)lē\<span class="cjk">：这里指</span>“<span class="cjk">理论上说</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>Yeah. So all the Justice Department themselves have said about this are people who are victims of, quote unquote, “weaponization” and, quote unquote, “lawfare.” But in terms of people who believe that <span class="no-break">they’ll</span> be eligible and people who are excited about this, I mean, one of the main groups <span class="no-break">we’ve</span> heard from so far are people who were convicted on January 6, 2021, for storming the Capitol and who President Trump previously pardoned.</p>
+<aside class="vocab"><div class="terms"><span class="term">quote unquote</span><span class="term">lawfare</span><span class="term">convicted</span><span class="term">storming</span><span class="term">pardoned</span></div><ul><li><strong>quote unquote</strong><span class="cjk">：这里表示</span>“<span class="cjk">所谓的</span>”<span class="cjk">，带一点引号感，暗示这个说法本身带立场。</span></li><li><strong>lawfare</strong><span class="cjk">：这里仍是</span>“<span class="cjk">用法律手段打击对手</span>”<span class="cjk">。</span></li><li><strong>convict</strong> \kən-ˈvikt\<span class="cjk">：这里作动词原形，</span><strong>convicted</strong> <span class="cjk">表示</span>“<span class="cjk">被定罪的</span>”<span class="cjk">。</span></li><li><strong>storm</strong> \ˈstȯrm\<span class="cjk">：这里</span> <strong>storming the Capitol</strong> <span class="cjk">指</span>“<span class="cjk">强行冲击国会大厦</span>”<span class="cjk">。</span></li><li><strong>pardon</strong> \ˈpär-dᵊn\<span class="cjk">：这里指</span>“<span class="cjk">赦免</span>”<span class="cjk">。</span></li></ul></aside>
+<p>And there are other similar supporters and political allies of the president who say that under President Obama, the Justice Department, the FBI improperly investigated them, basically because they were Trump supporters. And now this is their opportunity to get money to make them whole from that experience. But again, there are all sorts of questions swirling around this. And we <span class="no-break">don’t</span> know if these payments would be specifically to pay back any sort of legal fees they may have incurred or if there will just be payments beyond that where they could basically profit from the experience overall. So <span class="no-break">there’s</span> not necessarily going to be clear receipts about <span class="no-break">who’s</span> receiving this money and how much money <span class="no-break">they’re</span> receiving.</p>
+<aside class="vocab"><div class="terms"><span class="term">make them whole from</span><span class="term">swirling</span><span class="term">incurred</span><span class="term">receipts</span></div><ul><li><strong>make them whole from</strong><span class="cjk">：这里指</span>“<span class="cjk">让他们因那段经历而得到补偿，尽量弥补损失</span>”<span class="cjk">。</span></li><li><strong>swirl</strong> \ˈswərl\<span class="cjk">：这里</span> <strong>questions swirling around this</strong> <span class="cjk">指</span>“<span class="cjk">各种疑问在不断冒出来、盘旋不去</span>”<span class="cjk">。</span></li><li><strong>incur</strong> \in-ˈkər\<span class="cjk">：这里指</span>“<span class="cjk">产生（费用）</span>”<span class="cjk">。</span></li><li><strong>receipts</strong> \ri-ˈsēts\<span class="cjk">：这里指</span>“<span class="cjk">票据、收据</span>”<span class="cjk">，也就是清楚的付款记录。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Wow.</p>
+<div class="speaker">Andy Duehren</div>
+<p>And so based on what we know right now, this entire operation might be very hidden from public view. But obviously, <span class="no-break">that’s</span> a live question.</p>
+<aside class="vocab"><div class="terms"><span class="term">hidden from public view</span><span class="term">live question</span></div><ul><li><strong>hidden from public view</strong><span class="cjk">：这里指</span>“<span class="cjk">对公众不透明；公众看不到</span>”<span class="cjk">。</span></li><li><strong>live question</strong><span class="cjk">：这里指</span>“<span class="cjk">仍未确定、还在发展中的问题</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>I think to a lot of people, though, the idea that somebody who stormed the Capitol on January 6 could get paid by the government would be shocking, to put it mildly. We are talking about, in some cases, convicted criminals who could theoretically get money from a government that they attacked. Is that right?</p>
+<aside class="vocab"><div class="terms"><span class="term">to put it mildly</span></div><ul><li><strong>to put it mildly</strong><span class="cjk">：这里表示</span>“<span class="cjk">往轻了说；保守地说</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>That is certainly the scenario that people are asking a lot of questions about. And that certainly seems possible under the way that this fund has been set up, for sure.</p>
+<aside class="vocab"><div class="terms"><span class="term">for sure</span></div><ul><li><strong>for sure</strong><span class="cjk">：这里指</span>“<span class="cjk">确实如此；肯定是这样</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>It would also, by the way, explain some of the reaction that we have heard to this announcement about this money, that <span class="no-break">we’ve</span> seen from both sides of the aisle.</p>
+<div class="speaker">Andy Duehren</div>
+<p>Yes. So the acting attorney general, Todd Blanche, happened to be scheduled to testify on Capitol Hill on Tuesday, to discuss appropriations to the Justice <span class="no-break">Department’s</span> budget.</p>
+<aside class="vocab"><div class="terms"><span class="term">testify</span><span class="term">appropriations</span><span class="term">budget</span></div><ul><li><strong>testify</strong> \ˈte-stə-ˌfī\<span class="cjk">：这里指</span>“<span class="cjk">出席国会作证</span>”<span class="cjk">。</span></li><li><strong>appropriations</strong> \ə-ˌprō-prē-ˈā-shənz\<span class="cjk">：这里指</span>“<span class="cjk">拨款</span>”<span class="cjk">。</span></li><li><strong>budget</strong> \ˈbə-jət\<span class="cjk">：这里指</span>“<span class="cjk">预算</span>”<span class="cjk">。</span></li></ul></aside>
+<p>archived recording (todd blanche) Good morning to all of you. Ranking Member Van Hollen, Senator Collins, Senator Moran, good morning. Thank you for the opportunity to present President <span class="no-break">Trump’s</span> Fiscal Year 2027 Budget.</p>
+<aside class="vocab"><div class="terms"><span class="term">Ranking Member</span></div><ul><li><strong>Ranking Member</strong><span class="cjk">：这里指委员会中</span>“<span class="cjk">少数党首席成员</span>”<span class="cjk">，通常是该委员会里级别最高的在野党议员。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>During the hearing, Blanche defended the arrangement by saying that the Judgment Fund, this pot of money, had been used in similar ways in the past.</p>
+<aside class="vocab"><div class="terms"><span class="term">defended</span></div><ul><li><strong>defend</strong> \di-ˈfend\<span class="cjk">：这里指</span>“<span class="cjk">为</span>……<span class="cjk">辩护；为某个安排作解释</span>”<span class="cjk">。</span><strong>defended</strong> <span class="cjk">就是</span>“<span class="cjk">为此安排辩护</span>”<span class="cjk">。</span></li></ul></aside>
+<p>archived recording (todd blanche) It is true that this is unusual. That is true. But it is not unprecedented. And it was done.</p>
+<div class="speaker">Andy Duehren</div>
+<p>And he told the committee that anyone could get money out of the fund, regardless of their politics.</p>
+<p>archived recording (todd blanche) <span class="no-break">It’s</span> not limited to Republicans. <span class="no-break">It’s</span> not limited to Biden.</p>
+<p>archived recording 6 I <span class="no-break">didn’t</span> say that it was.</p>
+<p>archived recording (todd blanche) <span class="no-break">It’s</span> not limited to the Biden weaponization. <span class="no-break">It’s</span> not limited to in any way, scope or form to January 6 or to Jack Smith. <span class="no-break">There’s</span> no limitation on the claims.</p>
+<p>[RUMINATING MUSIC]</p>
+<div class="speaker">Andy Duehren</div>
+<p>But that hearing quickly became basically an opportunity for lawmakers, and particularly Democrats, to really push him on this arrangement —</p>
+<aside class="vocab"><div class="terms"><span class="term">push him on this arrangement</span></div><ul><li><strong>push him on this arrangement</strong><span class="cjk">：这里指</span>“<span class="cjk">就这个安排不断追问他、逼他解释</span>”<span class="cjk">。</span></li></ul></aside>
+<p>archived recording (chris van hollen) Mr. Attorney General, this is an outrageous, unprecedented slush fund.</p>
+<aside class="vocab"><div class="terms"><span class="term">outrageous</span><span class="term">slush</span></div><ul><li><strong>outrageous</strong> \a<span class="u-dot">u</span>t-ˈrā-jəs\<span class="cjk">：这里指</span>“<span class="cjk">离谱的；令人愤怒的</span>”<span class="cjk">。</span></li><li><strong>slush</strong> \ˈsləsh\<span class="cjk">：这里仍然是在</span> <strong>slush fund</strong> <span class="cjk">中，指</span>“<span class="cjk">可被随意支配的政治资金池</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>— and push him on what they called a slush fund that the administration had set up to pay the <span class="no-break">president’s</span> political allies.</p>
+<p>archived recording (chris van hollen) Will individuals who assaulted Capitol Hill Police officers be eligible for this fund?</p>
+<p>archived recording (todd blanche) Well, as it makes plain, anybody in this country is eligible to apply if they believe they were a victim of weaponization.</p>
+<aside class="vocab"><div class="terms"><span class="term">plain</span></div><ul><li><strong>plain</strong> \ˈplān\<span class="cjk">：这里在</span> <strong>as it makes plain</strong> <span class="cjk">中表示</span>“<span class="cjk">说得很清楚；表明得很明确</span>”<span class="cjk">。</span></li></ul></aside>
+<p>archived recording (chris van hollen) Mr. Attorney General, let me ask you this.</p>
+<div class="speaker">Andy Duehren</div>
+<p>In particular, these Democrats wanted to whether people who stormed the Capitol on January 6 would be beneficiary of these funds.</p>
+<p>archived recording (chris van hollen) That is pure theft of public funds. And rewarding individuals who committed crimes is obscene. Every American can see through this illegal, corrupt, self-dealing scheme.</p>
+<aside class="vocab"><div class="terms"><span class="term">obscene</span><span class="term">see through</span></div><ul><li><strong>obscene</strong> \äb-ˈsēn\<span class="cjk">：这里不是字面上的</span>“<span class="cjk">色情</span>”<span class="cjk">，而是</span>“<span class="cjk">恶劣得令人发指</span>”<span class="cjk">。</span></li><li><strong>see through</strong><span class="cjk">：这里指</span>“<span class="cjk">看穿；识破</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>Senator Chris Van Hollen accused Blanche of public theft of this money and said that it was part of President <span class="no-break">Trump’s</span> broader revenge tour during his second term in office.</p>
+<p>archived recording (chris van hollen) Mr. Blanche, the record is crystal clear. You are still acting as the <span class="no-break">president’s</span> personal lawyer, not as acting attorney general. It is hard to justify giving you any funds that will enable this pattern of wrongdoing to continue. Thank you, Mr. Chairman.</p>
+<aside class="vocab"><div class="terms"><span class="term">justify</span></div><ul><li><strong>justify</strong> \ˈjə-stə-ˌfī\<span class="cjk">：这里指</span>“<span class="cjk">证明</span>……<span class="cjk">是合理的；为</span>……<span class="cjk">辩解</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>But there are also signs that Republicans on Capitol Hill are a little squeamish about this whole idea. You started to see some questions from them about what this money could be for and how it could be used. And even the Senate Majority Leader John Thune —</p>
+<aside class="vocab"><div class="terms"><span class="term">squeamish</span></div><ul><li><strong>squeamish</strong> \ˈskwē-mish\<span class="cjk">：这里指</span>“<span class="cjk">感到不舒服、不太敢公开支持的</span>”<span class="cjk">。</span></li></ul></aside>
+<p>[PRESS CLAMORING]</p>
+<aside class="vocab"><div class="terms"><span class="term">CLAMORING</span></div><ul><li><strong>clamoring</strong> \ˈkla-m(ə-)riŋ\<span class="cjk">：这里是现场说明，指记者们</span>“<span class="cjk">七嘴八舌地喊问、吵闹追问</span>”<span class="cjk">。</span></li></ul></aside>
+<p>archived recording 7 On another topic, the acting attorney general —</p>
+<div class="speaker">Andy Duehren</div>
+<p>— outside of the hearing, made some comments to reporters on Tuesday, essentially suggesting that Congress will be taking a close look at this pot of money.</p>
+<p>archived recording 7 Do you believe this is a legitimate fund. And do you believe those terms are fair?</p>
+<aside class="vocab"><div class="terms"><span class="term">legitimate</span></div><ul><li><strong>legitimate</strong> \lə-ˈji-tə-mət\<span class="cjk">：这里指</span>“<span class="cjk">正当的；合法的吗</span>”<span class="cjk">。</span></li></ul></aside>
+<p>archived recording (john thune) I think that there are and will continue to be a lot of questions around that, that the administration is going to have to answer.</p>
+<p>[PRESS CLAMORING]</p>
+<div class="speaker">Andy Duehren</div>
+<p>And so even some of the mild discontent that <span class="no-break">we’re</span> seeing right now publicly from top Republican lawmakers is, I think, an indication that this is not something, again, that even people in President <span class="no-break">Trump’s</span> party are excited about or proud of. And it sounds like there are concerns, too, even within the Trump administration. The top lawyer at the Treasury Department, which will play a role in creating this fund, suddenly resigned on Monday, just hours after its creation. And my initial reporting is that this resignation was, in part, because of the creation of this fund.</p>
+<aside class="vocab"><div class="terms"><span class="term">there are concerns</span></div><ul><li><strong>there are concerns</strong><span class="cjk">：这里就是</span>“<span class="cjk">存在担忧；有人对此不安</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>I want to ask about President Trump himself and whether he is going to benefit from this. <span class="no-break">He’s</span> obviously the one who sued the IRS, right? So can he apply for this fund?</p>
+<div class="speaker">Andy Duehren</div>
+<p>So the Justice Department has said that the president himself and his two sons and the Trump organization, which, again, are the people and the entities that brought the suit in the first place, will not be paid out of the fund themselves. That said, we learned on Tuesday that another provision in this agreement between Trump and the Justice Department is that the IRS will drop any audits it has of Trump, his family members and any related business entities, which is itself very unusual and extraordinary concession to make to the president and is also one that could directly benefit him financially.</p>
+<aside class="vocab"><div class="terms"><span class="term">in the first place</span><span class="term">That said</span><span class="term">audits</span></div><ul><li><strong>in the first place</strong><span class="cjk">：这里指</span>“<span class="cjk">本来；一开始</span>”<span class="cjk">。</span></li><li><strong>That said</strong><span class="cjk">：这里表示转折，</span>“<span class="cjk">话虽如此；不过</span>”<span class="cjk">。</span></li><li><strong>audit</strong> \ˈȯ-ˌdit\<span class="cjk">：这里指</span>“<span class="cjk">税务审计；税务核查</span>”<span class="cjk">。</span></li></ul></aside>
+<p>I mean, <span class="no-break">it’s</span> unclear what sort of audits the president himself may be facing right now. But <span class="no-break">it’s</span> potentially a protection that could deliver him tens of millions of dollars in direct financial benefit. If the IRS was planning to charge him more in taxes and now they are not going to be able to under this agreement, that is something that could go directly into his pockets.</p>
+<aside class="vocab"><div class="terms"><span class="term">go directly into his pockets</span></div><ul><li><strong>go directly into his pockets</strong><span class="cjk">：这里是形象说法，指</span>“<span class="cjk">直接让他个人得利、进他自己的腰包</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>He might avoid giant tax bills to the tune of tens of millions of dollars, is what <span class="no-break">you’re</span> saying.</p>
+<aside class="vocab"><div class="terms"><span class="term">to the tune of</span></div><ul><li><strong>to the tune of</strong><span class="cjk">：这里指</span>“<span class="cjk">达到</span>……<span class="cjk">的数额</span>”<span class="cjk">，常用于金额很大的语境。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>I mean, essentially, again, “The Times” has reported and <span class="no-break">it’s</span> been publicly reported that the president has faced audits in the past, in which if the IRS won, essentially, the president would owe more than a hundred million dollars in additional taxes. And so we <span class="no-break">don’t</span> what the situation is now, what audits he and his family members may be facing, but this has robbed the IRS of the opportunity to demand that the Trumps pay the taxes that the IRS says that they may owe under the law.</p>
+<div class="speaker">Rachel Abrams</div>
+<p>Is there anything that anybody in Congress or anybody, for that matter, can do to stop this if they find it objectionable?</p>
+<aside class="vocab"><div class="terms"><span class="term">for that matter</span><span class="term">objectionable</span></div><ul><li><strong>for that matter</strong><span class="cjk">：这里表示</span>“<span class="cjk">就这一点来说；甚至说</span>”<span class="cjk">。</span></li><li><strong>objectionable</strong> \əb-ˈjek-sh(ə-)nə-bəl\<span class="cjk">：这里指</span>“<span class="cjk">令人反感</span>/<span class="cjk">无法接受的</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p><span class="no-break">We’ll</span> find out. So I think on one level, there was an attempt by some House Democrats to intervene in the original lawsuit that President Trump filed and can further try and convince the judge to put a stop to it. Obviously, that ship has now sailed. So I think the question now is whether Congress takes any steps to change how money can be spent on legal settlements, generally, or specifically trying to address this situation.</p>
+<aside class="vocab"><div class="terms"><span class="term"><span class="no-break">We’ll</span> find out</span><span class="term">intervene</span><span class="term">filed</span><span class="term">that ship has now sailed</span><span class="term">legal settlements</span><span class="term">address this situation</span></div><ul><li><strong><span class="no-break">We’ll</span> find out</strong><span class="cjk">：这里指</span>“<span class="cjk">还要看后面会不会发生；目前还不确定</span>”<span class="cjk">。</span></li><li><strong>intervene</strong> \ˌin-tər-ˈvēn\<span class="cjk">：这里指</span>“<span class="cjk">介入</span>”<span class="cjk">。</span></li><li><strong>file</strong> \ˈfī(-ə)l\<span class="cjk">：这里</span> <strong>filed</strong> <span class="cjk">指</span>“<span class="cjk">提交、提起（诉讼）</span>”<span class="cjk">。</span></li><li><strong>that ship has now sailed</strong><span class="cjk">：这里是习语，指</span>“<span class="cjk">已经错过时机了</span>”<span class="cjk">。</span></li><li><strong>legal settlements</strong><span class="cjk">：这里指</span>“<span class="cjk">法律和解款</span>/<span class="cjk">和解安排</span>”<span class="cjk">。</span></li><li><strong>address this situation</strong><span class="cjk">：这里指</span>“<span class="cjk">针对这个情况采取处理办法</span>”<span class="cjk">。</span></li></ul></aside>
+<p>So under the Constitution, Congress has the power of the purse. <span class="no-break">That’s</span> a power <span class="no-break">that’s</span> certainly been eroded under this presidency and that the Trump administration has tried to kind of pull back into the executive branch. But it is something that, at least theoretically, Congress could take some steps and pass some laws to address. But <span class="no-break">it’s</span> unclear if that will actually happen.</p>
+<aside class="vocab"><div class="terms"><span class="term">eroded</span><span class="term">presidency</span><span class="term">executive branch</span></div><ul><li><strong>erode</strong> \i-ˈrōd\<span class="cjk">：这里指</span>“<span class="cjk">被削弱、被侵蚀</span>”<span class="cjk">。</span></li><li><strong>presidency</strong> \ˈpre-zə-dən(t)-sē\<span class="cjk">：这里指</span>“<span class="cjk">总统任期</span>/<span class="cjk">总统执政时期</span>”<span class="cjk">。</span></li><li><strong>executive branch</strong><span class="cjk">：这里指</span>“<span class="cjk">行政部门</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>I <span class="no-break">don’t</span> think <span class="no-break">I’m</span> going out on a limb here by saying that most people probably did not even know that this pot of money existed for the DOJ to use until this week, probably. So you are in a good position to kind of help us make sense of this. What should we make of the fact that this money is now being used in this way?</p>
+<aside class="vocab"><div class="terms"><span class="term"><span class="no-break">I’m</span> going out on a limb here</span><span class="term">make sense of this</span><span class="term">make of the fact</span></div><ul><li><strong><span class="no-break">I’m</span> going out on a limb here</strong><span class="cjk">：这里表示</span>“<span class="cjk">我冒个险这么说；我大胆说一句</span>”<span class="cjk">。</span></li><li><strong>make sense of this</strong><span class="cjk">：这里指</span>“<span class="cjk">把这件事理清楚、理解透</span>”<span class="cjk">。</span></li><li><strong>make of the fact</strong><span class="cjk">：这里指</span>“<span class="cjk">该如何理解这个事实</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Andy Duehren</div>
+<p>I think we should think about this in the broader context of what President Trump has hoped to accomplish in his return to office. And one of his main goals was, obviously, retribution against people and agencies that he saw as having been opposed to him the first time he was in office and while he was out of it. And I think what this usage of the fund indicates is that now the Trump administration is making that next step from revenge to compensation for President <span class="no-break">Trump’s</span> allies. And some ethics experts and watchdogs are calling this the most corrupt act in American history.</p>
+<aside class="vocab"><div class="terms"><span class="term">retribution</span><span class="term">ethics experts</span><span class="term">watchdogs</span></div><ul><li><strong>retribution</strong> \ˌre-trə-ˈbyü-shən\<span class="cjk">：这里仍是</span>“<span class="cjk">报复；清算</span>”<span class="cjk">。</span></li><li><strong>ethics experts</strong><span class="cjk">：这里指</span>“<span class="cjk">伦理</span>/<span class="cjk">政府操守方面的专家</span>”<span class="cjk">。</span></li><li><strong>watchdogs</strong><span class="cjk">：这里指</span>“<span class="cjk">监督机构或监督公共权力的人</span>/<span class="cjk">组织</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Just to bring it back to where we started. What this represents is also not just using the DOJ to punish enemies, but using it to reward allies.</p>
+<div class="speaker">Andy Duehren</div>
+<p>Yes, exactly. But I think there is a significant difference and advancement of that agenda in this prospect of directly paying people of essentially the <span class="no-break">president’s</span> choosing with taxpayer dollars. There are almost no limits or controls on how this money will be used. These people who will be selected by Todd Blanche, the <span class="no-break">president’s</span> former defense lawyer, will have seemingly total freedom to give money to whoever they deem is worthy of it and to give them as much money as they want.</p>
+<aside class="vocab"><div class="terms"><span class="term">advancement</span><span class="term">prospect</span></div><ul><li><strong>advancement</strong> \əd-ˈvan(t)s-mənt\<span class="cjk">：这里指</span>“<span class="cjk">推进；更进一步</span>”<span class="cjk">。</span></li><li><strong>prospect</strong> \ˈprä-ˌspekt\<span class="cjk">：这里指</span>“<span class="cjk">可能性；前景</span>”<span class="cjk">，即</span>“<span class="cjk">直接给这些人发钱</span>”<span class="cjk">这一前景。</span></li></ul></aside>
+<p>[BROODING MUSIC]</p>
+<aside class="vocab"><div class="terms"><span class="term">BROODING</span></div><ul><li><strong>brooding</strong> \ˈbrü-diŋ\<span class="cjk">：这里是音乐氛围说明，指</span>“<span class="cjk">阴沉压抑、带思虑感的</span>”<span class="cjk">。</span></li></ul></aside>
+<p>And so this is a very aggressive and extraordinary use of the money that we, the American public, all pay on our taxes and that the government borrows on our behalf. And it could go to simply whoever has been loyal to the president. They could be cashing out to the tunes of thousands or tens of thousands, hundreds of thousands or even millions of dollars. And so it is just a really radical and striking situation.</p>
+<aside class="vocab"><div class="terms"><span class="term">cashing out</span><span class="term">to the tunes of</span><span class="term">radical</span><span class="term">striking</span></div><ul><li><strong>cash out</strong><span class="cjk">：这里指</span>“<span class="cjk">套现、拿到钱离场</span>”<span class="cjk">，在这里就是</span>“<span class="cjk">拿到大笔现金补偿</span>”<span class="cjk">。</span></li><li><strong>to the tunes of</strong><span class="cjk">：这里和</span> <strong>to the tune of</strong> <span class="cjk">同义，指</span>“<span class="cjk">金额达到</span>……”<span class="cjk">。</span></li><li><strong>radical</strong> \ˈra-di-kəl\<span class="cjk">：这里指</span>“<span class="cjk">激进的；非常极端的</span>”<span class="cjk">。</span></li><li><strong>striking</strong> \ˈstrī-kiŋ\<span class="cjk">：这里指</span>“<span class="cjk">非常醒目、非常惊人的</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Andy Duran, thank you so much.</p>
+<div class="speaker">Andy Duehren</div>
+<p>Thanks for having me.</p>
+<div class="speaker">Rachel Abrams</div>
+<p><span class="no-break">We’ll</span> be right back.</p>
+<p><span class="no-break">Here’s</span> what else you need to today. In a closely-watched Republican primary, seven-term Congressman Thomas Massie of Kentucky was defeated by President <span class="no-break">Trump’s</span> hand-picked challenger, Ed Gallrein.</p>
+<aside class="vocab"><div class="terms"><span class="term">closely-watched</span><span class="term">primary</span><span class="term">seven-term</span><span class="term">hand-picked</span></div><ul><li><strong>closely-watched</strong><span class="cjk">：这里指</span>“<span class="cjk">受到高度关注的</span>”<span class="cjk">。</span></li><li><strong>primary</strong> \ˈprī-ˌmer-ē\<span class="cjk">：这里指</span>“<span class="cjk">党内初选</span>”<span class="cjk">。</span></li><li><strong>seven-term</strong><span class="cjk">：这里指</span>“<span class="cjk">已经担任了七届</span>”<span class="cjk">。</span></li><li><strong>hand-picked</strong><span class="cjk">：这里指</span>“<span class="cjk">由特朗普亲自挑选</span>/<span class="cjk">钦点的</span>”<span class="cjk">。</span></li></ul></aside>
+<p>archived recording (ed gallrein) I want to thank President Trump for his support —</p>
+<p>[CHEERING]</p>
+<p>— his endorsement and his counsel as I navigated this campaign, which is a journey.</p>
+<div class="speaker">Rachel Abrams</div>
+<p><span class="no-break">Massie’s</span> loss caps a remarkable demonstration across three states of <span class="no-break">Trump’s</span> power to exile his opponents from the Republican Party. In a matter of weeks, Trump ousted five Republican state lawmakers in Indiana, who opposed his plan to redraw election maps there, a US Senator from Louisiana who voted to impeach Trump and now Massie, who broke with Trump on several key issues, including Jeffrey Epstein.</p>
+<aside class="vocab"><div class="terms"><span class="term">caps</span><span class="term">exile</span><span class="term">In a matter of weeks</span><span class="term">ousted</span><span class="term">impeach</span></div><ul><li><strong>cap</strong> \ˈkap\<span class="cjk">：这里</span> <strong>caps</strong> <span class="cjk">指</span>“<span class="cjk">给</span>……<span class="cjk">画上句号；成为最终体现</span>”<span class="cjk">。</span></li><li><strong>exile</strong> \ˈeg-ˌzī(-ə)l\<span class="cjk">：这里作动词含义，指</span>“<span class="cjk">把</span>……<span class="cjk">驱逐出圈子</span>/<span class="cjk">排除出去</span>”<span class="cjk">。</span></li><li><strong>In a matter of weeks</strong><span class="cjk">：这里指</span>“<span class="cjk">就在短短几周之内</span>”<span class="cjk">。</span></li><li><strong>oust</strong> \ˈa<span class="u-dot">u</span>st\<span class="cjk">：这里指</span>“<span class="cjk">赶下台；排挤出去</span>”<span class="cjk">。</span></li><li><strong>impeach</strong> \im-ˈpēch\<span class="cjk">：这里指</span>“<span class="cjk">弹劾</span>”<span class="cjk">。</span></li></ul></aside>
+<p>archived recording (thomas massie) For 14 years, those SOBs in Washington tried to buy my vote. They <span class="no-break">couldn’t</span> buy it.</p>
+<aside class="vocab"><div class="terms"><span class="term">SOBs</span></div><ul><li><strong>SOBs</strong><span class="cjk">：是</span> <strong>sons of bitches</strong> <span class="cjk">的粗口缩写，这里带有强烈愤怒，意思接近</span>“<span class="cjk">那帮混蛋</span>”<span class="cjk">。</span></li></ul></aside>
+<p>[SUPPORTERS CLAMORING]</p>
+<div class="speaker">Rachel Abrams</div>
+<p>And the Senate agreed to take up a measure to force President Trump to either end the war in Iran or secure approval from Congress to continue it. The move comes after a handful of Republicans joined Democrats in pushing forward with a resolution that the GOP has managed to block for months.</p>
+<aside class="vocab"><div class="terms"><span class="term">secure approval</span><span class="term">The move comes</span><span class="term">a handful of</span><span class="term">GOP</span></div><ul><li><strong>secure approval</strong><span class="cjk">：这里指</span>“<span class="cjk">获得批准</span>”<span class="cjk">。</span></li><li><strong>The move comes</strong><span class="cjk">：新闻里常见表达，意思是</span>“<span class="cjk">这一举动是在</span>……<span class="cjk">背景下出现的</span>”<span class="cjk">。</span></li><li><strong>a handful of</strong><span class="cjk">：这里指</span>“<span class="cjk">少数几个</span>”<span class="cjk">。</span></li><li><strong>GOP</strong><span class="cjk">：指美国共和党。</span></li></ul></aside>
+<p><span class="no-break">Today’s</span> episode was produced by Lexie Diao and Stella Tan. It was edited by Rachel Quester and Liz O. Baylen, and contains music by Diane Huang, Elisheba Ittoop, Marion Lozano and Dan Powell. Our theme music is by Wonderly. This episode was engineered by Chris Wood. Special thanks to Alan Feuer.</p>
+<div class="speaker">THEME MUSIC</div>
+<p><span class="no-break">That’s</span> it for “The Daily.” <span class="no-break">I’m</span> Rachel Abrams. See you tomorrow.</p>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const storageKey = "podcastTranscriptBodyText";
+      const fontSelect = document.getElementById("bodyFontSelect");
+      const sizeDown = document.getElementById("bodySizeDown");
+      const sizeUp = document.getElementById("bodySizeUp");
+      const reset = document.getElementById("bodyTextReset");
+      const fontMap = {
+        roboto: 'var(--body-roboto)',
+        sanFrancisco: 'var(--body-san-francisco)',
+        helvetica: 'var(--body-helvetica)',
+        arial: 'var(--body-arial)',
+        times: 'var(--body-serif)',
+      };
+
+      if (!fontSelect || !sizeDown || !sizeUp || !reset) return;
+
+      const firstParagraph = document.querySelector("main p");
+      const defaultSize = firstParagraph
+        ? Math.round(parseFloat(getComputedStyle(firstParagraph).fontSize))
+        : 19;
+      const defaultFont = "roboto";
+      let settings = { font: defaultFont, size: defaultSize };
+
+      try {
+        settings = { ...settings, ...JSON.parse(localStorage.getItem(storageKey) || "{}" ) };
+      } catch (error) {}
+      if (!fontMap[settings.font]) settings.font = defaultFont;
+      if (!Number.isFinite(settings.size)) settings.size = defaultSize;
+
+      function applySettings() {
+        fontSelect.value = settings.font;
+        root.style.setProperty("--reader-body-font", fontMap[settings.font] || fontMap.roboto);
+        root.style.setProperty("--reader-body-size", `${settings.size}px`);
+        localStorage.setItem(storageKey, JSON.stringify(settings));
+      }
+
+      fontSelect.addEventListener("change", () => {
+        settings.font = fontSelect.value;
+        applySettings();
+      });
+
+      sizeDown.addEventListener("click", () => {
+        settings.size = Math.max(15, settings.size - 1);
+        applySettings();
+      });
+
+      sizeUp.addEventListener("click", () => {
+        settings.size = Math.min(24, settings.size + 1);
+        applySettings();
+      });
+
+      reset.addEventListener("click", () => {
+        settings = { font: defaultFont, size: defaultSize };
+        root.style.removeProperty("--reader-body-font");
+        root.style.removeProperty("--reader-body-size");
+        localStorage.removeItem(storageKey);
+        fontSelect.value = defaultFont;
+      });
+
+      applySettings();
+    })();
+  </script>
+</body>
+</html>

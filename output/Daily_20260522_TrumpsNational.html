@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trump’s National Support Is Cratering</title>
+  <style>
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --paper: #fffdfa;
+      --ink: #202124;
+      --muted: #6d675f;
+      --line: #e2dacf;
+      --accent: #2f6f73;
+      --accent-soft: #e7f2f1;
+      --note: #eef7f0;
+      --note-line: #a6c7ad;
+      --shadow: 0 24px 80px rgba(63, 52, 38, 0.12);
+      --content-width: 76ch;
+      --body-serif: "Times New Roman", Times, "Microsoft YaHei", "微软雅黑", serif;
+      --body-roboto: "Transcript Roboto", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      --body-san-francisco: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-helvetica: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-arial: Arial, Helvetica, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-sans: var(--body-roboto);
+      --cjk-font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --card-sans: Aptos, "Aptos Display", "Segoe UI", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --reader-body-font: var(--body-serif);
+      --reader-body-size: 19px;
+      --reader-body-line: 1.75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(246, 243, 237, 0.94), rgba(246, 243, 237, 1)),
+        radial-gradient(circle at 12% 0%, rgba(47, 111, 115, 0.12), transparent 32%);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+
+    header {
+      margin: 0 auto 28px;
+      padding: 34px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--accent);
+      font: 700 12px/1.2 var(--body-serif);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font: 500 14px/1.4 var(--body-serif);
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(255, 253, 250, 0.72);
+    }
+
+    .reader-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: var(--card-sans);
+    }
+
+    .reader-controls label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .reader-controls select,
+    .reader-controls button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.9);
+      color: var(--ink);
+      font: 650 14px/1 var(--card-sans);
+    }
+
+    .reader-controls select {
+      padding: 0 30px 0 10px;
+    }
+
+    .reader-controls button {
+      min-width: 38px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .audio-panel {
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.86);
+      font-family: var(--card-sans);
+    }
+
+    .audio-label {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+    }
+
+    .audio-file {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(226, 218, 207, 0.72);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 58px);
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-family: var(--reader-body-font);
+      font-size: var(--reader-body-size);
+      line-height: var(--reader-body-line);
+      max-width: var(--content-width);
+      text-align: justify;
+      text-align-last: left;
+      text-justify: auto;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .speaker {
+      width: fit-content;
+      max-width: 100%;
+      margin: 18px 0 8px;
+      padding: 5px 10px 6px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: #214d50;
+      font: 750 13px/1.3 var(--body-serif);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vocab {
+      max-width: calc(var(--content-width) + 42px);
+      margin: 10px 0 12px;
+      padding: 16px 18px 17px;
+      border: 1px solid var(--note-line);
+      border-left: 5px solid #5f8f6b;
+      border-radius: 8px;
+      background: var(--note);
+      font-family: var(--card-sans);
+      line-height: 1.6;
+    }
+
+    .terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .term {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(95, 143, 107, 0.28);
+      color: #2f2f2f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .vocab ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .vocab li {
+      margin: 6px 0;
+      color: #403622;
+      font-size: 15px;
+    }
+
+    .vocab strong {
+      color: #202124;
+    }
+
+    .cjk {
+      font-family: var(--cjk-font);
+    }
+
+    .no-break {
+      white-space: nowrap;
+    }
+
+    .u-dot {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .u-dot::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0.04em;
+      width: 0.11em;
+      height: 0.11em;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --reader-body-font: var(--body-sans);
+        --reader-body-size: 17px;
+        --reader-body-line: 1.68;
+      }
+
+      .page {
+        padding: 22px 14px 46px;
+      }
+
+      header {
+        padding-top: 22px;
+      }
+
+      main {
+        padding: 22px 16px;
+      }
+
+      p {
+        max-width: none;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .vocab {
+        max-width: none;
+        padding: 14px 14px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --reader-body-size: 17px;
+        --reader-body-line: 1.66;
+      }
+
+      .page {
+        padding: 14px 8px 34px;
+      }
+
+      header {
+        margin-bottom: 18px;
+        padding: 18px 4px 18px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      main {
+        padding: 18px 12px;
+      }
+
+      .vocab li {
+        font-size: 14px;
+      }
+
+      .audio-panel {
+        margin-top: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11pt;
+        line-height: 1.55;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      header {
+        padding-top: 0;
+      }
+
+      main {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      p {
+        font-size: 11pt;
+        line-height: 1.55;
+        max-width: none;
+        text-align: justify;
+      }
+
+      .reader-controls {
+        display: none;
+      }
+
+      .audio-panel {
+        display: none;
+      }
+
+      .speaker {
+        break-after: avoid;
+      }
+
+      .vocab {
+        max-width: none;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .vocab li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">Podcast Transcript Notes</div>
+      <h1><span class="no-break">Trump’s</span> National Support Is Cratering</h1>
+      <div class="meta">
+        
+        <span>55 vocabulary blocks</span>
+        <span>175 collected terms</span>
+        <span>77 speaker turns</span>
+      </div>
+      <div class="reader-controls" aria-label="正文显示设置">
+        <label for="bodyFontSelect">正文字体
+          <select id="bodyFontSelect">
+            <option value="roboto">Roboto</option>
+            <option value="sanFrancisco">San Francisco</option>
+            <option value="helvetica">Helvetica</option>
+            <option value="arial">Arial</option>
+            <option value="times">Times New Roman</option>
+          </select>
+        </label>
+        <button type="button" id="bodySizeDown" aria-label="减小正文字号">A-</button>
+        <button type="button" id="bodySizeUp" aria-label="增大正文字号">A+</button>
+        <button type="button" id="bodyTextReset">Reset</button>
+      </div>
+      <section class="audio-panel" aria-label="Episode audio">
+        <div class="audio-label">Episode Audio</div>
+        <audio controls preload="metadata">
+          <source src="../audio/Daily_20260522_TrumpsNational.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="audio-file">Daily_20260522_TrumpsNational.mp3</div>
+      </section>
+    </header>
+    <main>
+<p>The <span class="no-break">president’s</span> low approval rating suggests the G.O.P. is facing a big midterm problem despite recent redistricting gains.</p>
+<p><span class="cjk">总统低迷的支持率显示，尽管共和党最近在重新划分选区上取得了一些优势，但该党在中期选举中正面临一个大麻烦。</span></p>
+<p>2026-05-22T06:00:11-04:00</p>
+<p>2026-05-22T06:00:11-04:00</p>
+<p>This transcript was created using speech recognition software. While it has been reviewed by human transcribers, it may contain errors. Please review the episode audio before quoting from this transcript and email transcripts@nytimes.com with any questions.</p>
+<p><span class="cjk">本逐字稿由语音识别软件生成。虽然已经由人工转录员审校，但仍可能存在错误。如需引用本逐字稿，请先核对节目音频；如有问题，请发送邮件至</span> transcripts@nytimes.com<span class="cjk">。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">approval rating</span><span class="term">G.O.P.</span><span class="term">redistricting</span></div><ul><li>approval rating /ə-ˈprü-vəl ˈrā-tiŋ/<span class="cjk">：这里指总统的</span>“<span class="cjk">支持率</span>/<span class="cjk">认可度</span>”<span class="cjk">。</span></li><li>G.O.P.<span class="cjk">：</span>Grand Old Party <span class="cjk">的缩写，这里指美国共和党。</span></li><li>redistricting /ˌrē-ˈdi-strik-tiŋ/<span class="cjk">：这里指重新划分选区，尤其是为中期选举重划国会选区。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>From “The New York Times,” <span class="no-break">I’m</span> Michael Barbaro. This is “The Daily.” A major new poll from “The Times” suggests that, despite his seemingly unchecked power over the federal government and his own party, President <span class="no-break">Trump’s</span> national support is crumbling to record lows, and Democrats are now poised to win back many of the key voters who made Trump president in 2024. Today, Chief Political Analyst Nate Cohn walks us through the <span class="no-break">poll’s</span> results and what they mean for this <span class="no-break">fall’s</span> midterm elections and the future of both parties. <span class="no-break">It’s</span> Friday, May 22. Hi, Nate.</p>
+<p><span class="cjk">这里是《纽约时报》，我是迈克尔</span>·<span class="cjk">巴巴罗。这是《</span>The Daily<span class="cjk">》。一项来自《时报》的大型最新民调显示，尽管特朗普总统看起来几乎不受约束地掌控着联邦政府和自己的党派，但他在全国范围内的支持正在跌至创纪录低点；民主党如今则有望重新赢回许多在</span>2024<span class="cjk">年帮助特朗普当选的关键选民。今天，首席政治分析师内特</span>·<span class="cjk">科恩将为我们解读这项民调的结果，以及这些结果对今年秋天的中期选举和两党未来意味着什么。今天是</span>5<span class="cjk">月</span>22<span class="cjk">日，星期五。嗨，内特。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">poll</span><span class="term">unchecked power</span><span class="term">are now poised to</span></div><ul><li>poll /ˈpōl/<span class="cjk">：这里指民意调查。</span></li><li>unchecked power<span class="cjk">：不受制衡的权力；这里指特朗普看起来对联邦政府和党内拥有很强控制力。</span></li><li>are now poised to<span class="cjk">：现在已经准备好</span>/<span class="cjk">很有可能要；这里指民主党有望重新赢回关键选民。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>Hello. How are you?</p>
+<p><span class="cjk">你好。你怎么样？</span></p>
+<div class="speaker">Michael Barbaro</div>
+<p><span class="no-break">I’m</span> great. That was such an enthusiastic greeting.</p>
+<p><span class="cjk">我很好。你这个开场问候真是热情。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">enthusiastic</span></div><ul><li>enthusiastic /in-ˌthü-zē-ˈa-stik/<span class="cjk">：这里形容打招呼很热情、情绪很高。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>I had enough coffee, I guess.</p>
+<p><span class="cjk">我大概是咖啡喝够了。</span></p>
+<div class="speaker">Michael Barbaro</div>
+<p>Well, <span class="no-break">I’m</span> glad to have you in such high, energetic, caffeinated spirits.</p>
+<p><span class="cjk">那我很高兴今天见到你这么情绪高昂、精力充沛、咖啡因满满。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>Well, <span class="no-break">it’ll</span> fade quickly, I promise.</p>
+<p><span class="cjk">放心，这股劲儿很快就会过去。</span></p>
+<aside class="vocab"><div class="terms"><span class="term"><span class="no-break">it’ll</span> fade quickly</span></div><ul><li><span class="no-break">it’ll</span> fade quickly<span class="cjk">：这股劲儿很快就会消退；这里是在开玩笑说咖啡带来的精神状态很快会过去。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Nate, this big new poll that “The Times” conducted arrives at a really fascinating moment. Because if <span class="no-break">you’re</span> even a casual observer of American politics, you recognize that President Trump has racked up victory after victory after victory in his campaign to punish members of his party who he thinks has been disloyal in Indiana, in Louisiana, just a couple of nights ago in Kentucky. <span class="no-break">It’s</span> been really a historic flexing of his power within the Republican Party. But what you all found in this poll is that <span class="no-break">Trump’s</span> power over his party masks a real weakness and, frankly, an outright rejection of Trump nationally <span class="no-break">that’s</span> never been deeper, and a level of Democratic popularity that we <span class="no-break">haven’t</span> seen in a really long time. So just summarize what you found here.</p>
+<p><span class="cjk">内特，《时报》这项大型新民调出现在一个非常耐人寻味的时刻。因为只要你哪怕只是稍微关注美国政治，就会注意到，特朗普总统最近在惩罚那些他认为不忠的党内成员时，可谓一场胜利接着一场胜利：印第安纳、路易斯安那，还有就在几天前的肯塔基。这确实是他在共和党内部权力的一次历史性展示。但你们在这项民调中发现的是，特朗普对本党强大的控制力掩盖了一种真实的脆弱性；坦白说，在全国层面，对特朗普的明确拒斥从未如此深，而民主党的受欢迎程度也达到了我们很久没见过的水平。所以请你先概括一下你们发现了什么。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">casual observer</span><span class="term">racked up</span><span class="term">racked</span><span class="term">disloyal</span><span class="term">flexing</span><span class="term">masks</span><span class="term">outright</span><span class="term">an outright rejection of Trump nationally <span class="no-break">that’s</span> never been deeper</span></div><ul><li>casual observer<span class="cjk">：普通关注者；这里指哪怕只是稍微关注美国政治的人。</span></li><li>rack up /ˈrak/<span class="cjk">：原形</span> rack<span class="cjk">，这里</span> racked up <span class="cjk">指连续取得、积累了很多胜利。</span></li><li>rack /ˈrak/<span class="cjk">：这里作为</span> rack up <span class="cjk">的原形，意思是</span>“<span class="cjk">积累、获得</span>”<span class="cjk">。</span></li><li>disloyal /dis-ˈlȯi(-ə)l/<span class="cjk">：这里指对特朗普</span>“<span class="cjk">不忠诚</span>”<span class="cjk">的党内成员。</span></li><li>flexing /ˈflek-siŋ/<span class="cjk">：原形</span> flex /ˈfleks/<span class="cjk">；这里指展示、炫示权力。</span></li><li>mask /ˈmask/<span class="cjk">：这里</span> masks <span class="cjk">指掩盖；即党内权力掩盖了全国层面的弱势。</span></li><li>outright /ˈa<span class="u-dot">u</span>t-ˌrīt/<span class="cjk">：彻底的、明确的；这里强调拒绝态度很直接。</span></li><li>an outright rejection of Trump nationally <span class="no-break">that’s</span> never been deeper<span class="cjk">：全国层面对特朗普的明确拒斥达到了前所未有的深度。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>We did not find very much good news for the president. We did find that a majority of Republicans still support the president. So in that sense, the outcome of recent primary elections <span class="no-break">isn’t</span> very surprising. But beyond that core Republican base, the president has lost a tremendous amount of support. In terms of the <span class="no-break">President’s</span> approval rating, it was at just 37 percent. That is the lowest approval rating <span class="no-break">he’s</span> ever had in a Times Siena poll.</p>
+<p><span class="cjk">我们几乎没有发现多少对总统有利的消息。我们确实看到，多数共和党人仍然支持总统。所以从这个意义上说，最近初选的结果并不令人意外。但在共和党的核心基本盘之外，总统已经流失了大量支持。就总统支持率而言，他只有</span>37%<span class="cjk">。这是他在《时报》</span>/<span class="cjk">锡耶纳民调中得到过的最低支持率。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">primary elections</span><span class="term">core Republican base</span></div><ul><li>primary election /ˈprī-ˌmer-ē i-ˈlek-shən/<span class="cjk">：这里指党内初选。</span></li><li>core Republican base<span class="cjk">：共和党的核心基本盘；这里指仍坚定支持特朗普的共和党选民。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>And <span class="no-break">we’ve</span> been doing this poll for the entirety of his political life.</p>
+<p><span class="cjk">而我们做这个民调，几乎覆盖了他整个政治生涯。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>Yep. And <span class="no-break">we’re</span> not alone on that, <span class="no-break">it’s</span> worth noting. The average of all the polls right now shows the <span class="no-break">President’s</span> approval rating is lower today than it has been at any time that <span class="no-break">he’s</span> been president, going back to when he first took office in 2017. And this broad disillusionment has left the coalition that brought President Trump to the White House for a second time in tatters. The young and nonwhite voters who swung to President Trump in 2024 <span class="no-break">haven’t</span> just swung back towards the Democrats, <span class="no-break">they’ve</span> now swung even farther toward the left than they were in 2020, when he lost the first time.</p>
+<p><span class="cjk">是的。而且值得一提的是，不只是我们一家这么显示。现在所有民调的平均值都显示，自他</span>2017<span class="cjk">年首次就任总统以来，总统今天的支持率比他任内任何时候都更低。这种广泛的幻灭感，让把特朗普第二次送进白宫的那套选民联盟变得支离破碎。</span>2024<span class="cjk">年转向特朗普的年轻选民和非白人选民，不只是重新转回民主党，他们现在甚至比他第一次败选的</span>2020<span class="cjk">年更偏向左翼。</span></p>
+<aside class="vocab"><div class="terms"><span class="term"><span class="no-break">it’s</span> worth noting</span><span class="term">disillusionment</span><span class="term">coalition</span><span class="term">in tatters</span><span class="term">tatters</span></div><ul><li><span class="no-break">it’s</span> worth noting<span class="cjk">：值得指出的是；用于补充一个重要背景。</span></li><li>disillusionment /ˌdis-i-ˈlü-zhən-mənt/<span class="cjk">：幻灭、失望；这里指选民对特朗普的广泛失望。</span></li><li>coalition /ˌkō-ə-ˈli-shən/<span class="cjk">：这里指把特朗普送回白宫的选民联盟。</span></li><li>in tatters<span class="cjk">：支离破碎；这里形容特朗普的选民联盟已经严重瓦解。</span></li><li>tatter /ˈta-tər/<span class="cjk">：通常用复数</span> tatters<span class="cjk">，这里指破碎状态、残片。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Right. <span class="no-break">We’ll</span> get to that. Fascinating.</p>
+<p><span class="cjk">对。我们等会儿会讲到那一点。很有意思。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>And it appears to leave the Democrats in an increasingly strong position heading into the midterm elections. And <span class="no-break">that’s</span> not necessarily surprising. On one level, the party out of power usually does well in the midterms, but this poll suggests they could do really, really well this November.</p>
+<p><span class="cjk">而且这似乎让民主党在中期选举前处在越来越有利的位置。这本身倒也不一定令人惊讶。从某种层面上说，失去执政权的一方通常会在中期选举中表现不错，但这项民调显示，民主党今年</span>11<span class="cjk">月的表现可能会非常、非常好。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">the party out of power</span></div><ul><li>the party out of power<span class="cjk">：不执政的党、在野党；这里指民主党。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Gotcha. I want to talk through each of these one by one. And <span class="no-break">let’s</span> start with the <span class="no-break">president’s</span> record low approval rating that this poll found, because it feels like it changed our understanding of something that felt very well established in the Trump era.</p>
+<p><span class="cjk">明白。我想把这些问题一个一个谈清楚。我们先从这项民调发现的总统创纪录低支持率谈起，因为这似乎改变了我们对特朗普时代一个看似早已确立的认识。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p><span class="no-break">That’s</span> right. For as long as Donald Trump has been president, <span class="no-break">it’s</span> been commonly said that there is a high floor on his support.</p>
+<p><span class="cjk">没错。只要唐纳德</span>·<span class="cjk">特朗普担任总统，人们就一直常说，他的支持有一个很高的底线。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">high floor</span></div><ul><li>high floor<span class="cjk">：很高的底线；这里指特朗普支持率即使下跌，也通常不会跌破某个相对高的水平。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Just explain that. Just define that.</p>
+<p><span class="cjk">解释一下。给我们定义一下。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>The idea is that Donald Trump can do all kinds of things that might ordinarily hurt a president politically, but that his base of support is so strong that his ratings can never fall that low. And historically, that floor has been around 38 percent. If you just look over his whole time as president, there have only been a handful of days where his approval rating on average has fallen beneath 38 percent.</p>
+<p><span class="cjk">这个说法的意思是，唐纳德</span>·<span class="cjk">特朗普可以做很多通常会在政治上伤害一位总统的事情，但他的支持基本盘如此稳固，以至于他的支持率不可能跌得太低。从历史上看，这个底线大约在</span>38%<span class="cjk">左右。如果你回顾他担任总统以来的整个时期，会发现他的平均支持率跌破</span>38%<span class="cjk">的日子其实屈指可数。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">base of support</span><span class="term">ordinarily</span><span class="term">been a handful of days</span></div><ul><li>base of support<span class="cjk">：支持基本盘；这里指特朗普最稳定、最忠诚的支持者。</span></li><li>ordinarily /ˌȯr-də-ˈner-ə-lē/<span class="cjk">：通常情况下；这里指那些一般会伤害总统政治支持的事情。</span></li><li>a handful of days<span class="cjk">：屈指可数的几天；这里强调跌破</span>38%<span class="cjk">的情况很少。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Right. As Donald Trump would say, he could walk out onto Fifth Avenue and do something quite untoward, and 38 percent of Americans would still support him.</p>
+<p><span class="cjk">对。就像唐纳德</span>·<span class="cjk">特朗普自己会说的，他可以走到第五大道上做出非常不得体的事情，仍然会有</span>38%<span class="cjk">的美国人支持他。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">untoward</span></div><ul><li>untoward /ˌən-ˈtō-ərd/<span class="cjk">：不得体的、不合适的；这里委婉指非常不当甚至恶劣的行为。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p><span class="no-break">That’s</span> the basic idea. So our poll this week shows President <span class="no-break">Trump’s</span> approval rating at 37 percent. <span class="no-break">It’s</span> not necessarily hugely different from 38 percent, of course. <span class="no-break">That’s</span> a 4 point decline, though, since our last poll in January. And <span class="no-break">it’s</span> part of a broader decline in the <span class="no-break">President’s</span> approval rating over the last year. So at best, <span class="no-break">we’re</span> looking at the president now having fallen to that floor, and <span class="no-break">we’re</span> wondering whether <span class="no-break">he’s</span> going to keep falling. And at worst, I think you can look at this poll and see all kinds of signs that the <span class="no-break">president’s</span> really falling through a level that he <span class="no-break">hasn’t</span> fallen before. And we have no reason to assume that he <span class="no-break">can’t</span> fall any further. When you look at the numbers in the survey on Iran or the cost of living, his approval ratings are even lower. So as long as those issues last and fester, they drag his approval rating even lower.</p>
+<p><span class="cjk">基本就是这个意思。所以我们本周的民调显示，特朗普总统的支持率是</span>37%<span class="cjk">。当然，这和</span>38%<span class="cjk">并不是天差地别。但这比我们</span>1<span class="cjk">月的上一次民调下降了</span>4<span class="cjk">个百分点，而且也是总统支持率过去一年持续下滑的一部分。因此，最乐观地说，我们现在看到的是总统已经跌到了那个底线，我们正在观察他会不会继续往下掉；最糟糕地说，你可以从这项民调里看到各种迹象，显示总统正在跌穿一个他以前从未跌穿过的水平。我们也没有理由假定他不会继续下跌。你看民调中关于伊朗或生活成本的数字，他的支持率甚至更低。所以只要这些问题持续存在、不断发酵，它们就会把他的支持率拖得更低。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">at best</span><span class="term">fester</span></div><ul><li>at best<span class="cjk">：最乐观地说；这里用于给出较轻的一种解读。</span></li><li>fester /ˈfe-stər/<span class="cjk">：这里指问题持续恶化、发酵，继续拖累支持率。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Well, <span class="no-break">let’s</span> really explore the factors that <span class="no-break">you’re</span> starting to touch on here. You mentioned the war, you mentioned the economy, but <span class="no-break">let’s</span> really talk through what the numbers are revealing there.</p>
+<p><span class="cjk">那我们就好好展开一下你刚才提到的这些因素。你提到了战争，也提到了经济，我们具体说说数字到底揭示了什么。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">revealing</span></div><ul><li>reveal /ri-ˈvēl/<span class="cjk">：这里</span> revealing <span class="cjk">指数字</span>“<span class="cjk">揭示出、显示出</span>”<span class="cjk">的情况。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>In one way or another, <span class="no-break">it’s</span> almost everything <span class="no-break">that’s</span> dragging down the <span class="no-break">president’s</span> support. There <span class="no-break">aren’t</span> any bright spots for him in this poll. And frankly, there <span class="no-break">haven’t</span> been bright spots in our polling for months now. The president has alienated a large swath of Republican leaning voters on almost every issue, generally because <span class="no-break">he’s</span> gone too far. And on those two issues in particular — the cost of living and the conflict in the Middle East — the <span class="no-break">president’s</span> approval ratings are really bad. <span class="no-break">There’s</span> no nice way to put it. I mean, on the cost of living, he has a 28 percent approval rating. Only 30 percent approve of his decision to go attack Iran. Even a modest number of people who still approve of the <span class="no-break">president’s</span> performance overall are skeptical of what <span class="no-break">he’s</span> done on these two central issues. But <span class="no-break">it’s</span> also worth remembering that the <span class="no-break">president’s</span> standing on even his areas of relative strength <span class="no-break">don’t</span> look especially good.</p>
+<p><span class="cjk">从某种意义上说，几乎所有事情都在拖累总统的支持率。这项民调里没有任何对他来说算得上亮点的地方。坦率地说，我们几个月来的民调里也一直没有看到亮点。总统在几乎所有议题上都疏远了一大批倾向共和党的选民，通常原因是他走得太远。尤其在生活成本和中东冲突这两个问题上，总统的支持率真的很糟糕。没什么委婉的说法。在生活成本问题上，他的支持率只有</span>28%<span class="cjk">。只有</span>30%<span class="cjk">的人认可他攻击伊朗的决定。即便在那些总体上仍认可总统表现的人当中，也有相当一部分对他在这两个核心议题上的做法持怀疑态度。但也值得记住的是，即便在他相对强势的议题上，他的处境看起来也不算好。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">bright spots</span><span class="term">alienated</span><span class="term">a large swath of</span><span class="term">swath</span><span class="term"><span class="no-break">There’s</span> no nice way to put it</span><span class="term">approve of</span><span class="term">a modest number of people</span><span class="term">skeptical of</span><span class="term">his areas of relative strength</span><span class="term">standing</span></div><ul><li>bright spot /ˈbrīt ˌspät/<span class="cjk">：亮点；这里指对特朗普有利的民调项目。</span></li><li>alienate /ˈāl-yə-ˌnāt/<span class="cjk">：这里</span> alienated <span class="cjk">指疏远、使选民反感。</span></li><li>a large swath of<span class="cjk">：一大批、一大片；这里指很多倾向共和党的选民。</span></li><li>swath /ˈswäth/<span class="cjk">：这里指一大部分人群。</span></li><li><span class="no-break">There’s</span> no nice way to put it<span class="cjk">：没法委婉地说；这里表示结果就是很糟。</span></li><li>approve of<span class="cjk">：认可、赞成；这里指选民是否认可特朗普的决定或表现。</span></li><li>a modest number of people<span class="cjk">：相当一部分人；这里不是</span>“<span class="cjk">很少</span>”<span class="cjk">，而是指数量不算巨大但值得注意。</span></li><li>skeptical of<span class="cjk">：对</span>……<span class="cjk">持怀疑态度；这里指即便总体支持特朗普的人，也怀疑他在这些议题上的做法。</span></li><li>his areas of relative strength<span class="cjk">：他相对强势的议题领域。</span></li><li>standing /ˈstan-diŋ/<span class="cjk">：这里指政治地位、民意支持状况。</span></li></ul></aside>
+<p>On immigration, which was the best issue for the president that we tested in the poll, only 41 percent of voters approve of his handling on that issue, where he has some real wins on, for instance, reducing the number of illegal border crossings. On the Israeli-Palestinian conflict, only 31 percent approve of his handling of that issue. So, at risk of belaboring the point, there just <span class="no-break">aren’t</span> any bright spots that are helping to sustain the floor that <span class="no-break">we’ve</span> seen for him in the past.</p>
+<p><span class="cjk">在移民问题上，这是我们在民调中测试过的、总统表现最好的议题，也只有</span>41%<span class="cjk">的选民认可他的处理方式。这个议题上他确实有一些实质成绩，比如减少非法越境人数。而在以色列</span>—<span class="cjk">巴勒斯坦冲突问题上，只有</span>31%<span class="cjk">的人认可他的处理。也就是说，哪怕有点重复强调的风险，我还是要说：现在没有什么亮点在帮助维持我们过去看到的那个支持底线。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">handling on that issue</span><span class="term">belaboring</span></div><ul><li>handling on that issue<span class="cjk">：对那个议题的处理方式；这里指特朗普处理移民问题的表现。</span></li><li>belabor /bi-ˈlā-bər/<span class="cjk">：这里</span> belaboring <span class="cjk">指反复强调、过度展开同一点。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Right. And as the <span class="no-break">president’s</span> popularity plunges, the voters who are disillusioned with him have to go somewhere. And, Nate, you just said that key groups of voters, young and nonwhite voters, are moving from Trump to the Democrats. What strikes me about that is that <span class="no-break">Trump’s</span> ability to win those kinds of voters, to peel them away from their historic allegiance to the Democrats back in 2024, was so singular and so effective that, Nate, you and I spoke of the possibility that it could be a permanent realignment. But what <span class="no-break">you’re</span> suggesting now is that <span class="no-break">it’s</span> not the case.</p>
+<p><span class="cjk">对。随着总统人气下滑，那些对他失望的选民总要流向某个地方。内特，你刚才说，年轻选民和非白人选民这些关键群体正在从特朗普转向民主党。让我印象深刻的是，特朗普在</span>2024<span class="cjk">年赢下这类选民、把他们从历史上对民主党的忠诚中剥离出来的能力，是如此独特、如此有效，以至于你和我当时还谈过这是否可能是一种永久性的政治重组。但你现在的意思是，情况并不是这样。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">disillusioned</span><span class="term">are disillusioned with</span><span class="term">What strikes me</span><span class="term">allegiance</span><span class="term">singular</span><span class="term">realignment</span></div><ul><li>disillusion /ˌdis-i-ˈlü-zhən/<span class="cjk">：这里</span> disillusioned <span class="cjk">指感到幻灭、失望的选民。</span></li><li>are disillusioned with<span class="cjk">：对</span>……<span class="cjk">感到失望；这里指选民对特朗普失望。</span></li><li>What strikes me<span class="cjk">：让我印象深刻的是。</span></li><li>allegiance /ə-ˈlē-jən(t)s/<span class="cjk">：忠诚、拥护；这里指这些选民历史上对民主党的政治归属。</span></li><li>singular /ˈsiŋ-gyə-lər/<span class="cjk">：独特的、非同寻常的；这里形容特朗普争取这些选民的能力很特别。</span></li><li>realignment /ˌrē-ə-ˈlīn-mənt/<span class="cjk">：政治重组；这里指选民长期改变党派归属。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>Not right now. I mean, the <span class="no-break">president’s</span> approval rating among young and nonwhite voters, specifically Hispanic voters, I think are worth dwelling on is extraordinarily bad under any circumstance. But it is even worse against the backdrop of what he was able to accomplish in 2024. Only, what was it, 18 months ago, the president won more than 40 and perhaps more than 45 percent of Hispanic voters and 18 to 29-year-olds.</p>
+<p><span class="cjk">至少现在不是。我的意思是，总统在年轻选民和非白人选民中的支持率，特别是在西语裔选民中的支持率，无论在什么背景下看都非常糟糕。但如果放在他</span>2024<span class="cjk">年所取得成果的背景下看，就更糟糕了。也就是大约</span>18<span class="cjk">个月前，总统赢得了超过</span>40%<span class="cjk">、甚至可能超过</span>45%<span class="cjk">的西语裔选民，以及</span>18<span class="cjk">到</span>29<span class="cjk">岁年轻选民。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">Hispanic</span><span class="term">Not right now</span><span class="term">dwelling on is extraordinarily</span><span class="term">extraordinarily</span><span class="term">under any circumstance</span><span class="term">backdrop</span></div><ul><li>Hispanic /hi-ˈspa-nik/<span class="cjk">：这里指美国西语裔选民。</span></li><li>Not right now<span class="cjk">：至少现在不是；这里是在否定</span>“<span class="cjk">永久性政治重组</span>”<span class="cjk">目前已经发生。</span></li><li>worth dwelling on<span class="cjk">：值得多停留、多讲一下；原文中</span> dwelling on <span class="cjk">后接</span> is<span class="cjk">，口语里结构有些松散。</span></li><li>extraordinarily /ik-ˈstrȯr-də-ˌner-ə-lē/<span class="cjk">：非常、极其；这里强调支持率糟糕程度。</span></li><li>under any circumstance<span class="cjk">：无论在什么情况下看；这里强调这些数字本身就很差。</span></li><li>backdrop /ˈbak-ˌdräp/<span class="cjk">：背景；这里指放在</span>2024<span class="cjk">年特朗普曾取得突破的背景下。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Right.</p>
+<p><span class="cjk">对。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>In our poll today, the <span class="no-break">president’s</span> approval rating among 18 to 29-year-olds is down to 19 percent —</p>
+<p><span class="cjk">在我们今天的民调中，总统在</span>18<span class="cjk">到</span>29<span class="cjk">岁人群中的支持率降到了</span>19%——</p>
+<div class="speaker">Michael Barbaro</div>
+<p>Wow, in half, basically.</p>
+<p><span class="cjk">哇，基本上腰斩了。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">in half</span></div><ul><li>in half<span class="cjk">：减半、腰斩；这里指支持率大约从</span>40%<span class="cjk">多跌到</span>19%<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>with 76 percent disapproving. And among Hispanic voters, <span class="no-break">it’s</span> a 20 percent approval rating with 71 percent disapproving. So <span class="no-break">that’s</span> not just rolling back the gains that he made in 2024. <span class="no-break">That’s</span> just losing a considerable amount of Hispanic and younger voters who would probably support Republican candidates under any circumstance. So this is an enormous decline in the <span class="no-break">president’s</span> support that extends really deep into traditional Republican support among two groups that <span class="no-break">they’re</span> usually Democratic, to be sure, but that usually have 30 percent or 40 percent who are willing to support a Republican candidate.</p>
+<p><span class="cjk">同时有</span>76%<span class="cjk">的人不认可他。而在西语裔选民中，他的支持率为</span>20%<span class="cjk">，不支持率为</span>71%<span class="cjk">。所以这不只是回吐了他在</span>2024<span class="cjk">年取得的增长；这意味着他正在失去相当数量的西语裔和年轻选民，而这些人原本在任何情况下都可能会支持共和党候选人。因此，总统支持率的下滑幅度非常巨大，而且深入到了这两个群体中传统上会支持共和党的部分。诚然，这两个群体通常偏向民主党，但通常也会有</span>30%<span class="cjk">或</span>40%<span class="cjk">的人愿意支持共和党候选人。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">rolling back</span><span class="term">to be sure</span></div><ul><li>roll back /ˈrōl/<span class="cjk">：这里</span> rolling back <span class="cjk">指回吐、撤回之前取得的支持增长。</span></li><li>to be sure<span class="cjk">：诚然、当然；这里用于承认年轻和非白人选民整体上通常偏民主党。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Should we assume that these voters are swinging away from Trump and Republicans and toward Democrats because of the war, the cost of living, or is there another added factor here?</p>
+<p><span class="cjk">我们是否应该认为，这些选民之所以从特朗普和共和党转向民主党，是因为战争、生活成本，还是还有其他因素？</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>I mean, the short answer is yes. High prices were a major reason why young and nonwhite voters swung toward Donald Trump in the first place in 2024. And I think <span class="no-break">it’s</span> worth adding that even beyond the cost of living, Iran and immigration play important roles with these groups of voters that <span class="no-break">we’re</span> talking about. If <span class="no-break">you’re</span> 26 years old today, you have spent almost your entire life in a post 9/11 world, where the United States has been engaged in military conflicts abroad. And one of the most important reasons why you might have supported Donald Trump in 2024 was because he promised to keep the US out of war. And now the United States is entangled in the Middle East yet again.</p>
+<p><span class="cjk">简短的答案是，是的。高物价是年轻选民和非白人选民最初在</span>2024<span class="cjk">年转向唐纳德</span>·<span class="cjk">特朗普的一个主要原因。而且我还想补充，除了生活成本之外，伊朗和移民问题也在我们谈到的这些选民群体中发挥了重要作用。如果你今天</span>26<span class="cjk">岁，那么你几乎整个人生都生活在</span>“9·11”<span class="cjk">之后的世界里，美国一直在海外卷入军事冲突。你在</span>2024<span class="cjk">年支持唐纳德</span>·<span class="cjk">特朗普的一个最重要原因，可能就是因为他承诺让美国远离战争。而现在，美国又一次卷入了中东。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">entangled</span></div><ul><li>entangle /in-ˈtaŋ-gəl/<span class="cjk">：这里</span> entangled <span class="cjk">指美国又被卷入中东事务或冲突。</span></li></ul></aside>
+<p>Many Latino voters, they <span class="no-break">didn’t</span> necessarily support Donald Trump because of his position on immigration. Maybe in some cases, they supported him despite that position. And maybe in some cases, Latino voters who backed Donald Trump sympathized with the critique of the Biden era immigration policy that led to many millions of people entering the United States without authorization. But when they backed Donald Trump, they were not necessarily doing so because they anticipated ICE entering Minneapolis or sending people to overseas detention camps in El Salvador and the other excesses of the Trump <span class="no-break">administration’s</span> immigration policy.</p>
+<p><span class="cjk">许多拉丁裔选民并不一定是因为唐纳德</span>·<span class="cjk">特朗普的移民立场而支持他。也许在某些情况下，他们是尽管不认同这一立场，仍然支持了他。也许在另一些情况下，支持特朗普的拉丁裔选民认同他对拜登时代移民政策的批评</span>——<span class="cjk">那一时期有数百万人未经授权进入美国。但当他们支持唐纳德</span>·<span class="cjk">特朗普时，他们并不一定预期会看到</span>ICE<span class="cjk">进入明尼阿波利斯，或者把人送到萨尔瓦多的海外拘押营，以及特朗普政府移民政策中的其他过激做法。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">position</span><span class="term">despite that position</span><span class="term">sympathized</span><span class="term">critique</span><span class="term">excesses</span></div><ul><li>position /pə-ˈzi-shən/<span class="cjk">：这里指政治立场，尤其是特朗普在移民问题上的立场。</span></li><li>despite that position<span class="cjk">：尽管不认同那个立场；这里指一些拉丁裔选民不是因为移民立场支持特朗普，而是尽管如此仍支持他。</span></li><li>sympathize /ˈsim-pə-ˌthīz/<span class="cjk">：这里</span> sympathized with <span class="cjk">指认同、同情某种批评。</span></li><li>critique /kri-ˈtēk/<span class="cjk">：批评、批判意见；这里指对拜登时代移民政策的批评。</span></li><li>excess /ik-ˈses/<span class="cjk">：这里</span> excesses <span class="cjk">指过激做法、越界行为。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Right.</p>
+<p><span class="cjk">对。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>So I think you can tell a pretty easy story about how all of the major issues that have defined <span class="no-break">Trump’s</span> terms so far have had a strong effect on his support among these particular groups.</p>
+<p><span class="cjk">所以我认为，你可以很容易地讲清楚：到目前为止界定特朗普任期的所有重大议题，如何对他在这些特定群体中的支持造成了强烈影响。</span></p>
+<div class="speaker">Michael Barbaro</div>
+<p><span class="no-break">You’ve</span> suggested that all this disillusionment and disapproval among these voters is good for the Democrats. And I wonder how you know that and why you <span class="no-break">don’t</span> suspect that it might just lead to apathy when it comes to both parties.</p>
+<p><span class="cjk">你刚才说，这些选民中的幻灭和不满对民主党有利。我想知道你怎么确定这一点？为什么你不怀疑它可能只是导致他们对两党都冷淡、都不想参与？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">disillusionment</span><span class="term">apathy</span></div><ul><li>disillusionment /ˌdis-i-ˈlü-zhən-mənt/<span class="cjk">：这里指选民对特朗普或政治现实的失望。</span></li><li>apathy /ˈa-pə-thē/<span class="cjk">：冷漠、不关心；这里指选民可能对两党都失去投票热情。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>Well, if I may, I think it will probably contribute to apathy. It would not surprise me to see many of these Trump voters stay home rather than cast a ballot for the Democrats. That said, when we ask voters who they intend to vote for in the midterm election, the Democrats have built a significant 10-point lead in this poll.</p>
+<p><span class="cjk">如果可以这么说，我认为它很可能确实会造成一定程度的冷淡。看到许多特朗普选民选择待在家里，而不是投票给民主党，我不会感到意外。话虽如此，当我们询问选民中期选举打算投给谁时，民主党在这项民调中已经建立了</span>10<span class="cjk">个百分点的显著领先。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">ballot</span><span class="term">cast a ballot</span></div><ul><li>ballot /ˈba-lət/<span class="cjk">：选票；这里指投票行为中的那张票。</span></li><li>cast a ballot<span class="cjk">：投票；这里指不投民主党，而是干脆待在家里不投票。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Wow. <span class="no-break">That’s</span> very meaningful.</p>
+<p><span class="cjk">哇。这非常有分量。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p><span class="no-break">It’s</span> very meaningful. <span class="no-break">It’s</span> much larger, by the way, than all of our prior polls this cycle. And that lead is built in no small part on the Democrats reclaiming and even expanding upon their traditional advantage among young and nonwhite voters. <span class="no-break">They’re</span> up by nearly 40 points among 18 to 29-year-olds, for instance.</p>
+<p><span class="cjk">确实非常有分量。顺便说一句，这个领先幅度比我们本轮选举周期此前所有民调都要大。而这一领先在很大程度上建立在民主党重新夺回、甚至扩大其在年轻选民和非白人选民中的传统优势之上。比如，在</span>18<span class="cjk">到</span>29<span class="cjk">岁的选民中，他们领先将近</span>40<span class="cjk">个百分点。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">traditional advantage</span><span class="term">reclaiming</span><span class="term">lead</span><span class="term">no small part on the Democrats reclaiming</span><span class="term"><span class="no-break">They’re</span> up by nearly 40 points</span></div><ul><li>traditional advantage<span class="cjk">：传统优势；这里指民主党过去在年轻和非白人选民中的优势。</span></li><li>reclaim /ri-ˈklām/<span class="cjk">：这里</span> reclaiming <span class="cjk">指重新夺回这些选民优势。</span></li><li>lead /ˈlēd/<span class="cjk">：这里作名词，指领先幅度。</span></li><li>no small part on the Democrats reclaiming<span class="cjk">：在很大程度上建立在民主党重新夺回</span>……<span class="cjk">之上；</span>no small part <span class="cjk">表示</span>“<span class="cjk">很大一部分</span>”<span class="cjk">。</span></li><li><span class="no-break">They’re</span> up by nearly 40 points<span class="cjk">：他们领先将近</span>40<span class="cjk">个百分点；这里</span> they <span class="cjk">指民主党。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Wow.</p>
+<p><span class="cjk">哇。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>So again, young voters often stay home in elections. It would not surprise me to see many young voters stay home in this <span class="no-break">year’s</span> midterm election as well. But the young voters who do turn up, I would expect to be very supportive of Democratic candidates for Congress based on this poll.</p>
+<p><span class="cjk">所以再说一次，年轻选民在选举中经常不出来投票。我同样不会惊讶于今年中期选举中很多年轻选民选择不投票。但根据这项民调，我会预期那些真正出来投票的年轻选民，会非常支持民主党的国会候选人。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">turn up</span></div><ul><li>turn up<span class="cjk">：出现、到场；这里指选民实际出来投票。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Got it. So this poll finds that <span class="no-break">Trump’s</span> loss is very much Democrats’ gains — 10 points gain — when it comes to the upcoming midterm elections in the fall for control of Congress. <span class="no-break">That’s</span> what this poll is showing.</p>
+<p><span class="cjk">明白了。所以这项民调发现，在今年秋天争夺国会控制权的中期选举中，特朗普的损失很大程度上就是民主党的收益</span>——10<span class="cjk">个百分点的收益。这就是这项民调所显示的。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">is very much</span></div><ul><li>is very much<span class="cjk">：很大程度上就是、确实是；这里强调特朗普的损失确实转化成了民主党的收益。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>Yep. And maybe <span class="no-break">it’s</span> worth putting a finer point on what that would mean. It would easily allow the Democrats to retake the House, despite the Republican efforts to redraw congressional maps to their favor in much of the country. And it would also have a real chance to put the Senate into play, even though, to flip the Senate, the Democrats would need to win some very Republican states.</p>
+<p><span class="cjk">是的。也许值得把这意味着什么说得更具体一点。即便共和党在全国许多地方努力重新划分国会选区、让地图更有利于自己，这样的结果也足以让民主党轻松夺回众议院。而且它也会让参议院真正进入可争夺状态，尽管要翻转参议院，民主党需要赢下一些非常偏共和党的州。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">putting a finer point on</span><span class="term"><span class="no-break">it’s</span> worth putting a finer point on what that would mean</span><span class="term">to their favor</span><span class="term">in much of the country</span><span class="term">put the Senate into play</span><span class="term">even though</span></div><ul><li>putting a finer point on<span class="cjk">：把话说得更具体、更明确。</span></li><li><span class="no-break">it’s</span> worth putting a finer point on what that would mean<span class="cjk">：值得更具体说明这意味着什么。</span></li><li>to their favor<span class="cjk">：朝着对他们有利的方向；这里指共和党重划选区以利于自己。</span></li><li>in much of the country<span class="cjk">：在全国很多地方。</span></li><li>put the Senate into play<span class="cjk">：让参议院也变成可争夺目标。</span></li><li>even though<span class="cjk">：尽管；这里引出民主党翻转参议院的难度。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Understood. So these numbers, <span class="no-break">you’re</span> saying, are sufficiently good for Democrats, sufficiently bad for Trump and Republicans, that no matter how far behind the Democrats may be falling in the gerrymandering redistricting battles — and it seems they are starting to fall pretty meaningfully behind the Republicans, based on some court rulings and just general Republican boldness here — that the Democrats will still, based on this poll, <span class="no-break">that’s</span> if this election were today, they would perform very well in the midterms, probably retake the House, maybe retake the Senate.</p>
+<p><span class="cjk">明白。所以你的意思是，这些数字对民主党足够好，对特朗普和共和党足够糟，以至于不管民主党在选区划分和党派操弄选区的战斗中落后多少</span>——<span class="cjk">而且看起来，基于一些法院裁决以及共和党整体上的大胆动作，他们确实开始明显落后</span>——<span class="cjk">如果选举今天举行，按照这项民调，民主党仍会在中期选举中表现很好，可能夺回众议院，甚至可能夺回参议院。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">Understood</span><span class="term">how far behind the Democrats may be falling in the gerrymandering redistricting battles</span><span class="term">gerrymandering</span><span class="term">boldness</span></div><ul><li>Understood<span class="cjk">：明白了；这里是主持人表示理解对方观点。</span></li><li>how far behind the Democrats may be falling in the gerrymandering redistricting battles<span class="cjk">：民主党在党派操弄选区</span>/<span class="cjk">重划选区的较量中可能落后到什么程度。</span></li><li>gerrymandering /ˈjer-ē-ˌman-dər-iŋ/<span class="cjk">：党派操弄选区；通过划选区来让某党获利。</span></li><li>boldness /ˈbōl(d)-nəs/<span class="cjk">：大胆、强硬；这里指共和党在选区操作上的进取姿态。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>You got it. Now, <span class="no-break">it’s</span> important to note that just because young and nonwhite voters are going to support Democrats by a wide margin in midterm election <span class="no-break">doesn’t</span> mean that <span class="no-break">they’re</span> now loyal Democrats. In fact, many of these voters <span class="no-break">don’t</span> identify as Democrats or say <span class="no-break">they’re</span> dissatisfied with the Democrats. And I think one of the most interesting parts of the poll is how it shows the extent of deep divisions within both of the parties right now. And those divisions will do a lot to shape the direction of the two parties heading into the next presidential election.</p>
+<p><span class="cjk">没错。不过有一点很重要：年轻选民和非白人选民会在中期选举中以很大优势支持民主党，并不意味着他们现在就是忠诚的民主党人。事实上，其中许多人并不认同自己是民主党人，或者说他们对民主党并不满意。我认为这项民调最有意思的部分之一，就是它显示了两党内部目前都存在很深的分歧。而这些分歧将在很大程度上塑造两党走向下一次总统选举时的方向。</span></p>
+<aside class="vocab"><div class="terms"><span class="term"><span class="no-break">it’s</span> important to note that</span><span class="term">by a wide margin</span></div><ul><li><span class="no-break">it’s</span> important to note that<span class="cjk">：需要特别指出的是。</span></li><li>by a wide margin<span class="cjk">：以很大优势；这里指年轻和非白人选民大幅支持民主党。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p><span class="no-break">We’ll</span> be right back. Nate, tell us what this poll reveals about the internal divisions inside the Democratic and Republican Party that we should be watching closely even beyond the midterms. <span class="no-break">Let’s</span> start with Democrats.</p>
+<p><span class="cjk">我们稍后回来。内特，告诉我们，这项民调揭示了民主党和共和党内部哪些分裂？哪些问题是即便超越中期选举之后，我们也应该密切关注的？我们先从民主党开始。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>I thought the poll was pretty clarifying on what divides Democrats and maybe more importantly, what really <span class="no-break">doesn’t</span> in the elite discourse since Kamala <span class="no-break">Harris’s</span> defeat in 2024. Democratic wonks, and activists, and policy makers have been arguing about whether the Democrats should move toward the center or embrace a more progressive, left-wing kind of politics.</p>
+<p><span class="cjk">我认为，这项民调相当清楚地说明了民主党内部究竟因为什么而分裂，也许更重要的是，在卡玛拉</span>·<span class="cjk">哈里斯</span>2024<span class="cjk">年败选后的精英讨论中，哪些东西其实并没有造成太大分裂。民主党的政策专家、活动人士和决策者一直在争论，民主党应该向中间靠拢，还是拥抱更进步、更左翼的政治路线。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">clarifying</span><span class="term">elite discourse</span><span class="term">elite</span><span class="term">discourse</span><span class="term">wonks</span></div><ul><li>clarify /ˈkler-ə-ˌfī/<span class="cjk">：这里</span> clarifying <span class="cjk">指民调让问题变得更清楚。</span></li><li>elite discourse<span class="cjk">：精英话语</span>/<span class="cjk">精英圈讨论；这里指民主党内政策专家、活动人士等人的讨论。</span></li><li>elite /ā-ˈlēt/<span class="cjk">：这里指政治或知识圈层中的精英群体。</span></li><li>discourse /ˈdis-ˌkȯrs/<span class="cjk">：讨论、话语；这里指政治讨论。</span></li><li>wonk /ˈwäŋk/<span class="cjk">：政策迷、政策专家；这里指非常关注政策细节的民主党人士。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Right.</p>
+<p><span class="cjk">对。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>But the poll <span class="no-break">didn’t</span> really show a ton of dissatisfaction on ideological lines.</p>
+<p><span class="cjk">但这项民调并没有显示出很多沿意识形态线划分的不满。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">a ton of</span><span class="term">ideological</span><span class="term">ideological lines</span></div><ul><li>a ton of<span class="cjk">：大量的；这里指民调没有显示大量不满。</span></li><li>ideological /ˌī-dē-ə-ˈlä-ji-kəl/<span class="cjk">：意识形态的。</span></li><li>ideological lines<span class="cjk">：意识形态分界线；这里指左、中、右这些政治立场差异。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p><span class="no-break">That’s</span> interesting.</p>
+<p><span class="cjk">这很有意思。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>Democrats basically thought that they were OK with where the party was. A majority of Democrats say that the <span class="no-break">party’s</span> not too far to the left or too far to the center. Only 20 percent, either way, say the party is too far to the left or too far to the right.</p>
+<p><span class="cjk">民主党人大体上认为，他们对党目前的位置还可以接受。多数民主党人说，民主党既没有太靠左，也没有太靠中间。无论是哪一边，只有</span>20%<span class="cjk">的人说这个党太左，或者太右。</span></p>
+<div class="speaker">Michael Barbaro</div>
+<p><span class="no-break">That’s</span> quite notable. Because we think of the Democratic brand as being really damaged, but this poll is suggesting when it comes to ideology and positions, <span class="no-break">that’s</span> not what voters see as the damage.</p>
+<p><span class="cjk">这很值得注意。因为我们通常会认为民主党的品牌已经受到严重损伤，但这项民调显示，在意识形态和政策立场方面，选民看到的损伤并不在这里。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">notable</span></div><ul><li>notable /ˈnō-tə-bəl/<span class="cjk">：值得注意的；这里指这个发现和通常印象不太一样。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>At least not within the Democratic Party, to be clear. <span class="no-break">We’re</span> talking about voters who lean Democratic, so <span class="no-break">it’s</span> possible that there are lost Trump voters, for instance, who <span class="no-break">wouldn’t</span> have been captured here, who are upset about the Democratic <span class="no-break">Party’s</span> position.</p>
+<p><span class="cjk">至少在民主党内部不是这样，这一点要说清楚。我们谈的是倾向民主党的选民，所以有可能有一些流失到特朗普那边的选民并没有被这里捕捉到，他们可能对民主党的立场不满。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">to be clear</span></div><ul><li>to be clear<span class="cjk">：说清楚一点；这里用于限定前面结论只适用于倾向民主党的选民。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Right.</p>
+<p><span class="cjk">对。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>But among those who were in the Democratic coalition, <span class="no-break">they’re</span> not that upset about the <span class="no-break">party’s</span> ideological positioning. They are, however, dissatisfied with the Democrats. And the clearest reason for that is because they <span class="no-break">don’t</span> think that the party has succeeded in stopping Trump, whether <span class="no-break">that’s</span> in Washington or in the last campaign.</p>
+<p><span class="cjk">但在那些仍属于民主党联盟的人当中，他们并没有那么不满于本党的意识形态定位。不过，他们确实对民主党不满意。而最明确的原因是，他们认为无论是在华盛顿，还是在上一场竞选中，民主党都没有成功阻止特朗普。</span></p>
+<div class="speaker">Michael Barbaro</div>
+<p>So what upsets them is their perception of their <span class="no-break">party’s</span> leaders as ineffective in countering Trump, even though it does feel like Democratic leaders over the past few months have tried to do that. Shutting down the government over health care costs, shutting down the government over immigration tactics is not enough.</p>
+<p><span class="cjk">所以让他们不满的是，他们觉得本党的领导人在对抗特朗普时无能为力。尽管过去几个月里，民主党领导人确实看起来试图这么做，比如围绕医疗成本关闭政府、围绕移民执法策略关闭政府，但这些还不够。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">perception</span><span class="term">countering</span><span class="term">tactics</span></div><ul><li>perception /pər-ˈsep-shən/<span class="cjk">：看法、认知；这里指选民对民主党领导层的印象。</span></li><li>counter /ˈka<span class="u-dot">u</span>n-tər/<span class="cjk">：这里</span> countering <span class="cjk">指对抗、反制特朗普。</span></li><li>tactic /ˈtak-tik/<span class="cjk">：这里</span> tactics <span class="cjk">指政治策略或行动手段。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p><span class="no-break">That’s</span> right. I mean, when you hone in on that group of Democrats who say <span class="no-break">they’re</span> dissatisfied with the party, more than 3/4 of them say that they <span class="no-break">don’t</span> think that the Democratic Party is doing enough to fight back against Donald Trump. Now, I think <span class="no-break">it’s</span> reasonable to say that the Democrats <span class="no-break">don’t</span> have that many opportunities to fight back against Donald Trump. And I think <span class="no-break">it’s</span> also worth wondering how much of this is still about the Democrats’ failure to stop him from winning power in the first place. I think this can just, this question, be a proxy for a broader sense that the party has failed in the central mission over the last 10 years, which was stopping Donald <span class="no-break">Trump’s</span> presidency. So I think the dissatisfaction that voters have here is fairly understandable if you look at it in a broader context.</p>
+<p><span class="cjk">没错。我的意思是，当你聚焦于那些表示对民主党不满意的民主党人时，其中超过四分之三的人说，他们认为民主党在反击唐纳德</span>·<span class="cjk">特朗普方面做得不够。现在，我认为可以合理地说，民主党其实没有那么多机会去反击唐纳德</span>·<span class="cjk">特朗普。我也认为值得思考的是，这其中有多少仍然是在回应民主党当初未能阻止他掌权。这个问题本身也许只是一个代理指标，反映了一种更广泛的感受：过去</span>10<span class="cjk">年里，民主党在自己的核心使命上失败了，而这个使命就是阻止唐纳德</span>·<span class="cjk">特朗普当上总统。所以如果把它放在更大的背景下看，选民这里的不满是相当可以理解的。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">hone in</span><span class="term">that group of</span><span class="term"><span class="no-break">it’s</span> also worth wondering</span><span class="term">in the first place</span><span class="term">in a broader context</span></div><ul><li>hone in<span class="cjk">：聚焦于；这里指把注意力集中在对民主党不满的那群人身上。</span></li><li>that group of<span class="cjk">：那一群；这里指表示不满的民主党选民。</span></li><li><span class="no-break">it’s</span> also worth wondering<span class="cjk">：也值得想一想。</span></li><li>in the first place<span class="cjk">：一开始、最初；这里指未能从一开始阻止特朗普上台。</span></li><li>in a broader context<span class="cjk">：放在更大的背景下；这里指从过去</span>10<span class="cjk">年的政治任务来看。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Right. Well, beyond effectively fighting Trump, what does this poll say — according to Democratic voters you all surveyed — about the positions that folks in the party want their leaders to take when they do take those positions?</p>
+<p><span class="cjk">对。那么，除了有效对抗特朗普之外，根据你们调查的民主党选民，这项民调还显示，当党内人士真正采取立场时，他们希望领导人采取什么样的立场？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">take those positions</span></div><ul><li>take those positions<span class="cjk">：采取那些立场；这里指民主党领导人在具体议题上表态。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>Yeah, we asked about this in a couple of ways. To the extent they want the party to move to the left or the right, <span class="no-break">they’d</span> rather see it move a little toward the center, but not too much. There <span class="no-break">aren’t</span> issues where they want the Democrats to embrace the conservative view on, say, transgender issues or something like that. But they would like to see the party somehow moderate a little bit on these cultural issues, maybe without moving to the right. And they would like to see some kind of economic populism. <span class="no-break">That’s</span> where they were likeliest to say they want to see the party to move to the left. And when we asked voters whether <span class="no-break">they’d</span> rather have a Democrat who wanted to lower prices by expanding the housing supply or lower prices by cracking down on corporate monopolies, they said, by nearly a 3 to 1 margin, that <span class="no-break">they’d</span> rather have the party crack down on corporate monopolies.</p>
+<p><span class="cjk">是的，我们用几种方式问了这个问题。就他们希望党向左还是向右移动而言，他们更希望党稍微向中间靠一点，但不要太多。并不存在一些议题，让他们希望民主党采纳保守派观点，比如跨性别议题之类。但他们确实希望民主党在这些文化议题上以某种方式稍微温和一点，也许并不是真的向右转。同时，他们也希望看到某种经济民粹主义。在这些问题上，他们最有可能说希望民主党向左移动。当我们问选民，他们更想要一个通过扩大住房供应来降低价格的民主党人，还是一个通过打击企业垄断来降低价格的民主党人时，他们以接近</span>3<span class="cjk">比</span>1<span class="cjk">的比例表示，更希望民主党打击企业垄断。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">somehow</span><span class="term">populism</span><span class="term">monopolies</span><span class="term">3 to 1 margin</span><span class="term">crack down</span></div><ul><li>somehow /ˈsəm-ˌha<span class="u-dot">u</span>/<span class="cjk">：以某种方式；这里表示希望民主党在文化议题上稍微温和，但方式并不明确。</span></li><li>populism /ˈpä-pyə-ˌli-zəm/<span class="cjk">：民粹主义；这里特指经济上强调反大公司、反垄断、保护普通人的路线。</span></li><li>monopoly /mə-ˈnä-p(ə-)lē/<span class="cjk">：这里</span> monopolies <span class="cjk">指企业垄断。</span></li><li>3 to 1 margin<span class="cjk">：三比一的比例优势。</span></li><li>crack down<span class="cjk">：严厉打击；这里指打击企业垄断。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Hmm.</p>
+<p><span class="cjk">嗯。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>So in this particular case, this is an example of Democratic leaning voters being quite receptive to a more economically populist approach, one that goes hard after billionaires, corporations, you know the list. And it would represent a real shift toward the left compared to recent Democrats like Kamala Harris. And <span class="no-break">I’d</span> also point out that they overwhelmingly oppose Israel. <span class="no-break">They’re</span> more sympathetic to the Palestinians than the Israelis, which has been true for some time. They also oppose additional military aid to Israel. Taking all of this together, the Democratic base <span class="no-break">isn’t</span> really looking for a candidate <span class="no-break">who’s</span> going to move the party far to the center or far towards the left. But they would like someone <span class="no-break">who’s</span> fairly populist on economic issues. And they also really would like to see a candidate <span class="no-break">who’s</span> an opponent of Israel. And it so happens that when I look at the Democrats who have been doing best lately in Democratic primaries, I see a lot of candidates who fit that billing, regardless of where they are on the ideological spectrum.</p>
+<p><span class="cjk">所以在这个具体案例中，这说明倾向民主党的选民相当愿意接受一种更具经济民粹主义色彩的路线，也就是强力针对亿万富翁、大企业，诸如此类。与卡玛拉</span>·<span class="cjk">哈里斯这类近期民主党人相比，这会代表一种真正向左的转变。我还要指出，他们压倒性地反对以色列。他们更同情巴勒斯坦人，而不是以色列人，这种情况已经持续一段时间了。他们也反对向以色列提供额外军事援助。把这些放在一起看，民主党的基本盘其实并不是在寻找一个会把党大幅推向中间或大幅推向左翼的候选人。但他们希望看到一个在经济议题上相当民粹的人。他们也确实很希望看到一个反对以色列的候选人。而碰巧的是，当我观察最近在民主党初选中表现最好的民主党人时，不管他们在意识形态谱系上处于哪里，我都看到很多候选人符合这个画像。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">leaning voters</span><span class="term">receptive</span><span class="term">overwhelmingly</span><span class="term">sympathetic</span><span class="term">populist</span><span class="term">fit that billing</span></div><ul><li>leaning voters<span class="cjk">：倾向某党派的选民；这里指倾向民主党的选民。</span></li><li>receptive /ri-ˈsep-tiv/<span class="cjk">：愿意接受的；这里指选民愿意接受经济民粹路线。</span></li><li>overwhelmingly /ˌō-vər-ˈ(h)wel-miŋ-lē/<span class="cjk">：压倒性地、以巨大多数。</span></li><li>sympathetic /ˌsim-pə-ˈthe-tik/<span class="cjk">：这里指更同情巴勒斯坦一方。</span></li><li>populist /ˈpä-pyə-list/<span class="cjk">：民粹主义的；这里指经济上反大公司、反亿万富翁的政治路线。</span></li><li>fit that billing<span class="cjk">：符合这种描述</span>/<span class="cjk">画像；这里指一些候选人符合民调显示的民主党选民偏好。</span></li></ul></aside>
+<p>I think about Zohran Mamdani winning in New York. On the other end of the spectrum, I might think of Jon Ossoff, the senator from Georgia, <span class="no-break">who’s</span> been earning accolades from across the Democratic Party for a kind of anti-corruption style of populism. And then maybe right in the middle, <span class="no-break">I’d</span> put Graham Platner, not a socialist, definitely a progressive, definitely running on a populist economic platform. I think you can see in all of these candidates, Democrats succeeding at least with Democratic voters, by adopting a position that looks a lot like what we see in this poll.</p>
+<p><span class="cjk">我会想到佐赫兰</span>·<span class="cjk">马姆达尼在纽约获胜。光谱的另一端，我可能会想到佐治亚州参议员乔恩</span>·<span class="cjk">奥索夫，他因为一种反腐败风格的民粹主义而在民主党内各方赢得赞誉。然后也许处在中间的是格雷厄姆</span>·<span class="cjk">普拉特纳，他不是社会主义者，但显然是进步派，也显然是在一个民粹主义经济平台上竞选。我认为你可以在所有这些候选人身上看到，民主党人至少在民主党选民中取得成功，是因为他们采取了一个很像这项民调所显示出的立场。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">accolades</span><span class="term">progressive</span></div><ul><li>accolade /ˈa-kə-ˌlād/<span class="cjk">：这里</span> accolades <span class="cjk">指赞誉、认可。</span></li><li>progressive /prə-ˈgre-siv/<span class="cjk">：进步派的；这里指政治上偏左、强调改革的民主党路线。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Nate, am I right to think that the ultimate test of whether Democrats are out of the rut that <span class="no-break">they’ve</span> been in for years will be whether the voters who fled the Democrats for Trump in 2024 and seem like they might be coming back to the Democrats for the midterms, that they will stay with the Democrats after the midterms? And are the candidates <span class="no-break">you’re</span> talking about here and the message <span class="no-break">they’re</span> espousing likely to appeal to young voters, Black voters, Latino voters beyond the midterms?</p>
+<p><span class="cjk">内特，我这样理解对吗：民主党是否真正走出多年来的困境，最终考验在于那些</span>2024<span class="cjk">年离开民主党投向特朗普、如今看起来可能会在中期选举中回到民主党身边的选民，是否会在中期选举之后继续留在民主党阵营里？而你刚才提到的这些候选人以及他们传递的信息，是否有可能在中期选举之后继续吸引年轻选民、黑人选民和拉丁裔选民？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">espousing</span><span class="term">appeal to</span></div><ul><li>espouse /i-ˈspa<span class="u-dot">u</span>z/<span class="cjk">：这里</span> espousing <span class="cjk">指公开支持、倡导某种政治信息或立场。</span></li><li>appeal to<span class="cjk">：吸引、打动；这里指能否吸引年轻、黑人、拉丁裔选民。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>Well, I do have to say that I think <span class="no-break">it’s</span> a slightly different question. The Democrats have an internal problem to solve. Can we come up with a candidate who bridges our divides, who we can all rally behind? And then <span class="no-break">there’s</span> the question of whether that candidate can succeed in the general election. I do happen to think that the combination of attributes that <span class="no-break">we’ve</span> been talking about — economic populism, de-emphasis on cultural issues, and opposition to Israel — would play pretty well with all of young Black and Latino voters in 2028. But I think that the core task that the party is trying to solve for right now is an internal one that even precedes how to try and win over voters in the general election. To take a different example, the Republicans have solved these problems for themselves. Right? They want to be the party of Donald Trump. And that may cost them the 2026 and 2028 election, but they know who they are.</p>
+<p><span class="cjk">我得说，我认为这是一个稍微不同的问题。民主党要解决一个内部问题：我们能不能推出一个能够弥合党内分歧、让所有人团结在其身后的候选人？然后才是这个候选人能否在大选中获胜的问题。我确实认为，我们刚才谈到的这些特征组合</span>——<span class="cjk">经济民粹主义、淡化文化议题、反对以色列</span>——<span class="cjk">在</span>2028<span class="cjk">年会相当受年轻黑人选民和拉丁裔选民欢迎。但我认为，民主党眼下试图解决的核心任务，是一个内部任务，它甚至先于如何在大选中争取选民。换一个例子，共和党已经为自己解决了这些问题，对吧？他们想成为唐纳德</span>·<span class="cjk">特朗普的党。这可能让他们输掉</span>2026<span class="cjk">年和</span>2028<span class="cjk">年的选举，但他们知道自己是谁。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">rally</span><span class="term">come up with</span><span class="term">opposition</span><span class="term">precedes</span></div><ul><li>rally /ˈra-lē/<span class="cjk">：这里指团结起来支持某个候选人。</span></li><li>come up with<span class="cjk">：提出、找到；这里指民主党能否推出合适候选人。</span></li><li>opposition /ˌä-pə-ˈzi-shən/<span class="cjk">：反对；这里指反对以色列的政治立场。</span></li><li>precede /pri-ˈsēd/<span class="cjk">：这里</span> precedes <span class="cjk">指先于；即内部整合问题先于大选争取选民的问题。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>OK. Well, since <span class="no-break">you’re</span> starting to do the Republican side of this equation, <span class="no-break">let’s</span> complete that thought. What are the fractures within the Republican Party that this poll exposes, knowing that Republicans are pretty unified and agree that their party is <span class="no-break">Trump’s</span> party and about <span class="no-break">Trump’s</span> agenda?</p>
+<p><span class="cjk">好。既然你已经开始谈到共和党这一边了，我们就把这个思路讲完整。这项民调暴露出共和党内部有哪些裂痕？尤其是在我们知道共和党人相当团结，而且同意他们的党就是特朗普的党、围绕特朗普议程运转的情况下。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p><span class="no-break">Let’s</span> just start by reiterating that last point before we go into the divisions. The Republican Party is mostly unified behind Donald Trump. Not only do they approve of Donald <span class="no-break">Trump’s</span> performance as president today, they also would like the next Republican candidate for president to follow Donald <span class="no-break">Trump’s</span> lead rather than go in a new direction. And they want to follow Donald <span class="no-break">Trump’s</span> lead on every issue that we asked about. So the overarching story here is much clearer on the Republican side than it is on the Democratic side.</p>
+<p><span class="cjk">我们先在进入分歧之前，重申刚才那一点。共和党基本上团结在唐纳德</span>·<span class="cjk">特朗普身后。他们不只是认可唐纳德</span>·<span class="cjk">特朗普今天作为总统的表现，也希望下一位共和党总统候选人追随唐纳德</span>·<span class="cjk">特朗普的路线，而不是另辟新路。而且在我们问到的每一个议题上，他们都希望追随特朗普的路线。所以，共和党这一边的总体故事比民主党那边清楚得多。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">go into the divisions</span><span class="term">reiterating</span><span class="term">approve of</span><span class="term">overarching</span></div><ul><li>go into the divisions<span class="cjk">：进入</span>/<span class="cjk">谈到这些分歧。</span></li><li>reiterate /rē-ˈi-tə-ˌrāt/<span class="cjk">：这里</span> reiterating <span class="cjk">指重申。</span></li><li>approve of<span class="cjk">：认可、赞成；这里指共和党人认可特朗普的表现。</span></li><li>overarching /ˌō-vər-ˈär-chiŋ/<span class="cjk">：总体的、统摄性的；这里指共和党一边的大故事更清楚。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Right.</p>
+<p><span class="cjk">对。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>That said, there is a meaningful minority of Republicans who <span class="no-break">don’t</span> approve the <span class="no-break">president’s</span> conduct and who would like to see the Republican presidential candidate go in a new direction. These voters are disproportionately young and nonwhite And in fact, a majority of 18 to 44-year-olds in the poll want to see the next Republican president take the party in a new direction. And a majority of nonwhite Republicans want to see the next presidential candidate take the party in a new direction. And they say so by wide 2 to 1 margins.</p>
+<p><span class="cjk">话虽如此，确实有相当一部分共和党少数派并不认可总统的行为，也希望下一位共和党总统候选人走一条新的道路。这些选民中年轻人和非白人比例偏高。事实上，民调中</span>18<span class="cjk">到</span>44<span class="cjk">岁的共和党人多数希望下一位共和党总统把党带向新的方向。非白人共和党人中，多数也希望下一位总统候选人把党带向新的方向，而且比例达到明显的</span>2<span class="cjk">比</span>1<span class="cjk">。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">That said</span><span class="term">disproportionately</span><span class="term">wide 2 to 1 margins</span><span class="term">2 to 1 margins</span></div><ul><li>That said<span class="cjk">：话虽如此；用于转折。</span></li><li>disproportionately /ˌdis-prə-ˈpȯr-sh(ə-)nət-lē/<span class="cjk">：不成比例地；这里指反对特朗普的共和党少数派中年轻和非白人比例偏高。</span></li><li>wide 2 to 1 margins<span class="cjk">：明显的二比一优势。</span></li><li>2 to 1 margins<span class="cjk">：二比一的比例优势。</span></li></ul></aside>
+<p>On the issues, it seems pretty clear that the cost of living in foreign policy are crucial points of discontent. So this is a very different kind of opposition to Donald Trump than the one that you might remember from the so-called Never Trumpers back in 2016, who opposed Donald Trump because he was an isolationist, and opposed free trade, and opposed comprehensive immigration reform. This new kind of dissatisfaction from young and nonwhite Republicans is, in many cases, because he <span class="no-break">hasn’t</span> necessarily followed through with his promise to put America first, as he would put it.</p>
+<p><span class="cjk">在具体议题上，生活成本和外交政策显然是关键的不满点。所以这是一种与</span>2016<span class="cjk">年所谓</span>“<span class="cjk">永不特朗普派</span>”<span class="cjk">非常不同的反特朗普倾向。当年的</span>“<span class="cjk">永不特朗普派</span>”<span class="cjk">反对特朗普，是因为他主张孤立主义、反对自由贸易、反对全面移民改革。而今天这种来自年轻共和党人和非白人共和党人的新型不满，在很多情况下，是因为他并没有真正兑现他所谓</span>“<span class="cjk">美国优先</span>”<span class="cjk">的承诺。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">isolationist</span><span class="term">in many cases</span><span class="term">followed through with his promise</span><span class="term">as he would put it.</span></div><ul><li>isolationist /ˌī-sə-ˈlā-sh(ə-)nist/<span class="cjk">：孤立主义者；这里指主张美国少干预海外事务的人。</span></li><li>in many cases<span class="cjk">：在很多情况下。</span></li><li>follow through with his promise<span class="cjk">：兑现他的承诺；这里指兑现</span>“<span class="cjk">美国优先</span>”<span class="cjk">、避免卷入战争的承诺。</span></li><li>as he would put it<span class="cjk">：按他自己的说法；这里指用特朗普自己的表述来说。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Right. Instead, he has gone from being an isolationist back in 2016 to becoming an interventionist and starting the very kind of war in the Middle East that he very successfully lured young, nonwhite voters to the Republican Party by saying he would never pursue.</p>
+<p><span class="cjk">对。换句话说，他从</span>2016<span class="cjk">年的孤立主义者，转变成了一个干预主义者，并且在中东发动了正是他曾向年轻和非白人选民承诺绝不会发动的那种战争，而他也正是靠这个承诺成功把这些人吸引到共和党来的。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">interventionist</span><span class="term">lured</span></div><ul><li>interventionist /ˌin-tər-ˈven(t)-sh(ə-)nist/<span class="cjk">：干预主义者；这里指支持或发动海外军事干预的人。</span></li><li>lure /ˈl<span class="u-dot">u</span>r/<span class="cjk">：这里</span> lured <span class="cjk">指吸引、诱使；即用反战承诺吸引年轻和非白人选民。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p><span class="no-break">That’s</span> right. And again, the generational divide here is really stark. On all of the foreign policy issues, young Republicans under age 44, they line up against him and often by wide two to one or more margins. <span class="no-break">I’ll</span> also note, by the way, that includes the question of Republican support for Israel. A majority of young Republicans think that Donald Trump is too supportive of Israel and disapprove of his handling of the Israeli-Palestinian conflict. So <span class="no-break">that’s</span> very different from what <span class="no-break">we’ve</span> seen before from Republicans. And I will say that it happens to echo something we have seen in the elite discourse among Republicans. <span class="no-break">We’ve</span> seen prominent podcasters, like Tucker Carlson or Joe Rogan or even Nick Fuentes, take these positions on Israel and <span class="no-break">Trump’s</span> foreign policy that we can see echoed in public opinion among younger Republicans.</p>
+<p><span class="cjk">没错。而且再说一次，这里的代际分歧非常明显。在所有外交政策议题上，</span>44<span class="cjk">岁以下的年轻共和党人都站在他的对立面，而且常常以二比一甚至更大的比例反对他。顺便说一句，这也包括共和党人对以色列的支持问题。多数年轻共和党人认为唐纳德</span>·<span class="cjk">特朗普过于支持以色列，并且不认可他对以巴冲突的处理。这和我们过去在共和党人中看到的情况非常不同。而且我还要说，这恰好呼应了我们在共和党精英话语中看到的一些东西。我们看到一些知名播客主持人，比如塔克</span>·<span class="cjk">卡尔森、乔</span>·<span class="cjk">罗根，甚至尼克</span>·<span class="cjk">富恩特斯，对以色列和特朗普外交政策采取这样的立场，而这些立场也可以在年轻共和党人的公众意见中看到回响。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">generational divide</span><span class="term">stark</span><span class="term">line up against</span><span class="term">disapprove of</span><span class="term">echo</span><span class="term">elite discourse</span><span class="term">we can see echoed in public opinion</span></div><ul><li>generational divide<span class="cjk">：代际分歧；这里指年轻共和党人与年长共和党人在外交政策上的差异。</span></li><li>stark /ˈstärk/<span class="cjk">：鲜明的、强烈的；这里形容代际分歧很明显。</span></li><li>line up against<span class="cjk">：站到</span>……<span class="cjk">的对立面；这里指年轻共和党人在外交政策上反对特朗普。</span></li><li>disapprove of<span class="cjk">：不认可、不赞成。</span></li><li>echo /ˈe-kō/<span class="cjk">：呼应、回响；这里指精英话语和公众意见之间出现相似立场。</span></li><li>elite discourse<span class="cjk">：精英话语</span>/<span class="cjk">精英圈讨论。</span></li><li>we can see echoed in public opinion<span class="cjk">：我们可以看到这些观点在公众意见中得到呼应。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Nate, <span class="no-break">we’re</span> spending a lot of time talking about divisions within these two parties and this key group of voters, especially young nonwhite voters, what message from either party could bring them in. But it occurs to me, based on past conversations <span class="no-break">I’ve</span> had with you over the years, that that conversation might not be hugely relevant if we have a president whose approval numbers are this low. And those numbers, as you said earlier, might continue to fall. Am I right in thinking that?</p>
+<p><span class="cjk">内特，我们花了很多时间谈两党内部的分裂，以及年轻非白人选民这个关键群体，讨论哪一方的信息可能把他们吸引进来。但基于我这些年来和你的过往谈话，我突然想到，如果一位总统的支持率低到这种程度，而且正如你刚才说的，这些数字可能还会继续下降，那么我们刚才的那种讨论可能并没有那么重要。我这样想对吗？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">be hugely relevant</span><span class="term">approval numbers</span></div><ul><li>be hugely relevant<span class="cjk">：非常重要、很有相关性；这里指对判断</span>2028<span class="cjk">年谁赢是否重要。</span></li><li>approval numbers<span class="cjk">：支持率数字；这里指总统民调支持率。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>If by relevant you mean relevant to determining which party wins the 2028 general election —</p>
+<p><span class="cjk">如果你说的</span>“<span class="cjk">重要</span>”<span class="cjk">是指对判断哪一党会赢得</span>2028<span class="cjk">年大选重要</span>——</p>
+<div class="speaker">Michael Barbaro</div>
+<p>You read me correctly.</p>
+<p><span class="cjk">你完全读懂我的意思了。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>then I think you have a fair point. The <span class="no-break">president’s</span> approval rating is under 40, the Democrats would be pretty clearly favored to win in 2028. <span class="no-break">There’s</span> no precedent for the <span class="no-break">president’s</span> party retaining the White House when his approval rating is under 40 percent, let alone even lower than that.</p>
+<p><span class="cjk">那我认为你说得有道理。总统支持率低于</span>40%<span class="cjk">，民主党在</span>2028<span class="cjk">年就会相当明显地被看好。历史上没有先例显示，在总统支持率低于</span>40%<span class="cjk">、更不用说更低的情况下，总统所在的政党还能继续保住白宫。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">you have a fair point</span><span class="term">be pretty clearly favored to win</span><span class="term">precedent</span></div><ul><li>you have a fair point<span class="cjk">：你说得有道理。</span></li><li>be pretty clearly favored to win<span class="cjk">：会被相当明显地看好获胜。</span></li><li>precedent /ˈpre-sə-dənt/<span class="cjk">：先例；这里指历史上是否发生过类似情况。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Wow.</p>
+<p><span class="cjk">哇。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>And I think the clearest example of that in recent memory is what happened to George W. Bush. I mean, at almost this exact time 20 years ago, George W. <span class="no-break">Bush’s</span> approval rating fell under 40 percent to about the number where Donald Trump is today, thanks to a combination of quagmire in the Middle East and high gas prices. And while it took a while, his ratings kept falling and ultimately landed in the 20s. And the Democrats, of course, won decisively in the 2008 general election. Barack Obama won by 7 points, and they came out of that election with nearly filibuster-proof majority in the Senate and a large majority in the House of Representatives. Now, obviously, this is a more polarized era. Whether the Democrats can appeal as broadly as Barack Obama did in 2008 is an open question. But when the <span class="no-break">president’s</span> approval rating starts sinking lower than the 40s and you start giving up traditional Republican-leaning voters, the opportunities for a more decisive Democratic victory start to come into view.</p>
+<p><span class="cjk">我认为近代记忆中最清楚的例子就是乔治</span>·W·<span class="cjk">布什。大约就在</span>20<span class="cjk">年前的这个时候，乔治</span>·W·<span class="cjk">布什的支持率跌破</span>40%<span class="cjk">，降到和今天唐纳德</span>·<span class="cjk">特朗普差不多的水平，原因是中东泥潭和高油价共同作用。虽然花了一段时间，但他的支持率继续下跌，最终跌到了</span>20%<span class="cjk">多。民主党当然在</span>2008<span class="cjk">年大选中取得了决定性胜利。巴拉克</span>·<span class="cjk">奥巴马赢了</span>7<span class="cjk">个百分点，而民主党在那次选举后在参议院几乎拿到可以阻止冗长辩论的多数，在众议院也获得了很大多数。当然，今天显然是一个更加极化的时代。民主党能否像</span>2008<span class="cjk">年的巴拉克</span>·<span class="cjk">奥巴马那样广泛吸引选民，仍然是一个开放问题。但当总统支持率开始跌破</span>40%<span class="cjk">区间，并且你开始失去传统上倾向共和党的选民时，一场更具决定性的民主党胜利的机会就开始浮现。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">quagmire</span><span class="term">decisively</span><span class="term">came out of</span><span class="term">filibuster-proof majority</span><span class="term">filibuster</span><span class="term">polarized</span><span class="term">era</span><span class="term">appeal</span><span class="term">come into view</span></div><ul><li>quagmire /ˈkwag-ˌmī(-ə)r/<span class="cjk">：泥潭、困局；这里指中东战争造成的政治困境。</span></li><li>decisively /di-ˈsī-siv-lē/<span class="cjk">：决定性地、明显地；这里指民主党在</span>2008<span class="cjk">年大胜。</span></li><li>came out of<span class="cjk">：从</span>……<span class="cjk">中出来并获得某种结果；这里指选后民主党拥有接近压倒性的席位优势。</span></li><li>filibuster-proof majority<span class="cjk">：足以不受冗长辩论阻挠的多数；这里指参议院接近</span>60<span class="cjk">票的优势。</span></li><li>filibuster /ˈfi-lə-ˌbə-stər/<span class="cjk">：参议院冗长辩论阻挠程序。</span></li><li>polarized /ˈpō-lə-ˌrīzd/<span class="cjk">：两极化的；这里指当代美国政治更分裂。</span></li><li>era /ˈer-ə/<span class="cjk">：时代；这里指当前政治时代。</span></li><li>appeal /ə-ˈpēl/<span class="cjk">：吸引力；这里指民主党能否广泛吸引选民。</span></li><li>come into view<span class="cjk">：开始显现、浮现出来；这里指民主党大胜的机会开始出现。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Right. I just want to end on a simple observation. Normally, this would be the moment for people inside a party like the one Trump leads to look around, especially in Congress, and say, man, this is not going well. And they would start to break with the president. They would start to resist his agenda in areas like the war in Iran, where <span class="no-break">it’s</span> clear broadly, nationally, voters <span class="no-break">don’t</span> like what <span class="no-break">he’s</span> doing. But what is so singular about Trump is that his hold over the party through these primaries, where <span class="no-break">he’s</span> pushing out anyone who ever resists him, means that everyone is holding on to the same steering wheel that he is in this moment. And <span class="no-break">they’re</span> all — and I used this metaphor earlier this week in a different episode — kind of driving the car towards the same electoral cliff, it would seem.</p>
+<p><span class="cjk">对。我想用一个简单的观察来收尾。通常来说，在这种时候，特朗普所领导的这个党内部的人，尤其是国会里的人，会开始环顾四周说，天啊，情况不太妙。然后他们会开始和总统切割，会开始抵制他的议程，比如在伊朗战争这样的问题上，因为全国范围内选民显然不喜欢他正在做的事情。但特朗普非常独特的一点在于，他通过这些初选牢牢控制着共和党</span>——<span class="cjk">他把任何曾经抵抗过他的人都赶出去</span>——<span class="cjk">这意味着在此刻，所有人都和他握着同一个方向盘。而他们全都</span>——<span class="cjk">我本周早些时候在另一集节目里也用了这个比喻</span>——<span class="cjk">似乎正在把车开向同一个选举悬崖。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">break with</span><span class="term">singular</span><span class="term">pushing out</span><span class="term">metaphor</span></div><ul><li>break with<span class="cjk">：与</span>……<span class="cjk">决裂</span>/<span class="cjk">切割；这里指共和党议员开始和特朗普保持距离。</span></li><li>singular /ˈsiŋ-gyə-lər/<span class="cjk">：独特的、非同寻常的；这里形容特朗普对党内控制力很特殊。</span></li><li>push out /ˈp<span class="u-dot">u</span>sh/<span class="cjk">：这里</span> pushing out <span class="cjk">指把反对者排挤出去。</span></li><li>metaphor /ˈme-tə-ˌfȯr/<span class="cjk">：比喻；这里指</span>“<span class="cjk">开车驶向选举悬崖</span>”<span class="cjk">的说法。</span></li></ul></aside>
+<div class="speaker">Nate Cohn</div>
+<p>I think <span class="no-break">that’s</span> absolutely right. I mentioned earlier that a majority of Republicans want to follow Donald <span class="no-break">Trump’s</span> lead in 2028, rather than go in a new direction. Well, the general electorate wants a new direction by a 3 to 1 margin. <span class="no-break">That’s</span> a big disconnect between the general <span class="no-break">electorate’s</span> desires and what the Republican Party is about to give the general electorate. And for all of the talk about the challenges facing the Democratic Party, that mismatch seems the biggest one to me. <span class="no-break">We’ve</span> had change election after change election over the last two decades. If the Republican Party really wants to serve the general electorate the same thing again, I think that they would be in a lot of trouble in ‘26 and ‘28.</p>
+<p><span class="cjk">我认为完全正确。我之前提到，多数共和党人希望在</span>2028<span class="cjk">年追随唐纳德</span>·<span class="cjk">特朗普的路线，而不是走新的方向。可是总体选民以</span>3<span class="cjk">比</span>1<span class="cjk">的比例希望看到新的方向。总体选民想要什么，和共和党即将提供给总体选民什么之间，存在巨大的脱节。尽管人们一直在谈民主党面临的挑战，但在我看来，这种错配才是最大的挑战。过去二十年里，我们经历了一场又一场要求改变的选举。如果共和党真的想把同样的东西再次端给总体选民，我认为他们在</span>2026<span class="cjk">年和</span>2028<span class="cjk">年都会遇到很大麻烦。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">electorate</span><span class="term">general electorate</span><span class="term">serve the general electorate</span></div><ul><li>electorate /i-ˈlek-t(ə-)rət/<span class="cjk">：选民整体。</span></li><li>general electorate<span class="cjk">：总体选民；这里指不只共和党内部，而是全国所有投票选民。</span></li><li>serve the general electorate<span class="cjk">：把某种选择提供给总体选民；这里带有</span>“<span class="cjk">端给选民</span>”<span class="cjk">的语气。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>Well, Nate, thank you very much.Appreciate it.</p>
+<p><span class="cjk">好，内特，非常感谢。谢谢你。</span></p>
+<div class="speaker">Nate Cohn</div>
+<p>Thanks for having me.</p>
+<p><span class="cjk">谢谢邀请我。</span></p>
+<div class="speaker">Michael Barbaro</div>
+<p>On Thursday evening, after we spoke with Nate, Congressional Republicans finally seemed to lose their patience with President Trump. Republican senators staged a rare rebellion against his establishment of a $1.8 billion compensation fund that could pay his political allies, including January 6th rioters.</p>
+<p><span class="cjk">周四晚上，在我们采访内特之后，国会共和党人似乎终于对特朗普总统失去了耐心。共和党参议员罕见地反抗了他设立一项</span>18<span class="cjk">亿美元赔偿基金的做法；这笔基金可能向他的政治盟友付款，其中包括</span>1<span class="cjk">月</span>6<span class="cjk">日国会骚乱参与者。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">rare</span><span class="term">rebellion</span></div><ul><li>rare /ˈrer/<span class="cjk">：罕见的；这里形容共和党参议员反抗特朗普并不常见。</span></li><li>rebellion /ri-ˈbel-yən/<span class="cjk">：反叛、抗命；这里指共和党参议员对特朗普安排的公开抵制。</span></li></ul></aside>
+<p>I think <span class="no-break">it’s</span> stupid on stilts. Why? Because it will put us in a position where your taxpayer dollars and my taxpayer dollars could potentially compensate someone who assaulted a police officer, admitted their guilt, got convicted, got pardoned and now <span class="no-break">we’re</span> going pay them for that? <span class="no-break">That’s</span> absurd.</p>
+<p><span class="cjk">我觉得这蠢到离谱。为什么？因为这会让我们陷入一种境地：你的纳税钱和我的纳税钱，可能被用来补偿一个袭击警察、承认有罪、被定罪、又被赦免的人，现在我们还要付钱给他们？这太荒唐了。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">stilts</span><span class="term">on stilts</span><span class="term">absurd</span></div><ul><li>stilt /ˈstilt/<span class="cjk">：高跷；单独看是</span>“<span class="cjk">高跷</span>”<span class="cjk">。</span></li><li>on stilts<span class="cjk">：这里出现在</span> stupid on stilts <span class="cjk">中，意思是</span>“<span class="cjk">蠢到加倍、蠢得离谱</span>”<span class="cjk">，不是字面上的踩高跷。</span></li><li>absurd /əb-ˈsərd/<span class="cjk">：荒唐的、荒谬的；这里指给这些人赔偿的想法很离谱。</span></li></ul></aside>
+<div class="speaker">Michael Barbaro</div>
+<p>To protest the controversial fund, Republican senators refused to vote on a bill to finance <span class="no-break">Trump’s</span> crackdown on illegal immigration, which was scheduled for Thursday afternoon. Shortly thereafter, reporters asked Trump about the rebellion at the White House.</p>
+<p><span class="cjk">为了抗议这项有争议的基金，共和党参议员拒绝就一项资助特朗普打击非法移民行动的法案投票。该投票原定于周四下午进行。不久之后，记者在白宫询问特朗普对这场反叛的看法。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">crackdown on</span><span class="term">rebellion</span></div><ul><li>crackdown on<span class="cjk">：严厉打击、强力整治；这里指特朗普打击非法移民的行动。</span></li><li>rebellion /ri-ˈbel-yən/<span class="cjk">：这里指共和党参议员对特朗普的反抗。</span></li></ul></aside>
+<p>Are you losing control of the Senate — Senate Republicans? I <span class="no-break">don’t</span> know. I really <span class="no-break">don’t</span> know. I can tell you I only do <span class="no-break">what’s</span> right.</p>
+<p><span class="cjk">你是否正在失去对参议院</span>——<span class="cjk">对参议院共和党人的控制？我不知道。我真的不知道。我可以告诉你，我只做正确的事。</span></p>
+<div class="speaker">Michael Barbaro</div>
+<p><span class="no-break">We’ll</span> be right back.</p>
+<p><span class="cjk">我们稍后回来。</span></p>
+<p>On Thursday, the Democratic National Committee released a draft of an internal autopsy of what went wrong in the 2024 presidential campaign. It found that President Biden had failed to position Kamala Harris for success by the time he dropped out of the race, that Harris failed to distance herself from <span class="no-break">Biden’s</span> damaged brand, and that <span class="no-break">Trump’s</span> attacks on <span class="no-break">Harris’s</span> past positions, especially her liberal approach to transgender rights had been highly effective. In the end, the report said, the Harris campaign failed to make a strong enough case to Americans to vote for Harris, rather than just against President Trump.</p>
+<p><span class="cjk">周四，民主党全国委员会发布了一份内部复盘报告草案，分析</span>2024<span class="cjk">年总统竞选究竟出了什么问题。报告发现，在拜登总统退选时，他未能为卡玛拉</span>·<span class="cjk">哈里斯的成功铺好道路；哈里斯未能与拜登受损的政治品牌切割；而特朗普对哈里斯过去立场的攻击，尤其是她在跨性别权利问题上的自由派立场，非常有效。报告最后说，哈里斯竞选团队没有足够有力地向美国人说明为什么要投票给哈里斯，而不只是投票反对特朗普总统。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">autopsy</span><span class="term">campaign</span><span class="term">success</span><span class="term">dropped out of the race</span><span class="term">make a strong enough case</span></div><ul><li>autopsy /ˈȯ-ˌtäp-sē/<span class="cjk">：这里不是医学上的尸检，而是竞选失败后的内部复盘报告。</span></li><li>campaign /kam-ˈpān/<span class="cjk">：这里指总统竞选活动</span>/<span class="cjk">竞选团队。</span></li><li>success /sək-ˈses/<span class="cjk">：这里指哈里斯竞选成功的条件或机会。</span></li><li>dropped out of the race<span class="cjk">：退出竞选；这里指拜登退出</span>2024<span class="cjk">年总统竞选。</span></li><li>make a strong enough case<span class="cjk">：提出足够有说服力的理由；这里指没能充分说明为什么选民应该投给哈里斯。</span></li></ul></aside>
+<p><span class="no-break">Today’s</span> episode was produced by Mary Wilson, Chris Benderev, and Mooj Zadie. It was edited by Patricia Willens and Rachel Quester, and contains music by Rowan Niemisto, Dan Powell, and Marion Lozano. Our theme music is by Wonderly. This episode was engineered by Chris Wood. <span class="no-break">That’s</span> it for “The Daily.” <span class="no-break">I’m</span> Michael Barbaro. See you on Sunday.</p>
+<p><span class="cjk">本期节目由玛丽</span>·<span class="cjk">威尔逊、克里斯</span>·<span class="cjk">本德列夫和穆吉</span>·<span class="cjk">扎迪制作。编辑是帕特里夏</span>·<span class="cjk">威伦斯和瑞秋</span>·<span class="cjk">奎斯特，音乐来自罗恩</span>·<span class="cjk">尼米斯托、丹</span>·<span class="cjk">鲍威尔和玛丽昂</span>·<span class="cjk">洛萨诺。我们的主题音乐由</span>Wonderly<span class="cjk">制作。本期节目由克里斯</span>·<span class="cjk">伍德进行工程制作。以上就是本期《</span>The Daily<span class="cjk">》。我是迈克尔</span>·<span class="cjk">巴巴罗。周日见。</span></p>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const storageKey = "podcastTranscriptBodyText";
+      const fontSelect = document.getElementById("bodyFontSelect");
+      const sizeDown = document.getElementById("bodySizeDown");
+      const sizeUp = document.getElementById("bodySizeUp");
+      const reset = document.getElementById("bodyTextReset");
+      const fontMap = {
+        roboto: 'var(--body-roboto)',
+        sanFrancisco: 'var(--body-san-francisco)',
+        helvetica: 'var(--body-helvetica)',
+        arial: 'var(--body-arial)',
+        times: 'var(--body-serif)',
+      };
+
+      if (!fontSelect || !sizeDown || !sizeUp || !reset) return;
+
+      const firstParagraph = document.querySelector("main p");
+      const defaultSize = firstParagraph
+        ? Math.round(parseFloat(getComputedStyle(firstParagraph).fontSize))
+        : 19;
+      const defaultFont = "roboto";
+      let settings = { font: defaultFont, size: defaultSize };
+
+      try {
+        settings = { ...settings, ...JSON.parse(localStorage.getItem(storageKey) || "{}" ) };
+      } catch (error) {}
+      if (!fontMap[settings.font]) settings.font = defaultFont;
+      if (!Number.isFinite(settings.size)) settings.size = defaultSize;
+
+      function applySettings() {
+        fontSelect.value = settings.font;
+        root.style.setProperty("--reader-body-font", fontMap[settings.font] || fontMap.roboto);
+        root.style.setProperty("--reader-body-size", `${settings.size}px`);
+        localStorage.setItem(storageKey, JSON.stringify(settings));
+      }
+
+      fontSelect.addEventListener("change", () => {
+        settings.font = fontSelect.value;
+        applySettings();
+      });
+
+      sizeDown.addEventListener("click", () => {
+        settings.size = Math.max(15, settings.size - 1);
+        applySettings();
+      });
+
+      sizeUp.addEventListener("click", () => {
+        settings.size = Math.min(24, settings.size + 1);
+        applySettings();
+      });
+
+      reset.addEventListener("click", () => {
+        settings = { font: defaultFont, size: defaultSize };
+        root.style.removeProperty("--reader-body-font");
+        root.style.removeProperty("--reader-body-size");
+        localStorage.removeItem(storageKey);
+        fontSelect.value = defaultFont;
+      });
+
+      applySettings();
+    })();
+  </script>
+</body>
+</html>

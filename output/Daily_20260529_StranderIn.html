@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stranded in the Strait of Hormuz</title>
+  <style>
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --paper: #fffdfa;
+      --ink: #202124;
+      --muted: #6d675f;
+      --line: #e2dacf;
+      --accent: #2f6f73;
+      --accent-soft: #e7f2f1;
+      --note: #eef7f0;
+      --note-line: #a6c7ad;
+      --shadow: 0 24px 80px rgba(63, 52, 38, 0.12);
+      --content-width: 76ch;
+      --body-serif: "Times New Roman", Times, "Microsoft YaHei", "微软雅黑", serif;
+      --body-roboto: "Transcript Roboto", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      --body-san-francisco: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-helvetica: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-arial: Arial, Helvetica, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-sans: var(--body-roboto);
+      --cjk-font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --card-sans: Aptos, "Aptos Display", "Segoe UI", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --reader-body-font: var(--body-serif);
+      --reader-body-size: 19px;
+      --reader-body-line: 1.75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(246, 243, 237, 0.94), rgba(246, 243, 237, 1)),
+        radial-gradient(circle at 12% 0%, rgba(47, 111, 115, 0.12), transparent 32%);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+
+    header {
+      margin: 0 auto 28px;
+      padding: 34px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--accent);
+      font: 700 12px/1.2 var(--body-serif);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font: 500 14px/1.4 var(--body-serif);
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(255, 253, 250, 0.72);
+    }
+
+    .reader-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: var(--card-sans);
+    }
+
+    .reader-controls label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .reader-controls select,
+    .reader-controls button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.9);
+      color: var(--ink);
+      font: 650 14px/1 var(--card-sans);
+    }
+
+    .reader-controls select {
+      padding: 0 30px 0 10px;
+    }
+
+    .reader-controls button {
+      min-width: 38px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .audio-panel {
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.86);
+      font-family: var(--card-sans);
+    }
+
+    .audio-label {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+    }
+
+    .audio-file {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(226, 218, 207, 0.72);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 58px);
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-family: var(--reader-body-font);
+      font-size: var(--reader-body-size);
+      line-height: var(--reader-body-line);
+      max-width: var(--content-width);
+      text-align: justify;
+      text-align-last: left;
+      text-justify: auto;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .speaker {
+      width: fit-content;
+      max-width: 100%;
+      margin: 18px 0 8px;
+      padding: 5px 10px 6px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: #214d50;
+      font: 750 13px/1.3 var(--body-serif);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vocab {
+      max-width: calc(var(--content-width) + 42px);
+      margin: 10px 0 12px;
+      padding: 16px 18px 17px;
+      border: 1px solid var(--note-line);
+      border-left: 5px solid #5f8f6b;
+      border-radius: 8px;
+      background: var(--note);
+      font-family: var(--card-sans);
+      line-height: 1.6;
+    }
+
+    .terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .term {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(95, 143, 107, 0.28);
+      color: #2f2f2f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .vocab ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .vocab li {
+      margin: 6px 0;
+      color: #403622;
+      font-size: 15px;
+    }
+
+    .vocab strong {
+      color: #202124;
+    }
+
+    .cjk {
+      font-family: var(--cjk-font);
+    }
+
+    .no-break {
+      white-space: nowrap;
+    }
+
+    .u-dot {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .u-dot::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0.04em;
+      width: 0.11em;
+      height: 0.11em;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --reader-body-font: var(--body-sans);
+        --reader-body-size: 17px;
+        --reader-body-line: 1.68;
+      }
+
+      .page {
+        padding: 22px 14px 46px;
+      }
+
+      header {
+        padding-top: 22px;
+      }
+
+      main {
+        padding: 22px 16px;
+      }
+
+      p {
+        max-width: none;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .vocab {
+        max-width: none;
+        padding: 14px 14px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --reader-body-size: 17px;
+        --reader-body-line: 1.66;
+      }
+
+      .page {
+        padding: 14px 8px 34px;
+      }
+
+      header {
+        margin-bottom: 18px;
+        padding: 18px 4px 18px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      main {
+        padding: 18px 12px;
+      }
+
+      .vocab li {
+        font-size: 14px;
+      }
+
+      .audio-panel {
+        margin-top: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11pt;
+        line-height: 1.55;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      header {
+        padding-top: 0;
+      }
+
+      main {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      p {
+        font-size: 11pt;
+        line-height: 1.55;
+        max-width: none;
+        text-align: justify;
+      }
+
+      .reader-controls {
+        display: none;
+      }
+
+      .audio-panel {
+        display: none;
+      }
+
+      .speaker {
+        break-after: avoid;
+      }
+
+      .vocab {
+        max-width: none;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .vocab li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">Podcast Transcript Notes</div>
+      <h1>Stranded in the Strait of Hormuz</h1>
+      <div class="meta">
+        
+        <span>36 vocabulary blocks</span>
+        <span>51 collected terms</span>
+        <span>183 speaker turns</span>
+      </div>
+      <div class="reader-controls" aria-label="正文显示设置">
+        <label for="bodyFontSelect">正文字体
+          <select id="bodyFontSelect">
+            <option value="roboto">Roboto</option>
+            <option value="sanFrancisco">San Francisco</option>
+            <option value="helvetica">Helvetica</option>
+            <option value="arial">Arial</option>
+            <option value="times">Times New Roman</option>
+          </select>
+        </label>
+        <button type="button" id="bodySizeDown" aria-label="减小正文字号">A-</button>
+        <button type="button" id="bodySizeUp" aria-label="增大正文字号">A+</button>
+        <button type="button" id="bodyTextReset">Reset</button>
+      </div>
+      <section class="audio-panel" aria-label="Episode audio">
+        <div class="audio-label">Episode Audio</div>
+        <audio controls preload="metadata">
+          <source src="../audio/Daily_20260529_StranderIn.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="audio-file">Daily_20260529_StranderIn.mp3</div>
+      </section>
+    </header>
+    <main>
+<p>We hear from two of the thousands of seafarers who became stuck in the middle of the war.</p>
+<p><strong>2026-05-29</strong> T06:00:14-04:00</p>
+<p><span class="cjk">我们听到两名海员的讲述。他们和数千名海员一样，被困在了这场战争的中心。</span></p>
+<p><strong>2026-05-29</strong> T06:00:14-04:00</p>
+<aside class="vocab"><div class="terms"><span class="term">seafarers</span></div><ul><li><strong>seafarer</strong> /ˈsē-ˌfer-ər/<span class="cjk">：海员，远洋船员；这里指被困在霍尔木兹海峡附近船上的船员。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>From “The New York Times,” <span class="no-break">I’m</span> Natalie Kitroeff. This is “The Daily.” The US and Iran are each signaling that they may be making progress toward reopening the Strait of Hormuz. But they <span class="no-break">haven’t</span> reached a deal yet. And the crucial shipping channel remains shut. Hanging in the balance are thousands of crew members who have been stranded on their ships since the fighting started three months ago. Today, we hear from two seafarers who got stuck about what <span class="no-break">it’s</span> like to be trapped in the middle of this war zone and what it would mean to get everyone out. <span class="no-break">It’s</span> Friday, May 29. Can you hear me?</p>
+<p><span class="cjk">这里是《</span>The New York Times<span class="cjk">》，我是</span> Natalie Kitroeff<span class="cjk">。这是《</span>The Daily<span class="cjk">》。美国和伊朗都在释放信号，称双方可能正在为重新开放</span> Hormuz Strait <span class="cjk">取得进展。但到目前为止，协议还没有达成。这条至关重要的航运通道仍然处于关闭状态。悬在半空中的，是自三个月前战事爆发以来一直被困在船上的数千名船员。今天，我们听两名被困海员讲述：被困在这个战区中央到底是什么感受，以及让所有人脱困意味着什么。今天是</span> 5 <span class="cjk">月</span> 29 <span class="cjk">日，星期五。你能听到我说话吗？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">stranded</span><span class="term">seafarers</span><span class="term">get everyone out</span></div><ul><li><strong>strand</strong> /ˈstrand/<span class="cjk">：使滞留、使陷入困境；这里</span> <strong>stranded</strong> <span class="cjk">指船员被困在船上，无法安全离开。</span></li><li><strong>seafarer</strong> /ˈsē-ˌfer-ər/<span class="cjk">：海员，远洋船员。</span></li><li><strong>get everyone out</strong><span class="cjk">：把所有人都撤出来、救出来。</span></li></ul></aside>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yeah, I can hear you loud and clear.</p>
+<p><span class="cjk">能，我听得很清楚。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>OK, great. Thank you so much for taking the time to talk with us.</p>
+<p><span class="cjk">好，太好了。非常感谢你抽时间接受我们的采访。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yeah, no problem, Natalie.</p>
+<p><span class="cjk">没问题，</span>Natalie<span class="cjk">。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>So just to start, can you introduce yourself, please?</p>
+<p><span class="cjk">那我们先从这里开始吧。能请你介绍一下自己吗？</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yeah. My name is Captain Virendra Vishwakarma. <span class="no-break">I’m</span> sailing on LPG tankers since last five years. And before I was captain on oil chemical ships. I started my career in 2000. So now <span class="no-break">it’s</span> already 26 years in the shipping.</p>
+<p><span class="cjk">可以。我叫</span> Captain Virendra Vishwakarma<span class="cjk">。过去五年我一直在</span> LPG tanker <span class="cjk">上工作。在那之前，我是</span> oil chemical ships <span class="cjk">的船长。我从</span> 2000 <span class="cjk">年开始这份职业。所以到现在，我已经在航运业干了</span> 26 <span class="cjk">年。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Captain Vishwakarma has sailed through the Strait of Hormuz dozens of times. But before the war began, he said the wider world <span class="no-break">didn’t</span> much about it. <span class="no-break">It’s</span> a relatively small body of water <span class="no-break">that’s</span> basically the doorway to the Persian Gulf. At its narrowest point, <span class="no-break">it’s</span> only about 21 miles wide. But in that sliver of ocean, <span class="no-break">there’s</span> a bustling waterway. The Strait is one of the <span class="no-break">world’s</span> most critical energy corridors. <span class="no-break">It’s</span> responsible for 20 percent of the <span class="no-break">world’s</span> oil and natural gas supply. More than a hundred ships pass through it every day.</p>
+<p>Captain Vishwakarma <span class="cjk">曾经几十次穿过</span> Hormuz Strait<span class="cjk">。但他说，在这场战争爆发之前，更广大的世界其实并不太了解这片水域。它是一片相对狭小的海域，基本上就是</span> Persian Gulf <span class="cjk">的门户。最窄的地方只有大约</span> 21 <span class="cjk">英里宽。但就在这片狭窄的海面上，却是一条繁忙的航道。</span>Hormuz Strait <span class="cjk">是世界上最关键的能源通道之一，全球</span> 20% <span class="cjk">的石油和天然气供应都要经过这里。每天都有一百多艘船从这里通过。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">Persian</span><span class="term">sliver of ocean</span><span class="term">bustling</span><span class="term">waterway</span></div><ul><li><strong>Persian</strong> /ˈpər-zhən/<span class="cjk">：波斯的；这里出现在</span> <strong>Persian Gulf</strong><span class="cjk">，指</span>“<span class="cjk">波斯湾</span>”<span class="cjk">。</span></li><li><strong>sliver of ocean</strong><span class="cjk">：一小片、一条狭窄的海域。</span></li><li><strong>bustling</strong> /ˈbə-s(ə-)liŋ/<span class="cjk">：繁忙的；这里形容航道船只往来频繁。</span></li><li><strong>waterway</strong> /ˈwȯ-tər-ˌwā/<span class="cjk">：水路、航道。</span></li></ul></aside>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>We have container ships, we have cargo ships. We have crude oil. We have vegetable oil ships. We have chemical tankers. Then are all these ships are carrying different things. We are taking the gas. We are taking the petrol. We are taking the gasoline. And they are taking from one place to another place and giving to the world.</p>
+<p><span class="cjk">这里有集装箱船，有货船。有运原油的船，有运植物油的船，还有化学品船。这些船都在运不同的东西。我们运天然气，运汽油，运</span> gasoline<span class="cjk">。大家把这些东西从一个地方运到另一个地方，供应给全世界。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Captain <span class="no-break">Vishwakarma’s</span> ship is an LPG tanker — <span class="no-break">that’s</span> liquefied petroleum gas. His ship takes it back to India where people use the butane and propane for heating, cooking and fuel for cars. He says he loves the work.</p>
+<p>Captain Vishwakarma <span class="cjk">的船是一艘</span> LPG tanker<span class="cjk">，也就是液化石油气船。他的船把液化石油气运回印度，人们会用其中的</span> butane <span class="cjk">和</span> propane <span class="cjk">来取暖、做饭，也用作汽车燃料。他说，他热爱这份工作。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">butane</span><span class="term">propane</span></div><ul><li><strong>butane</strong> /ˈbyü-ˌtān/<span class="cjk">：丁烷，液化石油气的一种成分。</span></li><li><strong>propane</strong> /ˈprō-ˌpān/<span class="cjk">：丙烷，液化石油气的一种成分。</span></li></ul></aside>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yeah, because <span class="no-break">it’s</span> a good job and a prestigious job. Plus, we can move the world economy.</p>
+<p><span class="cjk">是的，因为这是一份好工作，也是一份体面的工作。而且，我们能推动世界经济运转。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">prestigious</span></div><ul><li><strong>prestigious</strong> /pre-ˈsti-jəs/<span class="cjk">：有声望的、体面的；这里是船长认为海员</span>/<span class="cjk">船长工作受尊重。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>The idea is basically that <span class="no-break">you’re</span> keeping the world economy moving. <span class="no-break">That’s</span> what you mean by that?</p>
+<p><span class="cjk">你的意思大概是，你们是在让世界经济继续运转。你说的就是这个意思吗？</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yeah, that is right. Suppose if you buy a Christmas gift from China, it should reach to the New York on 24th of December. So our job is to make sure that it will reach on 24th of December, not 25th or 26th. So our importance in the world economy is if the seafarer will not take, then the whole world will be stopped.</p>
+<p><span class="cjk">对，就是这样。比如说，你从中国买了一份圣诞礼物，它应该在</span> 12 <span class="cjk">月</span> 24 <span class="cjk">日送到纽约。所以我们的工作，就是确保它在</span> 12 <span class="cjk">月</span> 24 <span class="cjk">日到，而不是</span> 25 <span class="cjk">日或者</span> 26 <span class="cjk">日到。所以海员在世界经济中的重要性就在于，如果没有海员去运输，整个世界都会停下来。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">seafarer</span></div><ul><li><strong>seafarer</strong> /ˈsē-ˌfer-ər/<span class="cjk">：海员；这里泛指承担海运工作的人。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>So a few months back, on February 28th, it was just another day at work. His ship had made it to the Port of Kuwait. And his crew had started loading the butane and propane onto the ship.</p>
+<p><span class="cjk">几个月前，也就是</span> 2 <span class="cjk">月</span> 28 <span class="cjk">日，那本来只是一个普通的工作日。他的船已经抵达</span> Kuwait <span class="cjk">港口，他的船员也开始把</span> butane <span class="cjk">和</span> propane <span class="cjk">装到船上。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>So at 1700 hours, I heard a sound.</p>
+<p><span class="cjk">下午</span> 5 <span class="cjk">点的时候，我听到一个声音。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>And <span class="no-break">that’s</span> where he was when the war started.</p>
+<p><span class="cjk">战争爆发的时候，他就在那个地方。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Like boom. I thought maybe the crew has banging the door. But again, I hear the same thing. So I thought, it could not be possible.</p>
+<p><span class="cjk">像是</span>“<span class="cjk">砰</span>”<span class="cjk">的一声。我一开始以为可能是船员在重重关门。但我又听到了同样的声音。所以我想，不可能是这么回事。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">banging the door</span></div><ul><li><strong>banging the door</strong><span class="cjk">：重重地关门、砰地撞门；这里船长最初以为听到的是船员弄出的关门声。</span></li></ul></aside>
+<p>So I went on the bridge. Bridge is the part of the ship where we navigate the ship. All the navigation equipment, all the parts are there on the bridge where we navigate. So I run on the bridge. I saw all the missiles continuously. And the US base is intercepting the drones and missiles.</p>
+<p><span class="cjk">于是我去了驾驶台。驾驶台就是我们操纵船舶航行的地方。所有导航设备、各种相关设备，都在驾驶台上，我们就是在那里驾驶船舶。所以我跑上驾驶台。我看到导弹不断飞过，美军基地正在拦截无人机和导弹。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">intercepting</span><span class="term">drones</span></div><ul><li><strong>intercept</strong> /ˌin-tər-ˈsept/<span class="cjk">：拦截；这里</span> <strong>intercepting</strong> <span class="cjk">指美军基地在拦截导弹和无人机。</span></li><li><strong>drone</strong> /ˈdrōn/<span class="cjk">：无人机；这里指战争中飞来的攻击或侦察无人机。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Whoa, you could see missiles from the bridge where you were standing?</p>
+<p><span class="cjk">等等，你站在驾驶台上就能看到导弹？</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yes, yes, yes.</p>
+<p><span class="cjk">是的，是的，是的。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>And the debris started falling near to our vessels. And the vibration was very high. All my crew were panicked then after seeing that.</p>
+<p><span class="cjk">然后碎片开始落在我们船的附近。震动非常强烈。我的所有船员看到之后都慌了。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">debris</span><span class="term">panicked</span></div><ul><li><strong>debris</strong> /də-ˈbrē/<span class="cjk">：碎片、残骸；这里指导弹</span>/<span class="cjk">无人机被拦截后的碎片。</span></li><li><strong>panic</strong> /ˈpa-nik/<span class="cjk">：惊慌；这里</span> <strong>panicked</strong> <span class="cjk">指船员看到碎片落下后陷入恐慌。</span></li></ul></aside>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>And I was shivering. I was shivering. And I was in shock of what to do.</p>
+<p><span class="cjk">我自己也在发抖。我一直在发抖，整个人都被吓住了，不知道该怎么办。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">shivering</span></div><ul><li><strong>shiver</strong> /ˈshi-vər/<span class="cjk">：发抖、颤抖；这里指船长因为恐惧而发抖。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Captain, did you know what was happening? Did you have any idea what was going on at this point?</p>
+<p><span class="cjk">船长，你当时知道发生了什么吗？那个时候你知道到底出了什么事吗？</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>No, when the day started, we are clueless. Why it is happening? What is the reason behind that, where it is coming and where it is going? We <span class="no-break">don’t</span> know actually.</p>
+<p><span class="cjk">不知道，那天刚开始的时候，我们完全没有头绪。不知道为什么会发生，不知道背后的原因是什么，也不知道这些东西从哪里来、要飞到哪里去。我们真的不知道。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">clueless</span></div><ul><li><strong>clueless</strong> /ˈklü-ləs/<span class="cjk">：毫无头绪的；这里指他们完全不知道袭击为什么发生、从哪里来。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Wow.</p>
+<p><span class="cjk">哇。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>So after that, I informed my company. And then big bosses from the company, they said that, Captain, if you feel unsafe, you take out the vessel. We are with you.</p>
+<p><span class="cjk">在那之后，我通知了我的公司。然后公司的高层对我说，船长，如果你觉得不安全，你就把船开出去。我们支持你。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Captain Vishwakarma wanted to get his crew out of there. And he wanted to stop loading the fuel onto the ship, because if they got hit, the cargo could turn his ship into a massive bomb.</p>
+<p>Captain Vishwakarma <span class="cjk">想把他的船员带离那里。他也想停止把燃料继续装上船，因为如果他们被击中，船上的货物可能会把整艘船变成一枚巨大的炸弹。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>We have almost 6,000, 7,000 of metric ton of propane butane on board the ship. So if suppose something is fall on our ship, it will be a bigger disaster.</p>
+<p><span class="cjk">我们船上已经有差不多</span> 6,000 <span class="cjk">到</span> 7,000 <span class="cjk">公吨的</span> propane <span class="cjk">和</span> butane<span class="cjk">。所以假如有什么东西落到我们船上，那会是一场更大的灾难。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Wow. I mean, you were literally worried, it sounds like at this point, that your ship could blow up.</p>
+<p><span class="cjk">哇。我的意思是，听起来在那个时候，你确实是在担心你的船可能会爆炸。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">blow up</span></div><ul><li><strong>blow up</strong><span class="cjk">：爆炸；这里指船如果被击中，船上的</span> LPG <span class="cjk">货物可能导致整船爆炸。</span></li></ul></aside>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yeah.</p>
+<p><span class="cjk">是的。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>But when he told the terminal authorities that he <span class="no-break">wasn’t</span> going to keep loading, they pushed back.</p>
+<p><span class="cjk">但当他告诉码头方面，自己不打算继续装货的时候，对方提出了反对。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">pushed back</span></div><ul><li><strong>push back</strong><span class="cjk">：反对、抵制；这里指码头方面不同意船长停止装货的决定。</span></li></ul></aside>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Can you take the cargo?</p>
+<p><span class="cjk">你能把这批货接走吗？</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>They wanted him to take the cargo.</p>
+<p><span class="cjk">他们想让他把货装上。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>See, if something happens, then it will wipe out the full terminal and everything.</p>
+<p><span class="cjk">你看，如果发生什么事，那会把整个码头和所有东西都摧毁。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">wipe out</span></div><ul><li><strong>wipe out</strong><span class="cjk">：彻底摧毁、抹掉；这里指爆炸可能摧毁整个码头。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Meanwhile —</p>
+<p><span class="cjk">与此同时</span>——</p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Every 10 minutes, 10 drones, 10 missiles, they are firing.</p>
+<p><span class="cjk">每</span> 10 <span class="cjk">分钟，就有</span> 10 <span class="cjk">架无人机、</span>10 <span class="cjk">枚导弹，他们一直在发射。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>he said the drones and the missiles kept coming.</p>
+<p><span class="cjk">他说，无人机和导弹一直没有停。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Bigger than what was happening before.</p>
+<p><span class="cjk">比之前发生的还要严重。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>So he eventually finished loading the cargo. It took hours. And then got out.</p>
+<p><span class="cjk">所以他最后还是完成了装货。整个过程花了好几个小时。然后他离开了那里。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>And then after that, we have out from that place. We go with a maximum speed. And on the way, our GPS was not working. There was no GPS signal.</p>
+<p><span class="cjk">然后在那之后，我们从那个地方出来。我们以最快速度航行。路上，我们的</span> GPS <span class="cjk">不能用了。没有</span> GPS <span class="cjk">信号。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Oh, wow.</p>
+<p><span class="cjk">哦，天哪。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>There was nothing. We did our navigation totally on the basic what we learn in our college. Then we dropped anchor near Abu Musa Island,</p>
+<p><span class="cjk">什么都没有。我们完全靠大学里学过的最基础的东西来导航。后来我们在</span> Abu Musa Island <span class="cjk">附近抛锚。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Near Dubai.</p>
+<p><span class="cjk">在</span> Dubai <span class="cjk">附近。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Near Dubai.</p>
+<p><span class="cjk">在</span> Dubai <span class="cjk">附近。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>He anchored at the edge of the Strait. And as the days passed, the attacks kept coming.</p>
+<p><span class="cjk">他在海峡边缘抛锚。随着一天天过去，袭击还在继续。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Every day, the missiles are going.</p>
+<p><span class="cjk">每天都有导弹飞过去。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Captain Vishwakarma said his crew watched as rockets hit an island about 10 miles away. It was engulfed in flames.</p>
+<p>Captain Vishwakarma <span class="cjk">说，他的船员亲眼看见火箭击中了大约</span> 10 <span class="cjk">英里外的一座岛。那座岛被火焰吞没。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">engulfed</span></div><ul><li><strong>engulf</strong> /in-ˈgəlf/<span class="cjk">：吞没、包围；这里</span> <strong>engulfed in flames</strong> <span class="cjk">指岛屿被大火吞没。</span></li></ul></aside>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>We are seeing the flames. We are seeing the smoke. So we are just thinking, if they miss anything, it will be fire to us also.</p>
+<p><span class="cjk">我们看得到火光，看得到浓烟。所以我们就在想，如果他们有任何一发打偏了，那火也会烧到我们这里。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>The constant noise and vibrations were stressful. Captain Vishwakarma <span class="no-break">couldn’t</span> sleep.</p>
+<p><span class="cjk">持续不断的噪音和震动让人非常紧张。</span>Captain Vishwakarma <span class="cjk">睡不着。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Definitely with anxiety.</p>
+<p><span class="cjk">肯定会焦虑。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>He said his crew was having panic attacks, worried one of those missiles could hit the ship.</p>
+<p><span class="cjk">他说，他的船员开始出现</span> panic attacks<span class="cjk">，担心其中一枚导弹会击中这艘船。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">panic attacks</span></div><ul><li><strong>panic attack</strong><span class="cjk">：惊恐发作；这里指船员因为持续导弹威胁而出现强烈恐惧反应。</span></li></ul></aside>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Panic attacks.</p>
+<p>Panic attacks<span class="cjk">。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>And they were turning to him for answers.</p>
+<p><span class="cjk">他们也开始转向他，希望他给出答案。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>If they feel unsafe, they call me, Captain, what to do? But we cannot do much about that.</p>
+<p><span class="cjk">如果他们觉得不安全，就会打电话给我，说船长，我们该怎么办？但我们其实也做不了太多。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>And were you in touch with any other captains? Did you know how they were dealing with this?</p>
+<p><span class="cjk">你当时和其他船长有联系吗？你知道他们是怎么应对这种情况的吗？</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>So every day, we are talking to each other. Every day, we say our feelings and what are the things happening in your company and what is your crew saying? So that we feel safe. We have one captain on another ship and <span class="no-break">he’s</span> a 56-years-old captain. And every day, he is calling me, Captain, what is your company doing? Because my company is a little bit established company. And his company is not that much established. So he asks me every day. Captain, what is your company saying? When are you going to cross?</p>
+<p><span class="cjk">所以我们每天都会互相通话。每天我们都会讲自己的感受，问对方公司那边有什么消息，船员又在说什么。这样我们会觉得安全一点。另一艘船上有一位船长，他</span> 56 <span class="cjk">岁。每天他都会打电话给我，问，船长，你们公司在做什么？因为我的公司算是比较成熟的公司，而他的公司没有那么成熟。所以他每天都问我，船长，你们公司怎么说？你们什么时候要穿过海峡？</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>It sounds like he was trying to get some advice from you, some guidance about what to do in this scenario.</p>
+<p><span class="cjk">听起来，他是在向你寻求一些建议，想知道在这种情况下该怎么做。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Right, right, right, because nobody expected this thing will be happen. But after maybe 10 days, 15 days, our hope was gone that we are stranded and nobody is going to help.</p>
+<p><span class="cjk">对，对，对。因为没有人预料到这种事会发生。但大概</span> 10 <span class="cjk">天、</span>15 <span class="cjk">天之后，我们的希望就没有了。我们意识到自己被困住了，而且没有人会来帮忙。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">stranded</span></div><ul><li><strong>strand</strong> /ˈstrand/<span class="cjk">：使滞留、使困住；这里</span> <strong>stranded</strong> <span class="cjk">指船长意识到他们被困在海上，没人来救。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Did you feel as though — I mean, and it sounds like you were, very much out there on your own alone?</p>
+<p><span class="cjk">你有没有觉得</span>——<span class="cjk">我的意思是，听起来你确实很像是被孤零零地丢在海上一样，只能靠自己。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">as though</span></div><ul><li><strong>as though</strong><span class="cjk">：好像、仿佛；这里采访者是在说他好像完全孤立无援。</span></li></ul></aside>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yeah, that is right. That is right. Because if something happened, definitely nobody is going to help us. And every day, my wife, my son and daughter, they call, Papa, when you are coming back home? Every day, they call. But I <span class="no-break">don’t</span> have answer to give. What answer should I give?</p>
+<p><span class="cjk">是的，就是这样。就是这样。因为如果真发生了什么事，肯定没有人会来帮我们。每天我的妻子、儿子和女儿都会打电话来，问，爸爸，你什么时候回家？他们每天都问。但我没有答案可以给他们。我该怎么回答呢？</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>How old are your children? What did it feel like to not be able to tell them, <span class="no-break">Papa’s</span> coming home soon.</p>
+<p><span class="cjk">你的孩子多大？你不能告诉他们</span>“<span class="cjk">爸爸很快就回家</span>”<span class="cjk">，那是一种什么感觉？</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>My son is 10 years old and my daughter is 12 years old. Yeah, I feel very bad about that. But what to do? We cannot go out from there. We are in, you can say, in a jail.</p>
+<p><span class="cjk">我儿子</span> 10 <span class="cjk">岁，女儿</span> 12 <span class="cjk">岁。是的，我心里很难受。但能怎么办呢？我们没法从那里出去。你可以说，我们就像是在监狱里。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>You felt like you were in a jail, like you were imprisoned?</p>
+<p><span class="cjk">你感觉自己像是在监狱里，像是被关起来了一样？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">were imprisoned</span></div><ul><li><strong>imprison</strong> /im-ˈpri-zən/<span class="cjk">：监禁、关押；这里</span> <strong>were imprisoned</strong> <span class="cjk">是比喻，指船员像被关在船上一样无法离开。</span></li></ul></aside>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yeah, yeah, that is right. But I said, OK, I will come back safely. <span class="no-break">Don’t</span> worry. Every day, I have to give these hopes to my family.</p>
+<p><span class="cjk">对，对，就是这样。但我会说，好，我会安全回来的，别担心。每天我都必须给我的家人这样的希望。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Captain Vishwakarma was at a loss. He <span class="no-break">couldn’t</span> leave. <span class="no-break">He’d</span> heard of the Iranian Navy firing on ships that tried. And plus, <span class="no-break">he’d</span> heard reports that there were mines in the water. He <span class="no-break">didn’t</span> how to safely navigate out. But then the Indian Navy got in touch with Captain Vishwakarma. They said, wait for our call. <span class="no-break">We’ll</span> tell you precisely how to leave. He waited anxiously for days. And then on March 23rd —</p>
+<p>Captain Vishwakarma <span class="cjk">不知所措。他无法离开。他听说</span> Iranian Navy <span class="cjk">向试图离开的船只开火。除此之外，他还听说水里有水雷。他不知道怎样才能安全地驶出去。但后来</span> Indian Navy <span class="cjk">联系了</span> Captain Vishwakarma<span class="cjk">。他们说，等我们的电话。我们会准确告诉你怎么离开。他焦急地等了好几天。然后到了</span> 3 <span class="cjk">月</span> 23 <span class="cjk">日</span>——</p>
+<aside class="vocab"><div class="terms"><span class="term">mines</span></div><ul><li><strong>mine</strong> /ˈmīn/<span class="cjk">：水雷；这里指海峡水域里可能存在的爆炸装置。</span></li></ul></aside>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>We got the call from the Naval Command.</p>
+<p><span class="cjk">我们接到了</span> Naval Command <span class="cjk">的电话。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>he got the call. <span class="no-break">It’s</span> not clear how a deal was made, but as so many other ships set stranded, Captain Vishwakarma was given a secret route — one he says he <span class="no-break">couldn’t</span> share with anyone.</p>
+<p><span class="cjk">他终于接到了电话。目前并不清楚相关安排是如何达成的，但在许多其他船只仍然被困的时候，</span>Captain Vishwakarma <span class="cjk">得到了一条秘密路线</span>——<span class="cjk">他说这条路线不能告诉任何人。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>I said, <span class="no-break">I’m</span> ready. Give me the plan where to pass and what is the route to follow, where to go and where not to go.</p>
+<p><span class="cjk">我说，我准备好了。把计划给我，告诉我从哪里通过，要走什么路线，哪里能去，哪里不能去。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Are you nervous, Captain? I mean, I have to ask, because <span class="no-break">we’ve</span> heard about mines in the Strait. <span class="no-break">We’ve</span> heard about your experience with missiles. I mean, are you worried?</p>
+<p><span class="cjk">船长，你紧张吗？我的意思是，我必须问这个问题，因为我们听说海峡里有水雷，也听过你经历导弹袭击的事。我的意思是，你担心吗？</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yeah, definitely, we are worried. We have got a chance of 90 percent we will die and 10 percent chance we will alive.</p>
+<p><span class="cjk">是的，我们当然担心。我们觉得有</span> 90% <span class="cjk">的可能会死，只有</span> 10% <span class="cjk">的可能能活下来。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>You thought there was a 90 percent chance you would die?</p>
+<p><span class="cjk">你当时认为自己有</span> 90% <span class="cjk">的可能会死？</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yeah, and 10 percent maybe we will pass.</p>
+<p><span class="cjk">是的，也许只有</span> 10% <span class="cjk">的可能能通过。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Wow.</p>
+<p><span class="cjk">哇。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>So I decided, OK, <span class="no-break">we’ll</span> take the 10 percent chance and <span class="no-break">we’ll</span> get out from this base.</p>
+<p><span class="cjk">所以我决定，好吧，我们就抓住那</span> 10% <span class="cjk">的机会，从这个地方出去。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>He followed the coordinates to a spot near Oman, when he saw the Indian Navy, which had come to escort them out.</p>
+<p><span class="cjk">他按照坐标航行到</span> Oman <span class="cjk">附近的一个位置，在那里他看到了</span> Indian Navy<span class="cjk">。他们是来护送他们离开的。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">escort</span></div><ul><li><strong>escort</strong> /ˈe-ˌskȯrt/<span class="cjk">：护送；这里指印度海军护送船只安全离开。</span></li></ul></aside>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>When the Indian Navy came near to us, we are very happy, our crew, and everybody was very happy.</p>
+<p><span class="cjk">当</span> Indian Navy <span class="cjk">靠近我们的时候，我们非常高兴。我们的船员，还有所有人，都非常高兴。</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Everybody was shouting, Indian Navy, giving the slogans to the Indian Navy. Yes, we are safely came out. They were very, very happy.</p>
+<p><span class="cjk">所有人都在喊</span> Indian Navy<span class="cjk">，还在为</span> Indian Navy <span class="cjk">高呼口号。是的，我们安全出来了。他们非常、非常高兴。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">slogans</span></div><ul><li><strong>slogan</strong> /ˈslō-gən/<span class="cjk">：口号；这里指船员向印度海军高喊感谢或欢呼的口号。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>There was a lot of joy?</p>
+<p><span class="cjk">那是一种非常大的喜悦吗？</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Including me also. Yeah, including me also. Finally out.</p>
+<p><span class="cjk">包括我也是。是的，也包括我。终于出来了。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Were you shouting, too? Were you cheering?</p>
+<p><span class="cjk">你也在喊吗？你也在欢呼吗？</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yes, yes. Yes, yes, yes. Definitely. Then our crew and everybody was coming and they are congratulating me. Captain, you have done good job. You have taken us safely. I said, see, this is my duty. I have done it, which is a part of my job. So we have came out safely. And we were very happy. And we were really proud that, OK, Indian government has done something else to take out from that place. We are finally past and we are now safe. Then I was very happy when I saw my family. And my son is dancing when he saw me. OK, Papa, has came. And my daughter came and just hugged me tightly, Papa. And my wife, too, same thing.</p>
+<p><span class="cjk">是的，是的。是的，是的，当然。然后我们的船员和所有人都过来祝贺我，说，船长，你干得很好，你把我们安全带出来了。我说，你看，这是我的职责。我只是完成了工作的一部分。所以我们安全出来了。我们非常高兴，也真的很自豪，觉得好，</span>Indian government <span class="cjk">确实做了一些事情，把我们从那个地方带出来了。我们终于通过了，现在安全了。后来当我见到家人的时候，我非常开心。我儿子看到我时开心得跳起舞来，说，好，爸爸回来了。我的女儿跑过来紧紧抱住我，说爸爸。我的妻子也是一样。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Captain <span class="no-break">Vishwakarma’s</span> story is rare. Only a small number of ships have made it out of the Strait since the war began. About 1,500 ships remained stuck in the Persian Gulf, with about 20,000 seafarers on board them.</p>
+<p>Captain Vishwakarma <span class="cjk">的经历并不常见。自战争爆发以来，只有少数船只成功驶出了海峡。大约</span> 1,500 <span class="cjk">艘船仍被困在</span> Persian Gulf<span class="cjk">，船上约有</span> 20,000 <span class="cjk">名海员。</span></p>
+<p>And even though much of the bombing has subsided after the ceasefire, new dangers have emerged. Maritime unions have received hundreds of distress calls from ships, who say <span class="no-break">they’re</span> running out of provisions like food, medicine and water. Captain Vishwakarma worries a lot about that and about the fate of the thousands of seafarers that are still stranded.</p>
+<p><span class="cjk">尽管停火之后大部分轰炸已经平息，但新的危险又出现了。海员工会已经收到船只发来的数百通求救电话，这些船说他们的食物、药品和饮用水等补给正在耗尽。</span>Captain Vishwakarma <span class="cjk">对此非常担心，也很担心那些仍然被困的数千名海员的命运。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">even though</span><span class="term">subsided</span><span class="term">distress calls</span></div><ul><li><strong>even though</strong><span class="cjk">：尽管，即使。</span></li><li><strong>subside</strong> /səb-ˈsīd/<span class="cjk">：减弱、平息；这里</span> <strong>subsided</strong> <span class="cjk">指轰炸在停火后有所减少。</span></li><li><strong>distress call</strong><span class="cjk">：求救信号、遇险呼叫；这里指缺食物、药品、水的船只向外界求助。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Captain, a final question. There are still many, many seafarers who are stranded in the Strait of Hormuz. What do you want the people who are listening to this interview to know on behalf of these crews?</p>
+<p><span class="cjk">船长，最后一个问题。现在仍然有很多很多海员被困在</span> Hormuz Strait<span class="cjk">。你希望正在收听这次采访的人，代表这些船员知道些什么？</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yeah, on the behalf of all seafarers, the fear which we felt in the last 25 days, they are also feeling the same thing. And they are more than a month. I <span class="no-break">don’t</span> think they have a food or maybe water. I <span class="no-break">don’t</span> know how they are surviving on there.</p>
+<p><span class="cjk">是的，我想代表所有海员说，我们在过去</span> 25 <span class="cjk">天里感受到的恐惧，他们现在也在感受同样的东西。而且他们已经超过一个月了。我觉得他们可能已经没有食物，或者没有水了。我不知道他们在那里是怎么活下来的。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>So <span class="no-break">you’re</span> worried about them?</p>
+<p><span class="cjk">所以你很担心他们？</span></p>
+<div class="speaker">Virendra Vishwakarma</div>
+<p>Yeah. Maybe they <span class="no-break">don’t</span> have food, they <span class="no-break">don’t</span> have water to drink. You can imagine the scenario. I <span class="no-break">don’t</span> how they are surviving.</p>
+<p><span class="cjk">是的。也许他们没有食物，也没有水喝。你可以想象那种场景。我不知道他们是怎么活下来的。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>After the break, we hear from one of those seafarers who still stranded. <span class="no-break">We’ll</span> be right back.</p>
+<p><span class="cjk">广告之后，我们会听到其中一名仍然被困的海员的讲述。我们马上回来。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Hi.</p>
+<p><span class="cjk">嗨。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Hi, hello.</p>
+<p><span class="cjk">嗨，你好。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Can you see me?</p>
+<p><span class="cjk">你能看到我吗？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yes, I can see you.</p>
+<p><span class="cjk">能，我能看到你。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>So, where are you right now?</p>
+<p><span class="cjk">那么，你现在在哪里？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>This is my room.</p>
+<p><span class="cjk">这是我的房间。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Can I see it?</p>
+<p><span class="cjk">我能看看吗？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Of course. This is my bed. And this is my living room.</p>
+<p><span class="cjk">当然。这是我的床。这是我的</span> living room<span class="cjk">。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>OK. You have a couch. You have a desk.</p>
+<p><span class="cjk">好。你有一张沙发，还有一张桌子。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yes.</p>
+<p><span class="cjk">是的。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>What are the pictures that you have on your wall?</p>
+<p><span class="cjk">你墙上的那些照片是什么？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>This is the sailing vessel. We are taken from the calendar, the calendar picture.</p>
+<p><span class="cjk">这是帆船。我们是从日历上取下来的，就是日历上的图片。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Do you have a window?</p>
+<p><span class="cjk">你有窗户吗？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yeah, of course.</p>
+<p><span class="cjk">有，当然有。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Oh, wow. So you can see outside?</p>
+<p><span class="cjk">哦，哇。所以你能看到外面？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yeah, I can see outside. We can see the water, the sea. Now we are drifting near Abu Dhabi. The Hormuz Strait, <span class="no-break">it’s</span> about 150 nautical miles far away. <span class="no-break">Everybody’s</span> stuck in here. All ships are waiting in the Persian Gulf.</p>
+<p><span class="cjk">是的，我能看到外面。我们能看到水，看到海。现在我们在</span> Abu Dhabi <span class="cjk">附近漂着。</span>Hormuz Strait <span class="cjk">距离这里大约</span> 150 <span class="cjk">海里。所有人都被困在这里。所有船都在</span> Persian Gulf <span class="cjk">等着。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">nautical</span><span class="term">nautical miles</span></div><ul><li><strong>nautical</strong> /ˈnȯ-ti-kəl/<span class="cjk">：航海的。</span></li><li><strong>nautical mile</strong><span class="cjk">：海里；这里指船离霍尔木兹海峡大约</span> 150 <span class="cjk">海里。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>The Persian Gulf has been the view outside Aung Thu <span class="no-break">Khant’s</span> window for more than three months. <span class="no-break">He’s</span> far from home. <span class="no-break">He’s</span> from Myanmar. And his ship was delivering cars to the Gulf when the war first broke out.</p>
+<p><span class="cjk">三个多月来，</span>Persian Gulf <span class="cjk">一直就是</span> Aung Thu Khant <span class="cjk">窗外的景色。他离家很远。他来自</span> Myanmar<span class="cjk">。战争刚爆发时，他的船正在把汽车运往海湾地区。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>My job on ship is <span class="no-break">I’m</span> a safety officer to all crew. So I have to be strong for my crew. And I have to think all the time for the safety and also my safety.</p>
+<p><span class="cjk">我在船上的工作是担任全体船员的安全官。所以为了我的船员，我必须坚强。我也必须时时刻刻考虑他们的安全，还有我自己的安全。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>That sounds like a big responsibility in this moment.</p>
+<p><span class="cjk">在现在这个时刻，这听起来是一份很重的责任。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yes. So <span class="no-break">that’s</span> why we are staying inside the ship, not going outside, because some drones maybe falling down to our ship.</p>
+<p><span class="cjk">是的。所以这就是为什么我们待在船里面，不到外面去，因为可能会有无人机掉到我们的船上。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p><span class="no-break">He’s</span> constantly worried that the temporary ceasefire will break down and that the missile strikes could start again. So as the safety officer, <span class="no-break">he’s</span> checking the news a lot. But the news can be confusing. So a more direct way to understand <span class="no-break">what’s</span> happening around him is by listening to the transmissions coming in over the <span class="no-break">ship’s</span> radio —</p>
+<p><span class="cjk">他一直担心临时停火会破裂，导弹袭击可能会再次开始。所以作为安全官，他经常查看新闻。但新闻有时让人摸不着头脑。因此，更直接了解周围正在发生什么的方式，是收听船上无线电里传来的通信</span>——</p>
+<aside class="vocab"><div class="terms"><span class="term">transmissions coming in</span></div><ul><li><strong>transmissions coming in</strong><span class="cjk">：传进来的无线电通信；这里指船上电台收到的周围军方和其他船只的通话。</span></li></ul></aside>
+<div class="speaker">Aung Thu Khant</div>
+<p>We open the radio all the time.</p>
+<p><span class="cjk">我们一直开着无线电。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>which he does every day.</p>
+<p><span class="cjk">他每天都会这样做。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Every day.</p>
+<p><span class="cjk">每天。</span></p>
+<div class="speaker">Recordings</div>
+<p>Attention, all ships. Attention, all ships. Attention, all ships. This is the [INAUDIBLE] Navy.</p>
+<p><span class="cjk">各船注意。各船注意。各船注意。这里是</span>[<span class="cjk">听不清</span>]<span class="cjk">海军。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p><span class="no-break">He’s</span> listened in as the Iranian military has issued warnings.</p>
+<p><span class="cjk">他听到</span> Iranian military <span class="cjk">发出警告。</span></p>
+<div class="speaker">Recordings</div>
+<p>Warning to all ships, do not approach the Strait of Hormuz without permission.</p>
+<p><span class="cjk">警告所有船只，未经许可，不得接近</span> Hormuz Strait<span class="cjk">。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Some of the calls <span class="no-break">he’s</span> heard have been disturbing.</p>
+<p><span class="cjk">他听到的一些通话令人不安。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">disturbing</span></div><ul><li><strong>disturbing</strong> /di-ˈstər-biŋ/<span class="cjk">：令人不安的；这里指无线电里听到的求救、威胁和开火信息让人害怕。</span></li></ul></aside>
+<div class="speaker">Aung Thu Khant</div>
+<p>One ship, they start yelling at that Iranian Navy. “We want to go out! Open the Hormuz!” <span class="no-break">They’re</span> talking like that.</p>
+<p><span class="cjk">有一艘船，他们开始冲着</span> Iranian Navy <span class="cjk">大喊：</span>“<span class="cjk">我们要出去！打开</span> Hormuz<span class="cjk">！</span>”<span class="cjk">他们就是那样说的。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>They were screaming and begging to be let out.</p>
+<p><span class="cjk">他们在尖叫，恳求让他们出去。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yes.</p>
+<p><span class="cjk">是的。</span></p>
+<div class="speaker">Recordings</div>
+<p>[INAUDIBLE] Navy, you give me clearance! You give me clearance to go!</p>
+<p>[<span class="cjk">听不清</span>]<span class="cjk">海军，请给我许可！请给我许可，让我离开！</span></p>
+<aside class="vocab"><div class="terms"><span class="term">clearance</span></div><ul><li><strong>clearance</strong> /ˈklir-ən(t)s/<span class="cjk">：许可、放行；这里指船只请求海军允许它离开。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p><span class="no-break">He’s</span> heard crews from multiple ships who have pleaded to leave.</p>
+<p><span class="cjk">他听到过多艘船的船员恳求离开。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">pleaded</span></div><ul><li><strong>plead</strong> /ˈplēd/<span class="cjk">：恳求、请求；这里</span> <strong>pleaded</strong> <span class="cjk">指船员在无线电里恳求允许离开。</span></li></ul></aside>
+<div class="speaker">Recordings</div>
+<p>You are running into danger. We may open fire on you. Establish communications, over.</p>
+<p><span class="cjk">你们正在驶入危险区域。我们可能会向你们开火。请建立通信，完毕。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>One month ago, some of the ships going through the Strait of Hormuz, they shot.</p>
+<p><span class="cjk">一个月前，有些船试图穿过</span> Hormuz Strait<span class="cjk">，结果他们被开枪了。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>And <span class="no-break">he’s</span> heard ships being fired at for trying to leave.</p>
+<p><span class="cjk">他还听到过试图离开的船只遭到射击。</span></p>
+<div class="speaker">Recordings</div>
+<p>Mayday, mayday, mayday! This is vessel [INAUDIBLE]! Under attack!</p>
+<p>Mayday<span class="cjk">，</span>mayday<span class="cjk">，</span>mayday<span class="cjk">！这里是</span>[<span class="cjk">听不清</span>]<span class="cjk">号船！我们正在遭受攻击！</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Oh, my god. You could hear the gunshots on the radio?</p>
+<p><span class="cjk">天哪。你能在无线电里听到枪声？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yes. Yes.</p>
+<p><span class="cjk">是的。是的。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p><span class="no-break">He’s</span> also heard a different call for help.</p>
+<p><span class="cjk">他还听到过另一种求救。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Other ships also, they are now running out of food. And also, they need assistance.</p>
+<p><span class="cjk">其他船现在也快没有食物了。而且他们需要援助。</span></p>
+<div class="speaker">Recordings</div>
+<p>We do not have provisions nor drinking water since last four days. And we have two crew on board who is very critical and need medical assistance.</p>
+<p><span class="cjk">过去四天以来，我们没有补给，也没有饮用水。船上有两名船员情况非常危急，需要医疗救助。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">provisions</span></div><ul><li><strong>provision</strong> /prə-ˈvi-zhən/<span class="cjk">：补给品、给养；这里指食物、饮用水等船上基本物资。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Some ships are reporting that <span class="no-break">they’re</span> running out of food.</p>
+<p><span class="cjk">一些船只报告说，他们的食物快没了。</span></p>
+<div class="speaker">Recordings</div>
+<p>Any ship nearby [? operation, ?] we request you to provide us provision and water. And we have a crew on board for medical emergency. We need medical assistance. Please, save our lives. We are seamen. We do not attack your country. We do not attack your person. Over.</p>
+<p><span class="cjk">附近任何船只，</span>[<span class="cjk">？</span>operation<span class="cjk">，？</span>]<span class="cjk">，我们请求你们向我们提供补给和水。我们船上有船员出现医疗紧急情况。我们需要医疗援助。请救救我们的命。我们是海员。我们没有攻击你们的国家，也没有攻击你们的人。完毕。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>What does it feel when you hear stuff like that? How does that affect you?</p>
+<p><span class="cjk">当你听到这种事情的时候，是什么感受？这会对你产生什么影响？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>When I heard that, that day that <span class="no-break">they’re</span> talking like that, then I feel very sorry, because we cannot afford to go to that ship. We cannot help.</p>
+<p><span class="cjk">那天我听到他们那样说的时候，我感到非常难过，因为我们没办法去那艘船那里。我们帮不了他们。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>It sounds like you felt a little bit powerless in that moment.</p>
+<p><span class="cjk">听起来，在那个时刻，你有一点无能为力的感觉。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yes. Yes, correct. Correct, correct.</p>
+<p><span class="cjk">是的。是的，没错。没错，没错。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Aung says his ship is doing OK for now. They were running out of some food, but they managed to resupply at a nearby anchorage in the Gulf. But the daily stress of being stranded in a war zone has been taking a toll.</p>
+<p>Aung <span class="cjk">说，他的船目前还算可以。他们之前有些食物快用完了，但他们设法在海湾附近的一个锚地补给了物资。但每天被困在战区里的压力，已经开始造成影响。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">anchorage</span><span class="term">taking a toll</span></div><ul><li><strong>anchorage</strong> /ˈaŋ-k(ə-)rij/<span class="cjk">：锚地；这里指船可以停泊并补给的地方。</span></li><li><strong>taking a toll</strong><span class="cjk">：造成损耗、带来负面影响；这里指长期困在战区对船员心理造成压力。</span></li></ul></aside>
+<div class="speaker">Aung Thu Khant</div>
+<p><span class="no-break">It’s</span> like house arrest.</p>
+<p><span class="cjk">就像被软禁一样。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">house arrest</span></div><ul><li><strong>house arrest</strong><span class="cjk">：软禁、居家监禁；这里是比喻，指他们虽在船上但不能自由离开。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>He says everyone on the ship is on edge.</p>
+<p><span class="cjk">他说，船上的每个人都神经紧绷。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Sometimes, we are angry.</p>
+<p><span class="cjk">有时候，我们会生气。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Yeah.</p>
+<p><span class="cjk">是啊。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Mentally, <span class="no-break">it’s</span> a little bit aggressive, because we talk all the time, but sometimes we are a little bit arguing.</p>
+<p><span class="cjk">从心理上说，会有一点攻击性，因为我们一直在一起说话，但有时候我们会有点争吵。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>You can see that they get angry more easily?</p>
+<p><span class="cjk">你能看到他们更容易发火吗？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yes. Including me.</p>
+<p><span class="cjk">是的。包括我自己。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Including you?</p>
+<p><span class="cjk">包括你？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yeah, because I feel like my mind is stuck. And <span class="no-break">I’m</span> worried about my life and my crew, my ship. I also want to go out. We want to be free. Not only me, all the crew and all other ships also, they feel like that, I think. But we cannot get out. So in our mind, <span class="no-break">it’s</span> hopeless now.</p>
+<p><span class="cjk">是的，因为我感觉自己的脑子像是被困住了。我担心自己的生命，担心我的船员，担心我的船。我也想出去。我们想要自由。不只是我，所有船员，还有其他所有船上的人，我想他们都有这种感觉。但我们出不去。所以在我们心里，现在已经很绝望了。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>So as Aung waits in a situation he <span class="no-break">can’t</span> control, <span class="no-break">he’s</span> trying to find small ways to cope. Sometimes before bed, he reads a book on positive thinking.</p>
+<p><span class="cjk">所以，</span>Aung <span class="cjk">在一个自己无法控制的处境中等待时，他试着寻找一些小方法来应对。有时候睡觉前，他会读一本关于积极思维的书。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>That book name is “<span class="no-break">You’re</span> Special.”</p>
+<p><span class="cjk">那本书的名字叫《</span><span class="no-break">You’re</span> Special<span class="cjk">》。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>“<span class="no-break">You’re</span> Special?”</p>
+<p><span class="cjk">《</span><span class="no-break">You’re</span> Special<span class="cjk">》？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yeah. “<span class="no-break">You’re</span> Special.”</p>
+<p><span class="cjk">是的，《</span><span class="no-break">You’re</span> Special<span class="cjk">》。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>And <span class="no-break">he’s</span> giving himself pep talks, telling himself not to give up.</p>
+<p><span class="cjk">他也会给自己打气，告诉自己不要放弃。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">pep talks</span></div><ul><li><strong>pep talk</strong><span class="cjk">：鼓舞士气的话、打气的话；这里指他给自己和船员做心理鼓励。</span></li></ul></aside>
+<div class="speaker">Aung Thu Khant</div>
+<p>All the time, <span class="no-break">I’m</span> talking to myself, OK, one day, <span class="no-break">I’m</span> going out of the Hormuz Strait. One day, one day. One day, <span class="no-break">I’m</span> going out. <span class="no-break">I’m</span> going out the Hormuz one day.</p>
+<p><span class="cjk">我一直对自己说，好，总有一天，我会走出</span> Hormuz Strait<span class="cjk">。总有一天，总有一天。总有一天，我会出去。我总有一天会离开</span> Hormuz<span class="cjk">。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>And <span class="no-break">he’s</span> doing the same with the crew.</p>
+<p><span class="cjk">他也会对船员做同样的事。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>I talk to them. <span class="no-break">It’s</span> going to be OK. And we were going out one day. <span class="no-break">Don’t</span> worry, <span class="no-break">it’s</span> going to be fine. <span class="no-break">It’s</span> going to be OK.</p>
+<p><span class="cjk">我跟他们说，会没事的。总有一天我们会出去的。别担心，一切都会好起来的。会没事的。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p><span class="no-break">They’re</span> all doing their best to try to distract themselves.</p>
+<p><span class="cjk">他们都在尽力转移注意力。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">distract</span></div><ul><li><strong>distract</strong> /di-ˈstrakt/<span class="cjk">：转移注意力；这里指船员通过打篮球、唱歌等方式暂时不去想被困和危险。</span></li></ul></aside>
+<div class="speaker">Aung Thu Khant</div>
+<p>They play the basketball. We play the basketball in the cargo hold.</p>
+<p><span class="cjk">他们打篮球。我们在货舱里打篮球。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Sometimes <span class="no-break">they’ve</span> played basketball in the empty cargo hold where the cars used to be.</p>
+<p><span class="cjk">有时候，他们会在空荡荡的货舱里打篮球，那里以前装的是汽车。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Sometimes we celebrate the birthday party.</p>
+<p><span class="cjk">有时候我们会庆祝生日。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>When <span class="no-break">it’s</span> a crew <span class="no-break">member’s</span> birthday —</p>
+<p><span class="cjk">当有船员过生日的时候</span>——</p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Do you have cake?</p>
+<p><span class="cjk">你们有蛋糕吗？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>We do.</p>
+<p><span class="cjk">有。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>they make a cake.</p>
+<p><span class="cjk">他们会做一个蛋糕。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p><span class="no-break">It’s</span> mostly chocolate, because they like chocolate. We celebrate and then we forgot where we are. And then the time is very, very nice.</p>
+<p><span class="cjk">大多是巧克力的，因为他们喜欢巧克力。我们一起庆祝，然后就会忘记自己身在何处。那段时间会非常、非常美好。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>And sometimes they sing.</p>
+<p><span class="cjk">有时候他们也会唱歌。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>My crews are Filipino, so we sing together, because my hobby is singing and listening to the music. Yeah, <span class="no-break">that’s</span> my hobby.</p>
+<p><span class="cjk">我的船员是菲律宾人，所以我们会一起唱歌，因为我的爱好就是唱歌和听音乐。是的，那是我的爱好。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>What do you like to sing?</p>
+<p><span class="cjk">你喜欢唱什么？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>My favorite song in this moment is the “Home.” Do you know “Home,” the song named “Home?”</p>
+<p><span class="cjk">这一刻我最喜欢的歌是《</span>Home<span class="cjk">》。你知道《</span>Home<span class="cjk">》吗？歌名叫《</span>Home<span class="cjk">》。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Is it called “Home?”</p>
+<p><span class="cjk">是叫《</span>Home<span class="cjk">》吗？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yes, “Home.” Yes.</p>
+<p><span class="cjk">是的，《</span>Home<span class="cjk">》。是的。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>I <span class="no-break">don’t</span> know that song.</p>
+<p><span class="cjk">我不知道那首歌。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yeah.</p>
+<p><span class="cjk">嗯。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Can you sing it for me, the song? Just a little bit, so I can hear it?</p>
+<p><span class="cjk">你能给我唱一下那首歌吗？就唱一点点，让我听一下？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>[CHUCKLING]: oh my god.</p>
+<p>[<span class="cjk">笑</span>]<span class="cjk">：哦，我的天。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">CHUCKLING</span></div><ul><li><strong>chuckle</strong> /ˈchə-kəl/<span class="cjk">：轻声笑、低声笑；这里括号里的</span> <strong>CHUCKLING</strong> <span class="cjk">表示他说话前不好意思地笑了一下。</span></li></ul></aside>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Please?</p>
+<p><span class="cjk">拜托？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Are you sure?</p>
+<p><span class="cjk">你确定吗？</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Yeah, <span class="no-break">I’m</span> sure. <span class="no-break">I’m</span> so sure.</p>
+<p><span class="cjk">是的，我确定。我非常确定。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>OK. OK. OK, I try. (SINGING) Another summer day has come and gone away. There is some wrong, I just want to go home. Ooh. Baby, surrounded by a million people. I feel all alone, But I want to go home. I miss you, you know (SPEAKING) Yeah, just like that.</p>
+<p><span class="cjk">好。好。好，我试试。（唱歌）他唱了一小段《</span>Home<span class="cjk">》，大意是人在外漂泊、被人群包围却依然孤独，只想回家、思念亲人。（说话）嗯，大概就是这样。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p><span class="no-break">That’s</span> beautiful.</p>
+<p><span class="cjk">真好听。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Oh, thank you.</p>
+<p><span class="cjk">哦，谢谢。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>And when you think of your home, what do you think of? What comes to your mind?</p>
+<p><span class="cjk">当你想到你的家时，你会想到什么？脑子里会浮现什么？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>It was my mom and my dad. They also worry about me. So they also see the news every day. My mom, <span class="no-break">it’s</span> a everyday worship for me.</p>
+<p><span class="cjk">是我的妈妈和爸爸。他们也很担心我。所以他们每天也都在看新闻。我妈妈每天都在为我祈祷。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p><span class="no-break">She’s</span> praying for you?</p>
+<p><span class="cjk">她在为你祈祷？</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Yes. Yes, yes. <span class="no-break">She’s</span> praying for me every day. So <span class="no-break">that’s</span> why I want to go through that Hormuz Strait safety. And then yeah.</p>
+<p><span class="cjk">是的。是的，是的。她每天都在为我祈祷。所以我才想安全地穿过</span> Hormuz Strait<span class="cjk">。然后，是的。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Well, I hope you get home really soon.</p>
+<p><span class="cjk">好，我希望你很快就能回家。</span></p>
+<div class="speaker">Aung Thu Khant</div>
+<p>Thank you so much. I wish.</p>
+<p><span class="cjk">非常感谢。我也希望如此。</span></p>
+<div class="speaker">Natalie Kitroeff</div>
+<p>Since the beginning of the war in Iran, the UN says that at least 39 commercial vessels in the region have been hit by the ongoing attacks or, in some cases, what appear to be targeted strikes. At least 11 seafarers and 1 shipyard worker have been killed, with several others injured and missing. <span class="no-break">We’ll</span> be right back. <span class="no-break">Here’s</span> what else you need to today. Israel widened its offensive in Lebanon on Thursday, striking the capital, Beirut, for the first time in nearly a month. The Israeli military said that it had struck more than 135 targets that belonged to Hezbollah in a 24-hour period. And Hezbollah continued its attacks on Israeli troops in southern Lebanon. The escalating conflict there threatens to further destabilize the talks to end the US-Israeli war in Iran. Iran has insisted that any peace deal include Lebanon.</p>
+<p><span class="cjk">联合国说，自伊朗战争开始以来，该地区至少有</span> 39 <span class="cjk">艘商船受到持续袭击的波及，或者在某些情况下，遭到疑似有针对性的打击。至少</span> 11 <span class="cjk">名海员和</span> 1 <span class="cjk">名船厂工人已经死亡，还有多人受伤和失踪。我们马上回来。接下来是你今天还需要知道的其他新闻。周四，</span>Israel <span class="cjk">扩大了对</span> Lebanon <span class="cjk">的攻势，空袭了首都</span> Beirut<span class="cjk">，这是近一个月来首次。</span>Israeli military <span class="cjk">表示，过去</span> 24 <span class="cjk">小时内，他们打击了</span> 135 <span class="cjk">多个属于</span> Hezbollah <span class="cjk">的目标。</span>Hezbollah <span class="cjk">也继续袭击</span> Lebanon <span class="cjk">南部的</span> Israeli troops<span class="cjk">。那里的冲突升级，可能进一步破坏结束美国</span>-Israel <span class="cjk">对</span> Iran <span class="cjk">战争的谈判。</span>Iran <span class="cjk">坚持认为，任何和平协议都必须包括</span> Lebanon<span class="cjk">。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">targeted strikes</span><span class="term">Hezbollah</span><span class="term">escalating</span></div><ul><li><strong>targeted strike</strong><span class="cjk">：定点打击、有针对性的袭击；这里指一些商船可能不是误伤，而是被专门攻击。</span></li><li><strong>Hezbollah</strong> /ˌhez-bə-ˈlä/<span class="cjk">：真主党；这里指黎巴嫩真主党。</span></li><li><strong>escalate</strong> /ˈe-skə-ˌlāt/<span class="cjk">：升级、加剧；这里</span> <strong>escalating</strong> <span class="cjk">指黎巴嫩冲突正在扩大。</span></li></ul></aside>
+<p>And Anthropic, once a lesser-known artificial intelligence company, punctuated its stunning rise with eye-popping news on Thursday. It said it had reached a valuation of $900 billion after its latest funding round, overtaking OpenAI to become the most valuable AI startup in the world. It took roughly a decade for OpenAI to hit its most recent valuation of $730 billion. Anthropic surpassed that in half the time. <span class="no-break">Today’s</span> episode was produced by Caitlin <span class="no-break">O’Keefe</span> and Lynsea Garrison. It was edited by MJ Davis Lin, fact-checked by Susan Lee and Will Peischel and contains music by Marion Lozano, Dan Powell and Pat McCusker. Original music by Elisheba Ittoop. Our theme music is by Wonderly. This episode was engineered by Alyssa Moxley. Special thanks to David Botti, Peter Eavis, Christiaan Triebert and Jenny Gross, as well as Jatin Dua and Kristi Petersen-Rhead from the University of Michigan. “The Daily” studio support team is Maddy Masiello, Nick Pitman, Kyle Grandillo, Efim Shapiro and Samantha Winter. Our radio team is Jody Becker, Rowan Niemisto, Diane Wong and [? Kathryn ?] Anderson. Alexandra Leigh Young is our deputy executive producer. Michael Benoist is our deputy editor.</p>
+<p>Anthropic <span class="cjk">曾经是一家不太知名的人工智能公司，而周四传出的惊人消息，为它令人瞩目的崛起画上了一个感叹号。该公司表示，最新一轮融资之后，它的估值已达到</span> 9,000 <span class="cjk">亿美元，超过</span> OpenAI<span class="cjk">，成为全球估值最高的</span> AI startup<span class="cjk">。</span>OpenAI <span class="cjk">用了大约十年才达到最近的</span> 7,300 <span class="cjk">亿美元估值。</span>Anthropic <span class="cjk">只用了它一半的时间就超过了这个数字。今天这一集由</span> Caitlin <span class="no-break">O’Keefe</span> <span class="cjk">和</span> Lynsea Garrison <span class="cjk">制作。编辑是</span> MJ Davis Lin<span class="cjk">，事实核查由</span> Susan Lee <span class="cjk">和</span> Will Peischel <span class="cjk">完成，配乐来自</span> Marion Lozano<span class="cjk">、</span>Dan Powell <span class="cjk">和</span> Pat McCusker<span class="cjk">。原创音乐由</span> Elisheba Ittoop <span class="cjk">创作。我们的主题音乐来自</span> Wonderly<span class="cjk">。本集由</span> Alyssa Moxley <span class="cjk">负责工程制作。特别感谢</span> David Botti<span class="cjk">、</span>Peter Eavis<span class="cjk">、</span>Christiaan Triebert <span class="cjk">和</span> Jenny Gross<span class="cjk">，以及</span> University of Michigan <span class="cjk">的</span> Jatin Dua <span class="cjk">和</span> Kristi Petersen-Rhead<span class="cjk">。</span>“The Daily”<span class="cjk">演播室支持团队包括</span> Maddy Masiello<span class="cjk">、</span>Nick Pitman<span class="cjk">、</span>Kyle Grandillo<span class="cjk">、</span>Efim Shapiro <span class="cjk">和</span> Samantha Winter<span class="cjk">。我们的广播团队是</span> Jody Becker<span class="cjk">、</span>Rowan Niemisto<span class="cjk">、</span>Diane Wong <span class="cjk">和</span>[<span class="cjk">？</span>Kathryn<span class="cjk">？</span>] Anderson<span class="cjk">。</span>Alexandra Leigh Young <span class="cjk">是我们的</span> deputy executive producer<span class="cjk">。</span>Michael Benoist <span class="cjk">是我们的</span> deputy editor<span class="cjk">。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">punctuated</span><span class="term">stunning</span><span class="term">eye-popping</span><span class="term">overtaking</span></div><ul><li><strong>punctuate</strong> /ˈpəŋ(k)-chə-ˌwāt/<span class="cjk">：为某事加上强调性节点；这里</span> <strong>punctuated its rise</strong> <span class="cjk">指这条融资新闻凸显了</span> Anthropic <span class="cjk">的快速崛起。</span></li><li><strong>stunning</strong> /ˈstə-niŋ/<span class="cjk">：令人震惊的；这里形容</span> Anthropic <span class="cjk">崛起速度惊人。</span></li><li><strong>eye-popping</strong><span class="cjk">：令人瞠目结舌的、非常惊人的；这里形容估值新闻非常夸张。</span></li><li><strong>overtake</strong> /ˌō-vər-ˈtāk/<span class="cjk">：超过、赶超；这里</span> <strong>overtaking OpenAI</strong> <span class="cjk">指估值超过</span> OpenAI<span class="cjk">。</span></li></ul></aside>
+<p>Paige Cowett is the editor of “The Daily.” Ben Calhoun is our executive producer. Special thanks to Paula Szuchman, Larissa Anderson, Sam Dolnick, and to the founding editor of the show, Lisa Tobin. <span class="no-break">That’s</span> it for “The Daily.” <span class="no-break">I’m</span> Natalie Kitroeff. See you on Sunday.</p>
+<p>Paige Cowett <span class="cjk">是《</span>The Daily<span class="cjk">》的编辑。</span>Ben Calhoun <span class="cjk">是我们的</span> executive producer<span class="cjk">。特别感谢</span> Paula Szuchman<span class="cjk">、</span>Larissa Anderson<span class="cjk">、</span>Sam Dolnick<span class="cjk">，以及本节目的创始编辑</span> Lisa Tobin<span class="cjk">。以上就是今天的《</span>The Daily<span class="cjk">》。我是</span> Natalie Kitroeff<span class="cjk">。周日见。</span></p>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const storageKey = "podcastTranscriptBodyText";
+      const fontSelect = document.getElementById("bodyFontSelect");
+      const sizeDown = document.getElementById("bodySizeDown");
+      const sizeUp = document.getElementById("bodySizeUp");
+      const reset = document.getElementById("bodyTextReset");
+      const fontMap = {
+        roboto: 'var(--body-roboto)',
+        sanFrancisco: 'var(--body-san-francisco)',
+        helvetica: 'var(--body-helvetica)',
+        arial: 'var(--body-arial)',
+        times: 'var(--body-serif)',
+      };
+
+      if (!fontSelect || !sizeDown || !sizeUp || !reset) return;
+
+      const firstParagraph = document.querySelector("main p");
+      const defaultSize = firstParagraph
+        ? Math.round(parseFloat(getComputedStyle(firstParagraph).fontSize))
+        : 19;
+      const defaultFont = "roboto";
+      let settings = { font: defaultFont, size: defaultSize };
+
+      try {
+        settings = { ...settings, ...JSON.parse(localStorage.getItem(storageKey) || "{}" ) };
+      } catch (error) {}
+      if (!fontMap[settings.font]) settings.font = defaultFont;
+      if (!Number.isFinite(settings.size)) settings.size = defaultSize;
+
+      function applySettings() {
+        fontSelect.value = settings.font;
+        root.style.setProperty("--reader-body-font", fontMap[settings.font] || fontMap.roboto);
+        root.style.setProperty("--reader-body-size", `${settings.size}px`);
+        localStorage.setItem(storageKey, JSON.stringify(settings));
+      }
+
+      fontSelect.addEventListener("change", () => {
+        settings.font = fontSelect.value;
+        applySettings();
+      });
+
+      sizeDown.addEventListener("click", () => {
+        settings.size = Math.max(15, settings.size - 1);
+        applySettings();
+      });
+
+      sizeUp.addEventListener("click", () => {
+        settings.size = Math.min(24, settings.size + 1);
+        applySettings();
+      });
+
+      reset.addEventListener("click", () => {
+        settings = { font: defaultFont, size: defaultSize };
+        root.style.removeProperty("--reader-body-font");
+        root.style.removeProperty("--reader-body-size");
+        localStorage.removeItem(storageKey);
+        fontSelect.value = defaultFont;
+      });
+
+      applySettings();
+    })();
+  </script>
+</body>
+</html>

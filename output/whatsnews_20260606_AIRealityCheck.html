@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What’s News in Markets: AI Reality Check, Oil’s Tipping Point, Crypto Winter</title>
+  <style>
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --paper: #fffdfa;
+      --ink: #202124;
+      --muted: #6d675f;
+      --line: #e2dacf;
+      --accent: #2f6f73;
+      --accent-soft: #e7f2f1;
+      --note: #eef7f0;
+      --note-line: #a6c7ad;
+      --shadow: 0 24px 80px rgba(63, 52, 38, 0.12);
+      --content-width: 76ch;
+      --body-serif: "Times New Roman", Times, "Microsoft YaHei", "微软雅黑", serif;
+      --body-roboto: "Transcript Roboto", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      --body-san-francisco: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-helvetica: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-arial: Arial, Helvetica, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-sans: var(--body-roboto);
+      --cjk-font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --card-sans: Aptos, "Aptos Display", "Segoe UI", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --reader-body-font: var(--body-serif);
+      --reader-body-size: 19px;
+      --reader-body-line: 1.75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(246, 243, 237, 0.94), rgba(246, 243, 237, 1)),
+        radial-gradient(circle at 12% 0%, rgba(47, 111, 115, 0.12), transparent 32%);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+
+    header {
+      margin: 0 auto 28px;
+      padding: 34px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--accent);
+      font: 700 12px/1.2 var(--body-serif);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font: 500 14px/1.4 var(--body-serif);
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(255, 253, 250, 0.72);
+    }
+
+    .reader-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: var(--card-sans);
+    }
+
+    .reader-controls label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .reader-controls select,
+    .reader-controls button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.9);
+      color: var(--ink);
+      font: 650 14px/1 var(--card-sans);
+    }
+
+    .reader-controls select {
+      padding: 0 30px 0 10px;
+    }
+
+    .reader-controls button {
+      min-width: 38px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .audio-panel {
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.86);
+      font-family: var(--card-sans);
+    }
+
+    .audio-label {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+    }
+
+    .audio-file {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(226, 218, 207, 0.72);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 58px);
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-family: var(--reader-body-font);
+      font-size: var(--reader-body-size);
+      line-height: var(--reader-body-line);
+      max-width: var(--content-width);
+      text-align: justify;
+      text-align-last: left;
+      text-justify: auto;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .speaker {
+      width: fit-content;
+      max-width: 100%;
+      margin: 18px 0 8px;
+      padding: 5px 10px 6px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: #214d50;
+      font: 750 13px/1.3 var(--body-serif);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vocab {
+      max-width: calc(var(--content-width) + 42px);
+      margin: 10px 0 12px;
+      padding: 16px 18px 17px;
+      border: 1px solid var(--note-line);
+      border-left: 5px solid #5f8f6b;
+      border-radius: 8px;
+      background: var(--note);
+      font-family: var(--card-sans);
+      line-height: 1.6;
+    }
+
+    .terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .term {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(95, 143, 107, 0.28);
+      color: #2f2f2f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .vocab ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .vocab li {
+      margin: 6px 0;
+      color: #403622;
+      font-size: 15px;
+    }
+
+    .vocab strong {
+      color: #202124;
+    }
+
+    .cjk {
+      font-family: var(--cjk-font);
+    }
+
+    .no-break {
+      white-space: nowrap;
+    }
+
+    .u-dot {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .u-dot::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0.04em;
+      width: 0.11em;
+      height: 0.11em;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --reader-body-font: var(--body-sans);
+        --reader-body-size: 17px;
+        --reader-body-line: 1.68;
+      }
+
+      .page {
+        padding: 22px 14px 46px;
+      }
+
+      header {
+        padding-top: 22px;
+      }
+
+      main {
+        padding: 22px 16px;
+      }
+
+      p {
+        max-width: none;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .vocab {
+        max-width: none;
+        padding: 14px 14px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --reader-body-size: 17px;
+        --reader-body-line: 1.66;
+      }
+
+      .page {
+        padding: 14px 8px 34px;
+      }
+
+      header {
+        margin-bottom: 18px;
+        padding: 18px 4px 18px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      main {
+        padding: 18px 12px;
+      }
+
+      .vocab li {
+        font-size: 14px;
+      }
+
+      .audio-panel {
+        margin-top: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11pt;
+        line-height: 1.55;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      header {
+        padding-top: 0;
+      }
+
+      main {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      p {
+        font-size: 11pt;
+        line-height: 1.55;
+        max-width: none;
+        text-align: justify;
+      }
+
+      .reader-controls {
+        display: none;
+      }
+
+      .audio-panel {
+        display: none;
+      }
+
+      .speaker {
+        break-after: avoid;
+      }
+
+      .vocab {
+        max-width: none;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .vocab li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">Podcast Transcript Notes</div>
+      <h1><span class="no-break">What’s</span> News in Markets: AI Reality Check, <span class="no-break">Oil’s</span> Tipping Point, Crypto Winter</h1>
+      <div class="meta">
+        
+        <span>4 vocabulary blocks</span>
+        <span>48 collected terms</span>
+        <span>0 speaker turns</span>
+      </div>
+      <div class="reader-controls" aria-label="正文显示设置">
+        <label for="bodyFontSelect">正文字体
+          <select id="bodyFontSelect">
+            <option value="roboto">Roboto</option>
+            <option value="sanFrancisco">San Francisco</option>
+            <option value="helvetica">Helvetica</option>
+            <option value="arial">Arial</option>
+            <option value="times">Times New Roman</option>
+          </select>
+        </label>
+        <button type="button" id="bodySizeDown" aria-label="减小正文字号">A-</button>
+        <button type="button" id="bodySizeUp" aria-label="增大正文字号">A+</button>
+        <button type="button" id="bodyTextReset">Reset</button>
+      </div>
+      <section class="audio-panel" aria-label="Episode audio">
+        <div class="audio-label">Episode Audio</div>
+        <audio controls preload="metadata">
+          <source src="../audio/whatsnews_20260606_AIRealityCheck.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="audio-file">whatsnews_20260606_AIRealityCheck.mp3</div>
+      </section>
+    </header>
+    <main>
+<p>SATURDAY, JUNE 6, 2026</p>
+<p><strong>Imani Moise</strong>: Hey listeners, <span class="no-break">it&#x27;s</span> Saturday, June 6th. <span class="no-break">I&#x27;m</span> Imani Moise for The Wall Street Journal and this is <span class="no-break">what&#x27;s</span> news in markets, our look at the biggest stock moves of the week and the news that drove them. <span class="no-break">Let&#x27;s</span> dive in. <strong>Imani Moise</strong><span class="cjk">：大家好，今天是</span>6<span class="cjk">月</span>6<span class="cjk">日，星期六。我是《华尔街日报》的</span> Imani Moise<span class="cjk">，欢迎收听《</span><span class="no-break">What&#x27;s</span> News in Markets<span class="cjk">》。在这里，我们将回顾本周市场中最重要的股价波动，以及推动这些波动发生的新闻事件。让我们开始吧。</span></p>
+<p>Markets hit the brakes this week. With major indexes falling after setting record highs just last week, a strong jobs report and rising tensions in the Middle East stoked fears about inflation. A conservative revenue outlook from one of the <span class="no-break">world&#x27;s</span> biggest chip makers caused investors to question whether AI growth expectations were beginning to lose touch with reality and a sale by one of <span class="no-break">Bitcoin&#x27;s</span> biggest bulls triggered a crypto selloff. The tech heavy NASDAQ tumbled 4.7% and the S&amp;P snapped a nine-week winning streak ending 2.6% lower. Those were the worst weekly declines for those indexes so far this year. The Dow declined 0.3%. <span class="cjk">本周市场踩下了刹车。就在主要股指上周刚刚创下历史新高之后，一份强劲的就业报告以及中东地区不断升级的紧张局势重新点燃了市场对通胀的担忧。一家全球最大的芯片制造商给出了相对保守的营收展望，这让投资者开始怀疑，市场对于人工智能增长的预期是否已经开始脱离现实；与此同时，比特币最坚定的支持者之一减持持仓，也引发了加密货币市场的抛售潮。以科技股为主的纳斯达克指数暴跌</span>4.7%<span class="cjk">，标普</span>500<span class="cjk">指数结束了连续九周上涨的纪录，本周下跌</span>2.6%<span class="cjk">。这是这两个指数今年以来表现最差的一周。道琼斯工业平均指数则下跌了</span>0.3%<span class="cjk">。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">hit the brakes</span><span class="term">stoked</span><span class="term">revenue</span><span class="term">lose touch with reality</span><span class="term">bulls</span><span class="term">selloff</span><span class="term">tech heavy NASDAQ</span><span class="term">tumbled</span><span class="term">winning streak</span><span class="term">snapped a nine-week winning streak</span></div><ul><li><strong>hit the brakes</strong><span class="cjk">：这里是固定表达，意思是</span>“<span class="cjk">踩刹车、突然放缓</span>”<span class="cjk">。放在市场语境里，就是说</span><strong><span class="cjk">市场这一周明显降温了，不再继续猛涨</span></strong><span class="cjk">。</span></li><li><strong>stoked</strong><span class="cjk">：原形</span> <strong>stoke</strong> /ˈstōk/<span class="cjk">。这里的意思是</span><strong><span class="cjk">加剧了、激起了</span></strong><span class="cjk">（对通胀的担忧）。</span></li><li><strong>revenue</strong> /ˈrev-ə-ˌnü/<span class="cjk">：这里是</span><strong><span class="cjk">营收、营业收入</span></strong><span class="cjk">，指芯片公司给出的收入预期。</span></li><li><strong>lose touch with reality</strong><span class="cjk">：这里不是字面上的</span>“<span class="cjk">失去现实感</span>”<span class="cjk">，而是指</span><strong><span class="cjk">开始脱离现实、变得不切实际</span></strong><span class="cjk">。这里说的是市场对</span> AI <span class="cjk">增长的期待可能有点过头了。</span></li><li><strong>bulls</strong><span class="cjk">：原形</span> <strong>bull</strong> /ˈb<span class="u-dot">u</span>l/<span class="cjk">。在金融语境里这里指</span><strong><span class="cjk">看涨者、多头、坚定看好比特币的人</span></strong><span class="cjk">。</span></li><li><strong>selloff</strong> /ˈsel-ˌȯf/<span class="cjk">：这里指</span><strong><span class="cjk">抛售潮</span></strong><span class="cjk">，也就是市场里出现集中卖出。</span></li><li><strong>tech heavy NASDAQ</strong><span class="cjk">：这里的</span> <strong>tech-heavy</strong> <span class="cjk">不是单独一个普通词义，而是说</span><strong><span class="cjk">纳斯达克里科技股占比很高</span></strong><span class="cjk">，所以可理解为</span>“<span class="cjk">以科技股为主的纳斯达克指数</span>”<span class="cjk">。</span></li><li><strong>tumbled</strong><span class="cjk">：原形</span> <strong>tumble</strong> /ˈtəm-bəl/<span class="cjk">。这里表示</span><strong><span class="cjk">大跌、猛跌</span></strong><span class="cjk">。</span></li><li><strong>winning streak</strong><span class="cjk">：这里指</span><strong><span class="cjk">连续上涨的一段走势、连涨纪录</span></strong><span class="cjk">。</span></li><li><strong>snapped a nine-week winning streak</strong><span class="cjk">：这里的</span> <strong>snapped</strong> <span class="cjk">不是</span>“<span class="cjk">掰断</span>”<span class="cjk">的字面意思，而是说</span><strong><span class="cjk">九周连涨到此结束了</span></strong><span class="cjk">。整句就是</span>“<span class="cjk">终结了连续九周上涨的纪录</span>”<span class="cjk">。</span></li></ul></aside>
+<p>The AI trade hit a speed bump this week as one of the <span class="no-break">industry&#x27;s</span> biggest chip makers prompted investors to rethink some of their loftiest expectations. Broadcom reported an explosive 48% surge in revenue and said it expects to generate more than $100 billion in annual AI semiconductor revenue by next year. Most people would think that those numbers would send a stock soaring. Instead, investors erased roughly $300 billion from <span class="no-break">Broadcom&#x27;s</span> market value in a single day. Now <span class="no-break">let&#x27;s</span> make that make sense. Analysts say the decline <span class="no-break">wasn&#x27;t</span> really about <span class="no-break">Broadcom&#x27;s</span> results. It was about its outlook. Investors have gotten used to AI chip companies exceeding expectations and raising their outlooks. NVIDIA has repeatedly blown past expectations with its quarterly numbers and earlier this week ST microelectronics nearly doubled its revenue guidance from above $500 million to well above one billion. But Broadcom held the line. Executives stuck with the <span class="no-break">company&#x27;s</span> previous forecast, suggesting growth remained strong but maybe not accelerating as quickly as investors had hoped. Broadcom shares ended the week more than 13% lower. The reaction rippled across the chip sector as investors reconsidered just how much future growth is already priced into some of the <span class="no-break">market&#x27;s</span> biggest winners. Shares of Micron dropped 11% and AMD fell roughly 10%. <span class="cjk">本周，</span>AI<span class="cjk">投资主题遭遇了一次减速带。行业内一家最大的芯片制造商让投资者开始重新审视他们最乐观的预期。博通（</span>Broadcom<span class="cjk">）公布营收同比大增</span>48%<span class="cjk">，并表示预计到明年其年度</span>AI<span class="cjk">半导体业务收入将超过</span>1000<span class="cjk">亿美元。大多数人会认为，这样的数据足以推动股价大幅上涨。然而事实恰恰相反，投资者在一天之内就抹去了博通大约</span>3000<span class="cjk">亿美元的市值。那么这该如何解释呢？分析师表示，市场下跌其实并不是因为博通的业绩，而是因为它的未来展望。投资者已经习惯了</span>AI<span class="cjk">芯片公司不断超出预期并持续上调业绩指引。英伟达（</span>NVIDIA<span class="cjk">）多次公布远超预期的季度业绩，而就在本周稍早时候，意法半导体（</span>STMicroelectronics<span class="cjk">）甚至将其收入指引从略高于</span>5<span class="cjk">亿美元上调至超过</span>10<span class="cjk">亿美元。但博通却没有这么做。管理层维持了此前的预测，这表明增长依然强劲，但增长速度可能并没有投资者期待的那么快。博通股价本周累计下跌超过</span>13%<span class="cjk">。这一反应迅速蔓延至整个芯片板块，因为投资者开始重新评估，市场中这些最大赢家的股价究竟已经提前反映了多少未来增长。美光（</span>Micron<span class="cjk">）股价下跌</span>11%<span class="cjk">，</span>AMD<span class="cjk">则下跌约</span>10%<span class="cjk">。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">loftiest</span><span class="term">soaring</span><span class="term"><span class="no-break">let&#x27;s</span> make that make sense</span><span class="term">outlook</span><span class="term">raising their outlooks</span><span class="term">held the line</span><span class="term">stuck with</span><span class="term">rippled</span><span class="term">is already priced into</span><span class="term">biggest winners</span></div><ul><li><strong>loftiest</strong><span class="cjk">：原形</span> <strong>lofty</strong> /ˈlȯf-tē/<span class="cjk">。这里指</span><strong><span class="cjk">最高的、最乐观的、最夸张的</span></strong><span class="cjk">（预期）。</span></li><li><strong>soaring</strong><span class="cjk">：原形</span> <strong>soar</strong> /ˈsȯr/<span class="cjk">。这里表示</span><strong><span class="cjk">大涨、飙升</span></strong><span class="cjk">。</span></li><li><strong><span class="no-break">let&#x27;s</span> make that make sense</strong><span class="cjk">：这里是很口语的说法，意思是</span><strong>“<span class="cjk">我们来把这件看起来不合理的事解释清楚</span>”</strong><span class="cjk">。</span></li><li><strong>outlook</strong> /ˈa<span class="u-dot">u</span>t-ˌl<span class="u-dot">u</span>k/<span class="cjk">：这里指</span><strong><span class="cjk">未来展望、业绩指引、前景判断</span></strong><span class="cjk">，不是一般生活里的</span>“<span class="cjk">看法</span>”<span class="cjk">。</span></li><li><strong>raising their outlooks</strong><span class="cjk">：这里是说公司</span><strong><span class="cjk">上调未来预期</span>/<span class="cjk">上调业绩指引</span></strong><span class="cjk">。</span></li><li><strong>held the line</strong><span class="cjk">：这里不是字面上的</span>“<span class="cjk">守住防线</span>”<span class="cjk">，而是说</span><strong><span class="cjk">没有继续往上调，维持原来的说法不变</span></strong><span class="cjk">。</span></li><li><strong>stuck with</strong><span class="cjk">：原形</span> <strong>stick</strong> /ˈstik/<span class="cjk">。这里指</span><strong><span class="cjk">坚持沿用、维持</span></strong><span class="cjk">（原先的预测）。</span></li><li><strong>rippled</strong><span class="cjk">：原形</span> <strong>ripple</strong> /ˈri-pəl/<span class="cjk">。这里表示</span><strong><span class="cjk">扩散开来、蔓延开来</span></strong><span class="cjk">，说的是博通的市场反应波及了整个芯片板块。</span></li><li><strong>is already priced into</strong><span class="cjk">：这里是市场常用表达，意思是</span><strong><span class="cjk">已经被市场提前计入股价了</span></strong><span class="cjk">。</span></li><li><strong>biggest winners</strong><span class="cjk">：这里不是泛泛的</span>“<span class="cjk">赢家</span>”<span class="cjk">，而是指</span><strong><span class="cjk">这轮行情里涨得最猛、最受益的一批股票</span></strong><span class="cjk">。</span></li></ul></aside>
+<p>The conflict in the Middle East came back into focus on Wall Street this week after fresh missile attacks raised questions about the future of the Strait of Hormuz, helping to make energy the best performing sector in the S&amp;P 500. Brent Crude rose about 2% to $93.09 a barrel as another week passed by without a peace deal, reinforcing concerns that supply disruptions could last longer than expected. Until recently, investors had largely looked past the war, betting that ample oil inventories would help cushion the global economy from supply disruptions, but that assumption is starting to crack. Commodity trading giant, Trafigura, warned this week that energy markets are approaching an inflection point as inventories shrink and supply constraints persist. If a peace deal is reached soon, analysts say it could take months for oil production and shipping flows to fully recover. The S&amp;P Energy Index rose about two and a half percent over the week. <span class="cjk">本周，中东冲突再次成为华尔街关注的焦点。新一轮导弹袭击让市场开始担忧霍尔木兹海峡的未来局势，也推动能源板块成为标普</span>500<span class="cjk">指数中表现最好的行业。由于和平协议迟迟未能达成，布伦特原油价格上涨约</span>2%<span class="cjk">，达到每桶</span>93.09<span class="cjk">美元，进一步强化了市场对于供应中断持续时间可能超出预期的担忧。直到不久前，投资者基本上还在忽视这场战争，他们认为充足的石油库存足以缓冲供应中断对全球经济带来的影响。但这种假设如今开始出现裂痕。大宗商品交易巨头托克集团（</span>Trafigura<span class="cjk">）本周警告称，随着库存下降以及供应限制持续存在，能源市场正接近一个关键拐点。分析师表示，即使和平协议很快达成，石油产量和航运流量要恢复正常也可能需要数月时间。标普能源指数本周上涨约</span>2.5%<span class="cjk">。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">came back into focus</span><span class="term">Until recently</span><span class="term">looked past the war</span><span class="term">ample</span><span class="term">inventories</span><span class="term">cushion the global economy</span><span class="term">inflection point</span><span class="term">shrink</span></div><ul><li><strong>came back into focus</strong><span class="cjk">：这里指</span><strong><span class="cjk">重新成为关注焦点</span></strong><span class="cjk">。</span></li><li><strong>Until recently</strong><span class="cjk">：这里就是</span><strong><span class="cjk">直到最近为止、就在前不久之前</span></strong><span class="cjk">。</span></li><li><strong>looked past the war</strong><span class="cjk">：这里不是说</span>“<span class="cjk">看过去</span>”<span class="cjk">，而是指</span><strong><span class="cjk">没有太把这场战争当回事、暂时忽略了战争影响</span></strong><span class="cjk">。</span></li><li><strong>ample</strong> /ˈam-pəl/<span class="cjk">：这里指</span><strong><span class="cjk">充足的、足够多的</span></strong><span class="cjk">。</span></li><li><strong>inventories</strong><span class="cjk">：原形</span> <strong>inventory</strong> /ˈin-vən-ˌtȯr-ē/<span class="cjk">。这里指</span><strong><span class="cjk">库存</span></strong><span class="cjk">，具体是石油库存。</span></li><li><strong>cushion the global economy</strong><span class="cjk">：这里的</span> <strong>cushion</strong> <span class="cjk">原形</span> <strong>cushion</strong> /ˈk<span class="u-dot">u</span>-shən/<span class="cjk">，在这里作动词，意思是</span><strong><span class="cjk">起缓冲作用、减轻冲击</span></strong><span class="cjk">。整段就是</span>“<span class="cjk">给全球经济提供缓冲</span>”<span class="cjk">。</span></li><li><strong>inflection point</strong><span class="cjk">：这里指</span><strong><span class="cjk">拐点、关键转折点</span></strong><span class="cjk">，也就是市场可能要从一个阶段转入另一个阶段。</span></li><li><strong>shrink</strong> /ˈshriŋk/<span class="cjk">：这里指</span><strong><span class="cjk">缩小、下降、减少</span></strong><span class="cjk">，说的是库存正在减少。</span></li></ul></aside>
+<p>And even after this <span class="no-break">week&#x27;s</span> chip stock slump, the AI trade has helped push major US indexes to record highs. But <span class="no-break">there&#x27;s</span> one corner of the market missing out on the rally, crypto. Bitcoin has fallen 30% this year and lost about half of its values in speaking at above $126,000 last October. Analysts say one reason is that crypto is no longer the <span class="no-break">market&#x27;s</span> favorite speculative trade. For much of the past year, investors who once chased Bitcoin gains have instead been piling into AI stocks. While Bitcoin struggles, semiconductor stocks are dominating Wall <span class="no-break">Street&#x27;s</span> leaderboard for the year. One crypto trader put it bluntly. What Bitcoin needs is for some air to come out of the AI trade. The shift in investor retention is now beginning to pressure some of <span class="no-break">crypto&#x27;s</span> biggest believers. Strategy, one of <span class="no-break">Bitcoin&#x27;s</span> most outspoken supporters, sold a portion of its holdings for the first time since the last crypto winter in 2022. The moves rattled investors because strategy executive chairman Michael Saylor built a reputation on a simple message. Never sell your Bitcoin. Shares of crypto-linked companies ended the week lower. Strategy tumbled about 24%. Coinbase slipped 19% and Robinhood dropped more than 12%. <span class="cjk">尽管本周芯片股遭遇重挫，但</span>AI<span class="cjk">投资热潮仍然推动美国主要股指屡创新高。不过，市场中有一个板块却完全没能分享到这波上涨行情，那就是加密货币。比特币今年以来已经下跌</span>30%<span class="cjk">，相比去年</span>10<span class="cjk">月超过</span>12.6<span class="cjk">万美元的高点，市值已经蒸发了大约一半。分析师表示，其中一个原因是，加密货币已经不再是市场最受欢迎的投机性交易。过去一年中，那些曾经追逐比特币收益的投资者，转而大量涌入</span>AI<span class="cjk">概念股。比特币表现低迷的同时，半导体股票则牢牢占据着华尔街年度涨幅榜的前列。一位加密货币交易员直言不讳地表示，比特币真正需要的是</span>AI<span class="cjk">交易热潮降温一些。投资者偏好的转移如今已经开始给加密货币最坚定的支持者带来压力。作为比特币最著名支持者之一的</span> Strategy <span class="cjk">公司，自</span>2022<span class="cjk">年上一轮加密货币寒冬以来首次出售了部分持仓。这一举动令投资者感到不安，因为</span> Strategy <span class="cjk">执行董事长</span> Michael Saylor <span class="cjk">一直以一句简单的话闻名</span>——“<span class="cjk">永远不要卖掉你的比特币</span>”<span class="cjk">。与加密货币相关的上市公司本周普遍下跌。</span>Strategy <span class="cjk">股价暴跌约</span>24%<span class="cjk">，</span>Coinbase <span class="cjk">下跌</span>19%<span class="cjk">，</span>Robinhood <span class="cjk">跌幅超过</span>12%<span class="cjk">。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">slump</span><span class="term">record highs</span><span class="term">missing out on the rally</span><span class="term">rally</span><span class="term">in speaking at</span><span class="term">speculative</span><span class="term">speculative trade</span><span class="term">For much of the past year</span><span class="term">been piling into</span><span class="term">leaderboard</span><span class="term">put it bluntly</span><span class="term">bluntly</span><span class="term">come out of the AI trade</span><span class="term">retention</span><span class="term">outspoken</span><span class="term">rattled</span><span class="term">ended the week lower</span><span class="term">tumbled about 24%</span><span class="term">slipped 19%</span><span class="term">dropped more than 12%</span></div><ul><li><strong>slump</strong> /ˈsləmp/<span class="cjk">：这里指</span><strong><span class="cjk">下挫、低迷、疲软下跌</span></strong><span class="cjk">。</span></li><li><strong>record highs</strong><span class="cjk">：这里指</span><strong><span class="cjk">历史新高</span></strong><span class="cjk">。</span></li><li><strong>missing out on the rally</strong><span class="cjk">：这里意思是</span><strong><span class="cjk">没赶上这波上涨、没有分享到这轮行情</span></strong><span class="cjk">。</span></li><li><strong>rally</strong> /ˈra-lē/<span class="cjk">：在这里是金融语境，指</span><strong><span class="cjk">一波上涨行情、反弹走势</span></strong><span class="cjk">。</span></li><li><strong>in speaking at</strong><span class="cjk">：这里按上下文看，</span><strong><span class="cjk">大概率是转录错误</span></strong><span class="cjk">，应接近</span> <strong>peaking at</strong><span class="cjk">。放在这句里就是</span>“<strong><span class="cjk">在去年</span>10<span class="cjk">月一度冲到</span>/<span class="cjk">达到</span> 126,000 <span class="cjk">美元以上的高点</span></strong>”<span class="cjk">。</span></li><li><strong>speculative</strong> /ˈspe-kyə-lə-tiv/<span class="cjk">：这里指</span><strong><span class="cjk">投机性的</span></strong><span class="cjk">。</span></li><li><strong>speculative trade</strong><span class="cjk">：这里不是单指一笔具体交易，而是说</span><strong><span class="cjk">市场上最受欢迎的投机性押注</span>/<span class="cjk">投机题材</span></strong><span class="cjk">。</span></li><li><strong>For much of the past year</strong><span class="cjk">：这里指</span><strong><span class="cjk">在过去一年里的大部分时间里</span></strong><span class="cjk">。</span></li><li><strong>been piling into</strong><span class="cjk">：原形</span> <strong>pile into</strong><span class="cjk">。这里指资金和投资者</span><strong><span class="cjk">不断大量涌入</span></strong> AI <span class="cjk">股票。</span></li><li><strong>leaderboard</strong> /ˈlē-dər-ˌbȯrd/<span class="cjk">：这里借用排行榜的意思，指</span><strong><span class="cjk">涨幅榜前列、市场表现排名前排的位置</span></strong><span class="cjk">。</span></li><li><strong>put it bluntly</strong><span class="cjk">：这里意思是</span><strong><span class="cjk">直白地说、毫不拐弯地说</span></strong><span class="cjk">。</span></li><li><strong>bluntly</strong><span class="cjk">：原形</span> <strong>bluntly</strong> /ˈblənt-lē/<span class="cjk">。这里就是</span><strong><span class="cjk">直截了当地、很直接地</span></strong><span class="cjk">。</span></li><li><strong>come out of the AI trade</strong><span class="cjk">：这里不是</span>“<span class="cjk">从里面出来</span>”<span class="cjk">那么直译，而是指</span><strong>AI <span class="cjk">交易热度退掉一点、资金从</span> AI <span class="cjk">题材里撤出一些</span></strong><span class="cjk">。</span></li><li><strong>retention</strong> /<span class="cjk">这里按语境看大概率也是转录不准</span>/<span class="cjk">：这句真正想表达的应是</span><strong><span class="cjk">投资者注意力</span>/<span class="cjk">偏好的转移</span></strong><span class="cjk">，也就是资金和兴趣从</span> crypto <span class="cjk">转向</span> AI<span class="cjk">。</span></li><li><strong>outspoken</strong> /a<span class="u-dot">u</span>t-ˈspō-kən/<span class="cjk">：这里指</span><strong><span class="cjk">公开直言的、旗帜鲜明表态的</span></strong><span class="cjk">。</span></li><li><strong>rattled</strong><span class="cjk">：原形</span> <strong>rattle</strong> /ˈra-tᵊl/<span class="cjk">。这里指</span><strong><span class="cjk">让投资者感到不安、受到震动</span></strong><span class="cjk">。</span></li><li><strong>ended the week lower</strong><span class="cjk">：这里就是</span><strong><span class="cjk">本周收盘更低、全周以下跌报收</span></strong><span class="cjk">。</span></li><li><strong>tumbled about 24%</strong><span class="cjk">：这里表示</span><strong><span class="cjk">暴跌约</span> 24%</strong><span class="cjk">。</span></li><li><strong>slipped 19%</strong><span class="cjk">：这里表示</span><strong><span class="cjk">下跌了</span> 19%</strong><span class="cjk">，语气比</span> tumble <span class="cjk">稍弱一些。</span></li><li><strong>dropped more than 12%</strong><span class="cjk">：这里就是</span><strong><span class="cjk">跌了超过</span> 12%</strong><span class="cjk">。</span></li></ul></aside>
+<p>And now you know <span class="no-break">what&#x27;s</span> news in markets this week. You could read about more stocks that moved on the <span class="no-break">week&#x27;s</span> news in our live markets coverage on wsj.com. <span class="no-break">Today&#x27;s</span> show was produced by Anthony Bansy with supervising producer, Melony Roy. <span class="no-break">I&#x27;m</span> Imani Moise. Have a great weekend and catch you next Saturday. <span class="cjk">以上就是本周市场的重要动态。想了解更多受本周新闻影响而出现波动的股票，欢迎访问</span> wsj.com <span class="cjk">阅读我们的实时市场报道。本期节目由</span> Anthony Bansy <span class="cjk">制作，</span>Melony Roy <span class="cjk">担任监制。我是</span> Imani Moise<span class="cjk">。祝大家周末愉快，我们下周六再见。</span></p>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const storageKey = "podcastTranscriptBodyText";
+      const fontSelect = document.getElementById("bodyFontSelect");
+      const sizeDown = document.getElementById("bodySizeDown");
+      const sizeUp = document.getElementById("bodySizeUp");
+      const reset = document.getElementById("bodyTextReset");
+      const fontMap = {
+        roboto: 'var(--body-roboto)',
+        sanFrancisco: 'var(--body-san-francisco)',
+        helvetica: 'var(--body-helvetica)',
+        arial: 'var(--body-arial)',
+        times: 'var(--body-serif)',
+      };
+
+      if (!fontSelect || !sizeDown || !sizeUp || !reset) return;
+
+      const firstParagraph = document.querySelector("main p");
+      const defaultSize = firstParagraph
+        ? Math.round(parseFloat(getComputedStyle(firstParagraph).fontSize))
+        : 19;
+      const defaultFont = "roboto";
+      let settings = { font: defaultFont, size: defaultSize };
+
+      try {
+        settings = { ...settings, ...JSON.parse(localStorage.getItem(storageKey) || "{}" ) };
+      } catch (error) {}
+      if (!fontMap[settings.font]) settings.font = defaultFont;
+      if (!Number.isFinite(settings.size)) settings.size = defaultSize;
+
+      function applySettings() {
+        fontSelect.value = settings.font;
+        root.style.setProperty("--reader-body-font", fontMap[settings.font] || fontMap.roboto);
+        root.style.setProperty("--reader-body-size", `${settings.size}px`);
+        localStorage.setItem(storageKey, JSON.stringify(settings));
+      }
+
+      fontSelect.addEventListener("change", () => {
+        settings.font = fontSelect.value;
+        applySettings();
+      });
+
+      sizeDown.addEventListener("click", () => {
+        settings.size = Math.max(15, settings.size - 1);
+        applySettings();
+      });
+
+      sizeUp.addEventListener("click", () => {
+        settings.size = Math.min(24, settings.size + 1);
+        applySettings();
+      });
+
+      reset.addEventListener("click", () => {
+        settings = { font: defaultFont, size: defaultSize };
+        root.style.removeProperty("--reader-body-font");
+        root.style.removeProperty("--reader-body-size");
+        localStorage.removeItem(storageKey);
+        fontSelect.value = defaultFont;
+      });
+
+      applySettings();
+    })();
+  </script>
+</body>
+</html>

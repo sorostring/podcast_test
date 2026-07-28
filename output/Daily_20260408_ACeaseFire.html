@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Cease-Fire in Iran</title>
+  <style>
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --paper: #fffdfa;
+      --ink: #202124;
+      --muted: #6d675f;
+      --line: #e2dacf;
+      --accent: #2f6f73;
+      --accent-soft: #e7f2f1;
+      --note: #eef7f0;
+      --note-line: #a6c7ad;
+      --shadow: 0 24px 80px rgba(63, 52, 38, 0.12);
+      --content-width: 76ch;
+      --body-serif: "Times New Roman", Times, "Microsoft YaHei", "微软雅黑", serif;
+      --body-roboto: "Transcript Roboto", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      --body-san-francisco: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-helvetica: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-arial: Arial, Helvetica, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-sans: var(--body-roboto);
+      --cjk-font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --card-sans: Aptos, "Aptos Display", "Segoe UI", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --reader-body-font: var(--body-serif);
+      --reader-body-size: 19px;
+      --reader-body-line: 1.75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(246, 243, 237, 0.94), rgba(246, 243, 237, 1)),
+        radial-gradient(circle at 12% 0%, rgba(47, 111, 115, 0.12), transparent 32%);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+
+    header {
+      margin: 0 auto 28px;
+      padding: 34px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--accent);
+      font: 700 12px/1.2 var(--body-serif);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font: 500 14px/1.4 var(--body-serif);
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(255, 253, 250, 0.72);
+    }
+
+    .reader-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: var(--card-sans);
+    }
+
+    .reader-controls label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .reader-controls select,
+    .reader-controls button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.9);
+      color: var(--ink);
+      font: 650 14px/1 var(--card-sans);
+    }
+
+    .reader-controls select {
+      padding: 0 30px 0 10px;
+    }
+
+    .reader-controls button {
+      min-width: 38px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .audio-panel {
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.86);
+      font-family: var(--card-sans);
+    }
+
+    .audio-label {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+    }
+
+    .audio-file {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(226, 218, 207, 0.72);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 58px);
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-family: var(--reader-body-font);
+      font-size: var(--reader-body-size);
+      line-height: var(--reader-body-line);
+      max-width: var(--content-width);
+      text-align: justify;
+      text-align-last: left;
+      text-justify: auto;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .speaker {
+      width: fit-content;
+      max-width: 100%;
+      margin: 18px 0 8px;
+      padding: 5px 10px 6px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: #214d50;
+      font: 750 13px/1.3 var(--body-serif);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vocab {
+      max-width: calc(var(--content-width) + 42px);
+      margin: 10px 0 12px;
+      padding: 16px 18px 17px;
+      border: 1px solid var(--note-line);
+      border-left: 5px solid #5f8f6b;
+      border-radius: 8px;
+      background: var(--note);
+      font-family: var(--card-sans);
+      line-height: 1.6;
+    }
+
+    .terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .term {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(95, 143, 107, 0.28);
+      color: #2f2f2f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .vocab ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .vocab li {
+      margin: 6px 0;
+      color: #403622;
+      font-size: 15px;
+    }
+
+    .vocab strong {
+      color: #202124;
+    }
+
+    .cjk {
+      font-family: var(--cjk-font);
+    }
+
+    .no-break {
+      white-space: nowrap;
+    }
+
+    .u-dot {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .u-dot::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0.04em;
+      width: 0.11em;
+      height: 0.11em;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --reader-body-font: var(--body-sans);
+        --reader-body-size: 17px;
+        --reader-body-line: 1.68;
+      }
+
+      .page {
+        padding: 22px 14px 46px;
+      }
+
+      header {
+        padding-top: 22px;
+      }
+
+      main {
+        padding: 22px 16px;
+      }
+
+      p {
+        max-width: none;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .vocab {
+        max-width: none;
+        padding: 14px 14px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --reader-body-size: 17px;
+        --reader-body-line: 1.66;
+      }
+
+      .page {
+        padding: 14px 8px 34px;
+      }
+
+      header {
+        margin-bottom: 18px;
+        padding: 18px 4px 18px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      main {
+        padding: 18px 12px;
+      }
+
+      .vocab li {
+        font-size: 14px;
+      }
+
+      .audio-panel {
+        margin-top: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11pt;
+        line-height: 1.55;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      header {
+        padding-top: 0;
+      }
+
+      main {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      p {
+        font-size: 11pt;
+        line-height: 1.55;
+        max-width: none;
+        text-align: justify;
+      }
+
+      .reader-controls {
+        display: none;
+      }
+
+      .audio-panel {
+        display: none;
+      }
+
+      .speaker {
+        break-after: avoid;
+      }
+
+      .vocab {
+        max-width: none;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .vocab li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">Podcast Transcript Notes</div>
+      <h1>A Cease-Fire in Iran</h1>
+      <div class="meta">
+        
+        <span>44 vocabulary blocks</span>
+        <span>118 collected terms</span>
+        <span>50 speaker turns</span>
+      </div>
+      <div class="reader-controls" aria-label="正文显示设置">
+        <label for="bodyFontSelect">正文字体
+          <select id="bodyFontSelect">
+            <option value="roboto">Roboto</option>
+            <option value="sanFrancisco">San Francisco</option>
+            <option value="helvetica">Helvetica</option>
+            <option value="arial">Arial</option>
+            <option value="times">Times New Roman</option>
+          </select>
+        </label>
+        <button type="button" id="bodySizeDown" aria-label="减小正文字号">A-</button>
+        <button type="button" id="bodySizeUp" aria-label="增大正文字号">A+</button>
+        <button type="button" id="bodyTextReset">Reset</button>
+      </div>
+      <section class="audio-panel" aria-label="Episode audio">
+        <div class="audio-label">Episode Audio</div>
+        <audio controls preload="metadata">
+          <source src="../audio/Daily_20260408_ACeaseFire.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="audio-file">Daily_20260408_ACeaseFire.mp3</div>
+      </section>
+    </header>
+    <main>
+<p>FOX News alert. We have a deal for now.</p>
+<p><span class="cjk">福克斯新闻快讯。至少目前，协议已经达成。</span></p>
+<p>From “The New York Times,” <span class="no-break">I’m</span> Rachel Abrams. And this is “The Daily.”</p>
+<p><span class="cjk">这里是《纽约时报》，我是</span> Rachel Abrams<span class="cjk">。欢迎收听《</span>The Daily<span class="cjk">》。</span></p>
+<p>The US and Iran have both confirmed that they have agreed to a two-week pause.</p>
+<p><span class="cjk">美国和伊朗都已确认，双方同意暂停冲突两周。</span></p>
+<p>It appears Iran has accepted President <span class="no-break">Trump’s</span> terms.</p>
+<p><span class="cjk">看起来，伊朗已经接受了特朗普总统提出的条件。</span></p>
+<p>Subject to the immediate opening of the strait.</p>
+<p><span class="cjk">前提是海峡必须立即开放。</span></p>
+<p>Just in out of Iran, a statement read on state-run media instructing all military units to follow the supreme <span class="no-break">leader’s</span> order and stop firing.</p>
+<p><span class="cjk">刚刚来自伊朗的消息，伊朗国营媒体宣读了一份声明，要求所有军事单位遵照最高领袖的命令，停止开火。</span></p>
+<div class="speaker">Rachel Abrams</div>
+<p>Just hours before a Trump-imposed deadline that could have led to a massive escalation in the war with Iran, the United States and Iran appeared to reach a temporary ceasefire.</p>
+<p><span class="cjk">就在特朗普设定的最后期限到来前几个小时，美国和伊朗似乎达成了一项临时停火协议；如果没有这项协议，对伊战争原本可能出现大规模升级。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">Trump-imposed deadline</span><span class="term">escalation</span></div><ul><li>Trump-imposed deadline<span class="cjk">：指</span>“<span class="cjk">特朗普设定</span>/<span class="cjk">强加的最后期限</span>”<span class="cjk">。这里强调这个</span> deadline <span class="cjk">是由</span> Trump <span class="cjk">单方面施压设定的。</span></li><li>escalation /ˌe-skə-ˈlā-shən/<span class="cjk">：升级。这里指对伊朗战争可能从现有冲突升级为更大规模、更严重的军事行动。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Today, Chief White House correspondent David Sanger explains what led to this last-minute deal and what it would take to make it stick. <span class="no-break">It’s</span> Wednesday, April 8. David Sanger, thank you so much for taping with us 9:35 PM on this Tuesday night.</p>
+<p><span class="cjk">今天，白宫首席记者</span> David Sanger <span class="cjk">将解释，这项最后关头的协议是如何达成的，以及要让它真正维持下去，还需要什么条件。今天是</span>4<span class="cjk">月</span>8<span class="cjk">日，星期三。</span>David Sanger<span class="cjk">，非常感谢你在这个星期二晚上</span>9<span class="cjk">点</span>35<span class="cjk">分和我们一起录制节目。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">stick</span></div><ul><li>stick /ˈstik/<span class="cjk">：维持住、持续有效。这里的</span> make it stick <span class="cjk">是</span>“<span class="cjk">让这项停火协议真正站得住、能维持下去</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p><span class="no-break">It’s</span> been a wild day, Rachel.</p>
+<p>Rachel<span class="cjk">，今天真是非常疯狂的一天。</span></p>
+<div class="speaker">Rachel Abrams</div>
+<p>I can imagine. David, it feels like the entire world has been holding its breath for the last two days. As President Trump ratcheted up the threats on Iran to open the Straits of Hormuz, which included Tuesday morning, when he basically threatened to wipe out the entire country. And just hours before the 8:00 PM deadline that the president had given Iran to make a deal, both the United States and Iran announced that <span class="no-break">they’d</span> reached some kind of temporary ceasefire. What do we about what they actually agreed to?</p>
+<p><span class="cjk">我可以想象。</span>David<span class="cjk">，过去两天，感觉整个世界都在屏住呼吸。特朗普总统不断升级对伊朗的威胁，要求伊朗开放霍尔木兹海峡，其中包括星期二早上，他几乎是在威胁要抹掉整个国家。而就在总统给伊朗设定的晚上</span>8<span class="cjk">点达成协议的最后期限前几个小时，美国和伊朗都宣布，双方达成了某种临时停火。关于他们到底同意了什么，我们现在知道些什么？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">ratcheted up</span><span class="term">ratcheted</span></div><ul><li>ratchet /ˈra-chət/<span class="cjk">：逐步加码、逐步升级。这里</span> ratcheted up the threats <span class="cjk">指特朗普不断加大对伊朗的威胁力度。</span></li><li>ratchet /ˈra-chət/<span class="cjk">：原形是</span> ratchet<span class="cjk">。这里</span> ratcheted <span class="cjk">是过去式，意思是</span>“<span class="cjk">升级了、加码了</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p>Well, <span class="no-break">we’ve</span> been trying to that out, because the American accounts and the Iranian accounts, as you might imagine, <span class="no-break">don’t</span> completely match up. But what President Trump said was that Iran and the US have agreed to a 14-day ceasefire. During that time, he said, Iran would commit to making sure that the Strait of Hormuz would be fully reopened, and that that would allow this bottleneck of ships full of oil, full of fertilizer, full of helium for semiconductor production to begin flowing again and relieve these huge shortages that have been wracking the world economy. We <span class="no-break">don’t</span> exactly when that will happen, but the American bombing of Iran stopped almost immediately.</p>
+<p><span class="cjk">我们一直在努力弄清楚这一点，因为可以想象，美国方面和伊朗方面的说法并不完全一致。但特朗普总统的说法是，伊朗和美国同意停火</span>14<span class="cjk">天。他说，在此期间，伊朗将承诺确保霍尔木兹海峡全面重新开放，让那些装满石油、化肥以及用于半导体生产的氦气的船只，不再堵在这个瓶颈处，重新开始流动，从而缓解正在重创全球经济的严重短缺。我们还不确切知道这会在什么时候发生，但美国对伊朗的轰炸几乎立刻停止了。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">trying to that out</span><span class="term">bottleneck</span><span class="term">relieve</span><span class="term">wracking</span></div><ul><li>trying to that out<span class="cjk">：这里应是</span> trying to figure that out<span class="cjk">，意思是</span>“<span class="cjk">一直在努力弄清楚那件事</span>”<span class="cjk">。</span>transcript <span class="cjk">中漏了</span> figure<span class="cjk">。</span></li><li>bottleneck /ˈbä-tᵊl-ˌnek/<span class="cjk">：瓶颈、堵点。这里指霍尔木兹海峡关闭导致船只无法通过，形成全球运输堵塞。</span></li><li>relieve /ri-ˈlēv/<span class="cjk">：缓解。这里指让货物流动恢复，从而缓解全球经济中的严重短缺。</span></li><li>wrack /ˈrak/<span class="cjk">：折磨、严重损害。</span>wracking <span class="cjk">是动词</span> wrack <span class="cjk">的现在分词；这里指这些短缺正在严重冲击、折磨全球经济。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>OK, so that is what Trump agreed to, David. But you mentioned that it did not really seem like both sides were on the same page when the ceasefire was first announced. What have the Iranians said that they agreed to?</p>
+<p><span class="cjk">好，所以这是特朗普方面说他们同意的内容。</span>David<span class="cjk">，但你提到，停火刚宣布时，双方看起来并不像是真的达成了完全一致。伊朗方面说他们同意了什么？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">on the same page</span></div><ul><li>on the same page<span class="cjk">：意见一致、理解一致。这里指美国和伊朗对停火协议内容的理解并不完全一致。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p>Well, if you just read President <span class="no-break">Trump’s</span> announcement, <span class="no-break">you’d</span> think that the Strait of Hormuz was just being thrown wide open, the way it was before the war started. But if you read the statement that came out a few minutes later from <span class="no-break">Iran’s</span> foreign minister, Abbas Araghchi, <span class="no-break">who’s</span> quite experienced, has been involved in many of these negotiations over the years. He said that Iran will cease their defensive operation for a period of two weeks and that safe passage through the Strait of Hormuz would only be possible by coordinating with <span class="no-break">Iran’s</span> armed forces.</p>
+<p><span class="cjk">如果你只看特朗普总统的声明，你会以为霍尔木兹海峡会像战争开始前那样一下子全面开放。但如果你看几分钟后伊朗外长</span> Abbas Araghchi <span class="cjk">发表的声明，情况就不一样了。</span>Araghchi <span class="cjk">是一位经验丰富的官员，多年来参与过很多这类谈判。他说，伊朗将在两周内停止其防御性行动，而船只想要安全通过霍尔木兹海峡，只能通过与伊朗武装力量协调来实现。</span></p>
+<p>So that means that in the Iranian vision, the Iranian military will retain the control that it seized in the past five or six weeks. And who knows at what pace <span class="no-break">they’re</span> going to allow ships to pass, whether or not <span class="no-break">they’re</span> going to allow them to just pass freely or charge them tolls. We just <span class="no-break">don’t</span> know.</p>
+<p><span class="cjk">这就意味着，在伊朗的设想中，伊朗军方将继续保留过去五六周里取得的控制权。至于他们会以什么速度允许船只通行，会不会让船只自由通过，还是会向它们收取通行费，我们现在都不知道。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">in the Iranian vision</span><span class="term">retain</span></div><ul><li>in the Iranian vision<span class="cjk">：在伊朗方面的设想</span>/<span class="cjk">理解中。这里指按伊朗自己的版本来看，停火后他们仍会保留对海峡通行的控制。</span></li><li>retain /ri-ˈtān/<span class="cjk">：保留、继续拥有。这里指伊朗军方继续保留过去几周取得的控制权。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>OK, so obviously some daylight between these two statements, room for interpretation. But we have not talked about another country that is a major actor here. And that is Israel. Israel, of course, attacked Iran along with the United States. That is how this war started. Has Israel said anything about this agreement. Do we know that they are party to it? Where do they stand?</p>
+<p><span class="cjk">好，所以很明显，这两份声明之间存在差距，也留下了解读空间。但我们还没有谈到这里另一个重要参与方，那就是以色列。以色列当然是和美国一起袭击了伊朗，这场战争就是这样开始的。以色列对这项协议有什么表态吗？我们知道他们是不是协议的一方吗？他们现在的立场是什么？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">daylight</span><span class="term">interpretation</span></div><ul><li>daylight /ˈdā-ˌlīt/<span class="cjk">：差距、分歧。这里</span> some daylight between these two statements <span class="cjk">指美伊两方声明之间有明显差异。</span></li><li>interpretation /in-ˌtər-prə-ˈtā-shən/<span class="cjk">：解读、解释。这里指协议条款留下了不同解释的空间。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p>Well, the White House told us that Israel had agreed to the terms. And then later in the evening, the Israelis turned out a statement from the prime <span class="no-break">minister’s</span> office, saying they support President <span class="no-break">Trump’s</span> decision. But it was interesting wording, because they <span class="no-break">didn’t</span> say that they were terribly enthused about it.</p>
+<p><span class="cjk">白宫告诉我们，以色列已经同意了这些条款。随后当天晚些时候，以色列总理办公室发表了一份声明，说他们支持特朗普总统的决定。但这份声明的措辞很有意思，因为他们并没有说自己对此特别热情或非常支持。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">terribly</span><span class="term">enthused</span></div><ul><li>terribly /ˈter-ə-blē/<span class="cjk">：非常、特别。这里和否定搭配，</span><span class="no-break">didn’t</span> say they were terribly enthused about it <span class="cjk">意思是</span>“<span class="cjk">并没有表现得特别热情</span>”<span class="cjk">。</span></li><li>enthuse /in-ˈthüz/<span class="cjk">：使热心、使兴奋。</span>enthused <span class="cjk">是过去分词；这里指以色列并没有显得对协议非常积极或热情。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>I just want to step back for a second, David, because it feels kind of stunning that literally just a few hours ago, this threat to wipe out an entire country was on the table. The two sides <span class="no-break">weren’t</span> even talking to each other. We had no idea what this threat meant. It just sort of felt like any possible option was on the table until very, very recently. So how did we get to this point where we are now with both sides having reached a temporary ceasefire agreement?</p>
+<p>David<span class="cjk">，我想先退一步看，因为这真的有点令人震惊。就在几个小时前，抹掉整个国家这种威胁还摆在桌面上。双方甚至都没有直接对话。我们也不知道这个威胁到底意味着什么。直到非常非常近的时候，一切可能的选项似乎都还摆在桌面上。那么，我们究竟是怎么走到现在这个局面的？为什么双方现在会达成一项临时停火协议？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">stunning</span></div><ul><li>stunning /ˈstə-niŋ/<span class="cjk">：令人震惊的。这里指局势变化非常突然：几小时前还在威胁毁灭一个国家，现在却达成了临时停火。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p>Well, Rachel, <span class="no-break">you’ll</span> remember, as <span class="no-break">we’ve</span> discussed on earlier shows, the president was feeling more and more pressure as the effects of the closing of the Strait of Hormuz was spreading around the world. So at first, he lashed out and he said to the Iranians, you have 48 hours to get the strait back open. And the Iranians kind of ignored him.</p>
+<p>Rachel<span class="cjk">，你会记得，正如我们在之前节目中讨论过的那样，随着霍尔木兹海峡关闭的影响扩散到全球，总统感受到的压力越来越大。所以一开始，他发了火，对伊朗人说，你们有</span>48<span class="cjk">小时重新开放海峡。而伊朗人基本上没有理会他。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">lashed out</span><span class="term">lashed</span></div><ul><li>lash out<span class="cjk">：猛烈抨击、突然发火。这里指特朗普对伊朗大发脾气，发出强硬威胁。</span></li><li>lash /ˈlash/<span class="cjk">：猛烈抨击、斥责。</span>lashed <span class="cjk">是过去式；这里指特朗普以强硬语言攻击伊朗。</span></li></ul></aside>
+<p>And then starting on March 26, he said, OK, there are 10 days to get a negotiation going. So he set this 10-day clock, essentially to Tuesday evening at 8:00 PM. But as the weekend approached, the Iranians were ignoring him. There was very little communication underway. And the Iranians were mocking the president on social media for all of his changing deadlines.</p>
+<p><span class="cjk">然后从</span>3<span class="cjk">月</span>26<span class="cjk">日开始，他说，好吧，给你们</span>10<span class="cjk">天时间开始谈判。于是他设定了这个</span>10<span class="cjk">天倒计时，基本上就是到星期二晚上</span>8<span class="cjk">点。但随着周末临近，伊朗方面仍然无视他。双方几乎没有什么沟通在进行。而伊朗人还在社交媒体上嘲笑总统不断变化的最后期限。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">underway</span><span class="term">mocking</span></div><ul><li>underway /ˌən-dər-ˈwā/<span class="cjk">：正在进行中。这里</span> very little communication underway <span class="cjk">指双方几乎没有沟通在进行。</span></li><li>mock /ˈmäk/<span class="cjk">：嘲笑、讥讽。</span>mocking <span class="cjk">是现在分词；这里指伊朗人在社交媒体上嘲笑特朗普不断改变最后期限。</span></li></ul></aside>
+<p>Then this all got interrupted by a sudden crisis that distracted everyone from all of this. This was, of course, the shootdown of the F-15E fighter jet on Friday. The pilot and the weapons officer both ejected. And no one could find the weapons officer.</p>
+<p><span class="cjk">随后，这一切被一场突发危机打断，所有人的注意力都被转移了。那当然就是星期五</span> F-15E <span class="cjk">战斗机被击落的事件。飞行员和武器系统官都弹射逃生，但没有人能找到那名武器系统官。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">distracted</span></div><ul><li>distract /di-ˈstrakt/<span class="cjk">：转移注意力。</span>distracted <span class="cjk">是过去分词；这里指</span> F-15E <span class="cjk">被击落事件把所有人的注意力从谈判和威胁上转移开了。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Right. That was actually the subject of <span class="no-break">Tuesday’s</span> episode, this unbelievably daring, costly rescue operation of this weapons officer, which they pulled off on Saturday. And that, as our colleague Eric Schmitt told us, seems to have emboldened President Trump, as he sort of begins to pick up where he left off with these negotiations and threats with Iran.</p>
+<p><span class="cjk">对。那其实正是星期二那期节目的主题：这次极其大胆、代价高昂的营救行动，目标就是那名武器系统官，而他们在星期六成功完成了营救。正如我们的同事</span> Eric Schmitt <span class="cjk">告诉我们的那样，这似乎让特朗普总统更有底气了，于是他又从之前中断的地方接着推进对伊朗的谈判和威胁。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">daring</span><span class="term">costly</span><span class="term">emboldened</span><span class="term">pick up where he left off</span><span class="term">left off</span></div><ul><li>daring /ˈder-iŋ/<span class="cjk">：大胆的、冒险的。这里形容营救行动风险很高、非常大胆。</span></li><li>costly /ˈkȯst-lē/<span class="cjk">：代价高昂的。这里指营救行动耗费大、风险和成本都高。</span></li><li>embolden /im-ˈbōl-dən/<span class="cjk">：使更有胆量、使更有底气。</span>emboldened <span class="cjk">是过去分词；这里指成功营救让特朗普更敢继续施压。</span></li><li>pick up where he left off<span class="cjk">：从上次停下的地方继续做。这里指特朗普在营救事件后，又接着推进之前的谈判和威胁。</span></li><li>left off<span class="cjk">：停止、中断的位置。这里指之前因飞机被击落和营救行动而暂停的对伊朗施压进程。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p><span class="no-break">That’s</span> exactly right. And remember, before the shootdown of the plane, the president had hinted that if the Iranians <span class="no-break">don’t</span> relent, he was going to begin to go after power plants, he said. And he suggested other infrastructure. And the Iranians came back and basically said, if you wipe out our power plants, you can say goodbye to the power plants around the Gulf.</p>
+<p><span class="cjk">完全正确。还要记得，在飞机被击落之前，总统曾暗示，如果伊朗人不让步，他就会开始攻击发电厂</span>——<span class="cjk">这是他的说法。他还暗示可能攻击其他基础设施。而伊朗方面的回应基本上是，如果你们摧毁我们的发电厂，那你们也可以跟海湾地区的发电厂说再见了。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">relent</span><span class="term">go after</span></div><ul><li>relent /ri-ˈlent/<span class="cjk">：让步、缓和态度。这里指如果伊朗不让步、不改变立场。</span></li><li>go after<span class="cjk">：攻击、针对。这里</span> go after power plants <span class="cjk">指开始打击伊朗的发电厂。</span></li></ul></aside>
+<p>Of course, all of this was put aside during the hunt for the missing airmen. But by Sunday morning, Easter Sunday, the president was over the high of retrieving the colonel, and he was right back in his set of demands. And <span class="no-break">that’s</span> what turned out to be the first of two truly bizarre social media posts.</p>
+<p><span class="cjk">当然，在搜寻失踪飞行人员期间，这一切都被暂时搁置了。但到了星期天早上，也就是复活节星期天，总统已经从成功救回那名上校的兴奋中回过神来，又重新回到了他的那套要求上。也正是在这时，他发出了两条极其怪异的社交媒体帖文中的第一条。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">was put aside</span><span class="term">over the high of</span><span class="term">his set of demands</span><span class="term">bizarre</span></div><ul><li>was put aside<span class="cjk">：被暂时搁置。这里指攻击发电厂等威胁在搜寻失踪飞行人员期间先放到一边。</span></li><li>over the high of<span class="cjk">：从兴奋劲儿里恢复过来。这里指特朗普从成功救回上校的兴奋状态中回过神来。</span></li><li>his set of demands<span class="cjk">：他的那一套要求。这里指特朗普对伊朗提出的重新开放海峡等要求。</span></li><li>bizarre /bə-ˈzär/<span class="cjk">：怪异的、离奇的。这里形容特朗普的社交媒体帖文非常反常、令人难以置信。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>And what was that post?</p>
+<p><span class="cjk">那条帖文说了什么？</span></p>
+<div class="speaker">David Sanger</div>
+<p>Well, <span class="no-break">I’ll</span> read it to you, Rachel. “Tuesday will be Power Plant Day and Bridge Day, all wrapped up in one in Iran. Open the fucking strait, you crazy bastards, or <span class="no-break">you’ll</span> be living in hell. Just watch.” So <span class="no-break">we’ll</span> set aside for a moment the pretty undiplomatic language. It actually led people to believe that the president might be willing to go escalate and escalate significantly in a way that would get us even deeper into this war.</p>
+<p>Rachel<span class="cjk">，我来读给你听。</span>“<span class="cjk">星期二将是伊朗的发电厂日和桥梁日，两个一起打包送上。把该死的海峡打开，你们这些疯子混蛋，否则你们就等着活在地狱里吧。走着瞧。</span>”<span class="cjk">我们先把这种极不外交的语言放在一边。它确实让人们相信，总统可能愿意进一步升级，而且是大幅升级，以一种会让美国更深陷入这场战争的方式升级。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">wrapped up</span><span class="term">all wrapped up in one in Iran</span><span class="term">set aside</span><span class="term">escalate</span></div><ul><li>wrap /ˈrap/<span class="cjk">：包起来、合并在一起。</span>wrapped up <span class="cjk">是过去分词；这里</span> all wrapped up in one <span class="cjk">指</span>“<span class="cjk">合在一起、打包在一起</span>”<span class="cjk">。</span></li><li>all wrapped up in one in Iran<span class="cjk">：这里是威胁说</span>“<span class="cjk">发电厂日</span>”<span class="cjk">和</span>“<span class="cjk">桥梁日</span>”<span class="cjk">会在伊朗合并到同一天发生，也就是同时打击这两类目标。</span></li><li>set aside<span class="cjk">：暂且不谈、先放在一边。这里指先不讨论这段话极不外交的粗俗措辞。</span></li><li>escalate /ˈe-skə-ˌlāt/<span class="cjk">：升级。这里指特朗普可能把战争进一步升级，而且升级幅度很大。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>So basically, by Sunday, it sounds like two very important things have happened. One is that the White House is crowing from this huge victory of rescuing this airman in this daring operation. But countering that is the fact that the president is still not getting what he wants from Iran. And as you mentioned, the tension is ratcheting up. And this Tuesday night deadline is looming and they are barreling toward it.</p>
+<p><span class="cjk">所以基本上，到星期天时，听起来发生了两件非常重要的事。一方面，白宫因为这次大胆行动成功救回飞行人员而大肆庆祝这场重大胜利。但另一方面，总统仍然没有从伊朗那里得到他想要的东西。正如你提到的，紧张局势正在升级。星期二晚上的最后期限越来越近，双方正朝着它一路冲过去。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">crowing</span><span class="term">crowing from</span><span class="term">countering</span><span class="term">ratcheting</span><span class="term">looming</span><span class="term">barreling</span></div><ul><li>crow /ˈkrō/<span class="cjk">：得意地夸耀。</span>crowing <span class="cjk">是现在分词；这里指白宫因营救成功而高调庆祝。</span></li><li>crowing from<span class="cjk">：因为某件事而得意宣扬。这里</span> crowing from this huge victory <span class="cjk">指白宫借这场营救胜利大肆庆祝。</span></li><li>counter /ˈka<span class="u-dot">u</span>n-tər/<span class="cjk">：抵消、与</span>……<span class="cjk">形成对照。</span>countering <span class="cjk">是现在分词；这里指</span>“<span class="cjk">但与之相对的是</span>”<span class="cjk">，特朗普仍没有从伊朗那里得到想要的东西。</span></li><li>ratchet /ˈra-chət/<span class="cjk">：逐步升级。</span>ratcheting <span class="cjk">是现在分词；这里指紧张局势正在继续加码。</span></li><li>loom /ˈlüm/<span class="cjk">：逼近、迫近。</span>looming <span class="cjk">是现在分词；这里指星期二晚上的最后期限越来越近，带来压力。</span></li><li>barrel /ˈber-əl/<span class="cjk">：高速冲向。</span>barreling <span class="cjk">是现在分词；这里指局势正快速朝最后期限冲去，带有失控感。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p><span class="no-break">That’s</span> exactly right. And on Monday, the president dug the hole even deeper. First, he went out on the South Lawn during <span class="no-break">what’s</span> usually the very charming Easter Egg Roll, with children running around. And standing next to the Easter Bunny, he began to ratchet up the threats to Iran and talk about the depth to which he would destroy their infrastructure. And then he began to say, we will destroy <span class="no-break">Iran’s</span> bridges, their electric power plants and so forth, and we will do it in hours, on a scale no one has ever seen before.</p>
+<p><span class="cjk">完全正确。到了星期一，总统把自己挖的坑又加深了。首先，他来到白宫南草坪，当时那里通常正在举行非常温馨可爱的复活节滚彩蛋活动，孩子们在周围跑来跑去。而他站在复活节兔子旁边，开始升级对伊朗的威胁，谈到他会把伊朗的基础设施摧毁到什么程度。随后他说，我们将摧毁伊朗的桥梁、发电厂等等，而且会在几个小时内完成，规模将是前所未见的。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">Easter Egg Roll</span></div><ul><li>Easter Egg Roll<span class="cjk">：白宫复活节滚彩蛋活动。这里指特朗普在这个本应轻松、儿童参与的传统活动现场，发表了对伊朗的强硬威胁。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>It was more specific and, therefore, it seemed, again, like it was ratcheting up this rhetoric.</p>
+<p><span class="cjk">这一次说得更具体，所以它看起来又一次是在升级这种言辞。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">rhetoric</span></div><ul><li>rhetoric /ˈre-tə-rik/<span class="cjk">：言辞、话术。这里指特朗普关于摧毁伊朗基础设施的强硬公开表态。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p><span class="no-break">That’s</span> right. And here in the office, we were asking the same question that was being asked all over the country, which is, was he truly determined to go that much deeper into an unpopular war? Or was he simply using these threats as a tactic to try to see if he could get the Iranian system moving? And then Tuesday morning, just as people were pouring their coffee at a little after 8:00 in the morning, comes another social media message that actually rivaled the Sunday one. Let me read that one to you, too, Rachel.</p>
+<p><span class="cjk">没错。在办公室里，我们也在问全国各地都在问的同一个问题：他是真的下定决心，要把美国更深地拖入一场并不受欢迎的战争吗？还是说，他只是把这些威胁当作一种策略，看看能不能逼伊朗体制动起来？然后到了星期二早上，</span>8<span class="cjk">点刚过，人们正倒着咖啡的时候，又一条社交媒体帖文出现了，其震撼程度几乎不亚于星期天那条。</span>Rachel<span class="cjk">，我也读给你听。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">tactic</span><span class="term">rivaled</span></div><ul><li>tactic /ˈtak-tik/<span class="cjk">：策略、手段。这里指特朗普可能把威胁当作迫使伊朗行动的谈判手段。</span></li><li>rival /ˈrī-vəl/<span class="cjk">：可与</span>……<span class="cjk">相比、匹敌。</span>rivaled <span class="cjk">是过去式；这里指星期二早上的帖文震撼程度几乎可以和星期天那条相比。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Please.</p>
+<p><span class="cjk">请读。</span></p>
+<div class="speaker">David Sanger</div>
+<p>“A whole civilization will die tonight, never to be brought back again. I <span class="no-break">don’t</span> want that to happen, but it probably will. However, now that we have complete and total regime change, where different, smarter, less radicalized minds prevail, maybe something revolutionarily wonderful can happen. Who knows? <span class="no-break">We’ll</span> find out tonight.”</p>
+<p>“<span class="cjk">今晚，一个完整的文明将会死去，而且永远不会再回来。我不希望这种事发生，但它很可能会发生。不过，现在既然我们已经实现了彻底的、全面的政权更迭，让不同的、更聪明的、更少激进化的头脑占据主导，也许某种革命性美好的事情会发生。谁知道呢？今晚我们就会知道。</span>”</p>
+<aside class="vocab"><div class="terms"><span class="term">radicalized</span><span class="term">revolutionarily</span></div><ul><li>radicalize /ˈra-di-kə-ˌlīz/<span class="cjk">：使激进化。</span>radicalized <span class="cjk">是过去分词；这里</span> less radicalized minds <span class="cjk">指</span>“<span class="cjk">没有那么激进的头脑</span>/<span class="cjk">人群</span>”<span class="cjk">。</span></li><li>revolutionarily /ˌre-və-ˈlü-shə-ˌner-ə-lē/<span class="cjk">：以革命性的方式。这里</span> revolutionarily wonderful <span class="cjk">指一种</span>“<span class="cjk">革命性地美好</span>”<span class="cjk">的变化。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Even for a president that breaks norms all the time in terms of how he speaks to the public and the threats that he makes, the rhetoric that he makes, this social media post was far beyond anything we had ever heard Trump say before. This was a threat to wipe out 90 million people.</p>
+<p><span class="cjk">即便对一位经常打破规范的总统来说</span>——<span class="cjk">无论是在他对公众说话的方式上，还是在他发出的威胁和使用的言辞上</span>——<span class="cjk">这条社交媒体帖文也远远超出了我们此前听过的任何特朗普言论。这是在威胁抹掉</span>9000<span class="cjk">万人。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">breaks norms</span></div><ul><li>breaks norms<span class="cjk">：打破规范、突破惯例。这里指特朗普经常用不符合传统总统表达方式的语言对公众讲话或发出威胁。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p><span class="no-break">That’s</span> right, Rachel. Or certainly <span class="no-break">that’s</span> how I think we read it and most everyone read it. And it suggested many different things. And the first is the president <span class="no-break">wasn’t</span> simply discussing defeating the Iranian government or going after nuclear sites here, he was talking about committing what would essentially be a huge war crime. And there was response all over the place.</p>
+<p><span class="cjk">没错，</span>Rachel<span class="cjk">。至少我是这样理解的，而且几乎所有人也是这样理解的。这条帖文暗示了很多事情。首先，总统在这里并不只是在讨论击败伊朗政府，或者攻击核设施，他说的是一种本质上可能构成大规模战争罪的行为。各方随即都作出了反应。</span></p>
+<p>I think that Trump has lost his mind. He is unfit to serve as our president. <span class="no-break">He’s</span> not capable of being the president.</p>
+<p><span class="cjk">我认为特朗普已经疯了。他不适合担任我们的总统。他没有能力当总统。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">is unfit to</span></div><ul><li>unfit /ˌən-ˈfit/<span class="cjk">：不适合的、不胜任的。</span>is unfit to serve as our president <span class="cjk">指</span>“<span class="cjk">没有资格</span>/<span class="cjk">不适合担任我们的总统</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p>Democrats, of course, were calling for invoking the 25th Amendment, in which the cabinet meets and determines that the president is unable to carry out his duties and temporarily puts the vice president in place.</p>
+<p><span class="cjk">当然，民主党人开始呼吁启动第二十五修正案。根据这一机制，内阁可以召开会议并认定总统无法履行职责，从而暂时由副总统接替。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">carry out</span></div><ul><li>carry out<span class="cjk">：履行、执行。这里</span> carry out his duties <span class="cjk">指总统履行自己的职责。</span></li></ul></aside>
+<p>His cabinet has a responsibility. And we need to be invoking the 25th Amendment. He should be removed using the 25th Amendment immediately.</p>
+<p><span class="cjk">他的内阁负有责任。我们需要启动第二十五修正案。应该立即通过第二十五修正案将他免职。</span></p>
+<div class="speaker">David Sanger</div>
+<p>But it <span class="no-break">wasn’t</span> just Democrats. How do we 25th Amendment is asked.</p>
+<p><span class="cjk">但发声的不只是民主党人。有人开始问，我们怎样启动第二十五修正案？</span></p>
+<div class="speaker">David Sanger</div>
+<p>Even within the MAGA movement, there were great critics of this, Alex Jones.</p>
+<p><span class="cjk">即便在</span> MAGA <span class="cjk">运动内部，也有人对此提出强烈批评，比如</span> Alex Jones<span class="cjk">。</span></p>
+<p>The problem is to get the 25th Amendment is harder than impeachment. You have to get 2/3 of the House and 2/3 of the Senate. So what do we do?</p>
+<p><span class="cjk">问题是，要启动第二十五修正案比弹劾还难。你必须拿到众议院三分之二和参议院三分之二的支持。那我们该怎么办？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">impeachment</span></div><ul><li>impeachment /im-ˈpēch-mənt/<span class="cjk">：弹劾。这里是在比较启动第二十五修正案和弹劾总统的政治难度。</span></li></ul></aside>
+<p>Tackle Trump and let him pretend <span class="no-break">he’s</span> president and publicly report that <span class="no-break">he’s</span> going through a health issue and Vance take over. It literally needs to be something like that. <span class="no-break">It’s</span> that bad.</p>
+<p><span class="cjk">把特朗普控制住，让他假装自己还是总统，同时公开报告说他正在经历健康问题，然后由</span> Vance <span class="cjk">接手。真的得是类似这样的办法。情况已经糟到这种程度了。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">Tackle</span></div><ul><li>tackle /ˈta-kəl/<span class="cjk">：拦住、扑倒、控制住。这里是非常口语化、夸张的说法，意思是</span>“<span class="cjk">把特朗普控制住</span>/<span class="cjk">拦下来</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p>Marjorie Taylor Greene and Candace Owens, who were talking about the 25th Amendment.</p>
+<p>Marjorie Taylor Greene <span class="cjk">和</span> Candace Owens <span class="cjk">也在谈论第二十五修正案。</span></p>
+<p>Candace Owens says the 25th Amendment needs to be invoked. He is a genocidal lunatic.</p>
+<p>Candace Owens <span class="cjk">说，必须启动第二十五修正案。他是一个有种族灭绝倾向的疯子。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">genocidal</span><span class="term">lunatic</span></div><ul><li>genocidal /ˌje-nə-ˈsī-dᵊl/<span class="cjk">：有种族灭绝倾向的、涉及种族灭绝的。这里是</span> Candace Owens <span class="cjk">对特朗普威胁言论的强烈批评。</span></li><li>lunatic /ˈlü-nə-ˌtik/<span class="cjk">：疯子、极端疯狂的人。这里也是政治批评中的强烈辱骂性说法。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p>Tucker Carlson called Mr. <span class="no-break">Trump’s</span> post vile — It is vile on every level.</p>
+<p>Tucker Carlson <span class="cjk">称特朗普先生的帖文</span>“<span class="cjk">卑劣</span>”——“<span class="cjk">它在各个层面上都是卑劣的。</span>”</p>
+<aside class="vocab"><div class="terms"><span class="term">vile</span><span class="term">on every level</span></div><ul><li>vile /ˈvī(-ə)l/<span class="cjk">：卑劣的、恶劣的。这里</span> Tucker Carlson <span class="cjk">用它批评特朗普帖文的道德性质。</span></li><li>on every level<span class="cjk">：在各个层面上。这里强调这条帖文无论从道德、政治还是战略层面看都很糟糕。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p>and suggested that, Those people who are in direct contact with the president need to say no, <span class="no-break">I’ll</span> resign.</p>
+<p><span class="cjk">并且暗示，那些与总统直接接触的人需要说，不，我会辞职。</span></p>
+<div class="speaker">David Sanger</div>
+<p>maybe people <span class="no-break">shouldn’t</span> be following these kinds of orders.</p>
+<p><span class="cjk">也许人们不应该执行这类命令。</span></p>
+<p><span class="no-break">I’ll</span> do whatever I can do legally to stop this, because this is insane. And if given the order, <span class="no-break">I’m</span> not carrying it out.</p>
+<p><span class="cjk">我会尽一切合法手段来阻止这件事，因为这太疯狂了。如果我接到这样的命令，我不会执行。</span></p>
+<div class="speaker">David Sanger</div>
+<p>And then there are some, like Senator Ron Johnson of Wisconsin, <span class="no-break">who’s</span> usually a little more reticent about criticizing the president, who said, this simply is not how Americans speak and how presidents ought to speak.</p>
+<p><span class="cjk">还有一些人，比如威斯康星州参议员</span> Ron Johnson<span class="cjk">，他通常不太愿意批评总统，但这次他说，这根本不是美国人应有的说话方式，也不是总统应有的说话方式。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">reticent</span></div><ul><li>reticent /ˈre-tə-sənt/<span class="cjk">：寡言的、不太愿意表态的。这里指</span> Ron Johnson <span class="cjk">通常不太愿意公开批评特朗普。</span></li></ul></aside>
+<p>I do not want to see us start blowing up civilian infrastructure. I do not want to see that. We are not at war with the Iranian people. We are trying to liberate them.</p>
+<p><span class="cjk">我不想看到我们开始炸毁民用基础设施。我不想看到那种事。我们不是在和伊朗人民开战。我们是在试图解放他们。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">blowing up</span></div><ul><li>blow up /ˈblō/<span class="cjk">：炸毁。</span>blowing up <span class="cjk">是现在分词；这里指炸毁伊朗的民用基础设施。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>So by the end of the day, David, what have you and our colleagues learned about how real this threat is? Is there evidence that the military has mobilized in any way to launch any kind of massive attack?</p>
+<p><span class="cjk">那么到当天结束时，</span>David<span class="cjk">，你和我们的同事了解到，这个威胁到底有多真实？有没有证据显示军方已经以某种方式动员起来，准备发动某种大规模攻击？</span></p>
+<div class="speaker">David Sanger</div>
+<p>Well, we saw lots of mobilization of aircraft moving from the United States to Europe and Europe on to the Middle East. But <span class="no-break">we’ve</span> been seeing that for the past five weeks. So it was hard to tell whether this was more of the same or a true escalation. But certainly, there were so many American forces in the Middle East that if the president wanted to make good on this threat, he could. And, of course, the clock was ticking all day on Tuesday.</p>
+<p><span class="cjk">我们看到大量飞机调动，从美国飞往欧洲，再从欧洲前往中东。但过去五周我们一直都在看到这种情况。所以很难判断这只是更多同样的部署，还是一次真正的升级。但可以肯定的是，中东地区已经有如此多的美军力量，如果总统想兑现这个威胁，他是有能力做到的。当然，整个星期二，倒计时一直在继续。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">make good on</span><span class="term">clock was ticking</span></div><ul><li>make good on<span class="cjk">：兑现、履行。这里</span> make good on this threat <span class="cjk">指特朗普如果真要兑现这种军事威胁，他有能力做到。</span></li><li>clock was ticking<span class="cjk">：时间在一分一秒过去；最后期限正在逼近。这里指星期二一整天都笼罩在倒计时压力下。</span></li></ul></aside>
+<p>But we were still hearing the echoes of some kind of negotiation taking place indirectly through the Pakistani foreign minister and the Pakistani prime minister. And then at a little after 6 <span class="no-break">o’clock</span>, the president announced that he was once again calling a timeout here. Suddenly, there was a ceasefire, a new two-week-long deadline, and everyone from market investors to the military, to many around the Gulf just breathed this huge sigh of relief.</p>
+<p><span class="cjk">但我们仍然听到某种谈判的回声，那是通过巴基斯坦外长和巴基斯坦总理间接进行的。然后在</span>6<span class="cjk">点刚过时，总统宣布，他再次在这里叫停。突然之间，停火出现了，一个新的两周期限也出现了。从市场投资者到军方，再到海湾周边的许多人，所有人都长长地松了一口气。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">timeout</span><span class="term">breathed this huge sigh of relief</span></div><ul><li>timeout /ˈtīm-ˌa<span class="u-dot">u</span>t/<span class="cjk">：暂停、叫停。这里指特朗普突然让局势暂停下来，不再继续逼近军事升级。</span></li><li>breathed this huge sigh of relief<span class="cjk">：大大松了一口气。这里指市场、军方和海湾地区的人都因停火宣布而感到强烈缓解。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p><span class="no-break">We’ll</span> be right back. So David, as you described, this moment of ceasefire seems to be this huge relief. But how real does this deal actually feel? And what does it actually mean?</p>
+<p><span class="cjk">我们稍后回来。</span>David<span class="cjk">，正如你描述的那样，这个停火时刻似乎带来了巨大的缓解。但这项协议到底有多真实？它实际上意味着什么？</span></p>
+<div class="speaker">David Sanger</div>
+<p>Well, it could mean the end of this war or it could mean just a brief pause. Ceasefires are fragile by nature. <span class="no-break">We’re</span> going to have to see if anybody violates it. And even if they have the discipline to keep it in place, we have to determine if the traffic <span class="no-break">that’s</span> going through the Strait of Hormuz is getting back to what it was before February 28, when the fighting broke out. And, of course, <span class="no-break">we’re</span> going to be in a situation now where the Iranian military actually still controls <span class="no-break">who’s</span> going through the strait. That <span class="no-break">wasn’t</span> the case back in February.</p>
+<p><span class="cjk">它可能意味着这场战争的结束，也可能只是一段短暂的暂停。停火本质上就是脆弱的。我们必须观察是否有人违反停火。即便双方有纪律维持停火，我们也必须判断通过霍尔木兹海峡的船舶流量是否能恢复到</span>2<span class="cjk">月</span>28<span class="cjk">日战斗爆发前的水平。当然，我们现在所处的局面是，伊朗军方实际上仍然控制着谁可以通过海峡。而在</span>2<span class="cjk">月份时，情况并不是这样。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">by nature</span><span class="term">fragile</span><span class="term">broke out</span><span class="term">fighting broke out</span><span class="term">That <span class="no-break">wasn’t</span> the case back in February</span></div><ul><li>by nature<span class="cjk">：本质上、天生就。这里</span> Ceasefires are fragile by nature <span class="cjk">指停火本来就容易破裂。</span></li><li>fragile /ˈfra-jəl/<span class="cjk">：脆弱的。这里形容停火协议很容易被违反或崩溃。</span></li><li>break out /ˈbrāk/<span class="cjk">：爆发。</span>broke out <span class="cjk">是过去式；这里指战斗开始。</span></li><li>fighting broke out<span class="cjk">：战斗爆发。这里指</span> 2 <span class="cjk">月</span> 28 <span class="cjk">日冲突正式爆发。</span></li><li>That <span class="no-break">wasn’t</span> the case back in February<span class="cjk">：</span>2 <span class="cjk">月份时情况并不是这样。这里指当时伊朗军方还没有像现在这样控制谁能通过海峡。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Right.</p>
+<p><span class="cjk">对。</span></p>
+<div class="speaker">David Sanger</div>
+<p>For the president, he said, basically, <span class="no-break">it’s</span> got to go back to the way it was. But the fact of the matter is, the Iranians have now discovered this is their greatest leverage. And <span class="no-break">it’s</span> not a power they are likely to give up anytime soon.</p>
+<p><span class="cjk">对总统来说，他的意思基本上是，一切必须恢复到原来的样子。但事实是，伊朗人现在已经发现，这是他们最大的杠杆。而这种权力，他们不太可能很快放弃。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">the way it was</span><span class="term">leverage</span><span class="term">anytime soon</span></div><ul><li>the way it was<span class="cjk">：原来的样子。这里指霍尔木兹海峡通行恢复到战前状态。</span></li><li>leverage /ˈle-və-rij/<span class="cjk">：筹码、影响力。这里指伊朗发现控制海峡是自己最大的谈判筹码。</span></li><li>anytime soon<span class="cjk">：短期内、很快。这里</span> not likely to give up anytime soon <span class="cjk">指伊朗不太可能很快放弃这种控制权。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>So was that the biggest test of the ceasefire, whether we see all these ships going through the strait?</p>
+<p><span class="cjk">所以，这是不是停火面临的最大考验，也就是我们是否能看到所有这些船只重新通过海峡？</span></p>
+<div class="speaker">David Sanger</div>
+<p><span class="no-break">That’s</span> the immediate test of the ceasefire. But remember, the ceasefire is only the means to an end. And its purpose is to allow the time and space to go negotiate on the bigger issues. It took two and a half years, Rachel, to negotiate the 2015 agreement between the Obama administration and the Iranians. And that was in peace time. You can imagine how difficult it will be now at a moment when the Iranians feel like this war left them empowered.</p>
+<p><span class="cjk">这是停火面临的即时考验。但要记住，停火只是实现目标的手段。它的目的是为谈判更大的问题争取时间和空间。</span>Rachel<span class="cjk">，当年奥巴马政府与伊朗谈判</span>2015<span class="cjk">年协议，用了两年半时间。而那还是在和平时期。你可以想象，在伊朗人认为这场战争让他们更有底气的时刻，现在谈判会有多么困难。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">empowered</span></div><ul><li>empower /im-ˈpa<span class="u-dot">u</span>(-ə)r/<span class="cjk">：使更有力量、使更有底气。</span>empowered <span class="cjk">是过去分词；这里指伊朗人认为这场战争反而让他们更有谈判底气。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>To that point, at the outset of the war, the US said that one of its big reasons for going to war was, in fact, among other reasons, keep Iran from making a nuclear weapon. That feels very absent from these discussions. Why is that?</p>
+<p><span class="cjk">说到这一点，在战争开始时，美国曾表示，除了其他原因外，参战的一个重要理由其实是阻止伊朗制造核武器。但在这些讨论中，这一点似乎非常缺席。为什么会这样？</span></p>
+<div class="speaker">David Sanger</div>
+<p>Well, the nuclear weapons issue is, presumably, the first issue <span class="no-break">they’re</span> going to have to take up in these negotiations over the next two weeks. And <span class="no-break">it’s</span> going to be hard. And the reason <span class="no-break">it’s</span> going to be hard is, first of all, the president himself has been all over the map here. Before the war broke out, he said the United States cannot tolerate Iran having any nuclear material, any of its stockpile left in the country. It all had to go. Then about a week and a half ago, he said, I <span class="no-break">don’t</span> really care. <span class="no-break">It’s</span> buried so deep, we can watch it by satellite. And now <span class="no-break">it’s</span> likely <span class="no-break">he’s</span> back to the negotiating position they were taking before the war, which is, Iran cannot be left with any nuclear material. And if the president left a significant amount of near bomb-grade uranium in Iran, he would be getting less out of the Iranians than Barack Obama got out of them in 2015. And frankly, <span class="no-break">it’s</span> hard to imagine that the president wants to read that he went to war with Iran and <span class="no-break">didn’t</span> get the material that was the reason for this conflict at the start.</p>
+<p><span class="cjk">核武器问题大概会是他们在未来两周谈判中必须首先处理的问题。而这会很难。之所以难，首先是因为总统本人在这个问题上的立场一直摇摆不定。战争爆发前，他说美国不能容忍伊朗境内保留任何核材料、任何库存，所有这些都必须移出。然后大约一周半前，他又说，我其实不在乎。它埋得那么深，我们可以通过卫星监控。现在，他很可能又回到了战前他们原本采取的谈判立场，也就是伊朗境内不能留下任何核材料。如果总统允许伊朗境内保留大量接近武器级的铀，那他从伊朗人那里得到的东西将少于</span> Barack Obama <span class="cjk">在</span>2015<span class="cjk">年得到的成果。坦率地说，很难想象总统愿意看到这样的评价：他和伊朗开了一场战，却没有拿到最初导致这场冲突的那批材料。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">presumably</span><span class="term">been all over the map here</span><span class="term">stockpile</span><span class="term">bomb-grade</span><span class="term">uranium</span><span class="term">out of the Iranians</span><span class="term">wants to read</span></div><ul><li>presumably /pri-ˈzü-mə-blē/<span class="cjk">：大概、据推测。这里指核武器问题很可能会成为接下来谈判首先处理的问题。</span></li><li>been all over the map here<span class="cjk">：立场摇摆不定、说法前后不一致。这里指特朗普在伊朗核材料问题上的态度不断变化。</span></li><li>stockpile /ˈstäk-ˌpī(-ə)l/<span class="cjk">：库存、储备。这里指伊朗境内的核材料储备。</span></li><li>bomb-grade /ˈbäm-ˌgrād/<span class="cjk">：达到制造炸弹级别的。这里</span> near bomb-grade uranium <span class="cjk">指接近武器级、可用于制造核弹的铀。</span></li><li>uranium /y<span class="u-dot">u</span>-ˈrā-nē-əm/<span class="cjk">：铀。这里指伊朗核项目中的关键核材料。</span></li><li>out of the Iranians<span class="cjk">：从伊朗人那里获得。这里</span> getting less out of the Iranians <span class="cjk">指美国从伊朗那里争取到的让步更少。</span></li><li>wants to read<span class="cjk">：愿意看到别人这样评价</span>/<span class="cjk">报道。这里指特朗普不希望看到媒体写他开战却没拿到最初开战理由所针对的核材料。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>Well, that makes me wonder about the effectiveness of these talks overall and how we should be thinking about them. The threat to annihilate a whole country, is that something that brought them to the table for a meaningful negotiations to end the war and get demands that the United States actually wanted? Or is this ceasefire just a temporary de-escalation that serves to save face more than anything else?</p>
+<p><span class="cjk">这让我想知道，这些谈判整体上到底有多有效，我们又应该如何看待它们。威胁毁灭整个国家，这是否真的把伊朗人带到了谈判桌前，促成了有意义的谈判，从而结束战争并让美国获得自己真正想要的东西？还是说，这次停火只是一种临时降温，更多是为了保全面子？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">annihilate</span><span class="term">save face</span></div><ul><li>annihilate /ə-ˈnī-ə-ˌlāt/<span class="cjk">：彻底毁灭。这里指威胁毁灭整个国家。</span></li><li>save face<span class="cjk">：保全面子。这里指停火也许不是实质性解决问题，而是让各方体面地降温。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p>It gains nothing we <span class="no-break">didn’t</span> have before the war began. But I think you have to give credit to the president, because this ratcheting up of pressure certainly played some role in forcing an agreement. <span class="no-break">It’s</span> not clear whether or not it actually terrified the Iranians, because their decision-making process is so spread out among the military and the clerics and so forth. <span class="no-break">It’s</span> not clear who was making these decisions. But it certainly scared the region. And I think it scared the Chinese, who were highly dependent on oil moving through the strait. So there were pressure points that the president was able to take advantage of.</p>
+<p><span class="cjk">它并没有让我们获得战争开始前没有的东西。但我认为你必须承认，总统不断升级施压，确实在迫成协议方面发挥了一定作用。现在还不清楚这是否真的吓到了伊朗人，因为他们的决策过程分散在军方、神职人员等不同群体之间。我们并不清楚到底是谁在做这些决定。但它确实吓到了整个地区。我认为它也吓到了中国，因为中国高度依赖通过这条海峡运输的石油。所以，总统确实利用了一些压力点。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">give credit to</span><span class="term">ratcheting</span><span class="term">ratcheting up</span><span class="term">clerics</span><span class="term">and so forth</span></div><ul><li>give credit to<span class="cjk">：承认</span>……<span class="cjk">有功劳</span>/<span class="cjk">起作用。这里指应承认特朗普升级压力在促成协议中发挥了一定作用。</span></li><li>ratchet /ˈra-chət/<span class="cjk">：逐步升级。</span>ratcheting <span class="cjk">是现在分词；这里指压力不断加码。</span></li><li>ratcheting up<span class="cjk">：逐步加大、不断升级。这里指特朗普持续加强对伊朗的施压力度。</span></li><li>cleric /ˈkler-ik/<span class="cjk">：神职人员。</span>clerics <span class="cjk">是复数；这里指伊朗决策体系中的宗教人士。</span></li><li>and so forth<span class="cjk">：等等、诸如此类。这里表示伊朗决策力量还包括军方、神职人员等其他群体。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>David, on the off chance that this temporary ceasefire leads to a permanent ceasefire, what will the White House, what will the United States have actually gained from all of this?</p>
+<p>David<span class="cjk">，假设这次临时停火真的发展成永久停火，那么白宫、美国到底从这一切中实际得到了什么？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">on the off chance</span></div><ul><li>on the off chance<span class="cjk">：抱着很小的可能性；万一。这里指</span>“<span class="cjk">假设这次临时停火真的有小概率发展成永久停火</span>”<span class="cjk">。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p>Look, I think the United States and the Israelis have accomplished a lot. They took out, in the opening hours of the war, the supreme leader. They devastated levels of the military and intelligence and nuclear establishment. They set back the missile program and the missile production program. But if this ceasefire essentially becomes permanent, with no change in Iran beyond the restoration of traffic in the Strait of Hormuz, then the White House will have accomplished virtually none of its major goals. The country is still run by a military and theocratic group of elites who have terrorized their own population. They still have their nuclear material and could, in theory, try to go rebuild and race for a bomb. They still have missile supplies and drones. Not on the scale that they did before the attacks, but <span class="no-break">we’ve</span> learned that they could rebuild fairly quickly. And most importantly, I think, they still have a sense that they were able to stand up to the United States and Israel and resist against a much larger invading force.</p>
+<p><span class="cjk">你看，我认为美国和以色列确实取得了不少成果。在战争最初几个小时里，他们除掉了最高领袖。他们重创了伊朗军事、情报和核体系的多个层级。他们也让伊朗的导弹项目和导弹生产项目倒退了。但如果这次停火实际上变成永久停火，而伊朗除了恢复霍尔木兹海峡通行之外没有发生其他变化，那么白宫几乎没有实现任何主要目标。这个国家仍然由一群军事和神权精英统治，他们一直恐吓自己的人民。伊朗仍然拥有核材料，理论上仍可能尝试重建并冲刺制造核弹。他们仍有导弹和无人机库存。规模已经不如袭击前那样大，但我们已经知道，他们重建速度可能相当快。最重要的是，我认为，他们仍然会有一种感觉：他们能够顶住美国和以色列，抵抗一支强大得多的入侵力量。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">took out</span><span class="term">devastated</span><span class="term">set back</span><span class="term">restoration</span><span class="term">virtually</span><span class="term">theocratic</span><span class="term">elites</span><span class="term">race for</span><span class="term">stand up to</span></div><ul><li>take out /ˈtāk/<span class="cjk">：除掉、摧毁。</span>took out <span class="cjk">是过去式；这里指美国和以色列在战争初期除掉了伊朗最高领袖。</span></li><li>devastate /ˈde-və-ˌstāt/<span class="cjk">：重创、严重破坏。</span>devastated <span class="cjk">是过去式；这里指他们严重打击了伊朗军方、情报和核体系。</span></li><li>set back<span class="cjk">：使倒退、拖慢进程。这里指打击让伊朗导弹项目和生产项目倒退。</span></li><li>restoration /ˌre-stə-ˈrā-shən/<span class="cjk">：恢复。这里指恢复霍尔木兹海峡的船只通行。</span></li><li>virtually /ˈvər-chə-wə-lē/<span class="cjk">：几乎、实际上。这里</span> virtually none <span class="cjk">指</span>“<span class="cjk">几乎没有任何</span>”<span class="cjk">主要目标被实现。</span></li><li>theocratic /ˌthē-ə-ˈkra-tik/<span class="cjk">：神权政治的。这里指伊朗仍由军事与神权精英集团统治。</span></li><li>elite /ā-ˈlēt/<span class="cjk">：精英。</span>elites <span class="cjk">是复数；这里指掌握国家权力的统治精英。</span></li><li>race for<span class="cjk">：全力冲刺争取。这里</span> race for a bomb <span class="cjk">指快速推进、抢时间制造核弹。</span></li><li>stand up to<span class="cjk">：顶住、抵抗。这里指伊朗认为自己顶住了美国和以色列的军事压力。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>David, <span class="no-break">we’ve</span> talked on the show, quite a bit, about how you <span class="no-break">can’t</span> put everything back together that has been broken by this war. Meaning, that the economic impacts, the political impacts are not going to just go back to the status quo, even if the war ends tonight or in two weeks. So much infrastructure has been destroyed, so much has been done to make these impacts ripple for, potentially, years to come. And so I wonder what consequences, specifically, you think as of this moment, feel like they are enduring?</p>
+<p>David<span class="cjk">，我们在节目里已经多次谈到，这场战争打碎的一切，不可能都重新拼回原样。也就是说，即便战争今晚结束，或者两周后结束，经济影响、政治影响也不会就此回到原状。如此多的基础设施被摧毁，如此多的事情已经发生，使得这些影响可能在未来多年持续扩散。所以我想知道，具体来说，在你看来，此时此刻有哪些后果似乎会长期存在？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">status quo</span><span class="term">quo</span><span class="term">make these impacts ripple</span></div><ul><li>status quo /ˈstā-təs-ˈkwō/<span class="cjk">：现状、原状。这里指战争前的政治经济状态。</span></li><li>quo /ˈkwō/<span class="cjk">：在</span> status quo <span class="cjk">这个固定表达中表示</span>“<span class="cjk">状态</span>”<span class="cjk">。这里单独收集时不需要拆开理解，整体就是</span>“<span class="cjk">现状</span>”<span class="cjk">。</span></li><li>make these impacts ripple<span class="cjk">：让这些影响持续扩散。这里指战争造成的经济、政治后果可能像涟漪一样延续多年。</span></li></ul></aside>
+<div class="speaker">David Sanger</div>
+<p>Well, a few things. First of all, the Iranians have discovered that they have a greater power than they knew over commerce around the world. Second, the Gulf states feel more vulnerable. <span class="no-break">They’ve</span> built these big, beautiful cities full of skyscrapers. And <span class="no-break">they’ve</span> entered the 21st century, and what do they discover? That the Iranians can put missiles through their windows and through their desalination plants. The world economy feels more fragile, because <span class="no-break">we’ve</span> discovered yet another supply chain vulnerability. And <span class="no-break">we’ve</span> discovered that while the United States thought, one more time, that it had gotten out of the Middle East, an explicit goal in the <span class="no-break">president’s</span> national security strategy that came out last fall, in fact, <span class="no-break">it’s</span> been sucked back in on a scale few could have imagined even a few months ago. And I think <span class="no-break">there’s</span> a last thing <span class="no-break">we’ve</span> learned.</p>
+<p><span class="cjk">有几件事。首先，伊朗人发现，自己对全球贸易拥有比他们以为的更大影响力。其次，海湾国家感到更加脆弱。他们建起了这些宏大、美丽、充满摩天大楼的城市。他们进入了</span>21<span class="cjk">世纪，然后他们发现了什么？他们发现伊朗人可以把导弹打进他们的窗户，打进他们的海水淡化厂。世界经济也显得更加脆弱，因为我们又发现了一个供应链脆弱点。我们还发现，美国曾经以为自己又一次摆脱了中东</span>——<span class="cjk">这正是去年秋天总统国家安全战略中明确提出的目标</span>——<span class="cjk">但事实上，美国又被卷了回去，而且卷入的规模，是几个月前几乎没人能想象的。我认为，我们还学到了最后一件事。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">vulnerable</span><span class="term">skyscrapers</span><span class="term">desalination</span><span class="term">vulnerability</span><span class="term">explicit</span><span class="term">came out</span><span class="term">been sucked back</span></div><ul><li>vulnerable /ˈvəl-n(ə-)rə-bəl/<span class="cjk">：脆弱的、容易受攻击的。这里指海湾国家感觉自己更容易遭到伊朗导弹攻击。</span></li><li>skyscraper /ˈskī-ˌskrā-pər/<span class="cjk">：摩天大楼。</span>skyscrapers <span class="cjk">是复数；这里指海湾国家建造的现代化高楼城市。</span></li><li>desalination /dē-ˌsa-lə-ˈnā-shən/<span class="cjk">：海水淡化。这里</span> desalination plants <span class="cjk">指海湾国家依赖的海水淡化设施。</span></li><li>vulnerability /ˌvəl-n(ə-)rə-ˈbi-lə-tē/<span class="cjk">：脆弱点、易受攻击之处。这里指全球供应链中新暴露出的弱点。</span></li><li>explicit /ik-ˈspli-sət/<span class="cjk">：明确的。这里指美国国家安全战略中明确提出了摆脱中东的目标。</span></li><li>come out /ˈkəm/<span class="cjk">：发布、出来。</span>came out <span class="cjk">是过去式；这里指国家安全战略在去年秋天发布。</span></li><li>be sucked back<span class="cjk">：被重新卷入。</span>been sucked back <span class="cjk">是现在完成时的被动形式；这里指美国又被卷回中东局势中。</span></li></ul></aside>
+<p>The world never really approved of the amount of power the United States has had, but <span class="no-break">it’s</span> usually signed up to the thought that the US was fundamentally a benevolent superpower in the past. And yet, I think we lost a lot of that reputation in this attack on Iran. That there was a sense that the president was never committed to the February diplomacy, that there was a sense that he thought he could topple a weak regime, that he could go out and threaten the lives of 92 million people, and that the threat came from a president who oversees the <span class="no-break">world’s</span> most powerful military. And so eventually, gas prices will come down. And eventually, oil will flow more naturally. And over time, the damage of the war will be rebuilt the way it was in Japan and Germany and Vietnam. But whether the world ever views the United States quite the way it did before this happened, <span class="no-break">I’m</span> not sure <span class="no-break">that’s</span> going to be back for a long time.</p>
+<p><span class="cjk">世界从未真正认可美国所拥有的巨大权力，但过去通常还是接受这样一种看法：美国本质上是一个相对善意的超级大国。然而，我认为，在这次对伊朗的袭击中，我们失去了很多这样的声誉。外界有一种感觉，认为总统从来没有真正致力于</span>2<span class="cjk">月份的外交；也有一种感觉，认为他以为自己可以推翻一个脆弱的政权；他可以走出来威胁</span>9200<span class="cjk">万人的生命，而且这种威胁来自一位掌管世界最强大军队的总统。所以，最终汽油价格会下降。最终，石油会更自然地流动。随着时间推移，战争造成的破坏也会像日本、德国和越南那样被重建起来。但世界是否还会像这件事发生之前那样看待美国，我不确定那会在很长时间内恢复。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">approved of</span><span class="term">signed up</span><span class="term">to the thought</span><span class="term">benevolent</span><span class="term">topple</span></div><ul><li>approve /ə-ˈprüv/<span class="cjk">：赞同、认可。</span>approved of <span class="cjk">是过去式；这里指世界并不真正认可美国拥有如此巨大的权力。</span></li><li>sign up /ˈsīn/<span class="cjk">：认同、接受。</span>signed up <span class="cjk">是过去式；这里</span> signed up to the thought <span class="cjk">指很多国家过去基本接受这种看法。</span></li><li>to the thought<span class="cjk">：对这种想法。这里和</span> signed up <span class="cjk">连在一起，表示</span>“<span class="cjk">接受这样一种观点</span>”<span class="cjk">。</span></li><li>benevolent /bə-ˈne-və-lənt/<span class="cjk">：善意的、仁慈的。这里指美国过去被认为是一个总体上善意的超级大国。</span></li><li>topple /ˈtä-pəl/<span class="cjk">：推翻。这里指特朗普以为自己可以推翻一个虚弱的政权。</span></li></ul></aside>
+<div class="speaker">Rachel Abrams</div>
+<p>David Sanger, thank you so much.</p>
+<p>David Sanger<span class="cjk">，非常感谢你。</span></p>
+<div class="speaker">David Sanger</div>
+<p>Thank you, Rachel.</p>
+<p><span class="cjk">谢谢你，</span>Rachel<span class="cjk">。</span></p>
+<div class="speaker">Rachel Abrams</div>
+<p><span class="no-break">We’ll</span> be right back. <span class="no-break">Here’s</span> what else you need to today. Shelly Kittleson, an American journalist who was abducted in Baghdad by an Iraqi militia aligned with Iran, was freed on Tuesday after a week in captivity. Kittleson has reported on the Middle East for more than a decade for various news outlets. And she was set free in exchange for the release of several imprisoned members of the militia. The kidnapping comes amid growing anxieties about Iranian-backed militias attacking American targets, since the United States and Israel-led war with Iran began. <span class="no-break">Today’s</span> episode was produced by Michael Simon Johnson, Olivia Natt and Mooj Zadie. It was edited by MJ Davis Lin with help from Paige Cowett. It contains music by Marion Lozano, Elisheba Ittoop and Dan Powell. Our theme music is by Wonderly. This episode was engineered by Alyssa Moxley. Special thanks to Efim Shapiro. <span class="no-break">That’s</span> it for “The Daily.” <span class="no-break">I’m</span> Rachel Abrams. See you tomorrow.</p>
+<p><span class="cjk">我们稍后回来。下面是今天你还需要了解的其他新闻。美国记者</span> Shelly Kittleson <span class="cjk">在巴格达被一个与伊朗结盟的伊拉克民兵组织绑架，被囚禁一周后，于星期二获释。十多年来，</span>Kittleson <span class="cjk">一直为多家新闻机构报道中东事务。她获释的交换条件是释放该民兵组织数名被监禁成员。自美国和以色列主导的对伊战争开始以来，人们越来越担心伊朗支持的民兵组织会袭击美国目标，而这起绑架就发生在这种焦虑不断上升的背景下。今天这一集由</span> Michael Simon Johnson<span class="cjk">、</span>Olivia Natt <span class="cjk">和</span> Mooj Zadie <span class="cjk">制作。</span>MJ Davis Lin <span class="cjk">负责编辑，</span>Paige Cowett <span class="cjk">协助编辑。本集配乐来自</span> Marion Lozano<span class="cjk">、</span>Elisheba Ittoop <span class="cjk">和</span> Dan Powell<span class="cjk">。我们的主题音乐由</span> Wonderly <span class="cjk">创作。本集录音工程由</span> Alyssa Moxley <span class="cjk">完成。特别感谢</span> Efim Shapiro<span class="cjk">。以上就是本期《</span>The Daily<span class="cjk">》的全部内容。我是</span> Rachel Abrams<span class="cjk">。明天见。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">abducted</span><span class="term">militia</span><span class="term">aligned</span><span class="term">captivity</span><span class="term">news outlets</span><span class="term">comes amid</span><span class="term">amid</span></div><ul><li>abduct /ab-ˈdəkt/<span class="cjk">：绑架、劫持。</span>abducted <span class="cjk">是过去分词；这里指记者</span> Shelly Kittleson <span class="cjk">在巴格达被民兵组织绑架。</span></li><li>militia /mə-ˈli-shə/<span class="cjk">：民兵组织。这里指与伊朗结盟的伊拉克武装组织。</span></li><li>align /ə-ˈlīn/<span class="cjk">：使结盟、使站在同一阵营。</span>aligned <span class="cjk">是过去分词；这里</span> aligned with Iran <span class="cjk">指该民兵组织与伊朗站在同一阵营。</span></li><li>captivity /kap-ˈti-və-tē/<span class="cjk">：囚禁、被俘状态。这里指记者被扣押的一周。</span></li><li>news outlets<span class="cjk">：新闻机构、媒体机构。这里指她为多家媒体报道中东事务。</span></li><li>comes amid<span class="cjk">：发生在</span>……<span class="cjk">背景下。这里指这起绑架发生在对伊朗支持的民兵袭击美国目标的担忧上升之际。</span></li><li>amid /ə-ˈmid/<span class="cjk">：在</span>……<span class="cjk">之中；在</span>……<span class="cjk">背景下。这里用于说明绑架发生时的整体紧张背景。</span></li></ul></aside>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const storageKey = "podcastTranscriptBodyText";
+      const fontSelect = document.getElementById("bodyFontSelect");
+      const sizeDown = document.getElementById("bodySizeDown");
+      const sizeUp = document.getElementById("bodySizeUp");
+      const reset = document.getElementById("bodyTextReset");
+      const fontMap = {
+        roboto: 'var(--body-roboto)',
+        sanFrancisco: 'var(--body-san-francisco)',
+        helvetica: 'var(--body-helvetica)',
+        arial: 'var(--body-arial)',
+        times: 'var(--body-serif)',
+      };
+
+      if (!fontSelect || !sizeDown || !sizeUp || !reset) return;
+
+      const firstParagraph = document.querySelector("main p");
+      const defaultSize = firstParagraph
+        ? Math.round(parseFloat(getComputedStyle(firstParagraph).fontSize))
+        : 19;
+      const defaultFont = "roboto";
+      let settings = { font: defaultFont, size: defaultSize };
+
+      try {
+        settings = { ...settings, ...JSON.parse(localStorage.getItem(storageKey) || "{}" ) };
+      } catch (error) {}
+      if (!fontMap[settings.font]) settings.font = defaultFont;
+      if (!Number.isFinite(settings.size)) settings.size = defaultSize;
+
+      function applySettings() {
+        fontSelect.value = settings.font;
+        root.style.setProperty("--reader-body-font", fontMap[settings.font] || fontMap.roboto);
+        root.style.setProperty("--reader-body-size", `${settings.size}px`);
+        localStorage.setItem(storageKey, JSON.stringify(settings));
+      }
+
+      fontSelect.addEventListener("change", () => {
+        settings.font = fontSelect.value;
+        applySettings();
+      });
+
+      sizeDown.addEventListener("click", () => {
+        settings.size = Math.max(15, settings.size - 1);
+        applySettings();
+      });
+
+      sizeUp.addEventListener("click", () => {
+        settings.size = Math.min(24, settings.size + 1);
+        applySettings();
+      });
+
+      reset.addEventListener("click", () => {
+        settings = { font: defaultFont, size: defaultSize };
+        root.style.removeProperty("--reader-body-font");
+        root.style.removeProperty("--reader-body-size");
+        localStorage.removeItem(storageKey);
+        fontSelect.value = defaultFont;
+      });
+
+      applySettings();
+    })();
+  </script>
+</body>
+</html>

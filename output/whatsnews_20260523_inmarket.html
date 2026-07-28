@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What’s News in Markets: IPO Excitement, Chip Fatigue, the Decline of Dividends</title>
+  <style>
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --paper: #fffdfa;
+      --ink: #202124;
+      --muted: #6d675f;
+      --line: #e2dacf;
+      --accent: #2f6f73;
+      --accent-soft: #e7f2f1;
+      --note: #eef7f0;
+      --note-line: #a6c7ad;
+      --shadow: 0 24px 80px rgba(63, 52, 38, 0.12);
+      --content-width: 76ch;
+      --body-serif: "Times New Roman", Times, "Microsoft YaHei", "微软雅黑", serif;
+      --body-roboto: "Transcript Roboto", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      --body-san-francisco: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-helvetica: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-arial: Arial, Helvetica, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-sans: var(--body-roboto);
+      --cjk-font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --card-sans: Aptos, "Aptos Display", "Segoe UI", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --reader-body-font: var(--body-serif);
+      --reader-body-size: 19px;
+      --reader-body-line: 1.75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(246, 243, 237, 0.94), rgba(246, 243, 237, 1)),
+        radial-gradient(circle at 12% 0%, rgba(47, 111, 115, 0.12), transparent 32%);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+
+    header {
+      margin: 0 auto 28px;
+      padding: 34px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--accent);
+      font: 700 12px/1.2 var(--body-serif);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font: 500 14px/1.4 var(--body-serif);
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(255, 253, 250, 0.72);
+    }
+
+    .reader-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: var(--card-sans);
+    }
+
+    .reader-controls label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .reader-controls select,
+    .reader-controls button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.9);
+      color: var(--ink);
+      font: 650 14px/1 var(--card-sans);
+    }
+
+    .reader-controls select {
+      padding: 0 30px 0 10px;
+    }
+
+    .reader-controls button {
+      min-width: 38px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .audio-panel {
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.86);
+      font-family: var(--card-sans);
+    }
+
+    .audio-label {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+    }
+
+    .audio-file {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(226, 218, 207, 0.72);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 58px);
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-family: var(--reader-body-font);
+      font-size: var(--reader-body-size);
+      line-height: var(--reader-body-line);
+      max-width: var(--content-width);
+      text-align: justify;
+      text-align-last: left;
+      text-justify: auto;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .speaker {
+      width: fit-content;
+      max-width: 100%;
+      margin: 18px 0 8px;
+      padding: 5px 10px 6px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: #214d50;
+      font: 750 13px/1.3 var(--body-serif);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vocab {
+      max-width: calc(var(--content-width) + 42px);
+      margin: 10px 0 12px;
+      padding: 16px 18px 17px;
+      border: 1px solid var(--note-line);
+      border-left: 5px solid #5f8f6b;
+      border-radius: 8px;
+      background: var(--note);
+      font-family: var(--card-sans);
+      line-height: 1.6;
+    }
+
+    .terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .term {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(95, 143, 107, 0.28);
+      color: #2f2f2f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .vocab ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .vocab li {
+      margin: 6px 0;
+      color: #403622;
+      font-size: 15px;
+    }
+
+    .vocab strong {
+      color: #202124;
+    }
+
+    .cjk {
+      font-family: var(--cjk-font);
+    }
+
+    .no-break {
+      white-space: nowrap;
+    }
+
+    .u-dot {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .u-dot::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0.04em;
+      width: 0.11em;
+      height: 0.11em;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --reader-body-font: var(--body-sans);
+        --reader-body-size: 17px;
+        --reader-body-line: 1.68;
+      }
+
+      .page {
+        padding: 22px 14px 46px;
+      }
+
+      header {
+        padding-top: 22px;
+      }
+
+      main {
+        padding: 22px 16px;
+      }
+
+      p {
+        max-width: none;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .vocab {
+        max-width: none;
+        padding: 14px 14px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --reader-body-size: 17px;
+        --reader-body-line: 1.66;
+      }
+
+      .page {
+        padding: 14px 8px 34px;
+      }
+
+      header {
+        margin-bottom: 18px;
+        padding: 18px 4px 18px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      main {
+        padding: 18px 12px;
+      }
+
+      .vocab li {
+        font-size: 14px;
+      }
+
+      .audio-panel {
+        margin-top: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11pt;
+        line-height: 1.55;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      header {
+        padding-top: 0;
+      }
+
+      main {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      p {
+        font-size: 11pt;
+        line-height: 1.55;
+        max-width: none;
+        text-align: justify;
+      }
+
+      .reader-controls {
+        display: none;
+      }
+
+      .audio-panel {
+        display: none;
+      }
+
+      .speaker {
+        break-after: avoid;
+      }
+
+      .vocab {
+        max-width: none;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .vocab li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">Podcast Transcript Notes</div>
+      <h1><span class="no-break">What’s</span> News in Markets: IPO Excitement, Chip Fatigue, the Decline of Dividends</h1>
+      <div class="meta">
+        
+        <span>2 vocabulary blocks</span>
+        <span>44 collected terms</span>
+        <span>0 speaker turns</span>
+      </div>
+      <div class="reader-controls" aria-label="正文显示设置">
+        <label for="bodyFontSelect">正文字体
+          <select id="bodyFontSelect">
+            <option value="roboto">Roboto</option>
+            <option value="sanFrancisco">San Francisco</option>
+            <option value="helvetica">Helvetica</option>
+            <option value="arial">Arial</option>
+            <option value="times">Times New Roman</option>
+          </select>
+        </label>
+        <button type="button" id="bodySizeDown" aria-label="减小正文字号">A-</button>
+        <button type="button" id="bodySizeUp" aria-label="增大正文字号">A+</button>
+        <button type="button" id="bodyTextReset">Reset</button>
+      </div>
+      <section class="audio-panel" aria-label="Episode audio">
+        <div class="audio-label">Episode Audio</div>
+        <audio controls preload="metadata">
+          <source src="../audio/whatsnews_20260523_inmarket.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="audio-file">whatsnews_20260523_inmarket.mp3</div>
+      </section>
+    </header>
+    <main>
+<p>Which tech giant will kick off the next IPO boom? And why <span class="no-break">weren’t</span> investors impressed by <span class="no-break">Nvidia’s</span> blowout quarter? Plus, how is the AI frenzy changing the way investors get paid? Host Imani Moise discusses the biggest stock moves of the week and the news that drove them.</p>
+<aside class="vocab"><div class="terms"><span class="term">kick off</span><span class="term">blowout</span></div><ul><li><strong>kick off</strong><span class="cjk">：此处表示</span>“<span class="cjk">开启、拉开序幕</span>”<span class="cjk">，指哪家科技巨头会</span><strong><span class="cjk">开启下一轮</span> IPO <span class="cjk">热潮</span></strong><span class="cjk">。</span></li><li><strong>blowout</strong><span class="cjk">：这里形容</span>“<span class="cjk">表现特别强、远超预期的</span>”<span class="cjk">，</span><code>blowout quarter</code> <span class="cjk">指</span> <strong><span class="cjk">业绩爆发式、非常亮眼的一个季度</span></strong><span class="cjk">。</span></li></ul></aside>
+<p>This transcript was prepared by a transcription service. This version may not be in its final form and may be updated.</p>
+<p><strong>Speaker 1</strong>: Hey listeners, <span class="no-break">it&#x27;s</span> Saturday, May 23rd. <span class="no-break">I&#x27;m</span> Imani Moise for The Wall Street Journal, and this is <span class="no-break">What&#x27;s</span> News in Markets, our look at the biggest stock news of the week and the news that drove them. <span class="no-break">Let&#x27;s</span> dive in. Markets spent this week chasing the next big thing. From AI to outer space and quantum computing, investors poured money into futuristic bets while brushing aside lingering concerns about the economy. A new $2 billion federal investment in quantum computing helped fuel rallies in companies tied to the emerging technology. Nvidia beat Wall Street expectations for the 14th straight quarter, according to data from FactSet. And SpaceX prepared to launch what could be the biggest IPO in history that lifted space related stocks across the market. Here on Earth, warning signs about the US consumer continued to pile up. Retail giants, including Walmart, Target, and Home Depot all pointed to increasingly budget conscious shoppers this week, while high gas prices and lingering uncertainty around the conflict in the Middle East continued to weigh on consumer sentiment. Still, investors saw more to be excited about than scared of. The Dow gained 2.1% and ended the week at a new record high while the NASDAQ rose about half a percent. The S&amp;P 500 increased 0.9% notching its eighth straight week of gains, the longest weekly winning streak since 2023. For months, Wall Street has been obsessing over <span class="no-break">AI&#x27;s</span> biggest private companies from the sidelines, but this week it finally got a meaningful glimpse behind the curtain. Three of Silicon <span class="no-break">Valley&#x27;s</span> hottest startups moved closer to going public, setting the stage for what could become the biggest IPO boom since the dotcom era. Elon <span class="no-break">Musk&#x27;s</span> SpaceX filed paperwork for a blockbuster stock offering that could raise as much as $80 billion and potentially make Musk the <span class="no-break">world&#x27;s</span> first trillionaire. Meanwhile, OpenAI, which was recently valued at more than $850 billion, is preparing to file for its own IPO soon. And rival Anthropic surprise investors by forecasting its first ever quarterly operating profit, a rare feat in the cash burning AI industry. While investors wait for those monster debuts, many are looking for other ways to cash in on the frenzy. European satellite stocks surged this week after SpaceX is filing ignited excitement across the industry. Francis Udelsat jumped nearly 35% while German satellite developer OHB climbed more than 28%. Investors&#x27; obsession with finding the next big market winner may be creating a problem for the company sitting on top of the mountain. Shares in Nvidia, currently the most valuable company in the world with the valuation of more than $5 trillion fell more than 4% over the week despite the chip giant reporting another blockbuster quarter. CEO Jensen Huang told investors that demand for AI chips has gone &quot;parabolic&quot; as companies race to build AI agents and massive data centers. The company posted more than $81 billion in quarterly revenue, up 85% from a year ago, while profits more than tripled. But investors appear more interested in finding the next Nvidia than rewarding the current one. Take Intel, for example. The one struggling chip maker has suddenly become one of Wall <span class="no-break">Street&#x27;s</span> hottest AI comeback bets. Shares in the company surged 10% this week and are now up more than 220% this year as investors bet <span class="no-break">Intel&#x27;s</span> processors could play a larger role in the next phase of the AI build out. The fatigue <span class="no-break">isn&#x27;t</span> limited to Nvidia. Analysts say Wall Street has developed a kind of apathy toward the biggest AI winners to date with investors increasingly rotating into underdogs they believe have more room to run. According to Goldman Sachs, the AI chip trade has become so dominant that semiconductor companies now make up nearly 20% of the S&amp;P 500, the highest concentration on record. And AI <span class="no-break">isn&#x27;t</span> just reshaping stock indexes, <span class="no-break">it&#x27;s</span> starting to reshape how investors make money. For decades, investors could count on tech companies eventually rewarding shareholders through dividends and massive stock buyback programs, but the AI boom is changing that equation. Dividend investing has lagged the broader market this year as excitement around artificial intelligence pushes companies to reinvest profits into data centers, chips, and computing power instead of returning that cash to shareholders. And because big tech has accounted for such a large share of recent market gains, those decisions carry extra weight. Even stock buybacks, one of Wall <span class="no-break">Street&#x27;s</span> favorite drivers of share prices in recent years are starting to slow. Excluding Nvidia, buybacks among the so called Magnificent Seven fell more than 70% from a year ago in the latest quarter as companies redirected cash toward the increasingly expensive AI arms race. Analysts say the trend reflects a growing reality inside big tech. The need to spend on AI infrastructure is crowding out other priorities, including keeping shareholders sweet with buybacks and dividends. And now you know <span class="no-break">what&#x27;s</span> news in markets this week. You can read about more stocks that moved on the <span class="no-break">week&#x27;s</span> news in our live markets coverage on wsj.com. <span class="no-break">Today&#x27;s</span> show was produced by Alexis Moore with supervising producer, Melanie Roy. <span class="no-break">I&#x27;m</span> Imani Moise. Have a great weekend and catch you next Saturday.</p>
+<aside class="vocab"><div class="terms"><span class="term">dive in</span><span class="term">big thing</span><span class="term">futuristic</span><span class="term">brushing aside</span><span class="term">lingering</span><span class="term">rallies</span><span class="term">beat Wall Street expectations</span><span class="term">straight quarter</span><span class="term">Here on Earth</span><span class="term">pile up</span><span class="term">weigh</span><span class="term">consumer sentiment</span><span class="term">investors saw more to be excited about than scared of</span><span class="term">notching</span><span class="term">straight week of gains</span><span class="term">streak</span><span class="term">obsessing over</span><span class="term">sidelines</span><span class="term">startups</span><span class="term">dotcom era</span><span class="term">blockbuster</span><span class="term">rival</span><span class="term">operating profit</span><span class="term">feat</span><span class="term">debuts</span><span class="term">frenzy</span><span class="term">on the frenzy</span><span class="term">parabolic</span><span class="term">up 85% from a year ago</span><span class="term">comeback bets</span><span class="term">apathy</span><span class="term">underdogs</span><span class="term">count on</span><span class="term">dividends</span><span class="term">buyback</span><span class="term">lagged</span><span class="term">broader market</span><span class="term">accounted for</span><span class="term">market gains</span><span class="term">carry extra weight</span><span class="term">arms race</span><span class="term">crowding out</span></div><ul><li><strong>dive in</strong><span class="cjk">：此处表示</span>“<span class="cjk">马上开始进入正题</span>”<span class="cjk">。</span></li><li><strong>big thing</strong><span class="cjk">：这里指</span>“<span class="cjk">下一个大热点</span> / <span class="cjk">大机会</span>”<span class="cjk">。</span></li><li><strong>futuristic</strong> \ˌfyü-chə-ˈri-stik\<span class="cjk">：此处表示</span>“<span class="cjk">带有未来感的</span>”<span class="cjk">，如</span> AI<span class="cjk">、太空、量子计算这类前沿主题。</span></li><li><strong>brushing aside</strong><span class="cjk">：原形</span> <strong>brush aside</strong> \ˈbrəsh-ə-ˌsīd\<span class="cjk">；这里表示</span>“<span class="cjk">把</span>……<span class="cjk">暂时放到一边、不太当回事</span>”<span class="cjk">。</span></li><li><strong>lingering</strong><span class="cjk">：原形</span> <strong>linger</strong> \ˈliŋ-gər\<span class="cjk">；这里表示</span>“<span class="cjk">挥之不去的、持续存在的</span>”<span class="cjk">。</span></li><li><strong>rallies</strong><span class="cjk">：原形</span> <strong>rally</strong> \ˈra-lē\<span class="cjk">；此处是股市语境，表示</span>“<span class="cjk">上涨、反弹</span>”<span class="cjk">。</span></li><li><strong>beat Wall Street expectations</strong><span class="cjk">：这里表示</span>“<span class="cjk">业绩超过华尔街预期</span>”<span class="cjk">。</span></li><li><strong>straight quarter</strong><span class="cjk">：这里表示</span>“<span class="cjk">连续的一个季度</span>”<span class="cjk">；</span><code>14th straight quarter</code> <span class="cjk">就是</span>“<span class="cjk">连续第</span>14<span class="cjk">个季度</span>”<span class="cjk">。</span></li><li><strong>Here on Earth</strong><span class="cjk">：这里不是字面强调地球，而是从</span>“<span class="cjk">太空、未来科技</span>”<span class="cjk">话题转回现实经济，意思接近</span>“<span class="cjk">回到现实这边</span>”<span class="cjk">。</span></li><li><strong>pile up</strong><span class="cjk">：这里表示</span>“<span class="cjk">不断累积、越来越多</span>”<span class="cjk">。</span></li><li><strong>weigh</strong><span class="cjk">：这里表示</span>“<span class="cjk">拖累、压制</span>”<span class="cjk">。</span></li><li><strong>consumer sentiment</strong><span class="cjk">：这里指</span>“<span class="cjk">消费者信心</span> / <span class="cjk">消费者情绪</span>”<span class="cjk">。</span></li><li><strong>investors saw more to be excited about than scared of</strong><span class="cjk">：这里表示</span>“<span class="cjk">投资者觉得利好更多、值得兴奋的地方多于值得害怕的地方</span>”<span class="cjk">。</span></li><li><strong>notching</strong><span class="cjk">：原形</span> <strong>notch</strong> \ˈnäch\<span class="cjk">；这里表示</span>“<span class="cjk">录得、实现（一个成绩）</span>”<span class="cjk">。</span></li><li><strong>straight week of gains</strong><span class="cjk">：这里表示</span>“<span class="cjk">连续上涨的一周</span>”<span class="cjk">；整句里是</span>“<span class="cjk">连续第八周上涨</span>”<span class="cjk">。</span></li><li><strong>streak</strong><span class="cjk">：这里指</span>“<span class="cjk">连续纪录、连胜</span>/<span class="cjk">连涨期</span>”<span class="cjk">。</span></li><li><strong>obsessing over</strong><span class="cjk">：原形</span> <strong>obsess over</strong><span class="cjk">；这里表示</span>“<span class="cjk">持续高度关注、几乎着迷地盯着</span>”<span class="cjk">。</span></li><li><strong>sidelines</strong><span class="cjk">：这里表示</span>“<span class="cjk">场边、局外</span>”<span class="cjk">，</span><code>from the sidelines</code> <span class="cjk">指</span>“<span class="cjk">以前主要是在场外看着、没法直接参与</span>”<span class="cjk">。</span></li><li><strong>startups</strong><span class="cjk">：原形</span> <strong>startup</strong> \ˈstärt-ˌəp\<span class="cjk">；这里指</span>“<span class="cjk">初创公司</span>”<span class="cjk">。</span></li><li><strong>dotcom era</strong><span class="cjk">：这里指</span>“<span class="cjk">互联网泡沫时代</span> / dot-com <span class="cjk">时代</span>”<span class="cjk">。</span></li><li><strong>blockbuster</strong><span class="cjk">：此处表示</span>“<span class="cjk">非常重磅的、影响很大的</span>”<span class="cjk">。</span></li><li><strong>rival</strong> \ˈrī-vəl\<span class="cjk">：这里作名词，表示</span>“<span class="cjk">竞争对手</span>”<span class="cjk">。</span></li><li><strong>operating profit</strong><span class="cjk">：这里指</span>“<span class="cjk">营业利润</span> / <span class="cjk">经营利润</span>”<span class="cjk">。</span></li><li><strong>feat</strong> \ˈfēt\<span class="cjk">：这里表示</span>“<span class="cjk">难得的成绩、了不起的成就</span>”<span class="cjk">。</span></li><li><strong>debuts</strong><span class="cjk">：原形</span> <strong>debut</strong> \dā-ˈbyü\<span class="cjk">；这里指公司上市时的</span>“<span class="cjk">首秀</span> / <span class="cjk">首次亮相</span>”<span class="cjk">。</span></li><li><strong>frenzy</strong> \ˈfren-zē\<span class="cjk">：这里表示</span>“<span class="cjk">狂热、热潮</span>”<span class="cjk">。</span></li><li><strong>on the frenzy</strong><span class="cjk">：这里结合上下文，指</span>“<span class="cjk">在这股狂热中</span> / <span class="cjk">围绕这股热潮</span>”<span class="cjk">去寻找赚钱机会。</span></li><li><strong>parabolic</strong> \ˌper-ə-ˈbä-lik\<span class="cjk">：此处表示</span>“<span class="cjk">呈抛物线式猛增的</span>”<span class="cjk">，也就是</span>“<span class="cjk">增长陡峭、几乎爆发式上升</span>”<span class="cjk">。</span></li><li><strong>up 85% from a year ago</strong><span class="cjk">：这里表示</span>“<span class="cjk">较一年前增长了</span> 85%”<span class="cjk">。</span></li><li><strong>comeback bets</strong><span class="cjk">：这里表示</span>“<span class="cjk">押注其翻身</span> / <span class="cjk">反弹的交易或预期</span>”<span class="cjk">。</span></li><li><strong>apathy</strong> \ˈa-pə-thē\<span class="cjk">：这里表示</span>“<span class="cjk">冷淡、提不起劲</span>”<span class="cjk">，指市场对龙头</span> AI <span class="cjk">股开始有点</span>“<span class="cjk">审美疲劳</span>”<span class="cjk">。</span></li><li><strong>underdogs</strong><span class="cjk">：原形</span> <strong>underdog</strong> \ˈən-dər-ˌdȯg\<span class="cjk">；这里指</span>“<span class="cjk">暂时不被看好、但可能逆袭的公司</span>”<span class="cjk">。</span></li><li><strong>count on</strong><span class="cjk">：这里表示</span>“<span class="cjk">指望、依赖</span>”<span class="cjk">。</span></li><li><strong>dividends</strong><span class="cjk">：原形</span> <strong>dividend</strong> \ˈdi-və-ˌdend\<span class="cjk">；这里指</span>“<span class="cjk">股息、分红</span>”<span class="cjk">。</span></li><li><strong>buyback</strong><span class="cjk">：这里指</span>“<span class="cjk">股票回购</span>”<span class="cjk">。</span></li><li><strong>lagged</strong><span class="cjk">：原形</span> <strong>lag</strong> \ˈlag\<span class="cjk">；这里表示</span>“<span class="cjk">表现落后于</span>”<span class="cjk">。</span></li><li><strong>broader market</strong><span class="cjk">：这里指</span>“<span class="cjk">更广泛的大盘</span> / <span class="cjk">整体市场</span>”<span class="cjk">。</span></li><li><strong>accounted for</strong><span class="cjk">：这里表示</span>“<span class="cjk">占了</span>……<span class="cjk">的很大一部分</span>”<span class="cjk">。</span></li><li><strong>market gains</strong><span class="cjk">：这里指</span>“<span class="cjk">市场涨幅</span> / <span class="cjk">市场的上涨表现</span>”<span class="cjk">。</span></li><li><strong>carry extra weight</strong><span class="cjk">：这里表示</span>“<span class="cjk">分量更重、影响更大</span>”<span class="cjk">。</span></li><li><strong>arms race</strong><span class="cjk">：这里是比喻，指</span>“AI <span class="cjk">投资军备竞赛式的比拼</span>”<span class="cjk">。</span></li><li><strong>crowding out</strong><span class="cjk">：原形</span> <strong>crowd out</strong><span class="cjk">；这里表示</span>“<span class="cjk">挤占了</span>……<span class="cjk">的空间</span> / <span class="cjk">资源</span>”<span class="cjk">，即</span> AI <span class="cjk">投资把其他用途的现金挤掉了。</span></li></ul></aside>
+<p>---</p>
+<p><strong><span class="cjk">中文</span></strong></p>
+<p><span class="no-break">What’s</span> News in Markets<span class="cjk">：</span>IPO <span class="cjk">热潮、芯片疲劳、股息式微</span></p>
+<p><span class="cjk">哪家科技巨头会开启下一轮</span> IPO <span class="cjk">热潮？为什么投资者对</span> Nvidia <span class="cjk">的爆炸性季度业绩并不买账？另外，</span>AI <span class="cjk">狂热正在如何改变投资者获得回报的方式？主持人</span> Imani Moise <span class="cjk">讨论本周最大的股票波动，以及推动这些波动的新闻。</span></p>
+<p><span class="cjk">本</span> transcript <span class="cjk">由转录服务生成。此版本可能不是最终版本，之后可能会更新。</span></p>
+<p>Speaker 1<span class="cjk">：</span> <span class="cjk">各位听众好，今天是</span> 5 <span class="cjk">月</span> 23 <span class="cjk">日，星期六。我是《华尔街日报》的</span> Imani Moise<span class="cjk">，这里是</span> <span class="no-break">What’s</span> News in Markets<span class="cjk">。我们会回顾本周最重要的股市新闻，以及推动这些市场变化的事件。我们开始吧。</span></p>
+<p><span class="cjk">本周，市场一直在追逐</span>“<span class="cjk">下一个大机会</span>”<span class="cjk">。从</span> AI <span class="cjk">到太空，再到量子计算，投资者不断把资金投入这些面向未来的押注，同时把对经济的持续担忧暂时放到一边。</span></p>
+<p><span class="cjk">美国联邦政府对量子计算新投入</span> 20 <span class="cjk">亿美元，帮助带动了相关新兴技术公司的股价上涨。根据</span> FactSet <span class="cjk">的数据，</span>Nvidia <span class="cjk">连续第</span> 14 <span class="cjk">个季度超出华尔街预期。</span>SpaceX <span class="cjk">则准备启动可能成为史上最大规模</span> IPO <span class="cjk">的上市计划，这带动了整个市场中与太空相关的股票上涨。</span></p>
+<p><span class="cjk">但在现实世界中，关于美国消费者的警告信号仍在不断增加。本周，包括</span> Walmart<span class="cjk">、</span>Target <span class="cjk">和</span> Home Depot <span class="cjk">在内的零售巨头都指出，消费者越来越注重预算。同时，高油价以及中东冲突带来的持续不确定性，也继续拖累消费者信心。</span></p>
+<p><span class="cjk">尽管如此，投资者看到的兴奋因素仍然多于恐惧因素。道琼斯指数上涨</span> 2.1%<span class="cjk">，并以历史新高结束本周；纳斯达克指数上涨约</span> 0.5%<span class="cjk">；标普</span> 500 <span class="cjk">指数上涨</span> 0.9%<span class="cjk">，连续第八周上涨，这是自</span> 2023 <span class="cjk">年以来最长的周度连涨纪录。</span></p>
+<p><span class="cjk">几个月以来，华尔街一直在场外密切关注</span> AI <span class="cjk">领域最大的私人公司。而本周，华尔街终于得以一窥这些公司的内部情况。硅谷三家最热门的初创公司进一步接近上市，为可能成为互联网泡沫时代以来最大规模的</span> IPO <span class="cjk">热潮铺平了道路。</span></p>
+<p><span class="cjk">埃隆</span>·<span class="cjk">马斯克的</span> SpaceX <span class="cjk">已提交文件，准备进行一场重量级股票发行，可能筹资高达</span> 800 <span class="cjk">亿美元，并有可能让马斯克成为全球首位万亿富翁。与此同时，最近估值超过</span> 8500 <span class="cjk">亿美元的</span> OpenAI<span class="cjk">，也正准备很快提交自己的</span> IPO <span class="cjk">文件。而竞争对手</span> Anthropic <span class="cjk">则让投资者感到意外：该公司预计将实现首次季度运营盈利。在这个高度烧钱的</span> AI <span class="cjk">行业里，这是一项罕见成就。</span></p>
+<p><span class="cjk">在等待这些巨型公司上市的同时，许多投资者也在寻找其他方式，从这股狂热中获利。本周，在</span> SpaceX <span class="cjk">提交上市文件点燃整个行业的兴奋情绪后，欧洲卫星类股票大涨。法国的</span> Eutelsat <span class="cjk">股价上涨近</span> 35%<span class="cjk">，德国卫星开发商</span> OHB <span class="cjk">上涨超过</span> 28%<span class="cjk">。</span></p>
+<p><span class="cjk">投资者痴迷于寻找下一个市场大赢家，这可能正在给已经站在山顶上的那家公司制造问题。</span>Nvidia <span class="cjk">目前是全球市值最高的公司，估值超过</span> 5 <span class="cjk">万亿美元。尽管这家芯片巨头再次公布了惊人的季度业绩，但其股价本周仍下跌超过</span> 4%<span class="cjk">。</span></p>
+<p>CEO <span class="cjk">黄仁勋告诉投资者，随着企业争相建设</span> AI agents <span class="cjk">和大规模数据中心，对</span> AI <span class="cjk">芯片的需求已经呈</span>“<span class="cjk">抛物线式</span>”<span class="cjk">增长。该公司本季度营收超过</span> 810 <span class="cjk">亿美元，同比上涨</span> 85%<span class="cjk">，利润则增长了两倍多。</span></p>
+<p><span class="cjk">但投资者似乎更感兴趣的是寻找</span>“<span class="cjk">下一个</span> Nvidia”<span class="cjk">，而不是继续奖励现在这个</span> Nvidia<span class="cjk">。以</span> Intel <span class="cjk">为例。这家曾经陷入困境的芯片制造商，突然成为华尔街最热门的</span> AI <span class="cjk">复苏押注之一。该公司股价本周上涨</span> 10%<span class="cjk">，今年以来已上涨超过</span> 220%<span class="cjk">。投资者押注，</span>Intel <span class="cjk">的处理器可能在</span> AI <span class="cjk">建设的下一阶段发挥更大的作用。</span></p>
+<p><span class="cjk">这种疲劳感并不只限于</span> Nvidia<span class="cjk">。分析师表示，华尔街对目前为止最大的</span> AI <span class="cjk">赢家已经产生了某种冷淡情绪。投资者越来越多地转向那些他们认为还有更大上涨空间的</span>“<span class="cjk">弱势挑战者</span>”<span class="cjk">或</span>“<span class="cjk">后进者</span>”<span class="cjk">。</span></p>
+<p><span class="cjk">根据</span> Goldman Sachs <span class="cjk">的数据，</span>AI <span class="cjk">芯片交易已经变得如此主导，以至于半导体公司现在占标普</span> 500 <span class="cjk">指数的近</span> 20%<span class="cjk">，这是有记录以来的最高集中度。</span></p>
+<p>AI <span class="cjk">不仅正在重塑股票指数，也开始重塑投资者赚钱的方式。几十年来，投资者一直可以期待科技公司最终通过股息和大规模股票回购计划来回报股东。但</span> AI <span class="cjk">热潮正在改变这个逻辑。</span></p>
+<p><span class="cjk">今年，股息投资的表现落后于大盘，因为人工智能带来的兴奋情绪推动公司把利润重新投入数据中心、芯片和算力，而不是把这些现金返还给股东。而由于大型科技公司在近期市场上涨中贡献了很大一部分，这些公司的决策就具有额外的重要性。</span></p>
+<p><span class="cjk">甚至连股票回购</span>——<span class="cjk">近年来华尔街最喜欢的股价推动因素之一</span>——<span class="cjk">也开始放缓。如果不包括</span> Nvidia<span class="cjk">，所谓</span>“Magnificent Seven”<span class="cjk">中的其他公司在最近一个季度的股票回购金额同比下降超过</span> 70%<span class="cjk">，因为这些公司把现金转向越来越昂贵的</span> AI <span class="cjk">军备竞赛。</span></p>
+<p><span class="cjk">分析师表示，这一趋势反映出大型科技公司内部一个越来越明显的现实：</span>AI <span class="cjk">基础设施支出的需求正在挤占其他优先事项，包括通过股票回购和股息来安抚股东。</span></p>
+<p><span class="cjk">现在你已经了解了本周市场新闻。你可以在</span> wsj.com <span class="cjk">的实时市场报道中阅读更多关于本周因新闻而波动的股票内容。今天的节目由</span> Alexis Moore <span class="cjk">制作，监制是</span> Melanie Roy<span class="cjk">。我是</span> Imani Moise<span class="cjk">。祝你周末愉快，我们下周六再见。</span></p>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const storageKey = "podcastTranscriptBodyText";
+      const fontSelect = document.getElementById("bodyFontSelect");
+      const sizeDown = document.getElementById("bodySizeDown");
+      const sizeUp = document.getElementById("bodySizeUp");
+      const reset = document.getElementById("bodyTextReset");
+      const fontMap = {
+        roboto: 'var(--body-roboto)',
+        sanFrancisco: 'var(--body-san-francisco)',
+        helvetica: 'var(--body-helvetica)',
+        arial: 'var(--body-arial)',
+        times: 'var(--body-serif)',
+      };
+
+      if (!fontSelect || !sizeDown || !sizeUp || !reset) return;
+
+      const firstParagraph = document.querySelector("main p");
+      const defaultSize = firstParagraph
+        ? Math.round(parseFloat(getComputedStyle(firstParagraph).fontSize))
+        : 19;
+      const defaultFont = "roboto";
+      let settings = { font: defaultFont, size: defaultSize };
+
+      try {
+        settings = { ...settings, ...JSON.parse(localStorage.getItem(storageKey) || "{}" ) };
+      } catch (error) {}
+      if (!fontMap[settings.font]) settings.font = defaultFont;
+      if (!Number.isFinite(settings.size)) settings.size = defaultSize;
+
+      function applySettings() {
+        fontSelect.value = settings.font;
+        root.style.setProperty("--reader-body-font", fontMap[settings.font] || fontMap.roboto);
+        root.style.setProperty("--reader-body-size", `${settings.size}px`);
+        localStorage.setItem(storageKey, JSON.stringify(settings));
+      }
+
+      fontSelect.addEventListener("change", () => {
+        settings.font = fontSelect.value;
+        applySettings();
+      });
+
+      sizeDown.addEventListener("click", () => {
+        settings.size = Math.max(15, settings.size - 1);
+        applySettings();
+      });
+
+      sizeUp.addEventListener("click", () => {
+        settings.size = Math.min(24, settings.size + 1);
+        applySettings();
+      });
+
+      reset.addEventListener("click", () => {
+        settings = { font: defaultFont, size: defaultSize };
+        root.style.removeProperty("--reader-body-font");
+        root.style.removeProperty("--reader-body-size");
+        localStorage.removeItem(storageKey);
+        fontSelect.value = defaultFont;
+      });
+
+      applySettings();
+    })();
+  </script>
+</body>
+</html>

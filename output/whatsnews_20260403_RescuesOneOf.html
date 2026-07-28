@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>U.S. Rescues One of Two Crew Members From Jet Downed in Iran</title>
+  <style>
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --paper: #fffdfa;
+      --ink: #202124;
+      --muted: #6d675f;
+      --line: #e2dacf;
+      --accent: #2f6f73;
+      --accent-soft: #e7f2f1;
+      --note: #eef7f0;
+      --note-line: #a6c7ad;
+      --shadow: 0 24px 80px rgba(63, 52, 38, 0.12);
+      --content-width: 76ch;
+      --body-serif: "Times New Roman", Times, "Microsoft YaHei", "微软雅黑", serif;
+      --body-roboto: "Transcript Roboto", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      --body-san-francisco: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-helvetica: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-arial: Arial, Helvetica, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-sans: var(--body-roboto);
+      --cjk-font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --card-sans: Aptos, "Aptos Display", "Segoe UI", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --reader-body-font: var(--body-serif);
+      --reader-body-size: 19px;
+      --reader-body-line: 1.75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(246, 243, 237, 0.94), rgba(246, 243, 237, 1)),
+        radial-gradient(circle at 12% 0%, rgba(47, 111, 115, 0.12), transparent 32%);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+
+    header {
+      margin: 0 auto 28px;
+      padding: 34px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--accent);
+      font: 700 12px/1.2 var(--body-serif);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font: 500 14px/1.4 var(--body-serif);
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(255, 253, 250, 0.72);
+    }
+
+    .reader-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: var(--card-sans);
+    }
+
+    .reader-controls label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .reader-controls select,
+    .reader-controls button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.9);
+      color: var(--ink);
+      font: 650 14px/1 var(--card-sans);
+    }
+
+    .reader-controls select {
+      padding: 0 30px 0 10px;
+    }
+
+    .reader-controls button {
+      min-width: 38px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .audio-panel {
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.86);
+      font-family: var(--card-sans);
+    }
+
+    .audio-label {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+    }
+
+    .audio-file {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(226, 218, 207, 0.72);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 58px);
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-family: var(--reader-body-font);
+      font-size: var(--reader-body-size);
+      line-height: var(--reader-body-line);
+      max-width: var(--content-width);
+      text-align: justify;
+      text-align-last: left;
+      text-justify: auto;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .speaker {
+      width: fit-content;
+      max-width: 100%;
+      margin: 18px 0 8px;
+      padding: 5px 10px 6px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: #214d50;
+      font: 750 13px/1.3 var(--body-serif);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vocab {
+      max-width: calc(var(--content-width) + 42px);
+      margin: 10px 0 12px;
+      padding: 16px 18px 17px;
+      border: 1px solid var(--note-line);
+      border-left: 5px solid #5f8f6b;
+      border-radius: 8px;
+      background: var(--note);
+      font-family: var(--card-sans);
+      line-height: 1.6;
+    }
+
+    .terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .term {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(95, 143, 107, 0.28);
+      color: #2f2f2f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .vocab ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .vocab li {
+      margin: 6px 0;
+      color: #403622;
+      font-size: 15px;
+    }
+
+    .vocab strong {
+      color: #202124;
+    }
+
+    .cjk {
+      font-family: var(--cjk-font);
+    }
+
+    .no-break {
+      white-space: nowrap;
+    }
+
+    .u-dot {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .u-dot::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0.04em;
+      width: 0.11em;
+      height: 0.11em;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --reader-body-font: var(--body-sans);
+        --reader-body-size: 17px;
+        --reader-body-line: 1.68;
+      }
+
+      .page {
+        padding: 22px 14px 46px;
+      }
+
+      header {
+        padding-top: 22px;
+      }
+
+      main {
+        padding: 22px 16px;
+      }
+
+      p {
+        max-width: none;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .vocab {
+        max-width: none;
+        padding: 14px 14px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --reader-body-size: 17px;
+        --reader-body-line: 1.66;
+      }
+
+      .page {
+        padding: 14px 8px 34px;
+      }
+
+      header {
+        margin-bottom: 18px;
+        padding: 18px 4px 18px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      main {
+        padding: 18px 12px;
+      }
+
+      .vocab li {
+        font-size: 14px;
+      }
+
+      .audio-panel {
+        margin-top: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11pt;
+        line-height: 1.55;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      header {
+        padding-top: 0;
+      }
+
+      main {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      p {
+        font-size: 11pt;
+        line-height: 1.55;
+        max-width: none;
+        text-align: justify;
+      }
+
+      .reader-controls {
+        display: none;
+      }
+
+      .audio-panel {
+        display: none;
+      }
+
+      .speaker {
+        break-after: avoid;
+      }
+
+      .vocab {
+        max-width: none;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .vocab li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">Podcast Transcript Notes</div>
+      <h1>U.S. Rescues One of Two Crew Members From Jet Downed in Iran</h1>
+      <div class="meta">
+        
+        <span>20 vocabulary blocks</span>
+        <span>81 collected terms</span>
+        <span>0 speaker turns</span>
+      </div>
+      <div class="reader-controls" aria-label="正文显示设置">
+        <label for="bodyFontSelect">正文字体
+          <select id="bodyFontSelect">
+            <option value="roboto">Roboto</option>
+            <option value="sanFrancisco">San Francisco</option>
+            <option value="helvetica">Helvetica</option>
+            <option value="arial">Arial</option>
+            <option value="times">Times New Roman</option>
+          </select>
+        </label>
+        <button type="button" id="bodySizeDown" aria-label="减小正文字号">A-</button>
+        <button type="button" id="bodySizeUp" aria-label="增大正文字号">A+</button>
+        <button type="button" id="bodyTextReset">Reset</button>
+      </div>
+      <section class="audio-panel" aria-label="Episode audio">
+        <div class="audio-label">Episode Audio</div>
+        <audio controls preload="metadata">
+          <source src="../audio/whatsnews_20260403_RescuesOneOf.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="audio-file">whatsnews_20260403_RescuesOneOf.mp3</div>
+      </section>
+    </header>
+    <main>
+<p>4/3/2026 5:14:00 PM Full Transcript This transcript was prepared by a transcription service. This version may not be in its final form and may be updated.</p>
+<p><strong>Alex Ossola:</strong> Iran hits two US warplanes, the search continues for our crew members still on the ground in the country. <span class="no-break">We&#x27;ll</span> get the latest. Plus, hiring in the US blew past expectations, the economy added 178,000 jobs last month.</p>
+<p><strong>Alex Ossola<span class="cjk">：</span></strong> <span class="cjk">伊朗击中了两架美国军机，对仍在该国地面上的我方机组人员的搜寻仍在继续。我们会带来最新消息。此外，美国招聘情况远超预期，上个月经济新增了</span>17.8<span class="cjk">万个就业岗位。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">blew past expectations</span></div><ul><li><strong>blew past expectations</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">大幅超过预期</span></strong>”<span class="cjk">，形容</span>3<span class="cjk">月新增就业人数明显好于市场原先估计。</span></li></ul></aside>
+<p><strong>Matt Grossman:</strong> Economists at the Fed and the policymakers there still have a lot of questions about how the war is going to affect the economy, the jobs report does give them some help though.</p>
+<p><strong>Matt Grossman<span class="cjk">：</span></strong> <span class="cjk">美联储的经济学家以及那里的政策制定者，对于战争将如何影响经济仍然有很多疑问，不过这份就业报告确实给了他们一些帮助。</span></p>
+<p><strong>Alex Ossola:</strong> And Maine is poised to freeze the construction of new data centers in the state. <span class="no-break">It&#x27;s</span> Friday, April 3rd. <span class="no-break">I&#x27;m</span> Alex Ossola for The Wall Street Journal. This is the PM edition of <span class="no-break">What&#x27;s</span> News, the top headlines and business stories that move the world today. Iran shot down an American F-15E fighter jet earlier today. <span class="no-break">It&#x27;s</span> the first known loss of a jet in the country since the start of the war. The US has rescued one crew member and the status of the second is unknown, and the search and rescue continues. The Journal senior video and national security correspondent, Shelby Holliday, has been reporting this story and is here now with the latest. Shelby, what do we know about the situation? How did this happen?</p>
+<p><strong>Alex Ossola<span class="cjk">：</span></strong> <span class="cjk">另外，缅因州准备冻结该州新数据中心的建设。今天是</span>4<span class="cjk">月</span>3<span class="cjk">日，星期五。我是《华尔街日报》的</span> Alex Ossola<span class="cjk">。这里是《</span><span class="no-break">What&#x27;s</span> News<span class="cjk">》的下午版，为您带来推动当今世界的重要头条新闻和商业故事。今天早些时候，伊朗击落了一架美国</span>F-15E<span class="cjk">战斗机。这是自战争开始以来，美国已知首次在该国损失一架喷气式战机。美国已经救出了一名机组成员，第二名机组成员的情况尚不清楚，搜救仍在继续。《华尔街日报》高级视频与国家安全记者</span> Shelby Holliday <span class="cjk">一直在报道这个事件，现在她来到节目中，为我们带来最新情况。</span>Shelby<span class="cjk">，我们对目前的情况了解多少？这是怎么发生的？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">Maine</span><span class="term">is poised to</span><span class="term">is here now with the latest</span><span class="term">status</span></div><ul><li><strong>Maine</strong> /ˈmān/<span class="cjk">：这里指美国的</span><strong><span class="cjk">缅因州</span></strong><span class="cjk">。</span></li><li><strong>is poised to</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">很可能马上就会</span>…… / <span class="cjk">即将</span>……</strong>”<span class="cjk">，表示缅因州眼看就要冻结新数据中心建设。</span></li><li><strong>is here now with the latest</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">现在来为我们带来最新情况</span></strong>”<span class="cjk">，是新闻节目里介绍连线记者的常见说法。</span></li><li><strong>status</strong> /ˈstā-təs/<span class="cjk">：这里指</span>“<strong><span class="cjk">状况；目前情况</span></strong>”<span class="cjk">，如第二名机组成员目前的下落和安全情况。</span></li></ul></aside>
+<p><strong>Shelby Holliday:</strong> Yeah, this was an extremely tense day for the United States. The plane was downed in Iranian territory, the crew members were both in an F-15E Strike Eagle fighter jet, and one of them was rescued earlier in the day, but the search has been ongoing for the second crew member for hours now. And we know that Iran brought the plane down, at this point, <span class="no-break">it&#x27;s</span> not clear what they shot the plane with, but there was a huge search and rescue effort and some of the aircraft involved in that effort have been filmed flying over Iran.</p>
+<p><strong>Shelby Holliday<span class="cjk">：</span></strong> <span class="cjk">是的，对美国来说，这是极其紧张的一天。这架飞机是在伊朗领土上被击落的。两名机组人员都在一架</span>F-15E“<span class="cjk">攻击鹰</span>”<span class="cjk">战斗机上，其中一人在当天早些时候获救，但对第二名机组人员的搜寻已经持续了数小时。我们知道是伊朗击落了这架飞机。目前还不清楚他们是用什么武器击落的，但当时展开了大规模搜救行动，而参与这次行动的一些飞机已经被拍到在伊朗上空飞行。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">been ongoing</span><span class="term">been filmed</span></div><ul><li><strong>ongoing</strong> /ˈän-ˌgō-iŋ/<span class="cjk">：这里用在</span> <strong>has been ongoing</strong> <span class="cjk">中，指</span>“<strong><span class="cjk">一直在持续进行</span></strong>”<span class="cjk">，即搜救已持续了好几个小时。</span></li><li><strong>film</strong> /ˈfilm/<span class="cjk">：这里用在</span> <strong>have been filmed</strong> <span class="cjk">中，原形是</span> <strong>film</strong><span class="cjk">，指</span>“<strong><span class="cjk">被拍到</span> / <span class="cjk">被摄录下来</span></strong>”<span class="cjk">。</span></li></ul></aside>
+<p><strong>Alex Ossola:</strong> And how has Iran responded to this situation?</p>
+<p><strong>Shelby Holliday:</strong> Iran has been using it to their advantage in propaganda and posts online, in some posts they were even taunting the United States. <span class="no-break">It&#x27;s</span> quite amazing when you talk to former Air Force officials, they say <span class="no-break">it&#x27;s</span> incredible that this <span class="no-break">hasn&#x27;t</span> happened sooner. <span class="no-break">It&#x27;s</span> been five weeks of war, 13,000 combat flights, <span class="no-break">it&#x27;s</span> pretty amazing that this is the first time something like this has happened. Of course, <span class="no-break">it&#x27;s</span> extremely serious. But for Iran, <span class="no-break">it&#x27;s</span> a big victory, <span class="no-break">they&#x27;ve</span> been shooting at US planes for five weeks and they <span class="no-break">haven&#x27;t</span> been able to bring anything down, and <span class="no-break">they&#x27;re</span> claiming it as a victory. <span class="no-break">It&#x27;s</span> a very small victory, but it is something, and <span class="no-break">it&#x27;s</span> just a reminder that Iran is still a very aggressive and capable enemy in this fight.</p>
+<p><strong>Shelby Holliday<span class="cjk">：</span></strong> <span class="cjk">伊朗一直在利用这件事，在宣传和网络帖子中为自己造势；在一些帖子里，他们甚至在嘲讽美国。和前空军官员交谈时，你会觉得这相当惊人。他们说，令人难以置信的是，这种事情竟然没有更早发生。战争已经持续了五周，进行了</span>13,000<span class="cjk">架次作战飞行，令人惊讶的是，这还是第一次发生这样的事情。当然，这件事极其严重。但对伊朗来说，这是一次重大胜利。他们已经向美国飞机开火五周了，却一直没能击落任何东西，现在他们把这件事宣称为胜利。这是一次很小的胜利，但毕竟是一个成果；它也提醒人们，在这场战斗中，伊朗仍然是一个非常好斗、并且有能力的敌人。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">to their advantage</span><span class="term">propaganda</span><span class="term">taunting</span><span class="term">claiming</span></div><ul><li><strong>to their advantage</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">对他们有利地加以利用</span></strong>”<span class="cjk">，即伊朗把这件事当成对自己有利的宣传素材。</span></li><li><strong>propaganda</strong> /ˌprä-pə-ˈgan-də/<span class="cjk">：这里指</span>“<strong><span class="cjk">宣传材料</span> / <span class="cjk">宣传话术</span></strong>”<span class="cjk">，尤其带政治或战时宣传色彩。</span></li><li><strong>taunt</strong> /ˈtȯnt/<span class="cjk">：这里用在</span> <strong>taunting</strong> <span class="cjk">中，原形是</span> <strong>taunt</strong><span class="cjk">，指</span>“<strong><span class="cjk">嘲弄；挑衅</span></strong>”<span class="cjk">美国。</span></li><li><strong>claim</strong> /ˈklām/<span class="cjk">：这里用在</span> <strong>claiming</strong> <span class="cjk">中，原形是</span> <strong>claim</strong><span class="cjk">，指</span>“<strong><span class="cjk">宣称；声称</span></strong>”<span class="cjk">，即把这次击落说成自己的胜利。</span></li></ul></aside>
+<p><strong>Alex Ossola:</strong> President Trump has said repeatedly that the US has diminished <span class="no-break">Iran&#x27;s</span> military, a claim that of course Iran has rejected, what does this incident show about <span class="no-break">Iran&#x27;s</span> military capabilities?</p>
+<p><strong>Alex Ossola<span class="cjk">：</span></strong> <span class="cjk">特朗普总统反复表示，美国已经削弱了伊朗的军事力量，而伊朗当然否认了这一说法。这一事件显示出伊朗军事实力的哪些方面？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">diminished</span></div><ul><li><strong>diminish</strong> /də-ˈmi-nish/<span class="cjk">：这里原形是</span> <strong>diminish</strong><span class="cjk">，指</span>“<strong><span class="cjk">削弱；减弱</span></strong>”<span class="cjk">，这里说的是伊朗军事打击能力被削弱了。</span></li></ul></aside>
+<p><strong>Shelby Holliday:</strong> <span class="no-break">That&#x27;s</span> a good question. From day one of this fight, Iran has fought back. Their ability to do so with missiles and drones and other types of equipment, fast boats, that has diminished. Drone strikes are down 90%, missile strikes are down 90%, but <span class="no-break">they&#x27;re</span> still shooting at stuff, <span class="no-break">they&#x27;re</span> still able to fight back. And so, this is just a reminder, <span class="no-break">it&#x27;s</span> just a wake-up call that Iran is not going down quietly.</p>
+<p><strong>Shelby Holliday<span class="cjk">：</span></strong> <span class="cjk">这是个好问题。从这场战斗的第一天起，伊朗就在反击。他们用导弹、无人机和其他类型装备、快艇等进行反击的能力已经减弱。无人机袭击下降了</span>90%<span class="cjk">，导弹袭击也下降了</span>90%<span class="cjk">，但他们仍然在向目标开火，仍然能够反击。所以，这只是一个提醒，也是一次警醒：伊朗不会悄无声息地败下阵来。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">missiles</span><span class="term">drones</span><span class="term">strikes are down 90%</span><span class="term">wake-up call</span></div><ul><li><strong>missile</strong> /ˈmi-səl/<span class="cjk">：这里原形是</span> <strong>missile</strong><span class="cjk">，指</span>“<strong><span class="cjk">导弹</span></strong>”<span class="cjk">。</span></li><li><strong>drone</strong> /ˈdrōn/<span class="cjk">：这里原形是</span> <strong>drone</strong><span class="cjk">，指</span>“<strong><span class="cjk">无人机</span></strong>”<span class="cjk">。</span></li><li><strong>strikes are down 90%</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">打击行动减少了</span>90%</strong>”<span class="cjk">，意思是相关攻击频率或规模大幅下降。</span></li><li><strong>wake-up call</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">警钟；提醒人清醒过来的信号</span></strong>”<span class="cjk">，即这件事提醒美国不要低估伊朗。</span></li></ul></aside>
+<p><strong>Alex Ossola:</strong> What are you going to be keeping an eye on in the coming hours and days to see how the situation progresses?</p>
+<p><strong>Alex Ossola<span class="cjk">：</span></strong> <span class="cjk">在接下来的几个小时和几天里，你会重点关注什么，来判断局势会如何发展？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">keeping an eye on</span></div><ul><li><strong>keep an eye on</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">密切关注</span></strong>”<span class="cjk">，即接下来会重点盯着局势怎么发展。</span></li></ul></aside>
+<p><strong>Shelby Holliday:</strong> <span class="no-break">I&#x27;m</span> really curious to see if the US will be even more resolved after this incident, and if they will ramp up the combat flights in any way or strike more targets, or do something that sends a big signal. <span class="no-break">I&#x27;ll</span> also be curious to see what Iran is capable of doing in the coming days. <span class="no-break">They&#x27;ve</span> been getting help from adversaries, Secretary of Defense Pete Hegseth has acknowledged that adversaries, hinting at Russia and China, have been helping them with satellite imagery and intelligence. So, I am really curious to see if things escalate from here or if we just go back to status quo, the air war over Iran, thousands of targets hit.</p>
+<p><strong>Shelby Holliday<span class="cjk">：</span></strong> <span class="cjk">我非常想看看，在这起事件之后，美国是否会更加坚定，以及他们是否会以某种方式增加作战飞行，或者打击更多目标，或者采取某种发出强烈信号的行动。我也会很想看看伊朗在接下来几天能够做什么。他们一直在得到对手的帮助，国防部长</span> Pete Hegseth <span class="cjk">已经承认，有一些对手</span>——<span class="cjk">暗示俄罗斯和中国</span>——<span class="cjk">一直在通过卫星图像和情报帮助他们。所以，我真的很想看看，事情是否会从这里开始升级，还是说我们只是回到原来的状态，也就是伊朗上空的空战，以及数千个目标遭到打击。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">resolved</span><span class="term">ramp up</span><span class="term">adversaries</span><span class="term">escalate</span><span class="term">status quo</span></div><ul><li><strong>resolved</strong> /ri-ˈzälvd/<span class="cjk">：这里指</span>“<strong><span class="cjk">更坚定的；更下定决心的</span></strong>”<span class="cjk">。</span></li><li><strong>ramp up</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">加大；加强；提升力度</span></strong>”<span class="cjk">，如增加作战飞行或打击力度。</span></li><li><strong>adversary</strong> /ˈad-vər-ˌser-ē/<span class="cjk">：这里原形是</span> <strong>adversary</strong><span class="cjk">，指</span>“<strong><span class="cjk">对手；敌对方</span></strong>”<span class="cjk">。</span></li><li><strong>escalate</strong> /ˈe-skə-ˌlāt/<span class="cjk">：这里指</span>“<strong><span class="cjk">升级；恶化</span></strong>”<span class="cjk">，即冲突进一步扩大。</span></li><li><strong>status quo</strong> /ˌstā-təs-ˈkwō/<span class="cjk">：这里指</span>“<strong><span class="cjk">现状</span></strong>”<span class="cjk">，即战争仍按目前这种状态继续。</span></li></ul></aside>
+<p><strong>Alex Ossola:</strong> That was WSJ senior video and national security correspondent, Shelby Holliday. Thanks, Shelby.</p>
+<p><strong>Shelby Holliday:</strong> Thanks guys.</p>
+<p><strong>Alex Ossola:</strong> This afternoon, we reported that Iran also hit a second American warplane, people familiar with the matter said that the pilot is safe, as they were able to fly out of Iranian territory before ejecting from the aircraft. In other Iran news, the latest efforts to reach a ceasefire between the US and Iran, led by Pakistan, have hit a dead end. Mediators said today that Iran has officially told them it <span class="no-break">isn&#x27;t</span> willing to meet US officials in Pakistan in the coming days, and that US demands are unacceptable. Qatar is resisting efforts by the US and other regional countries to be a key mediator for a potential ceasefire deal. And a French-owned container ship has passed through the strait of Hormuz, the first known vessel with ties to Western Europe to cross the channel since the start of the war. Separately, a new 2027 budget proposal released by the White House today seeks one and a half trillion dollars in defense spending, by far the most in modern history. President Trump had promised a request of this size back in January before the war on Iran. The proposed budget includes cuts for non-defense spending, for things like education and the Environmental Protection Agency. Congress will need to determine which pieces of the budget will be passed into law before the fiscal year begins on October 1st. The US job market added 178,000 jobs in March. The Labor <span class="no-break">Department&#x27;s</span> report showed the best month for job growth in more than a year, beating economists&#x27; expectations and a reversal from <span class="no-break">February&#x27;s</span> job losses. For more behind the numbers, <span class="no-break">I&#x27;m</span> joined now by WSJ economics reporter, Matt Grossman. Matt, which industries saw the most growth?</p>
+<p><strong>Alex Ossola<span class="cjk">：</span></strong> <span class="cjk">今天下午，我们报道称，伊朗还击中了第二架美国军机。知情人士称，飞行员是安全的，因为他们在从飞机上弹射之前，已经能够飞离伊朗领土。关于伊朗的其他消息，由巴基斯坦牵头的、旨在促成美国与伊朗停火的最新努力已经陷入僵局。调解人士今天表示，伊朗已经正式告诉他们，未来几天不愿在巴基斯坦与美国官员会面，并且美国的要求不可接受。卡塔尔正在抵制美国和其他地区国家的努力，不愿成为潜在停火协议的关键调解方。另外，一艘法国所有的集装箱船已经通过霍尔木兹海峡，这是自战争开始以来，已知第一艘与西欧有联系的船只穿越该水道。另据报道，白宫今天发布的一项新的</span>2027<span class="cjk">年预算提案寻求</span>1.5<span class="cjk">万亿美元国防开支，这将是现代史上迄今最高的国防开支。特朗普总统早在一月份、对伊朗战争爆发之前，就曾承诺提出这样规模的请求。该预算提案包括削减非国防开支，例如教育和环境保护署方面的支出。国会需要在</span>10<span class="cjk">月</span>1<span class="cjk">日财政年度开始之前，决定预算中的哪些部分将被通过成为法律。美国劳动力市场在</span>3<span class="cjk">月份新增了</span>17.8<span class="cjk">万个就业岗位。劳工部的报告显示，这是超过一年以来就业增长最强劲的一个月，超过经济学家的预期，并扭转了</span>2<span class="cjk">月份就业岗位减少的局面。为了进一步了解这些数字背后的情况，现在我请到了《华尔街日报》经济记者</span> Matt Grossman<span class="cjk">。</span>Matt<span class="cjk">，哪些行业增长最多？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">people familiar with the matter</span><span class="term">hit a dead end</span><span class="term">Mediators</span><span class="term">resisting efforts</span><span class="term">with ties to</span><span class="term">budget proposal</span><span class="term">back in January</span><span class="term">fiscal</span><span class="term">in more than a year</span><span class="term">reversal</span><span class="term">which industries</span></div><ul><li><strong>people familiar with the matter</strong><span class="cjk">：这里是新闻常用说法，指</span>“<strong><span class="cjk">知情人士</span></strong>”<span class="cjk">。</span></li><li><strong>hit a dead end</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">陷入僵局；走进死胡同</span></strong>”<span class="cjk">，即停火斡旋没有推进下去。</span></li><li><strong>mediator</strong> /ˈmē-dē-ˌā-tər/<span class="cjk">：这里原形是</span> <strong>mediator</strong><span class="cjk">，指</span>“<strong><span class="cjk">调停人；斡旋方</span></strong>”<span class="cjk">。</span></li><li><strong>resisting efforts</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">抵制这些努力</span> / <span class="cjk">不愿配合相关推动</span></strong>”<span class="cjk">。</span></li><li><strong>with ties to</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">与</span>……<span class="cjk">有关联</span> / <span class="cjk">有联系</span></strong>”<span class="cjk">。</span></li><li><strong>budget proposal</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">预算提案</span></strong>”<span class="cjk">。</span></li><li><strong>back in January</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">早在</span>1<span class="cjk">月份</span></strong>”<span class="cjk">，带有</span>“<span class="cjk">更早之前就</span>……”<span class="cjk">的感觉。</span></li><li><strong>fiscal</strong> /ˈfi-skəl/<span class="cjk">：这里出现在</span> <strong>fiscal year</strong> <span class="cjk">中，指</span>“<strong><span class="cjk">财政的</span></strong>”<span class="cjk">。</span></li><li><strong>in more than a year</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">一年多以来</span></strong>”<span class="cjk">，即这是一年多来最好的就业增长月份。</span></li><li><strong>reversal</strong> /ri-ˈvər-səl/<span class="cjk">：这里指</span>“<strong><span class="cjk">逆转；反转</span></strong>”<span class="cjk">，即从</span>2<span class="cjk">月的就业下滑转成</span>3<span class="cjk">月增长。</span></li><li><strong>which industries</strong><span class="cjk">：这里就是</span>“<strong><span class="cjk">哪些行业</span></strong>”<span class="cjk">。</span></li></ul></aside>
+<p><strong>Matt Grossman:</strong> Well, it was a really good month for the healthcare sector. In part, that <span class="no-break">wasn&#x27;t</span> a surprise because February had been a down month for that sector, mostly because there was a big strike. There was good job growth in leisure and hospitality, it was also a pretty good month for trades like construction and manufacturing. So, the gains were pretty broad. There were some declines in government payrolls, especially for the federal government.</p>
+<p><strong>Matt Grossman<span class="cjk">：</span></strong> <span class="cjk">嗯，对医疗保健行业来说，这是非常好的一个月。在一定程度上，这并不令人意外，因为</span>2<span class="cjk">月份这个行业曾经表现低迷，主要原因是发生了一场大型罢工。休闲和酒店餐饮行业的就业增长也不错，建筑和制造业等行业同样表现不错。所以，增长范围相当广泛。政府部门的就业人数有所下降，尤其是联邦政府。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">healthcare sector</span><span class="term">the gains were pretty broad</span><span class="term">declines</span><span class="term">payrolls</span></div><ul><li><strong>healthcare sector</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">医疗保健行业</span></strong>”<span class="cjk">。</span></li><li><strong>the gains were pretty broad</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">增长面相当广</span></strong>”<span class="cjk">，即不只是个别行业好，而是多个行业都有增长。</span></li><li><strong>decline</strong> /di-ˈklīn/<span class="cjk">：这里用复数</span> <strong>declines</strong><span class="cjk">，原形是</span> <strong>decline</strong><span class="cjk">，指</span>“<strong><span class="cjk">下降；减少</span></strong>”<span class="cjk">。</span></li><li><strong>payroll</strong> /ˈpā-ˌrōl/<span class="cjk">：这里用复数</span> <strong>payrolls</strong><span class="cjk">，原形是</span> <strong>payroll</strong><span class="cjk">，指</span>“<strong><span class="cjk">工资名单所代表的就业人数</span></strong>”<span class="cjk">；这里说</span> <strong>government payrolls</strong><span class="cjk">，就是政府部门的就业人数。</span></li></ul></aside>
+<p><strong>Alex Ossola:</strong> The unemployment rate also fell to 4.3% from 4.4% in February, but there was an asterisk to that, which is that the labor force itself actually shrank by nearly 400,000 people. <span class="no-break">What&#x27;s</span> going on with that?</p>
+<p><strong>Alex Ossola<span class="cjk">：</span></strong> <span class="cjk">失业率也从</span>2<span class="cjk">月份的</span>4.4%<span class="cjk">下降到了</span>4.3%<span class="cjk">，但这里有一个注脚，那就是劳动力人口本身实际上减少了将近</span>40<span class="cjk">万人。这是怎么回事？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">asterisk</span><span class="term">shrank</span></div><ul><li><strong>asterisk</strong> /ˈa-stə-ˌrisk/<span class="cjk">：这里不是字面</span>“<span class="cjk">星号</span>”<span class="cjk">，而是指</span>“<strong><span class="cjk">但书；需要额外说明的一点</span></strong>”<span class="cjk">。</span></li><li><strong>shrink</strong> /ˈshriŋk/<span class="cjk">：这里用在</span> <strong>shrank</strong> <span class="cjk">中，原形是</span> <strong>shrink</strong><span class="cjk">，指</span>“<strong><span class="cjk">缩小；减少</span></strong>”<span class="cjk">。</span></li></ul></aside>
+<p><strong>Matt Grossman:</strong> Yeah, this is a big story that economists are looking at when you zoom out a bit from the month to month numbers. A couple years ago when the economy and the labor force were in full boom mode, we were adding hundreds of thousands of jobs most months. In the past few months, given that immigration has slowed down so much, the economy now no longer needs to create nearly as many jobs to hold steady. So, <span class="no-break">that&#x27;s</span> a decent sign for people who are here looking for work because maybe there are fewer people that <span class="no-break">you&#x27;re</span> competing against for those jobs. On the other hand, it means the economy probably <span class="no-break">isn&#x27;t</span> growing as much because <span class="no-break">there&#x27;s</span> only so much economic activity that a steady or shrinking labor force can produce.</p>
+<p><strong>Matt Grossman<span class="cjk">：</span></strong> <span class="cjk">是的，当你稍微跳出逐月数据来看时，这是经济学家正在关注的一个大问题。几年前，当经济和劳动力市场都处在全面繁荣模式时，我们大多数月份都会新增几十万个就业岗位。过去几个月，由于移民放缓了很多，经济现在不再需要创造几乎同样多的就业岗位就能保持稳定。所以，对已经在这里找工作的人来说，这是一个还算不错的信号，因为也许与你竞争这些岗位的人更少了。另一方面，这意味着经济可能没有增长那么多，因为在劳动力保持稳定甚至萎缩的情况下，能够产生的经济活动就是有限的。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">boom mode</span></div><ul><li><strong>boom mode</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">高速繁荣状态</span></strong>”<span class="cjk">，即当时经济和劳动力市场都很火热。</span></li></ul></aside>
+<p><strong>Alex Ossola:</strong> These numbers are coming out four or five weeks after the US attacked Iran, how has the war affected the jobs market and what does it mean for the Fed?</p>
+<p><strong>Alex Ossola<span class="cjk">：</span></strong> <span class="cjk">这些数字是在美国袭击伊朗四到五周后公布的。战争对就业市场有什么影响？这对美联储又意味着什么？</span></p>
+<p><strong>Matt Grossman:</strong> The data we got today probably <span class="no-break">doesn&#x27;t</span> tell us much about how the war in Iran was affecting the economy. The numbers really reflect the state of the job market in the second week of March, at that point, the war had only been on for 10 or 15 days or so. Economists at the Fed and the policymakers there still have a lot of questions about how the war is going to affect the economy. The jobs report does give them some help though, because if this had been a really bad report, they <span class="no-break">might&#x27;ve</span> felt pressure to help cushion the labor market by potentially reducing rates at the same time that high inflation is still a concern for them. Now that they saw solid job growth in March, they can probably put that to one side and wait and see whether the war is going to have an impact and whether they can make any more progress on inflation.</p>
+<p><strong>Matt Grossman<span class="cjk">：</span></strong> <span class="cjk">我们今天拿到的数据，可能并不能告诉我们太多关于伊朗战争如何影响经济的信息。这些数字实际上反映的是</span>3<span class="cjk">月第二周就业市场的状态；在那个时候，战争才持续了大约</span>10<span class="cjk">到</span>15<span class="cjk">天。美联储的经济学家以及那里的政策制定者，对于战争将如何影响经济仍然有很多疑问。不过就业报告确实给了他们一些帮助，因为如果这是一份非常糟糕的报告，他们可能会感受到压力，需要通过可能降息来帮助缓冲劳动力市场，而与此同时，高通胀对他们来说仍然是一个担忧。现在他们看到</span>3<span class="cjk">月份就业增长稳健，可能就可以把这个问题暂时放到一边，继续观望战争是否会产生影响，以及他们是否能在通胀方面取得更多进展。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">cushion the labor market</span><span class="term">a concern</span><span class="term">put that to one side</span></div><ul><li><strong>cushion the labor market</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">给劳动力市场托底</span> / <span class="cjk">缓冲冲击</span></strong>”<span class="cjk">，比如通过降息来减轻就业压力。</span></li><li><strong>a concern</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">一个担忧因素</span></strong>”<span class="cjk">。</span></li><li><strong>put that to one side</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">先把那件事放一边</span></strong>”<span class="cjk">，即暂时不用急着因为就业太差而采取行动。</span></li></ul></aside>
+<p><strong>Alex Ossola:</strong> That was WSJ Economics reporter, Matt Grossman. Thank you, Matt.</p>
+<p><strong>Matt Grossman:</strong> Thanks.</p>
+<p><strong>Alex Ossola:</strong> Major indexes were closed today for Good Friday, but stock futures fell slightly after the report came out. Treasury yields climbed modestly. Coming up, executives are coming to Venezuela with an eye for investments and an appetite for risk, <span class="no-break">that&#x27;s</span> after the break. In the months since Nicolás <span class="no-break">Maduro&#x27;s</span> ouster, Venezuela has begun reopening after years of economic collapse and isolation. Businesses from the US, Columbia, and elsewhere are sending over their executives, studying projects, and in some cases, moving toward early investments. For more on this, <span class="no-break">I&#x27;m</span> joined now by WSJ South America bureau chief, Juan Forero. Juan, where does investment in Venezuela stand right now?</p>
+<p><strong>Alex Ossola<span class="cjk">：</span></strong> <span class="cjk">主要股指今天因耶稣受难日休市，但报告发布后，股指期货小幅下跌。美国国债收益率温和上升。接下来，高管们正前往委内瑞拉，带着投资的目光和风险偏好。广告之后回来。在</span> Nicolás Maduro <span class="cjk">被赶下台后的几个月里，委内瑞拉在经历多年经济崩溃和孤立之后，已经开始重新开放。来自美国、哥伦比亚以及其他地方的企业正在派遣高管前往那里，研究项目，并在某些情况下推进早期投资。为了进一步了解这个情况，现在我请到了《华尔街日报》南美分社社长</span> Juan Forero<span class="cjk">。</span>Juan<span class="cjk">，目前委内瑞拉的投资处于什么阶段？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">Good Friday</span><span class="term">climbed modestly</span><span class="term">Treasury yields</span><span class="term">Coming up</span><span class="term">ouster</span></div><ul><li><strong>Good Friday</strong><span class="cjk">：这里指基督教节日</span>“<strong><span class="cjk">耶稣受难日</span></strong>”<span class="cjk">。</span></li><li><strong>climbed modestly</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">小幅上升</span></strong>”<span class="cjk">。</span></li><li><strong>Treasury yields</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">美国国债收益率</span></strong>”<span class="cjk">。</span></li><li><strong>Coming up</strong><span class="cjk">：这里是节目衔接语，指</span>“<strong><span class="cjk">接下来</span> / <span class="cjk">稍后</span></strong>”<span class="cjk">。</span></li><li><strong>ouster</strong> /ˈa<span class="u-dot">u</span>-stər/<span class="cjk">：这里指</span>“<strong><span class="cjk">被赶下台；被罢黜</span></strong>”<span class="cjk">。</span></li></ul></aside>
+<p><strong>Juan Forero:</strong> I think <span class="no-break">we&#x27;re</span> seeing investment at its inception actually, because the situation really is quite unstable in Venezuela at this point. Venezuela still has a judicial system that is under state control, there are questions about the legality of contracts and things of that nature, and also sanctions <span class="no-break">haven&#x27;t</span> been lifted on Venezuelan companies and on several high ranking Venezuelan officials. You cannot go and do business with the state oil company, which is obviously key in Venezuela because a lot of the investments will be in oil. But what we can say with certainty is that Venezuela has nowhere to go but up, and Venezuela needs everything. Venezuela needs imports of food, and construction material, pharmaceuticals, chemicals. And because of the giant possibilities for oil production, the projection is that Venezuela will be able to generate a lot of money. The US government has deployed high officials, including the energy secretary and the interior secretary, <span class="no-break">they&#x27;ve</span> gone down to Venezuela to meet with officials and so forth, and <span class="no-break">they&#x27;ve</span> been talking up the investments in oil and critical minerals and so forth, and just how good an investment possibility Venezuela is. The big question is, will investors follow along?</p>
+<p><strong>Juan Forero<span class="cjk">：</span></strong> <span class="cjk">我认为我们看到的其实是投资刚刚起步，因为目前委内瑞拉的局势确实相当不稳定。委内瑞拉仍然有一个受国家控制的司法系统，人们对合同的合法性以及类似事项存在疑问，而且对委内瑞拉公司和几名委内瑞拉高级官员的制裁也尚未解除。你不能去和国有石油公司做生意，而这在委内瑞拉显然是关键，因为很多投资都会投向石油。但我们可以肯定地说，委内瑞拉没有别的路可走，只能向上，而且委内瑞拉什么都需要。委内瑞拉需要进口食品、建筑材料、药品、化学品。由于石油生产存在巨大的可能性，预测认为委内瑞拉将能够创造大量资金。美国政府已经派出高级官员，包括能源部长和内政部长，他们都前往委内瑞拉与官员会面等等，并且一直在宣传石油和关键矿产等方面的投资，也在谈论委内瑞拉作为投资机会是多么有吸引力。最大的问题是，投资者会不会跟进？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">inception</span><span class="term">judicial</span><span class="term">legality</span><span class="term">has nowhere to go but up</span><span class="term">pharmaceuticals</span><span class="term">secretary</span><span class="term">gone down to</span><span class="term">and so forth</span><span class="term">talking up</span></div><ul><li><strong>inception</strong> /in-ˈsep-shən/<span class="cjk">：这里指</span>“<strong><span class="cjk">起步阶段；开端</span></strong>”<span class="cjk">。</span></li><li><strong>judicial</strong> /jü-ˈdi-shəl/<span class="cjk">：这里指</span>“<strong><span class="cjk">司法的</span></strong>”<span class="cjk">。</span></li><li><strong>legality</strong> /li-ˈga-lə-tē/<span class="cjk">：这里指</span>“<strong><span class="cjk">合法性</span></strong>”<span class="cjk">。</span></li><li><strong>has nowhere to go but up</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">已经很低了，接下来只可能往上走</span></strong>”<span class="cjk">。</span></li><li><strong>pharmaceuticals</strong> /ˌfär-mə-ˈsü-ti-kəlz/<span class="cjk">：这里指</span>“<strong><span class="cjk">药品；医药产品</span></strong>”<span class="cjk">。</span></li><li><strong>secretary</strong> /ˈse-krə-ˌter-ē/<span class="cjk">：这里指美国政府里的</span>“<strong><span class="cjk">部长</span></strong>”<span class="cjk">（如能源部长、内政部长）。</span></li><li><strong>gone down to</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">去了</span>……</strong>”<span class="cjk">，这里有</span>“<span class="cjk">南下前往</span>”<span class="cjk">的口语感觉。</span></li><li><strong>and so forth</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">等等</span> / <span class="cjk">诸如此类</span></strong>”<span class="cjk">。</span></li><li><strong>talking up</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">大力吹捧；积极鼓吹</span></strong>”<span class="cjk">投资机会。</span></li></ul></aside>
+<p><strong>Alex Ossola:</strong> Who are some of the companies and investors looking into this? And what, if anything, do they have in common?</p>
+<p><strong>Alex Ossola<span class="cjk">：</span></strong> <span class="cjk">有哪些公司和投资者正在研究这件事？如果有的话，他们有什么共同点？</span></p>
+<aside class="vocab"><div class="terms"><span class="term">if anything</span></div><ul><li><strong>if anything</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">要说有什么共同点的话</span></strong>”<span class="cjk">，语气上有一点</span>“<span class="cjk">即便真有的话</span>”<span class="cjk">的意思。</span></li></ul></aside>
+<p><strong>Juan Forero:</strong> I interviewed an executive named Charles Myers, who is from Signum Global Advisory, which is a company that recently took down 55 executives from the United States, and from Columbia, Brazil, Mexico, Europe, Middle East, many different places, and this was a whole amalgam of executives from all kinds of different companies. One of the things that he said that was key to all of this, that underscored why <span class="no-break">they&#x27;re</span> interested, why they think this is a good place to go into, is one, the oil, that Venezuela has vast amounts of oil, which of course means revenues, and then secondly, that the US is a backstop, so guaranteeing that things move forward as opposed to slipping back. But of course, the concern that I think people probably should have is <span class="no-break">we&#x27;re</span> not 100% on how things are going to turn out in Venezuela, whether Delcy Rodríguez, <span class="no-break">who&#x27;s</span> the interim president, is going to stay in charge forever, or whether <span class="no-break">there&#x27;s</span> going to be some kind of transition to elections in the future.</p>
+<p><strong>Juan Forero<span class="cjk">：</span></strong> <span class="cjk">我采访了一位名叫</span> Charles Myers <span class="cjk">的高管，他来自</span> Signum Global Advisory<span class="cjk">。这家公司最近带了</span>55<span class="cjk">名高管前往那里，这些高管来自美国、哥伦比亚、巴西、墨西哥、欧洲、中东以及许多不同地方，来自各种不同类型的公司，是一个非常混合的高管群体。他说，有一点是这一切的关键，也说明了他们为什么感兴趣、为什么认为这是一个值得进入的地方。第一是石油，委内瑞拉拥有大量石油，当然这意味着收入；第二是美国是一个后盾，因此可以保证事情向前推进，而不是倒退。当然，我认为人们可能应该担心的是，我们并不能百分之百确定委内瑞拉局势将如何发展，</span>Delcy Rodríguez <span class="cjk">这个临时总统是否会一直掌权，或者未来是否会出现某种向选举过渡的安排。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">took down</span><span class="term">amalgam</span><span class="term">underscored</span><span class="term">revenues</span><span class="term">backstop</span><span class="term">as opposed to</span><span class="term">slipping back</span><span class="term">turn out</span><span class="term">interim</span></div><ul><li><strong>take down</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">带去；组织带着前往</span></strong>”<span class="cjk">，即那家公司带了</span>55<span class="cjk">位高管去委内瑞拉考察。</span></li><li><strong>amalgam</strong> /ə-ˈmal-gəm/<span class="cjk">：这里指</span>“<strong><span class="cjk">大杂烩式的组合；混合体</span></strong>”<span class="cjk">。</span></li><li><strong>underscore</strong> /ˌən-dər-ˈskȯr/<span class="cjk">：这里指</span>“<strong><span class="cjk">突出说明；强调</span></strong>”<span class="cjk">。</span></li><li><strong>revenue</strong> /ˈre-və-ˌnü/<span class="cjk">：这里用复数</span> <strong>revenues</strong><span class="cjk">，原形是</span> <strong>revenue</strong><span class="cjk">，指</span>“<strong><span class="cjk">收入；财政进账</span></strong>”<span class="cjk">。</span></li><li><strong>backstop</strong> /ˈbak-ˌstäp/<span class="cjk">：这里指</span>“<strong><span class="cjk">兜底支持力量</span></strong>”<span class="cjk">，即美国在背后提供保障。</span></li><li><strong>as opposed to</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">而不是</span></strong>”<span class="cjk">。</span></li><li><strong>slip back</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">倒退回去</span></strong>”<span class="cjk">，即局势又退回到以前的不稳定状态。</span></li><li><strong>turn out</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">最终发展成；结果证明是</span></strong>”<span class="cjk">。</span></li><li><strong>interim</strong> /ˈin-tə-rəm/<span class="cjk">：这里指</span>“<strong><span class="cjk">临时的；过渡期的</span></strong>”<span class="cjk">。</span></li></ul></aside>
+<p><strong>Alex Ossola:</strong> That was WSJ South America bureau chief, Juan Forero. Thanks, Juan.</p>
+<p><strong>Juan Forero:</strong> Thank you.</p>
+<p><strong>Alex Ossola:</strong> Maine is poised to become the first state to ban the construction of large new data centers. Last month, the <span class="no-break">State&#x27;s</span> House of Representatives passed a bill that would temporarily bar their construction, and <span class="no-break">it&#x27;s</span> expected to pass into law. The freeze would apply to data center projects of at least 20 megawatts, which is enough to power more than 15,000 homes, and it would pause construction until November 2027. Wall Street Journal real estate reporter, Will Parker tells our Tech News Briefing podcast, &quot;The ban is a challenge for data center builders, and it may not be limited to one state for long.&quot;</p>
+<p><strong>Alex Ossola<span class="cjk">：</span></strong> <span class="cjk">缅因州准备成为第一个禁止建设大型新数据中心的州。上个月，该州众议院通过了一项法案，将暂时禁止这类建设，预计该法案将成为法律。这项冻结措施将适用于至少</span>20<span class="cjk">兆瓦的数据中心项目，这一电力规模足以为超过</span>15,000<span class="cjk">户家庭供电，并且会暂停建设直到</span>2027<span class="cjk">年</span>11<span class="cjk">月。《华尔街日报》房地产记者</span> Will Parker <span class="cjk">在我们的《</span>Tech News Briefing<span class="cjk">》播客中表示：</span>“<span class="cjk">这项禁令对数据中心建设商是一个挑战，而且它可能不会长期局限于一个州。</span>”</p>
+<aside class="vocab"><div class="terms"><span class="term">is poised to</span><span class="term">bar</span><span class="term">it may not be limited to one state for long</span></div><ul><li><strong>is poised to</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">很可能马上就会</span>…… / <span class="cjk">即将</span>……</strong>”<span class="cjk">。</span></li><li><strong>bar</strong> /ˈbär/<span class="cjk">：这里指</span>“<strong><span class="cjk">禁止</span></strong>”<span class="cjk">。</span></li><li><strong>it may not be limited to one state for long</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">这种情况可能很快就不会只局限于一个州了</span></strong>”<span class="cjk">，暗示别的州也可能跟进。</span></li></ul></aside>
+<p><strong>Will Parker:</strong> This is coming in response to not so much a boom in AI in Maine, but a larger explosion of these projects nationally, the effects on electricity grids, the effects on the cost of electricity for rate payers. So losing access to Maine for 18 months may not be that big of a deal, but if this snowballs and starts to affect bigger states where there is more data center business, <span class="no-break">you&#x27;ll</span> see much more of a response to that. (inaudible) community opposition kind of shrinks the map of where they are likely to try to go and do business. So <span class="no-break">it&#x27;s</span> a mounting concern for data center developers, it shows momentum, especially for Democrats, who at the state level seem to be the ones introducing these bills most often. The polling on voter opinions of data centers and AI is increasingly negative, and I think <span class="no-break">you&#x27;re</span> likely to see more politicians try to respond to that with various legislative proposals.</p>
+<p><strong>Will Parker<span class="cjk">：</span></strong> <span class="cjk">这并不是因为缅因州本身出现了多么大的人工智能热潮，而是对全国范围内这些项目更大规模爆发的一种回应，这些项目对电网的影响，对电费缴纳者用电成本的影响。所以，</span>18<span class="cjk">个月内失去进入缅因州的机会，可能并不是什么大事；但如果这种情况滚雪球式扩大，开始影响那些数据中心业务更多的大州，那么你会看到对此更强烈的反应。（听不清）社区反对在某种程度上缩小了他们可能尝试进入并开展业务的地图。所以，对数据中心开发商来说，这是一种越来越大的担忧。它显示出一种势头，尤其是对民主党人来说，在州一级层面，似乎最经常提出这类法案的正是他们。选民对数据中心和人工智能的看法在民调中越来越负面，我认为你很可能会看到更多政治人物试图用各种立法提案来回应这种情况。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">not so much</span><span class="term">grids</span><span class="term">rate payers</span><span class="term">snowballs</span><span class="term">mounting</span><span class="term">momentum</span><span class="term">polling</span><span class="term">voter opinions</span><span class="term">legislative</span></div><ul><li><strong>not so much</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">与其说是</span>……<span class="cjk">不如说是</span>……</strong>”<span class="cjk">。</span></li><li><strong>grid</strong> /ˈgrid/<span class="cjk">：这里用复数</span> <strong>grids</strong><span class="cjk">，原形是</span> <strong>grid</strong><span class="cjk">，指</span>“<strong><span class="cjk">电网</span></strong>”<span class="cjk">。</span></li><li><strong>rate payer</strong> /ˈrāt-ˌpā-yər/<span class="cjk">：这里写作</span> <strong>rate payers</strong><span class="cjk">，原形可看作</span> <strong>rate payer</strong><span class="cjk">，指</span>“<strong><span class="cjk">电费等公共事业费用的缴费者</span></strong>”<span class="cjk">，也就是普通用户。</span></li><li><strong>snowball</strong> /ˈsnō-ˌbȯl/<span class="cjk">：这里用在</span> <strong>snowballs</strong> <span class="cjk">中，原形是</span> <strong>snowball</strong><span class="cjk">，指</span>“<strong><span class="cjk">像滚雪球一样越滚越大</span></strong>”<span class="cjk">。</span></li><li><strong>mounting</strong> /ˈma<span class="u-dot">u</span>n-tiŋ/<span class="cjk">：这里指</span>“<strong><span class="cjk">不断增加的；越来越严重的</span></strong>”<span class="cjk">。</span></li><li><strong>momentum</strong> /mō-ˈmen-təm/<span class="cjk">：这里指</span>“<strong><span class="cjk">势头</span></strong>”<span class="cjk">。</span></li><li><strong>polling</strong> /ˈpō-liŋ/<span class="cjk">：这里指</span>“<strong><span class="cjk">民调；调查结果</span></strong>”<span class="cjk">。</span></li><li><strong>voter opinions</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">选民看法</span></strong>”<span class="cjk">。</span></li><li><strong>legislative</strong> /ˈle-jə-ˌslā-tiv/<span class="cjk">：这里指</span>“<strong><span class="cjk">立法的</span></strong>”<span class="cjk">，如</span> <strong>legislative proposals</strong> <span class="cjk">就是立法提案。</span></li></ul></aside>
+<p><strong>Alex Ossola:</strong> For more from Will, listen to <span class="no-break">today&#x27;s</span> episode of Tech News Briefing. And <span class="no-break">that&#x27;s</span> <span class="no-break">What&#x27;s</span> News for this week. Tomorrow, you can look out for our weekly markets wrap up, <span class="no-break">What&#x27;s</span> News in Markets. <span class="no-break">We&#x27;ll</span> be off on Sunday for Easter, and <span class="no-break">we&#x27;ll</span> be back with our regular show on Monday morning. <span class="no-break">Today&#x27;s</span> show is produced by Alexis Green with supervising producer, Pierre Bienaimé. Michael LaValle wrote our theme music. Aisha Al-Muslim is our development producer. Chris Zinsli is our deputy editor, and <span class="no-break">I&#x27;m</span> Alex Ossola. Thanks for listening.</p>
+<aside class="vocab"><div class="terms"><span class="term">wrap up</span><span class="term">wrap</span><span class="term">be off</span></div><ul><li><strong>wrap up</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">总结；收尾回顾</span></strong>”<span class="cjk">，如</span> <strong>markets wrap up</strong> <span class="cjk">就是市场一周回顾。</span></li><li><strong>wrap</strong> /ˈrap/<span class="cjk">：这里在</span> <strong>wrap up</strong> <span class="cjk">里本义是</span>“<strong><span class="cjk">包起来</span></strong>”<span class="cjk">，但在此语境中延伸成</span>“<strong><span class="cjk">收尾结束</span></strong>”<span class="cjk">。</span></li><li><strong>be off</strong><span class="cjk">：这里指</span>“<strong><span class="cjk">休息；停播；不播出</span></strong>”<span class="cjk">，即周日节目暂停。</span></li></ul></aside>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const storageKey = "podcastTranscriptBodyText";
+      const fontSelect = document.getElementById("bodyFontSelect");
+      const sizeDown = document.getElementById("bodySizeDown");
+      const sizeUp = document.getElementById("bodySizeUp");
+      const reset = document.getElementById("bodyTextReset");
+      const fontMap = {
+        roboto: 'var(--body-roboto)',
+        sanFrancisco: 'var(--body-san-francisco)',
+        helvetica: 'var(--body-helvetica)',
+        arial: 'var(--body-arial)',
+        times: 'var(--body-serif)',
+      };
+
+      if (!fontSelect || !sizeDown || !sizeUp || !reset) return;
+
+      const firstParagraph = document.querySelector("main p");
+      const defaultSize = firstParagraph
+        ? Math.round(parseFloat(getComputedStyle(firstParagraph).fontSize))
+        : 19;
+      const defaultFont = "roboto";
+      let settings = { font: defaultFont, size: defaultSize };
+
+      try {
+        settings = { ...settings, ...JSON.parse(localStorage.getItem(storageKey) || "{}" ) };
+      } catch (error) {}
+      if (!fontMap[settings.font]) settings.font = defaultFont;
+      if (!Number.isFinite(settings.size)) settings.size = defaultSize;
+
+      function applySettings() {
+        fontSelect.value = settings.font;
+        root.style.setProperty("--reader-body-font", fontMap[settings.font] || fontMap.roboto);
+        root.style.setProperty("--reader-body-size", `${settings.size}px`);
+        localStorage.setItem(storageKey, JSON.stringify(settings));
+      }
+
+      fontSelect.addEventListener("change", () => {
+        settings.font = fontSelect.value;
+        applySettings();
+      });
+
+      sizeDown.addEventListener("click", () => {
+        settings.size = Math.max(15, settings.size - 1);
+        applySettings();
+      });
+
+      sizeUp.addEventListener("click", () => {
+        settings.size = Math.min(24, settings.size + 1);
+        applySettings();
+      });
+
+      reset.addEventListener("click", () => {
+        settings = { font: defaultFont, size: defaultSize };
+        root.style.removeProperty("--reader-body-font");
+        root.style.removeProperty("--reader-body-size");
+        localStorage.removeItem(storageKey);
+        fontSelect.value = defaultFont;
+      });
+
+      applySettings();
+    })();
+  </script>
+</body>
+</html>

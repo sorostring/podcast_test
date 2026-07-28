@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>what&#x27;s news in markets: Clarity Act, Chips&#x27; Dip, Klarna&#x27;s Pivot</title>
+  <style>
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --paper: #fffdfa;
+      --ink: #202124;
+      --muted: #6d675f;
+      --line: #e2dacf;
+      --accent: #2f6f73;
+      --accent-soft: #e7f2f1;
+      --note: #eef7f0;
+      --note-line: #a6c7ad;
+      --shadow: 0 24px 80px rgba(63, 52, 38, 0.12);
+      --content-width: 76ch;
+      --body-serif: "Times New Roman", Times, "Microsoft YaHei", "微软雅黑", serif;
+      --body-roboto: "Transcript Roboto", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      --body-san-francisco: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-helvetica: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-arial: Arial, Helvetica, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-sans: var(--body-roboto);
+      --cjk-font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --card-sans: Aptos, "Aptos Display", "Segoe UI", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --reader-body-font: var(--body-serif);
+      --reader-body-size: 19px;
+      --reader-body-line: 1.75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(246, 243, 237, 0.94), rgba(246, 243, 237, 1)),
+        radial-gradient(circle at 12% 0%, rgba(47, 111, 115, 0.12), transparent 32%);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+
+    header {
+      margin: 0 auto 28px;
+      padding: 34px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--accent);
+      font: 700 12px/1.2 var(--body-serif);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font: 500 14px/1.4 var(--body-serif);
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(255, 253, 250, 0.72);
+    }
+
+    .reader-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: var(--card-sans);
+    }
+
+    .reader-controls label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .reader-controls select,
+    .reader-controls button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.9);
+      color: var(--ink);
+      font: 650 14px/1 var(--card-sans);
+    }
+
+    .reader-controls select {
+      padding: 0 30px 0 10px;
+    }
+
+    .reader-controls button {
+      min-width: 38px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .audio-panel {
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.86);
+      font-family: var(--card-sans);
+    }
+
+    .audio-label {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+    }
+
+    .audio-file {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(226, 218, 207, 0.72);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 58px);
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-family: var(--reader-body-font);
+      font-size: var(--reader-body-size);
+      line-height: var(--reader-body-line);
+      max-width: var(--content-width);
+      text-align: justify;
+      text-align-last: left;
+      text-justify: auto;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .speaker {
+      width: fit-content;
+      max-width: 100%;
+      margin: 18px 0 8px;
+      padding: 5px 10px 6px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: #214d50;
+      font: 750 13px/1.3 var(--body-serif);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vocab {
+      max-width: calc(var(--content-width) + 42px);
+      margin: 10px 0 12px;
+      padding: 16px 18px 17px;
+      border: 1px solid var(--note-line);
+      border-left: 5px solid #5f8f6b;
+      border-radius: 8px;
+      background: var(--note);
+      font-family: var(--card-sans);
+      line-height: 1.6;
+    }
+
+    .terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .term {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(95, 143, 107, 0.28);
+      color: #2f2f2f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .vocab ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .vocab li {
+      margin: 6px 0;
+      color: #403622;
+      font-size: 15px;
+    }
+
+    .vocab strong {
+      color: #202124;
+    }
+
+    .cjk {
+      font-family: var(--cjk-font);
+    }
+
+    .no-break {
+      white-space: nowrap;
+    }
+
+    .u-dot {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .u-dot::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0.04em;
+      width: 0.11em;
+      height: 0.11em;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --reader-body-font: var(--body-sans);
+        --reader-body-size: 17px;
+        --reader-body-line: 1.68;
+      }
+
+      .page {
+        padding: 22px 14px 46px;
+      }
+
+      header {
+        padding-top: 22px;
+      }
+
+      main {
+        padding: 22px 16px;
+      }
+
+      p {
+        max-width: none;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .vocab {
+        max-width: none;
+        padding: 14px 14px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --reader-body-size: 17px;
+        --reader-body-line: 1.66;
+      }
+
+      .page {
+        padding: 14px 8px 34px;
+      }
+
+      header {
+        margin-bottom: 18px;
+        padding: 18px 4px 18px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      main {
+        padding: 18px 12px;
+      }
+
+      .vocab li {
+        font-size: 14px;
+      }
+
+      .audio-panel {
+        margin-top: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11pt;
+        line-height: 1.55;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      header {
+        padding-top: 0;
+      }
+
+      main {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      p {
+        font-size: 11pt;
+        line-height: 1.55;
+        max-width: none;
+        text-align: justify;
+      }
+
+      .reader-controls {
+        display: none;
+      }
+
+      .audio-panel {
+        display: none;
+      }
+
+      .speaker {
+        break-after: avoid;
+      }
+
+      .vocab {
+        max-width: none;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .vocab li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">Podcast Transcript Notes</div>
+      <h1><span class="no-break">what&#x27;s</span> news in markets: Clarity Act, Chips&#x27; Dip, <span class="no-break">Klarna&#x27;s</span> Pivot</h1>
+      <div class="meta">
+        
+        <span>5 vocabulary blocks</span>
+        <span>21 collected terms</span>
+        <span>1 speaker turns</span>
+      </div>
+      <div class="reader-controls" aria-label="正文显示设置">
+        <label for="bodyFontSelect">正文字体
+          <select id="bodyFontSelect">
+            <option value="roboto">Roboto</option>
+            <option value="sanFrancisco">San Francisco</option>
+            <option value="helvetica">Helvetica</option>
+            <option value="arial">Arial</option>
+            <option value="times">Times New Roman</option>
+          </select>
+        </label>
+        <button type="button" id="bodySizeDown" aria-label="减小正文字号">A-</button>
+        <button type="button" id="bodySizeUp" aria-label="增大正文字号">A+</button>
+        <button type="button" id="bodyTextReset">Reset</button>
+      </div>
+      <section class="audio-panel" aria-label="Episode audio">
+        <div class="audio-label">Episode Audio</div>
+        <audio controls preload="metadata">
+          <source src="../audio/whatsnews_20260516_inmarket.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="audio-file">whatsnews_20260516_inmarket.mp3</div>
+      </section>
+    </header>
+    <main>
+<p><strong>Jack Pitcher:</strong> Hey listeners, <span class="no-break">it&#x27;s</span> Saturday, May 16th. <span class="no-break">I&#x27;m</span> Jack Pitcher for The Wall Street Journal and this is <span class="no-break">What&#x27;s</span> News in Markets, our look at the biggest stock moves of the week and the news that drove them. <span class="no-break">Let&#x27;s</span> get to it. What started out as a strong week finished on a bit of a down note. Rising bond yields around the world are sapping investors&#x27; appetite for stocks and oil prices are still climbing, reigniting fears about inflation. All three major indexes fell more than 1% Friday. For the week, the Dow dropped 0.2%, the S&amp;P inched 0.1% higher, and the NASDAQ dropped a 10th of a percent. It was a hectic week for chip stocks like Intel, Nvidia, Micron, and Qualcomm. To give you a sense of the drama, here are some actual quotes from our coverage throughout the week. On Monday ...</p>
+<aside class="vocab"><div class="terms"><span class="term">down note</span><span class="term">sapping</span><span class="term">reigniting</span><span class="term">hectic</span></div><ul><li><strong>down note</strong><span class="cjk">：不是单词；这里指</span>“<span class="cjk">以略显低迷</span>/<span class="cjk">扫兴的状态收尾</span>”<span class="cjk">。</span>a strong week finished on a bit of a down note = <span class="cjk">原本强劲的一周，最后却有点走弱收场。</span></li><li><strong>sap</strong> \\ˈsap\\<span class="cjk">：原文</span> <strong>sapping</strong> <span class="cjk">是现在分词；这里指</span>“<span class="cjk">削弱、消耗</span>”<span class="cjk">。</span>Rising bond yields are sapping investors&#x27; appetite = <span class="cjk">债券收益率上升正在削弱投资者买股票的兴趣。</span></li><li><strong>reignite</strong> \\ˌrē-ig-ˈnīt\\<span class="cjk">：原文</span> <strong>reigniting</strong> <span class="cjk">是现在分词；这里指</span>“<span class="cjk">重新引发</span>”<span class="cjk">。</span>reigniting fears about inflation = <span class="cjk">重新引发对通胀的担忧。</span></li><li><strong>hectic</strong> \\ˈhek-tik\\<span class="cjk">：这里指</span>“<span class="cjk">忙乱的、波动剧烈的</span>”<span class="cjk">。</span>a hectic week for chip stocks = <span class="cjk">芯片股这一周走势很乱、很剧烈。</span></li></ul></aside>
+<p>Speaker 2: Enthusiasm for artificial intelligence continued to drive the market.</p>
+<aside class="vocab"><div class="terms"><span class="term">Enthusiasm</span></div><ul><li><strong>enthusiasm</strong> \\in-ˈthü-zē-ˌa-zəm\\<span class="cjk">：这里指</span>“<span class="cjk">热情、追捧、投资热度</span>”<span class="cjk">。</span>Enthusiasm for artificial intelligence = <span class="cjk">市场对人工智能的热情</span>/<span class="cjk">追捧。</span></li></ul></aside>
+<p><strong>Jack Pitcher:</strong> On Tuesday ...</p>
+<p>Speaker 3: A reversal for the semiconductor sector brought the market to a standstill.</p>
+<aside class="vocab"><div class="terms"><span class="term">reversal</span><span class="term">standstill</span></div><ul><li><strong>reversal</strong> \\ri-ˈvər-səl\\<span class="cjk">：这里指</span>“<span class="cjk">走势反转</span>”<span class="cjk">。</span>A reversal for the semiconductor sector = <span class="cjk">半导体板块走势发生反转，由涨转跌或由强转弱。</span></li><li><strong>standstill</strong> \\ˈstand-ˌstil\\<span class="cjk">：这里指</span>“<span class="cjk">停滞、陷入停顿</span>”<span class="cjk">。</span>brought the market to a standstill = <span class="cjk">让市场几乎停住，交易情绪</span>/<span class="cjk">走势陷入僵局。</span></li></ul></aside>
+<p><strong>Jack Pitcher:</strong> On Wednesday ...</p>
+<p>Speaker 3: Chip makers bounced back from <span class="no-break">yesterday&#x27;s</span> stumble.</p>
+<aside class="vocab"><div class="terms"><span class="term">bounced</span><span class="term">stumble</span></div><ul><li><strong>bounce</strong> \\ˈba<span class="u-dot">u</span>n(t)s\\<span class="cjk">：原文</span> <strong>bounced</strong> <span class="cjk">是过去式；这里指</span>“<span class="cjk">反弹</span>”<span class="cjk">。</span>Chip makers bounced back = <span class="cjk">芯片制造商股价反弹。</span></li><li><strong>stumble</strong> \\ˈstəm-bəl\\<span class="cjk">：这里作名词，指</span>“<span class="cjk">短暂下跌、失足式回落</span>”<span class="cjk">。</span>from <span class="no-break">yesterday&#x27;s</span> stumble = <span class="cjk">从前一天的下跌</span>/<span class="cjk">回落中恢复过来。</span></li></ul></aside>
+<p><strong>Jack Pitcher:</strong> You get the idea. So what gives? My colleague, Heather Gillers, called it a post-earnings hangover. She wrote that the dip was at least in part a natural breather for semiconductors and other AI related stocks and those companies have been tearing up the charts. After <span class="no-break">Tuesday&#x27;s</span> declines, Intel, Qualcomm, and Micron were still up more than 60% over the previous month. When all was said and done, the iShares Semiconductor ETF, a benchmark for the U.S. chip industry, closed out the week down two-and-a-quarter percent. This week also brought some long awaited news for crypto enthusiasts. A bill called the Clarity Act would create a pathway for crypto to further upend traditional finance. <span class="no-break">It&#x27;s</span> important for crypto companies who want, you guessed it, clarity about the rules of the road for cryptocurrencies across U.S. regulatory bodies. But the bill was stuck in the Senate Banking Committee for months. A big issue was whether crypto exchanges like Coinbase and other firms could offer so called rewards that pay recurring fees to the holders of popular tokens. Banks argued against what they call loopholes, saying they would threaten their deposits. On Thursday, the committee finally approved a version of the bill and in the end, neither side got everything it wanted. Banks won some concessions and shares of the stablecoin issuer Circle Internet fell 2%. Meanwhile, shares of Coinbase and Robinhood jumped more than 5%. But as is so often the case in crypto, the high <span class="no-break">didn&#x27;t</span> last. At the end of the week, shares of Robinhood were flat and Coinbase was down 3%. If you know the Swedish company Klarna for one thing, <span class="no-break">it&#x27;s</span> probably buy now pay later, but that might not be the case for too much longer. Klarna is shifting its focus more towards something called fair financing. <span class="no-break">That&#x27;s</span> a longer term type of installment loan designed for big ticket items. And this week the company said that pivot is working. The new offering has taken off faster than expected with gross merchandise volumes more than doubling from last year. The new strategy has also helped Klarna gain market share from competitors like Afterpay and Affirm in the recent quarter. After reporting earnings, shares of Klarna shot up 20% on Thursday. It was a welcome change for shareholders. <span class="no-break">Klarna&#x27;s</span> stock had lost about two thirds of its value over the past year. The shares gave up some of <span class="no-break">Thursday&#x27;s</span> gains on Friday, but still ended the week nearly 5% higher. And now you know <span class="no-break">what&#x27;s</span> news in markets this week. You can read about more stocks that moved on the <span class="no-break">week&#x27;s</span> news in our live markets coverage on wsj.com. <span class="no-break">Today&#x27;s</span> show was produced by Anthony Bansy with deputy editor, Chris Zinsli and supervising producer Katie Ferguson. <span class="no-break">I&#x27;m</span> Jack Pitcher. Have a great weekend and see you next Saturday.</p>
+<aside class="vocab"><div class="terms"><span class="term">in part a natural breather</span><span class="term">tearing up the charts</span><span class="term">two-and-a-quarter</span><span class="term">enthusiasts</span><span class="term">upend</span><span class="term">recurring</span><span class="term">loopholes</span><span class="term">concessions</span><span class="term">jumped more than 5%</span><span class="term">installment loan</span><span class="term">merchandise</span><span class="term">shot up 20%</span></div><ul><li><strong>in part a natural breather</strong><span class="cjk">：不是单词；这里指</span>“<span class="cjk">在一定程度上是一次自然的休整</span>”<span class="cjk">。意思是芯片股</span>/AI<span class="cjk">股此前涨太多，这次下跌部分属于正常回调。</span></li><li><strong>tearing up the charts</strong><span class="cjk">：不是单词；这里指</span>“<span class="cjk">股价表现极其强劲、涨势惊人</span>”<span class="cjk">。</span>those companies have been tearing up the charts = <span class="cjk">这些公司股价之前一路猛涨。</span></li><li><strong>two-and-a-quarter</strong><span class="cjk">：不是单词；这里指</span>“2.25”<span class="cjk">。</span>down two-and-a-quarter percent = <span class="cjk">下跌</span> 2.25%<span class="cjk">。</span></li><li><strong>enthusiast</strong> \\in-ˈthü-zē-ˌast\\<span class="cjk">：原文</span> <strong>enthusiasts</strong> <span class="cjk">是复数；这里指</span>“<span class="cjk">爱好者、支持者</span>”<span class="cjk">。</span>crypto enthusiasts = <span class="cjk">加密货币支持者</span>/<span class="cjk">拥趸。</span></li><li><strong>upend</strong> \\ˌəp-ˈend\\<span class="cjk">：这里指</span>“<span class="cjk">颠覆、彻底改变</span>”<span class="cjk">。</span>upend traditional finance = <span class="cjk">颠覆传统金融。</span></li><li><strong>recurring</strong> \\ri-ˈkər-iŋ\\<span class="cjk">：这里指</span>“<span class="cjk">反复发生的、定期支付的</span>”<span class="cjk">。</span>recurring fees = <span class="cjk">定期</span>/<span class="cjk">持续支付的费用或收益。</span></li><li><strong>loophole</strong> \\ˈlüp-ˌhōl\\<span class="cjk">：原文</span> <strong>loopholes</strong> <span class="cjk">是复数；这里指</span>“<span class="cjk">规则漏洞</span>”<span class="cjk">。</span>Banks argued against what they call loopholes = <span class="cjk">银行反对它们认为的监管漏洞。</span></li><li><strong>concession</strong> \\kən-ˈse-shən\\<span class="cjk">：原文</span> <strong>concessions</strong> <span class="cjk">是复数；这里指</span>“<span class="cjk">让步</span>”<span class="cjk">。</span>Banks won some concessions = <span class="cjk">银行方面争取到了一些让步条款。</span></li><li><strong>jumped more than 5%</strong><span class="cjk">：不是单词；这里指</span>“<span class="cjk">股价上涨超过</span> 5%”<span class="cjk">。</span>shares of Coinbase and Robinhood jumped more than 5% = Coinbase <span class="cjk">和</span> Robinhood <span class="cjk">股价涨超</span> 5%<span class="cjk">。</span></li><li><strong>installment loan</strong><span class="cjk">：不是单词；这里指</span>“<span class="cjk">分期贷款</span>”<span class="cjk">。</span>a longer term type of installment loan = <span class="cjk">一种期限更长的分期付款贷款。</span></li><li><strong>merchandise</strong> \\ˈmər-chən-ˌdīz\\<span class="cjk">：这里在</span> <strong>gross merchandise volumes</strong> <span class="cjk">里，指</span>“<span class="cjk">商品交易额中的商品</span>/<span class="cjk">交易商品</span>”<span class="cjk">。</span>gross merchandise volumes = <span class="cjk">平台商品交易总额，常缩写为</span> GMV<span class="cjk">。</span></li><li><strong>shot up 20%</strong><span class="cjk">：不是单词；这里指</span>“<span class="cjk">暴涨</span> 20%”<span class="cjk">。</span>shares of Klarna shot up 20% = Klarna <span class="cjk">股价大涨</span> 20%<span class="cjk">。</span></li></ul></aside>
+<p>---</p>
+<div class="speaker"><span class="cjk">整体翻译</span></div>
+<p># <span class="no-break">What&#x27;s</span> News in Markets<span class="cjk">：</span>Clarity Act<span class="cjk">、芯片股回落、</span>Klarna <span class="cjk">转向</span></p>
+<p><strong>Jack Pitcher<span class="cjk">：</span></strong> <span class="cjk">各位听众好，今天是</span> 5 <span class="cjk">月</span> 16 <span class="cjk">日，星期六。我是《华尔街日报》的</span> Jack Pitcher<span class="cjk">，这里是</span> *<span class="no-break">What&#x27;s</span> News in Markets*<span class="cjk">。我们会回顾本周股市中最大的价格波动，以及推动这些波动的新闻。我们开始吧。</span></p>
+<p><span class="cjk">本周开局强劲，但最后收尾有些走弱。全球债券收益率上升正在削弱投资者对股票的兴趣，而油价仍在上涨，重新引发了市场对通胀的担忧。周五，美国三大主要股指都下跌超过</span> 1%<span class="cjk">。从整周来看，道琼斯指数下跌</span> 0.2%<span class="cjk">，标普</span> 500 <span class="cjk">指数小幅上涨</span> 0.1%<span class="cjk">，纳斯达克指数下跌</span> 0.1%<span class="cjk">。</span></p>
+<p><span class="cjk">对</span> Intel<span class="cjk">、</span>Nvidia<span class="cjk">、</span>Micron <span class="cjk">和</span> Qualcomm <span class="cjk">这样的芯片股来说，这是非常动荡的一周。为了让你感受一下这种戏剧性变化，下面是我们本周报道中的一些原话。周一</span>……</p>
+<p><strong>Speaker 2<span class="cjk">：</span></strong> <span class="cjk">市场对人工智能的热情继续推动股市上涨。</span></p>
+<p><strong>Jack Pitcher<span class="cjk">：</span></strong> <span class="cjk">周二</span>……</p>
+<p><strong>Speaker 3<span class="cjk">：</span></strong> <span class="cjk">半导体板块走势反转，使市场陷入停顿。</span></p>
+<p><strong>Jack Pitcher<span class="cjk">：</span></strong> <span class="cjk">周三</span>……</p>
+<p><strong>Speaker 3<span class="cjk">：</span></strong> <span class="cjk">芯片制造商从昨日的回落中反弹。</span></p>
+<p><strong>Jack Pitcher<span class="cjk">：</span></strong> <span class="cjk">你懂这个意思了吧。那么到底发生了什么？我的同事</span> Heather Gillers <span class="cjk">把它称为</span>“<span class="cjk">财报后的宿醉</span>”<span class="cjk">。她写道，这次下跌至少部分是半导体和其他</span> AI <span class="cjk">相关股票的一次自然休整，因为这些公司的股价此前已经涨得非常猛。</span></p>
+<p><span class="cjk">在周二下跌之后，</span>Intel<span class="cjk">、</span>Qualcomm <span class="cjk">和</span> Micron <span class="cjk">的股价相较前一个月仍然上涨超过</span> 60%<span class="cjk">。最终，作为美国芯片行业基准的</span> iShares Semiconductor ETF <span class="cjk">本周收盘时下跌</span> 2.25%<span class="cjk">。</span></p>
+<p><span class="cjk">本周也给加密货币支持者带来了一些期待已久的消息。一项名为《</span>Clarity Act<span class="cjk">》的法案将为加密货币进一步颠覆传统金融创造路径。对于那些希望获得监管清晰度的加密公司来说，这项法案非常重要</span>——<span class="cjk">也就是希望弄清楚美国不同监管机构对加密货币的规则到底是什么。</span></p>
+<p><span class="cjk">但这项法案此前已经在参议院银行委员会卡了好几个月。一个重要争议是，</span>Coinbase <span class="cjk">等加密货币交易所和其他公司是否可以提供所谓的</span>“<span class="cjk">奖励</span>”<span class="cjk">，也就是向热门代币持有人支付持续性费用。银行反对它们所谓的</span>“<span class="cjk">漏洞</span>”<span class="cjk">，称这些安排会威胁到银行存款。</span></p>
+<p><span class="cjk">周四，该委员会终于批准了一个版本的法案。最终，双方都没有完全得到自己想要的东西。银行方面争取到了一些让步，稳定币发行商</span> Circle Internet <span class="cjk">的股价下跌</span> 2%<span class="cjk">。与此同时，</span>Coinbase <span class="cjk">和</span> Robinhood <span class="cjk">的股价上涨超过</span> 5%<span class="cjk">。</span></p>
+<p><span class="cjk">但就像加密货币领域经常发生的那样，这种兴奋没有持续太久。到本周结束时，</span>Robinhood <span class="cjk">股价基本持平，</span>Coinbase <span class="cjk">股价下跌</span> 3%<span class="cjk">。</span></p>
+<p><span class="cjk">如果你对瑞典公司</span> Klarna <span class="cjk">有一个印象，那很可能是</span>“<span class="cjk">先买后付</span>”<span class="cjk">。但这种情况可能不会持续太久了。</span>Klarna <span class="cjk">正在把业务重点更多转向一种叫做</span>“fair financing”<span class="cjk">的东西。这是一种期限更长的分期贷款，主要用于大件商品。</span></p>
+<p><span class="cjk">本周，该公司表示，这一转型正在奏效。这个新产品的增长速度快于预期，平台商品交易总额相比去年已经翻了一倍多。新策略也帮助</span> Klarna <span class="cjk">在最近一个季度从</span> Afterpay <span class="cjk">和</span> Affirm <span class="cjk">等竞争对手那里夺取了市场份额。</span></p>
+<p><span class="cjk">公布财报后，</span>Klarna <span class="cjk">股价周四大涨</span> 20%<span class="cjk">。这对股东来说是一个受欢迎的变化。在过去一年里，</span>Klarna <span class="cjk">的股价已经损失了大约三分之二。周五，该股回吐了周四部分涨幅，但本周收盘时仍然上涨近</span> 5%<span class="cjk">。</span></p>
+<p><span class="cjk">现在你已经知道了本周市场上的重要新闻。你可以在</span> wsj.com <span class="cjk">的实时市场报道中阅读更多关于本周因新闻而波动的股票内容。今天的节目由</span> Anthony Bansy <span class="cjk">制作，副编辑是</span> Chris Zinsli<span class="cjk">，监制是</span> Katie Ferguson<span class="cjk">。我是</span> Jack Pitcher<span class="cjk">。祝你周末愉快，我们下周六再见。</span></p>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const storageKey = "podcastTranscriptBodyText";
+      const fontSelect = document.getElementById("bodyFontSelect");
+      const sizeDown = document.getElementById("bodySizeDown");
+      const sizeUp = document.getElementById("bodySizeUp");
+      const reset = document.getElementById("bodyTextReset");
+      const fontMap = {
+        roboto: 'var(--body-roboto)',
+        sanFrancisco: 'var(--body-san-francisco)',
+        helvetica: 'var(--body-helvetica)',
+        arial: 'var(--body-arial)',
+        times: 'var(--body-serif)',
+      };
+
+      if (!fontSelect || !sizeDown || !sizeUp || !reset) return;
+
+      const firstParagraph = document.querySelector("main p");
+      const defaultSize = firstParagraph
+        ? Math.round(parseFloat(getComputedStyle(firstParagraph).fontSize))
+        : 19;
+      const defaultFont = "roboto";
+      let settings = { font: defaultFont, size: defaultSize };
+
+      try {
+        settings = { ...settings, ...JSON.parse(localStorage.getItem(storageKey) || "{}" ) };
+      } catch (error) {}
+      if (!fontMap[settings.font]) settings.font = defaultFont;
+      if (!Number.isFinite(settings.size)) settings.size = defaultSize;
+
+      function applySettings() {
+        fontSelect.value = settings.font;
+        root.style.setProperty("--reader-body-font", fontMap[settings.font] || fontMap.roboto);
+        root.style.setProperty("--reader-body-size", `${settings.size}px`);
+        localStorage.setItem(storageKey, JSON.stringify(settings));
+      }
+
+      fontSelect.addEventListener("change", () => {
+        settings.font = fontSelect.value;
+        applySettings();
+      });
+
+      sizeDown.addEventListener("click", () => {
+        settings.size = Math.max(15, settings.size - 1);
+        applySettings();
+      });
+
+      sizeUp.addEventListener("click", () => {
+        settings.size = Math.min(24, settings.size + 1);
+        applySettings();
+      });
+
+      reset.addEventListener("click", () => {
+        settings = { font: defaultFont, size: defaultSize };
+        root.style.removeProperty("--reader-body-font");
+        root.style.removeProperty("--reader-body-size");
+        localStorage.removeItem(storageKey);
+        fontSelect.value = defaultFont;
+      });
+
+      applySettings();
+    })();
+  </script>
+</body>
+</html>

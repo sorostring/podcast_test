@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What’s News in Markets: Memory’s Gold Rush, Oil Slips, Ford Finds a New Lane</title>
+  <style>
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --paper: #fffdfa;
+      --ink: #202124;
+      --muted: #6d675f;
+      --line: #e2dacf;
+      --accent: #2f6f73;
+      --accent-soft: #e7f2f1;
+      --note: #eef7f0;
+      --note-line: #a6c7ad;
+      --shadow: 0 24px 80px rgba(63, 52, 38, 0.12);
+      --content-width: 76ch;
+      --body-serif: "Times New Roman", Times, "Microsoft YaHei", "微软雅黑", serif;
+      --body-roboto: "Transcript Roboto", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      --body-san-francisco: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-helvetica: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-arial: Arial, Helvetica, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-sans: var(--body-roboto);
+      --cjk-font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --card-sans: Aptos, "Aptos Display", "Segoe UI", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --reader-body-font: var(--body-serif);
+      --reader-body-size: 19px;
+      --reader-body-line: 1.75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(246, 243, 237, 0.94), rgba(246, 243, 237, 1)),
+        radial-gradient(circle at 12% 0%, rgba(47, 111, 115, 0.12), transparent 32%);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+
+    header {
+      margin: 0 auto 28px;
+      padding: 34px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--accent);
+      font: 700 12px/1.2 var(--body-serif);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font: 500 14px/1.4 var(--body-serif);
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(255, 253, 250, 0.72);
+    }
+
+    .reader-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: var(--card-sans);
+    }
+
+    .reader-controls label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .reader-controls select,
+    .reader-controls button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.9);
+      color: var(--ink);
+      font: 650 14px/1 var(--card-sans);
+    }
+
+    .reader-controls select {
+      padding: 0 30px 0 10px;
+    }
+
+    .reader-controls button {
+      min-width: 38px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .audio-panel {
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.86);
+      font-family: var(--card-sans);
+    }
+
+    .audio-label {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+    }
+
+    .audio-file {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(226, 218, 207, 0.72);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 58px);
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-family: var(--reader-body-font);
+      font-size: var(--reader-body-size);
+      line-height: var(--reader-body-line);
+      max-width: var(--content-width);
+      text-align: justify;
+      text-align-last: left;
+      text-justify: auto;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .speaker {
+      width: fit-content;
+      max-width: 100%;
+      margin: 18px 0 8px;
+      padding: 5px 10px 6px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: #214d50;
+      font: 750 13px/1.3 var(--body-serif);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vocab {
+      max-width: calc(var(--content-width) + 42px);
+      margin: 10px 0 12px;
+      padding: 16px 18px 17px;
+      border: 1px solid var(--note-line);
+      border-left: 5px solid #5f8f6b;
+      border-radius: 8px;
+      background: var(--note);
+      font-family: var(--card-sans);
+      line-height: 1.6;
+    }
+
+    .terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .term {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(95, 143, 107, 0.28);
+      color: #2f2f2f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .vocab ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .vocab li {
+      margin: 6px 0;
+      color: #403622;
+      font-size: 15px;
+    }
+
+    .vocab strong {
+      color: #202124;
+    }
+
+    .cjk {
+      font-family: var(--cjk-font);
+    }
+
+    .no-break {
+      white-space: nowrap;
+    }
+
+    .u-dot {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .u-dot::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0.04em;
+      width: 0.11em;
+      height: 0.11em;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --reader-body-font: var(--body-sans);
+        --reader-body-size: 17px;
+        --reader-body-line: 1.68;
+      }
+
+      .page {
+        padding: 22px 14px 46px;
+      }
+
+      header {
+        padding-top: 22px;
+      }
+
+      main {
+        padding: 22px 16px;
+      }
+
+      p {
+        max-width: none;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .vocab {
+        max-width: none;
+        padding: 14px 14px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --reader-body-size: 17px;
+        --reader-body-line: 1.66;
+      }
+
+      .page {
+        padding: 14px 8px 34px;
+      }
+
+      header {
+        margin-bottom: 18px;
+        padding: 18px 4px 18px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      main {
+        padding: 18px 12px;
+      }
+
+      .vocab li {
+        font-size: 14px;
+      }
+
+      .audio-panel {
+        margin-top: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11pt;
+        line-height: 1.55;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      header {
+        padding-top: 0;
+      }
+
+      main {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      p {
+        font-size: 11pt;
+        line-height: 1.55;
+        max-width: none;
+        text-align: justify;
+      }
+
+      .reader-controls {
+        display: none;
+      }
+
+      .audio-panel {
+        display: none;
+      }
+
+      .speaker {
+        break-after: avoid;
+      }
+
+      .vocab {
+        max-width: none;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .vocab li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">Podcast Transcript Notes</div>
+      <h1><span class="no-break">What’s</span> News in Markets: <span class="no-break">Memory’s</span> Gold Rush, Oil Slips, Ford Finds a New Lane</h1>
+      <div class="meta">
+        
+        <span>5 vocabulary blocks</span>
+        <span>34 collected terms</span>
+        <span>0 speaker turns</span>
+      </div>
+      <div class="reader-controls" aria-label="正文显示设置">
+        <label for="bodyFontSelect">正文字体
+          <select id="bodyFontSelect">
+            <option value="roboto">Roboto</option>
+            <option value="sanFrancisco">San Francisco</option>
+            <option value="helvetica">Helvetica</option>
+            <option value="arial">Arial</option>
+            <option value="times">Times New Roman</option>
+          </select>
+        </label>
+        <button type="button" id="bodySizeDown" aria-label="减小正文字号">A-</button>
+        <button type="button" id="bodySizeUp" aria-label="增大正文字号">A+</button>
+        <button type="button" id="bodyTextReset">Reset</button>
+      </div>
+      <section class="audio-panel" aria-label="Episode audio">
+        <div class="audio-label">Episode Audio</div>
+        <audio controls preload="metadata">
+          <source src="../audio/whatsnews_20260530_inmarket.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="audio-file">whatsnews_20260530_inmarket.mp3</div>
+      </section>
+    </header>
+    <main>
+<p><strong>Imani Moise:</strong> Hey listeners, <span class="no-break">it&#x27;s</span> Saturday, May 30th. <span class="no-break">I&#x27;m</span> Imani Moise for The Wall Street Journal, and this is <span class="no-break">What&#x27;s</span> News in Markets, our look at the biggest stock moves of the week and the news that drove them. <span class="no-break">Let&#x27;s</span> dive in. Stocks continued their historic March higher as Wall <span class="no-break">Street&#x27;s</span> appetite for AI showed few signs of slowing. All three major indexes ended the week at record highs, and the S&amp;P has now risen nine consecutive weeks, the longest winning streak since 2023. Investors are paying historically high prices relative to corporate earnings, a dynamic not seen since the dot-com boom. The last time investors were willing to pay these kinds of prices was around the market peak in 2000.</p>
+<p><strong>Imani Moise<span class="cjk">：</span></strong> <span class="cjk">听众朋友们好，今天是</span>5<span class="cjk">月</span>30<span class="cjk">日，星期六。我是《华尔街日报》的</span> Imani Moise<span class="cjk">，这里是《</span><span class="no-break">What&#x27;s</span> News in Markets<span class="cjk">》，我们将回顾本周涨跌最明显的股票，以及推动这些行情的新闻。我们开始吧。随着华尔街对人工智能的胃口几乎没有放缓迹象，股市继续创下历史性的上涨行情。三大主要股指本周均以创纪录高位收盘，标普</span>500<span class="cjk">指数已经连续九周上涨，这是自</span>2023<span class="cjk">年以来最长的连涨纪录。相对于企业盈利，投资者正在支付历史性的高估值，这种情况自互联网泡沫时期以来就没有出现过。上一次投资者愿意支付这类价格，还是在</span>2000<span class="cjk">年前后市场见顶的时候。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">March</span><span class="term">historic March higher</span><span class="term">record highs</span><span class="term">winning streak</span><span class="term">streak</span><span class="term">dot-com</span></div><ul><li>March | <code>\ ˈmärch \</code><span class="cjk">：指三月份，这里强调</span>“<span class="cjk">历史性的</span>3<span class="cjk">月上涨</span>”<span class="cjk">。</span></li><li>historic March higher<span class="cjk">：指</span>“<span class="cjk">历史性三月涨幅</span>”<span class="cjk">，市场表现异常强劲。</span></li><li>record highs | <code>\ ˈre-kərd ˌhīz \</code><span class="cjk">：历史新高。</span></li><li>winning streak | <code>\ ˈwi-niŋ ˌstrēk \</code><span class="cjk">：连涨纪录。</span></li><li>streak | <code>\ ˈstrēk \</code><span class="cjk">：连续走势，这里指连涨。</span></li><li>dot-com<span class="cjk">：互联网泡沫时期，</span>2000<span class="cjk">年前后市场达到顶峰时的历史参考。</span></li></ul></aside>
+<p>So far, investors are still buying. The tech-heavy NASDAQ led the way, rising just under 2.4% for the week. The S&amp;P 500 grew 1.4% and the Dow increased 0.9%. The AI boom minted two new trillion-dollar companies this week. Shares in memory chip makers Micron and SK Hynix surged nearly 30% and 20%, respectively, to cross the trillion-dollar valuation mark. <span class="no-break">They&#x27;re</span> the latest additions after Samsung joined one of the stock <span class="no-break">market&#x27;s</span> most exclusive clubs earlier this month.</p>
+<p><span class="cjk">到目前为止，投资者仍在买入。以科技股为主的纳斯达克指数领涨，本周涨幅接近</span>2.4%<span class="cjk">。标普</span>500<span class="cjk">指数上涨</span>1.4%<span class="cjk">，道琼斯工业平均指数上涨</span>0.9%<span class="cjk">。人工智能热潮本周又催生了两家万亿美元市值公司。存储芯片制造商美光科技和</span> SK Hynix <span class="cjk">的股价分别飙升近</span>30%<span class="cjk">和</span>20%<span class="cjk">，市值双双突破万亿美元大关。本月早些时候，三星也加入了股市中这个最顶级的俱乐部，而它们则是最新加入者。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">tech-heavy</span><span class="term">led the way</span><span class="term">rising just under 2.4%</span></div><ul><li>tech-heavy | <code>\ ˈtek-ˌhe-vē \</code><span class="cjk">：以科技股为主。</span></li><li>led the way | <span class="cjk">这里指</span>“<span class="cjk">领涨、领先其他指数</span>”<span class="cjk">。</span></li><li>rising just under 2.4%<span class="cjk">：涨幅接近</span>2.4%<span class="cjk">。</span></li></ul></aside>
+<p>For years, memory chips were seen as a commodity business, the tech equivalent of selling gasoline, but investors are now trading chips as one of the most precious resources in the AI economy. In fact, the combined value of Samsung, SK Hynix, and Micron now exceeds the market value of the <span class="no-break">world&#x27;s</span> three largest oil companies. Every AI model needs enormous amounts of memory to store and move data, creating a global shortage of semiconductors. According to data provider Ornn, spot prices for a common AI memory chip known as DDR5 have more than doubled since November. Stock prices have mirrored those gains. Micron shares have tripled since the end of March, helping it become the fastest company to ever go from a $500 billion valuation to a trillion dollar one. As memory chips become the hottest commodity, oil stocks are getting the cold shoulder.</p>
+<p><span class="cjk">多年来，存储芯片一直被视为一种大宗商品业务，相当于科技行业里的</span>“<span class="cjk">卖汽油</span>”<span class="cjk">。但现在，投资者正把芯片当作人工智能经济中最宝贵的资源之一来交易。事实上，三星、</span>SK Hynix <span class="cjk">和美光的总市值现在已经超过全球三大石油公司的市值。每一个人工智能模型都需要海量存储空间来保存和传输数据，这造成了全球半导体短缺。数据提供商</span> Ornn <span class="cjk">称，一种常见的人工智能存储芯片</span> DDR5 <span class="cjk">的现货价格自去年</span>11<span class="cjk">月以来已经翻了一倍多。股价也反映了这些涨幅。美光的股价自</span>3<span class="cjk">月底以来已经涨至原来的三倍，帮助其成为有史以来从</span>5000<span class="cjk">亿美元市值升至</span>1<span class="cjk">万亿美元市值速度最快的公司。随着存储芯片成为最热门的大宗商品，石油股却正在受到冷落。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">more than doubled</span><span class="term">Stock prices have mirrored those gains</span><span class="term">getting the cold shoulder</span></div><ul><li>more than doubled | <span class="cjk">原形</span> double /ˈdəb-əl/<span class="cjk">：翻倍。</span></li><li>Stock prices have mirrored those gains<span class="cjk">：股价反映了这些涨幅。</span></li><li>getting the cold shoulder<span class="cjk">：受冷落、关注度下降。</span></li></ul></aside>
+<p>Energy was the worst-performing sector in the S&amp;P 500 this week, as crude prices saw their biggest monthly decline since the onset of the pandemic. Reports that Washington and Tehran may be inching toward a possible agreement that would reopen the Strait of Hormuz have traders unwinding bets that the conflict could lead to a prolonged supply shock. Investors have gotten used to whipsawing headlines as tensions in the Middle East drag on, but they still have some impact. The S&amp;P Energy Index fell more than 5% over the week as Brent Crude slid 11% to $92.05 a barrel. But <span class="no-break">don&#x27;t</span> cry for oil investors just yet. The conflict in the Middle East sent energy stocks soaring earlier this year, and the S&amp;P Energy Index remains up more than 25% year to date. Ford was one of the <span class="no-break">week&#x27;s</span> biggest winners as <span class="no-break">investor&#x27;s</span> enthusiasm for a new subsidiary continued to rev up.</p>
+<p><span class="cjk">本周，能源板块是标普</span>500<span class="cjk">指数中表现最差的板块，原因是原油价格出现了自疫情暴发以来最大的月度跌幅。有报道称，华盛顿和德黑兰可能正逐步接近一项潜在协议，该协议将重新开放霍尔木兹海峡；这使交易员开始解除此前押注冲突会导致长期供应冲击的头寸。随着中东紧张局势持续，投资者已经习惯了反复摇摆的新闻标题，但这些消息仍然会产生影响。布伦特原油价格下跌</span>11%<span class="cjk">，至每桶</span>92.05<span class="cjk">美元，标普能源指数本周下跌超过</span>5%<span class="cjk">。不过，现在还不必为石油投资者感到难过。今年早些时候，中东冲突曾推动能源股大幅上涨，标普能源指数今年以来仍上涨超过</span>25%<span class="cjk">。福特是本周表现最好的股票之一，因为投资者对其新子公司的热情继续升温。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">onset</span><span class="term">pandemic</span><span class="term">unwinding</span><span class="term">whipsawing</span><span class="term">drag on</span><span class="term">soaring</span><span class="term">up more than 25%</span><span class="term">year to date</span><span class="term">rev up</span></div><ul><li>onset | /ˈän-ˌset/<span class="cjk">：开始、起始。</span></li><li>pandemic | /pænˈdem-ik/<span class="cjk">：全球大流行。</span></li><li>unwinding | <span class="cjk">原形</span> unwind /ˌən-ˈwīnd/<span class="cjk">：解除、平掉（头寸）。</span></li><li>whipsawing | /ˈwɪp-sȯ/<span class="cjk">：指价格波动剧烈。</span></li><li>drag on | <span class="cjk">继续、拖延。</span></li><li>soaring | /ˈsȯr-ing/<span class="cjk">：暴涨。</span></li><li>up more than 25%<span class="cjk">：上涨超过</span>25%<span class="cjk">。</span></li><li>year to date<span class="cjk">：年初至今。</span></li><li>rev up | /ˈrev-ˌəp/<span class="cjk">：推动、加速。</span></li></ul></aside>
+<p>Shares in the automaker continued to climb nearly 17% this week, following the <span class="no-break">company&#x27;s</span> announcement of an energy storage division called Ford Energy earlier this month. After pulling back from the electric vehicle market, Ford is repurposing batteries originally intended for EVs into stationary energy storage systems for AI data centers, power utilities, and industrial customers. One Morgan Stanley analyst recently estimated that the business could eventually be worth $10 billion on its own. Investors see the move as a way for Ford to cash in on the AI frenzy, and <span class="no-break">that&#x27;s</span> right at a moment when the auto industry is slogging through an EV slowdown and broader downturn. Automakers are increasingly warning that new car sales could shrink this year. Roughly, 1 million potential buyers have left the new car market since the start of the decade, and executives <span class="no-break">don&#x27;t</span> expect them back anytime soon as consumers grapple with high interest rates, stubborn inflation, and elevated gas prices. Ford is up almost 27% for the year, while rival General Motors has risen by less than 4%. And now, you know <span class="no-break">What&#x27;s</span> News in Markets this week. You could read about more stocks that moved on the <span class="no-break">week&#x27;s</span> news in our live markets coverage on wsj.com. <span class="no-break">Today&#x27;s</span> show was produced by Anthony Bansie, with supervising producer Katie Ferguson. <span class="no-break">I&#x27;m</span> Imani Moise. Have a great weekend, and catch you next Saturday.</p>
+<p><span class="cjk">在该公司本月早些时候宣布成立一个名为</span> Ford Energy <span class="cjk">的储能部门后，这家汽车制造商的股价本周继续上涨近</span>17%<span class="cjk">。在从电动汽车市场收缩之后，福特正在把原本用于电动汽车的电池重新利用起来，转做面向人工智能数据中心、电力公用事业公司和工业客户的固定式储能系统。摩根士丹利的一位分析师最近估计，这项业务最终本身就可能价值</span>100<span class="cjk">亿美元。投资者认为，这一举措是福特借人工智能狂热赚钱的一种方式，而这正发生在汽车行业艰难应对电动汽车放缓和整体低迷之际。汽车制造商越来越多地警告称，今年新车销量可能会萎缩。自本十年初以来，约有</span>100<span class="cjk">万潜在买家已经离开新车市场；由于消费者仍在应对高利率、顽固通胀和高企的汽油价格，企业高管预计这些买家短期内不会回来。福特今年以来上涨近</span>27%<span class="cjk">，而竞争对手通用汽车的涨幅不到</span>4%<span class="cjk">。现在，你已经了解了本周《</span><span class="no-break">What&#x27;s</span> News in Markets<span class="cjk">》的内容。你可以在</span> wsj.com <span class="cjk">的实时市场报道中阅读更多受本周新闻影响而波动的股票信息。本期节目由</span> Anthony Bansie <span class="cjk">制作，监制是</span> Katie Ferguson<span class="cjk">。我是</span> Imani Moise<span class="cjk">。祝你周末愉快，下周六再见。</span></p>
+<aside class="vocab"><div class="terms"><span class="term">pulling back from the electric vehicle market</span><span class="term">pulling back</span><span class="term">repurposing</span><span class="term">stationary energy storage systems</span><span class="term">move</span><span class="term">cash in</span><span class="term">frenzy</span><span class="term">slogging</span><span class="term">downturn</span><span class="term">grapple</span><span class="term">grapple with</span><span class="term">rival</span><span class="term">soon as</span></div><ul><li>pulling back from the electric vehicle market | <span class="cjk">从电动车市场撤出。</span></li><li>pulling back | <span class="cjk">原形</span> pull back /ˈpəl-ˌbæk/<span class="cjk">：退回、收缩。</span></li><li>repurposing | <span class="cjk">原形</span> repurpose /ˌrē-ˈpər-pəs/<span class="cjk">：重新利用。</span></li><li>stationary energy storage systems<span class="cjk">：固定式储能系统。</span></li><li>move | <span class="cjk">这里指公司举措、策略。</span></li><li>cash in | /ˈka-sh ˌin/<span class="cjk">：套现、获利。</span></li><li>frenzy | /ˈfren-zē/<span class="cjk">：狂热、热潮。</span></li><li>slogging | /ˈslä-gɪŋ/<span class="cjk">：艰难推进。</span></li><li>downturn | /ˈda<span class="u-dot">u</span>n-ˌtərn/<span class="cjk">：下行趋势、低迷。</span></li><li>grapple | /ˈgrap-əl/<span class="cjk">：应对、处理。</span></li><li>grapple with | <span class="cjk">处理、应对（问题）。</span></li><li>rival | /ˈrī-vəl/<span class="cjk">：竞争对手。</span></li><li>soon as | <span class="cjk">表示</span>“<span class="cjk">一旦</span>…<span class="cjk">就</span>…”<span class="cjk">。</span></li></ul></aside>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const storageKey = "podcastTranscriptBodyText";
+      const fontSelect = document.getElementById("bodyFontSelect");
+      const sizeDown = document.getElementById("bodySizeDown");
+      const sizeUp = document.getElementById("bodySizeUp");
+      const reset = document.getElementById("bodyTextReset");
+      const fontMap = {
+        roboto: 'var(--body-roboto)',
+        sanFrancisco: 'var(--body-san-francisco)',
+        helvetica: 'var(--body-helvetica)',
+        arial: 'var(--body-arial)',
+        times: 'var(--body-serif)',
+      };
+
+      if (!fontSelect || !sizeDown || !sizeUp || !reset) return;
+
+      const firstParagraph = document.querySelector("main p");
+      const defaultSize = firstParagraph
+        ? Math.round(parseFloat(getComputedStyle(firstParagraph).fontSize))
+        : 19;
+      const defaultFont = "roboto";
+      let settings = { font: defaultFont, size: defaultSize };
+
+      try {
+        settings = { ...settings, ...JSON.parse(localStorage.getItem(storageKey) || "{}" ) };
+      } catch (error) {}
+      if (!fontMap[settings.font]) settings.font = defaultFont;
+      if (!Number.isFinite(settings.size)) settings.size = defaultSize;
+
+      function applySettings() {
+        fontSelect.value = settings.font;
+        root.style.setProperty("--reader-body-font", fontMap[settings.font] || fontMap.roboto);
+        root.style.setProperty("--reader-body-size", `${settings.size}px`);
+        localStorage.setItem(storageKey, JSON.stringify(settings));
+      }
+
+      fontSelect.addEventListener("change", () => {
+        settings.font = fontSelect.value;
+        applySettings();
+      });
+
+      sizeDown.addEventListener("click", () => {
+        settings.size = Math.max(15, settings.size - 1);
+        applySettings();
+      });
+
+      sizeUp.addEventListener("click", () => {
+        settings.size = Math.min(24, settings.size + 1);
+        applySettings();
+      });
+
+      reset.addEventListener("click", () => {
+        settings = { font: defaultFont, size: defaultSize };
+        root.style.removeProperty("--reader-body-font");
+        root.style.removeProperty("--reader-body-size");
+        localStorage.removeItem(storageKey);
+        fontSelect.value = defaultFont;
+      });
+
+      applySettings();
+    })();
+  </script>
+</body>
+</html>

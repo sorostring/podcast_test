@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What’s News in Markets: AI Whiplash, SpaceX’s Historic IPO, Knicks Fever</title>
+  <style>
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --paper: #fffdfa;
+      --ink: #202124;
+      --muted: #6d675f;
+      --line: #e2dacf;
+      --accent: #2f6f73;
+      --accent-soft: #e7f2f1;
+      --note: #eef7f0;
+      --note-line: #a6c7ad;
+      --shadow: 0 24px 80px rgba(63, 52, 38, 0.12);
+      --content-width: 76ch;
+      --body-serif: "Times New Roman", Times, "Microsoft YaHei", "微软雅黑", serif;
+      --body-roboto: "Transcript Roboto", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      --body-san-francisco: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-helvetica: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-arial: Arial, Helvetica, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-sans: var(--body-roboto);
+      --cjk-font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --card-sans: Aptos, "Aptos Display", "Segoe UI", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --reader-body-font: var(--body-serif);
+      --reader-body-size: 19px;
+      --reader-body-line: 1.75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(246, 243, 237, 0.94), rgba(246, 243, 237, 1)),
+        radial-gradient(circle at 12% 0%, rgba(47, 111, 115, 0.12), transparent 32%);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+
+    header {
+      margin: 0 auto 28px;
+      padding: 34px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--accent);
+      font: 700 12px/1.2 var(--body-serif);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font: 500 14px/1.4 var(--body-serif);
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(255, 253, 250, 0.72);
+    }
+
+    .reader-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: var(--card-sans);
+    }
+
+    .reader-controls label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .reader-controls select,
+    .reader-controls button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.9);
+      color: var(--ink);
+      font: 650 14px/1 var(--card-sans);
+    }
+
+    .reader-controls select {
+      padding: 0 30px 0 10px;
+    }
+
+    .reader-controls button {
+      min-width: 38px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .audio-panel {
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.86);
+      font-family: var(--card-sans);
+    }
+
+    .audio-label {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+    }
+
+    .audio-file {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(226, 218, 207, 0.72);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 58px);
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-family: var(--reader-body-font);
+      font-size: var(--reader-body-size);
+      line-height: var(--reader-body-line);
+      max-width: var(--content-width);
+      text-align: justify;
+      text-align-last: left;
+      text-justify: auto;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .speaker {
+      width: fit-content;
+      max-width: 100%;
+      margin: 18px 0 8px;
+      padding: 5px 10px 6px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: #214d50;
+      font: 750 13px/1.3 var(--body-serif);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vocab {
+      max-width: calc(var(--content-width) + 42px);
+      margin: 10px 0 12px;
+      padding: 16px 18px 17px;
+      border: 1px solid var(--note-line);
+      border-left: 5px solid #5f8f6b;
+      border-radius: 8px;
+      background: var(--note);
+      font-family: var(--card-sans);
+      line-height: 1.6;
+    }
+
+    .terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .term {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(95, 143, 107, 0.28);
+      color: #2f2f2f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .vocab ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .vocab li {
+      margin: 6px 0;
+      color: #403622;
+      font-size: 15px;
+    }
+
+    .vocab strong {
+      color: #202124;
+    }
+
+    .cjk {
+      font-family: var(--cjk-font);
+    }
+
+    .no-break {
+      white-space: nowrap;
+    }
+
+    .u-dot {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .u-dot::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0.04em;
+      width: 0.11em;
+      height: 0.11em;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --reader-body-font: var(--body-sans);
+        --reader-body-size: 17px;
+        --reader-body-line: 1.68;
+      }
+
+      .page {
+        padding: 22px 14px 46px;
+      }
+
+      header {
+        padding-top: 22px;
+      }
+
+      main {
+        padding: 22px 16px;
+      }
+
+      p {
+        max-width: none;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .vocab {
+        max-width: none;
+        padding: 14px 14px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --reader-body-size: 17px;
+        --reader-body-line: 1.66;
+      }
+
+      .page {
+        padding: 14px 8px 34px;
+      }
+
+      header {
+        margin-bottom: 18px;
+        padding: 18px 4px 18px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      main {
+        padding: 18px 12px;
+      }
+
+      .vocab li {
+        font-size: 14px;
+      }
+
+      .audio-panel {
+        margin-top: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11pt;
+        line-height: 1.55;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      header {
+        padding-top: 0;
+      }
+
+      main {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      p {
+        font-size: 11pt;
+        line-height: 1.55;
+        max-width: none;
+        text-align: justify;
+      }
+
+      .reader-controls {
+        display: none;
+      }
+
+      .audio-panel {
+        display: none;
+      }
+
+      .speaker {
+        break-after: avoid;
+      }
+
+      .vocab {
+        max-width: none;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .vocab li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">Podcast Transcript Notes</div>
+      <h1><span class="no-break">What’s</span> News in Markets: AI Whiplash, <span class="no-break">SpaceX’s</span> Historic IPO, Knicks Fever</h1>
+      <div class="meta">
+        
+        <span>3 vocabulary blocks</span>
+        <span>28 collected terms</span>
+        <span>0 speaker turns</span>
+      </div>
+      <div class="reader-controls" aria-label="正文显示设置">
+        <label for="bodyFontSelect">正文字体
+          <select id="bodyFontSelect">
+            <option value="roboto">Roboto</option>
+            <option value="sanFrancisco">San Francisco</option>
+            <option value="helvetica">Helvetica</option>
+            <option value="arial">Arial</option>
+            <option value="times">Times New Roman</option>
+          </select>
+        </label>
+        <button type="button" id="bodySizeDown" aria-label="减小正文字号">A-</button>
+        <button type="button" id="bodySizeUp" aria-label="增大正文字号">A+</button>
+        <button type="button" id="bodyTextReset">Reset</button>
+      </div>
+      <section class="audio-panel" aria-label="Episode audio">
+        <div class="audio-label">Episode Audio</div>
+        <audio controls preload="metadata">
+          <source src="../audio/whatsnews_20260613_AIWhiplash.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="audio-file">whatsnews_20260613_AIWhiplash.mp3</div>
+      </section>
+    </header>
+    <main>
+<p><strong>Imani Moise</strong>: Hey listeners, <span class="no-break">it&#x27;s</span> Saturday, June 13th. <span class="no-break">I&#x27;m</span> Imani Moise for the Wall Street Journal and this is <span class="no-break">what&#x27;s</span> news in markets. Our look at the biggest stock moves of the week and the news that drove them. <span class="no-break">Let&#x27;s</span> dive in.</p>
+<p><span class="cjk">大家好，听众朋友们，今天是</span>6<span class="cjk">月</span>13<span class="cjk">日，星期六。我是《华尔街日报》的</span> Imani Moise<span class="cjk">，欢迎收听《市场要闻》。在这里，我们将回顾本周股市中最重要的价格波动，以及推动这些走势背后的新闻事件。让我们开始吧。</span></p>
+<p>Markets went on a rollercoaster ride this week. The Dow suffered its worst day of the year on Wednesday after escalating conflict in the Middle East raised concerns that higher oil prices could reignite inflation. But less than 24 hours later, sentiment flipped. On Thursday, President Trump said he was canceling planned strikes on Iran as negotiators worked toward a broader agreement, and stocks soared with the Dow adding 930 points. Whether the ceasefire holds is an open question, but geopolitics <span class="no-break">wasn&#x27;t</span> the only thing driving markets. Investors were also grappling with growing questions about the AI trade and preparing for the largest IPO in history. After all the back and forth, major indexes ended the week slightly higher. The S&amp;P rose 0.65% while the Dow grew 0.66%, the Nasdaq gained 0.7%. Recent volatility has also reminded investors of the risks of a top-heavy market. The NASDAQ has swung more than 2% a day on average over the past week, more than double its typical pace. Chip stocks were at the center of the turbulence. After months of seemingly unstoppable gains, shares in Samsung, SK Hynix, Marvell Technology, and other semiconductor companies whipsawed. The initial selloff was sparked by concerns that expectations for AI fueled growth may have become too optimistic, but by the end of the week, many of those stocks rebounded. SK Hynix shares rose nearly 4% this week while Marvell Technology gained a little over 6%. Samsung ended the week roughly 2% lower. The episode also encouraged some investors to look beyond the AI trade. While chip stocks dominated the headlines, transportation companies, financial firms, and materials producers quietly attracted fresh interest as investors search for companies with strong earnings growth and less demanding valuations.</p>
+<aside class="vocab"><div class="terms"><span class="term">rollercoaster</span><span class="term">escalating</span><span class="term">sentiment flipped</span><span class="term">soared</span><span class="term">holds</span><span class="term">open question</span><span class="term">grappling with</span><span class="term">grappling</span><span class="term">back and forth</span><span class="term">volatility</span><span class="term">top-heavy</span><span class="term">swung more than</span><span class="term">typical pace</span><span class="term">whipsawed</span><span class="term">selloff</span><span class="term">AI fueled growth</span><span class="term">optimistic</span><span class="term">rebounded</span><span class="term">demanding valuations</span></div><ul><li><strong>rollercoaster</strong><span class="cjk">：对应</span> Merriam-Webster <span class="cjk">的</span> <strong>roller coaster</strong> /ˈrō-lər-ˌkō-stər/<span class="cjk">。这里是形容本周市场走势像</span>“<span class="cjk">过山车</span>”<span class="cjk">一样大起大落。</span></li><li><strong>escalating</strong><span class="cjk">：动词原形</span> <strong>escalate</strong> /ˈe-skə-ˌlāt/<span class="cjk">。这里指中东冲突</span>“<span class="cjk">升级、加剧</span>”<span class="cjk">。</span></li><li><strong>sentiment flipped</strong><span class="cjk">：市场情绪发生反转，从前一天的担忧、抛售转为乐观和买入。</span></li><li><strong>soared</strong><span class="cjk">：动词原形</span> <strong>soar</strong> /ˈsȯr/<span class="cjk">。这里指股市大幅上涨。</span></li><li><strong>holds</strong><span class="cjk">：动词原形</span> <strong>hold</strong> /ˈhōld/<span class="cjk">。这里说</span> ceasefire holds<span class="cjk">，是指停火能否维持住、是否不破裂。</span></li><li><strong>open question</strong><span class="cjk">：悬而未决的问题；这里指停火到底能不能持续，还没有答案。</span></li><li><strong>grappling with</strong><span class="cjk">：努力应对、艰难处理。这里指投资者正在面对并消化关于</span> AI <span class="cjk">交易热潮的疑问。</span></li><li><strong>grappling</strong><span class="cjk">：动词原形</span> <strong>grapple</strong> /ˈgra-pəl/<span class="cjk">。这里是</span>“<span class="cjk">努力处理、设法应对</span>”<span class="cjk">。</span></li><li><strong>back and forth</strong><span class="cjk">：来回反复、反复波动。这里指市场一会儿因冲突下跌，一会儿又因停火消息上涨。</span></li><li><strong>volatility</strong> /ˌvä-lə-ˈti-lə-tē/<span class="cjk">：波动性。这里指市场价格短期内上下波动很剧烈。</span></li><li><strong>top-heavy</strong> /ˈtäp-ˌhe-vē/<span class="cjk">：头重脚轻的。这里指市场上涨过度依赖少数大型热门股票，结构不够均衡。</span></li><li><strong>swung more than</strong><span class="cjk">：其中</span> <strong>swung</strong> <span class="cjk">的动词原形是</span> <strong>swing</strong> /ˈswiŋ/<span class="cjk">。这里指纳斯达克单日波动幅度超过</span> 2%<span class="cjk">。</span></li><li><strong>typical pace</strong><span class="cjk">：通常速度、正常节奏。这里指纳斯达克平时正常的日均波动幅度。</span></li><li><strong>whipsawed</strong><span class="cjk">：动词原形</span> <strong>whipsaw</strong> /ˈ(h)wip-ˌsȯ/<span class="cjk">。这里指芯片股价格剧烈来回震荡，先跌后涨或上下急转。</span></li><li><strong>selloff</strong> /ˈsel-ˌȯf/<span class="cjk">：抛售。这里指投资者集中卖出相关股票，导致价格下跌。</span></li><li><strong>AI fueled growth</strong><span class="cjk">：</span>AI <span class="cjk">驱动的增长。这里指市场之前预期</span> AI <span class="cjk">会继续带动半导体公司业绩增长。</span></li><li><strong>optimistic</strong> /ˌäp-tə-ˈmi-stik/<span class="cjk">：乐观的。这里指投资者对</span> AI <span class="cjk">带来的增长预期可能过于乐观。</span></li><li><strong>rebounded</strong><span class="cjk">：动词原形</span> <strong>rebound</strong> /(ˌ)rē-ˈba<span class="u-dot">u</span>nd/<span class="cjk">。这里指许多芯片股在下跌后反弹。</span></li><li><strong>demanding valuations</strong><span class="cjk">：较高、较难支撑的估值。这里指有些</span> AI/<span class="cjk">芯片股票估值已经很贵，市场对其未来增长要求很高。</span></li></ul></aside>
+<p><span class="cjk">本周市场如同坐上了过山车。由于中东局势升级引发市场担忧，投资者担心油价上涨可能再次推高通胀，导致道琼斯指数在周三创下年内最糟糕单日表现。但不到</span>24<span class="cjk">小时后，市场情绪便发生逆转。周四，特朗普总统表示，在谈判代表努力推动达成更广泛协议之际，他将取消原定对伊朗发动的打击计划，股市随即大涨，道指单日上涨</span>930<span class="cjk">点。停火协议最终能否维持仍是未知数，但地缘政治并非唯一影响市场的因素。投资者同时也在重新评估</span>AI<span class="cjk">投资热潮，并为历史上规模最大的</span>IPO<span class="cjk">做准备。经历这一系列反复之后，主要股指本周仍小幅收高：标普</span>500<span class="cjk">指数上涨</span>0.65%<span class="cjk">，道琼斯指数上涨</span>0.66%<span class="cjk">，纳斯达克指数上涨</span>0.7%<span class="cjk">。近期的剧烈波动也再次提醒投资者，高度集中于少数热门股票的市场存在风险。过去一周，纳斯达克指数平均每日波动幅度超过</span>2%<span class="cjk">，是其正常水平的两倍以上。芯片股成为本轮震荡的核心。经历数月近乎势不可挡的上涨后，</span>Samsung<span class="cjk">、</span>SK Hynix<span class="cjk">、</span>Marvell Technology <span class="cjk">等半导体公司的股价剧烈震荡。最初的抛售源于市场担心，</span>AI<span class="cjk">驱动增长的预期可能已经过于乐观；不过到了周末前，许多相关股票又出现反弹。</span>SK Hynix<span class="cjk">本周上涨接近</span>4%<span class="cjk">，</span>Marvell Technology<span class="cjk">上涨超过</span>6%<span class="cjk">，而</span>Samsung<span class="cjk">则收跌约</span>2%<span class="cjk">。这一轮行情也促使部分投资者将目光投向</span>AI<span class="cjk">主题之外的领域。在芯片股占据头条新闻的同时，运输企业、金融公司以及材料生产商悄然获得资金青睐，因为投资者正在寻找盈利增长更稳健、估值压力相对较小的公司。</span></p>
+<p>Among stocks that have hit record highs in recent days, our Old Dominion Freight Line, which has risen 58% this year, Ryder System gained 46% and logistics firm Matson added 61%. <span class="no-break">There&#x27;s</span> another reason markets have been so volatile lately and it has nothing to do with chips, inflation, or the conflict in the Middle East. Investors were preparing for the launch of SpaceX. And some analysts believe investors have been selling other stocks to raise cash for the offering. The Rocket Company went public yesterday in the largest IPO ever and immediately became the sixth most valuable US listed firm passing Elon <span class="no-break">Musk&#x27;s</span> other company, Tesla. Individual investors alone requested more than $70 billion worth of SpaceX shares. The company allocated about 20% of its shares to retail investors at $135 a piece. Many received only a fraction of the shares <span class="no-break">they&#x27;ve</span> requested. One trader posted that after requesting 450 shares, they were allocated just one. Even if they only got one share, early investors are doing pretty well. SpaceX shares closed up 19% in its first day of trading, giving the company a market value of around 2.1 trillion.</p>
+<aside class="vocab"><div class="terms"><span class="term">volatile</span><span class="term">Individual investors</span><span class="term">retail investors</span><span class="term">record highs</span><span class="term">hit record highs</span></div><ul><li><strong>volatile</strong> /ˈvä-lə-tᵊl/<span class="cjk">：波动大的、不稳定的。这里指市场近期价格波动明显。</span></li><li><strong>Individual investors</strong><span class="cjk">：个人投资者。这里指非机构投资者个人提交了大量</span> SpaceX <span class="cjk">股票认购申请。</span></li><li><strong>retail investors</strong><span class="cjk">：散户投资者。这里和</span> individual investors <span class="cjk">接近，强调不是机构资金，而是普通投资者。</span></li><li><strong>record highs</strong><span class="cjk">：历史新高。这里指某些股票价格创下有记录以来最高水平。</span></li><li><strong>hit record highs</strong><span class="cjk">：创下历史新高。这里指</span> Old Dominion Freight Line <span class="cjk">等股票最近涨到了历史高位。</span></li></ul></aside>
+<p><span class="cjk">近期创下历史新高的股票中，</span>Old Dominion Freight Line<span class="cjk">年内累计上涨</span>58%<span class="cjk">，</span>Ryder System<span class="cjk">上涨</span>46%<span class="cjk">，物流公司</span>Matson<span class="cjk">上涨</span>61%<span class="cjk">。而市场近期波动如此剧烈，还有另一个原因，与芯片、通胀或中东冲突都无关</span>——<span class="cjk">投资者正在为</span>SpaceX<span class="cjk">上市做准备。一些分析师认为，为了筹集参与认购所需资金，部分投资者甚至卖出了其他股票。这家火箭公司于昨天正式上市，成为历史上规模最大的</span>IPO<span class="cjk">，并立即超越</span>Elon Musk<span class="cjk">旗下另一家公司</span>Tesla<span class="cjk">，跻身美国上市公司市值第六位。仅散户投资者提交的</span>SpaceX<span class="cjk">股票认购申请金额就超过</span>700<span class="cjk">亿美元。公司以每股</span>135<span class="cjk">美元的价格，向散户投资者分配了约</span>20%<span class="cjk">的发行股份。不过，许多人最终只获得了极少量配售。一位交易员发帖称，他申请认购</span>450<span class="cjk">股，却只分到了</span>1<span class="cjk">股。即便如此，早期投资者的回报依然相当可观。</span>SpaceX<span class="cjk">上市首日收涨</span>19%<span class="cjk">，公司市值达到约</span>2.1<span class="cjk">万亿美元。</span></p>
+<p>And finally, as a native New Yorker, I could not end this <span class="no-break">week&#x27;s</span> podcast without shouting out the Knicks. Shares of Madison Square Garden Sports, the publicly traded company that owns the Knicks and the Rangers hockey team hit a record high during the NBA finals and have more than doubled over the past year. Part of that enthusiasm comes from a proposal to split the Knicks and Rangers into separate companies, potentially unlocking value for shareholders. But analysts say every playoff win is helping too. An Eastern Conference Finals home game can be worth roughly $20 million to the company and NBA finals games are worth even more. Shares in MSG sports are up more than 52% so far this year, which means Jalen Brunson may be one of the few athletes whose clutch shooting is actively moving a stock price. And now you know <span class="no-break">what&#x27;s</span> news in markets this week. You can read about more stocks that moved on the <span class="no-break">week&#x27;s</span> news in our live markets coverage on wsj.com. <span class="no-break">Today&#x27;s</span> show was produced by Anthony Bansy, with supervising producer Melanie Roy. <span class="no-break">I&#x27;m</span> Imani Moise. Have a great weekend and see you next Saturday.</p>
+<aside class="vocab"><div class="terms"><span class="term">shouting out</span><span class="term">have more than doubled over the past year</span><span class="term">playoff</span><span class="term">clutch shooting</span></div><ul><li><strong>shouting out</strong><span class="cjk">：公开提一下、特别致意。这里是主持人作为纽约人，节目结尾特意提到</span> Knicks<span class="cjk">。</span></li><li><strong>have more than doubled over the past year</strong><span class="cjk">：过去一年涨幅超过一倍。这里指</span> Madison Square Garden Sports <span class="cjk">的股价一年多来上涨超过</span> 100%<span class="cjk">。</span></li><li><strong>playoff</strong> /ˈplā-ˌȯf/<span class="cjk">：季后赛。这里指</span> NBA <span class="cjk">季后赛阶段的比赛。</span></li><li><strong>clutch shooting</strong><span class="cjk">：关键时刻的投篮能力。这里指</span> Jalen Brunson <span class="cjk">在关键比赛中的投篮表现，甚至可能影响</span> MSG Sports <span class="cjk">的股价。</span></li></ul></aside>
+<p><span class="cjk">最后，作为一名土生土长的纽约人，如果本周节目不提一下尼克斯队，我肯定会觉得遗憾。拥有纽约尼克斯队和纽约游骑兵冰球队的上市公司</span> Madison Square Garden Sports<span class="cjk">，在</span>NBA<span class="cjk">总决赛期间股价创下历史新高，过去一年累计涨幅已超过一倍。推动市场热情的部分原因，是公司提出将尼克斯和游骑兵拆分为两家独立公司的计划，这有望释放更多股东价值。不过分析师表示，每赢下一场季后赛，同样会给公司带来实实在在的收益。一场东部决赛主场比赛大约能够为公司创造</span>2,000<span class="cjk">万美元收入，而</span>NBA<span class="cjk">总决赛的价值则更高。</span>MSG Sports<span class="cjk">股价今年以来已上涨超过</span>52%<span class="cjk">，这意味着</span> Jalen Brunson <span class="cjk">或许是少数几位其关键投篮表现真的能够影响上市公司股价的运动员之一。以上就是本周市场要闻。如果想了解更多受新闻事件影响而出现波动的股票，欢迎访问《华尔街日报》网站的实时市场报道。今天的节目由</span> Anthony Bansy <span class="cjk">制作，监制为</span> Melanie Roy<span class="cjk">。我是</span> Imani Moise<span class="cjk">。祝大家周末愉快，我们下周六再见。</span></p>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const storageKey = "podcastTranscriptBodyText";
+      const fontSelect = document.getElementById("bodyFontSelect");
+      const sizeDown = document.getElementById("bodySizeDown");
+      const sizeUp = document.getElementById("bodySizeUp");
+      const reset = document.getElementById("bodyTextReset");
+      const fontMap = {
+        roboto: 'var(--body-roboto)',
+        sanFrancisco: 'var(--body-san-francisco)',
+        helvetica: 'var(--body-helvetica)',
+        arial: 'var(--body-arial)',
+        times: 'var(--body-serif)',
+      };
+
+      if (!fontSelect || !sizeDown || !sizeUp || !reset) return;
+
+      const firstParagraph = document.querySelector("main p");
+      const defaultSize = firstParagraph
+        ? Math.round(parseFloat(getComputedStyle(firstParagraph).fontSize))
+        : 19;
+      const defaultFont = "roboto";
+      let settings = { font: defaultFont, size: defaultSize };
+
+      try {
+        settings = { ...settings, ...JSON.parse(localStorage.getItem(storageKey) || "{}" ) };
+      } catch (error) {}
+      if (!fontMap[settings.font]) settings.font = defaultFont;
+      if (!Number.isFinite(settings.size)) settings.size = defaultSize;
+
+      function applySettings() {
+        fontSelect.value = settings.font;
+        root.style.setProperty("--reader-body-font", fontMap[settings.font] || fontMap.roboto);
+        root.style.setProperty("--reader-body-size", `${settings.size}px`);
+        localStorage.setItem(storageKey, JSON.stringify(settings));
+      }
+
+      fontSelect.addEventListener("change", () => {
+        settings.font = fontSelect.value;
+        applySettings();
+      });
+
+      sizeDown.addEventListener("click", () => {
+        settings.size = Math.max(15, settings.size - 1);
+        applySettings();
+      });
+
+      sizeUp.addEventListener("click", () => {
+        settings.size = Math.min(24, settings.size + 1);
+        applySettings();
+      });
+
+      reset.addEventListener("click", () => {
+        settings = { font: defaultFont, size: defaultSize };
+        root.style.removeProperty("--reader-body-font");
+        root.style.removeProperty("--reader-body-size");
+        localStorage.removeItem(storageKey);
+        fontSelect.value = defaultFont;
+      });
+
+      applySettings();
+    })();
+  </script>
+</body>
+</html>

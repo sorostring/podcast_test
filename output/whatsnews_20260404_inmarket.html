@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What’s News in Markets: The War Trade, Megadeals and a Sneaker Slowdown</title>
+  <style>
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Transcript Roboto";
+      src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --paper: #fffdfa;
+      --ink: #202124;
+      --muted: #6d675f;
+      --line: #e2dacf;
+      --accent: #2f6f73;
+      --accent-soft: #e7f2f1;
+      --note: #eef7f0;
+      --note-line: #a6c7ad;
+      --shadow: 0 24px 80px rgba(63, 52, 38, 0.12);
+      --content-width: 76ch;
+      --body-serif: "Times New Roman", Times, "Microsoft YaHei", "微软雅黑", serif;
+      --body-roboto: "Transcript Roboto", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      --body-san-francisco: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-helvetica: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-arial: Arial, Helvetica, "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+      --body-sans: var(--body-roboto);
+      --cjk-font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --card-sans: Aptos, "Aptos Display", "Segoe UI", Roboto, "Noto Sans", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+      --reader-body-font: var(--body-serif);
+      --reader-body-size: 19px;
+      --reader-body-line: 1.75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(246, 243, 237, 0.94), rgba(246, 243, 237, 1)),
+        radial-gradient(circle at 12% 0%, rgba(47, 111, 115, 0.12), transparent 32%);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+
+    header {
+      margin: 0 auto 28px;
+      padding: 34px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--accent);
+      font: 700 12px/1.2 var(--body-serif);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--muted);
+      font: 500 14px/1.4 var(--body-serif);
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(255, 253, 250, 0.72);
+    }
+
+    .reader-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: var(--card-sans);
+    }
+
+    .reader-controls label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .reader-controls select,
+    .reader-controls button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.9);
+      color: var(--ink);
+      font: 650 14px/1 var(--card-sans);
+    }
+
+    .reader-controls select {
+      padding: 0 30px 0 10px;
+    }
+
+    .reader-controls button {
+      min-width: 38px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .audio-panel {
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.86);
+      font-family: var(--card-sans);
+    }
+
+    .audio-label {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+    }
+
+    .audio-file {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(226, 218, 207, 0.72);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 58px);
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-family: var(--reader-body-font);
+      font-size: var(--reader-body-size);
+      line-height: var(--reader-body-line);
+      max-width: var(--content-width);
+      text-align: justify;
+      text-align-last: left;
+      text-justify: auto;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .speaker {
+      width: fit-content;
+      max-width: 100%;
+      margin: 18px 0 8px;
+      padding: 5px 10px 6px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: #214d50;
+      font: 750 13px/1.3 var(--body-serif);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vocab {
+      max-width: calc(var(--content-width) + 42px);
+      margin: 10px 0 12px;
+      padding: 16px 18px 17px;
+      border: 1px solid var(--note-line);
+      border-left: 5px solid #5f8f6b;
+      border-radius: 8px;
+      background: var(--note);
+      font-family: var(--card-sans);
+      line-height: 1.6;
+    }
+
+    .terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .term {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(95, 143, 107, 0.28);
+      color: #2f2f2f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .vocab ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .vocab li {
+      margin: 6px 0;
+      color: #403622;
+      font-size: 15px;
+    }
+
+    .vocab strong {
+      color: #202124;
+    }
+
+    .cjk {
+      font-family: var(--cjk-font);
+    }
+
+    .no-break {
+      white-space: nowrap;
+    }
+
+    .u-dot {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .u-dot::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0.04em;
+      width: 0.11em;
+      height: 0.11em;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --reader-body-font: var(--body-sans);
+        --reader-body-size: 17px;
+        --reader-body-line: 1.68;
+      }
+
+      .page {
+        padding: 22px 14px 46px;
+      }
+
+      header {
+        padding-top: 22px;
+      }
+
+      main {
+        padding: 22px 16px;
+      }
+
+      p {
+        max-width: none;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .vocab {
+        max-width: none;
+        padding: 14px 14px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --reader-body-size: 17px;
+        --reader-body-line: 1.66;
+      }
+
+      .page {
+        padding: 14px 8px 34px;
+      }
+
+      header {
+        margin-bottom: 18px;
+        padding: 18px 4px 18px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      main {
+        padding: 18px 12px;
+      }
+
+      .vocab li {
+        font-size: 14px;
+      }
+
+      .audio-panel {
+        margin-top: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: #fff;
+        font-size: 11pt;
+        line-height: 1.55;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      header {
+        padding-top: 0;
+      }
+
+      main {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      p {
+        font-size: 11pt;
+        line-height: 1.55;
+        max-width: none;
+        text-align: justify;
+      }
+
+      .reader-controls {
+        display: none;
+      }
+
+      .audio-panel {
+        display: none;
+      }
+
+      .speaker {
+        break-after: avoid;
+      }
+
+      .vocab {
+        max-width: none;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .vocab li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">Podcast Transcript Notes</div>
+      <h1><span class="no-break">What’s</span> News in Markets: The War Trade, Megadeals and a Sneaker Slowdown</h1>
+      <div class="meta">
+        
+        <span>8 vocabulary blocks</span>
+        <span>31 collected terms</span>
+        <span>0 speaker turns</span>
+      </div>
+      <div class="reader-controls" aria-label="正文显示设置">
+        <label for="bodyFontSelect">正文字体
+          <select id="bodyFontSelect">
+            <option value="roboto">Roboto</option>
+            <option value="sanFrancisco">San Francisco</option>
+            <option value="helvetica">Helvetica</option>
+            <option value="arial">Arial</option>
+            <option value="times">Times New Roman</option>
+          </select>
+        </label>
+        <button type="button" id="bodySizeDown" aria-label="减小正文字号">A-</button>
+        <button type="button" id="bodySizeUp" aria-label="增大正文字号">A+</button>
+        <button type="button" id="bodyTextReset">Reset</button>
+      </div>
+      <section class="audio-panel" aria-label="Episode audio">
+        <div class="audio-label">Episode Audio</div>
+        <audio controls preload="metadata">
+          <source src="../audio/whatsnews_20260404_inmarket.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="audio-file">whatsnews_20260404_inmarket.mp3</div>
+      </section>
+    </header>
+    <main>
+<p>Aprial 4, 2026</p>
+<p>Why are oil prices and oil stocks moving in opposite directions? And are megadeals a recipe for <span class="no-break">buyer’s</span> remorse? Plus, get ready for one of the biggest IPO of all time. Host Imani Moise discusses the biggest stock moves of the week and the news that drove them.</p>
+<p>This transcript was prepared by a transcription service. This version may not be in its final form and may be updated.</p>
+<p><strong>Imani Moise</strong>: Hey listeners, <span class="no-break">it&#x27;s</span> Saturday, April 4th. <span class="no-break">I&#x27;m</span> Imani Moise for The Wall Street Journal, and this is <span class="no-break">What&#x27;s</span> News in Markets. Our look at the biggest stock moves of the week and the news that drove them. <span class="no-break">Let&#x27;s</span> dive in. It was a short week for markets. Major stock exchanges were closed for Good Friday. Stocks seesawed throughout the week as they digested mixed signals about the conflict in Iran. In the end, all three major stock indexes finished the week higher. The Nasdaq led the way, closing up 4.4% on Thursday. Both the S&amp;P 500 and Dow Jones Industrial Average were also up about 3% for the week. Brent Crude, the international oil benchmark, surged nearly 8% this week to finish at $109 a barrel, as hopes for a quick end to the Iran conflict faded. But higher commodity prices <span class="no-break">didn&#x27;t</span> translate to gains for oil stocks. Energy was the only sector in the S&amp;P 500 to finish the week lower, falling more than 5% as investors worried about long-term supply.</p>
+<aside class="vocab"><div class="terms"><span class="term">stock moves</span><span class="term">dive in</span><span class="term">seesawed</span><span class="term">finished the week higher</span><span class="term">closing up 4.4%</span><span class="term">up about 3%</span><span class="term">surged</span><span class="term">hopes</span><span class="term">translate to gains</span><span class="term">finish the week lower</span></div><ul><li><strong>stock move</strong> \ˈstäk-ˌmüv\<span class="cjk">：这里指</span><strong><span class="cjk">股价变动、股票走势</span></strong><span class="cjk">。语境里是在说这一周市场里哪些股票涨了、跌了。</span></li><li><strong>dive in</strong><span class="cjk">：这里是主持人口语里的</span><strong><span class="cjk">进入正题、开始看内容</span></strong><span class="cjk">。</span></li><li><strong>seesaw</strong> \ˈsē-ˌsȯ\<span class="cjk">：这里指股市</span><strong><span class="cjk">来回震荡、忽上忽下</span></strong><span class="cjk">。</span></li><li><strong>finish the week higher</strong><span class="cjk">：这里指</span><strong><span class="cjk">本周收盘高于周初，整周录得上涨</span></strong><span class="cjk">。</span></li><li><strong>close up 4.4%</strong><span class="cjk">：这里指</span><strong><span class="cjk">收盘时上涨了</span> 4.4%</strong><span class="cjk">。</span></li><li><strong>up about 3%</strong><span class="cjk">：这里指</span><strong><span class="cjk">上涨了约</span> 3%</strong><span class="cjk">。</span></li><li><strong>surge</strong> \ˈsərj\<span class="cjk">：这里指价格</span><strong><span class="cjk">猛涨、急升</span></strong><span class="cjk">。</span></li><li><strong>hope</strong> \ˈhōp\<span class="cjk">：这里指市场对局势的</span><strong><span class="cjk">预期</span> / <span class="cjk">希望</span></strong><span class="cjk">，即希望伊朗冲突能很快结束。</span></li><li><strong>translate to gains</strong><span class="cjk">：这里指</span><strong><span class="cjk">转化成上涨、带来股价收益</span></strong><span class="cjk">。</span></li><li><strong>finish the week lower</strong><span class="cjk">：这里指</span><strong><span class="cjk">整周收跌，以更低的位置结束这一周交易</span></strong><span class="cjk">。</span></li></ul></aside>
+<p>Bond markets also closed early this week, but not before the latest jobs report gave bond yields a small boost. The 10-year Treasury recently traded at 4.35%, up from 4.32% before the Friday report. Stock futures moved slightly lower after the report.</p>
+<aside class="vocab"><div class="terms"><span class="term">small boost</span></div><ul><li><strong>boost</strong> \ˈbüst\<span class="cjk">：这里指</span><strong><span class="cjk">小幅推动、轻微提振</span></strong><span class="cjk">。语境里是说就业报告让债券收益率稍微上去了一点。</span></li></ul></aside>
+<p>Turbulent markets are usually a deterrent for mergers and acquisitions, but 2026 is off to a historic start for dealmaking. Corporations announced 22 M&amp;A transactions worth 10 billion or more in the quarter that wrapped up this week. That marks the strongest start to the year for mega deals on record. While <span class="no-break">that&#x27;s</span> good news for bankers, shareholders appeared to have <span class="no-break">buyer&#x27;s</span> remorse.</p>
+<aside class="vocab"><div class="terms"><span class="term">Turbulent</span><span class="term">deterrent</span><span class="term">is off to</span><span class="term">dealmaking</span><span class="term">wrapped up</span><span class="term">mega deals</span><span class="term">remorse</span></div><ul><li><strong>turbulent</strong> \ˈtər-byə-lənt\<span class="cjk">：这里指市场</span><strong><span class="cjk">动荡的、不稳定的</span></strong><span class="cjk">。</span></li><li><strong>deterrent</strong> \di-ˈtər-ənt\<span class="cjk">：这里指</span><strong><span class="cjk">阻碍因素、让人打退堂鼓的东西</span></strong><span class="cjk">。语境里是说动荡市场通常会劝退并购活动。</span></li><li><strong>be off to</strong><span class="cjk">：这里指</span><strong><span class="cjk">一开始就呈现出</span>……<span class="cjk">的势头</span></strong><span class="cjk">。</span><code>2026 is off to a historic start</code> <span class="cjk">就是</span>“2026 <span class="cjk">年开局就很不寻常</span>/<span class="cjk">很强</span>”<span class="cjk">。</span></li><li><strong>dealmaking</strong><span class="cjk">：这里指</span><strong><span class="cjk">并购交易活动、做交易这件事</span></strong><span class="cjk">。</span></li><li><strong>wrap up</strong><span class="cjk">：这里指</span><strong><span class="cjk">结束、收官</span></strong><span class="cjk">。</span><code>the quarter that wrapped up this week</code> <span class="cjk">就是</span>“<span class="cjk">本周刚结束的那个季度</span>”<span class="cjk">。</span></li><li><strong>mega deal</strong><span class="cjk">：这里指</span><strong><span class="cjk">超大型交易、巨额并购</span></strong><span class="cjk">。</span></li><li><strong>remorse</strong> \ri-ˈmȯrs\<span class="cjk">：这里在</span> <code><span class="no-break">buyer’s</span> remorse</code> <span class="cjk">里表示</span><strong><span class="cjk">买完就后悔</span></strong><span class="cjk">，即投资者担心公司买贵了、负债太多。</span></li></ul></aside>
+<p>Some of the companies announcing these massive acquisitions were among the <span class="no-break">week&#x27;s</span> biggest losers. McCormick shares tumbled 8% this week, after announcing it was taking on debt as part of a $65 billion deal to combine its food business with Unilever. Similarly, Sysco shares were down 13% on the week, as investors weighed the mountain of new debt tied to its 29 billion acquisition of Jetro Restaurant Depot.</p>
+<aside class="vocab"><div class="terms"><span class="term">biggest losers</span><span class="term">tumbled</span><span class="term">taking on debt as part of</span><span class="term">weighed the mountain</span></div><ul><li><strong>biggest losers</strong><span class="cjk">：这里指</span><strong><span class="cjk">本周跌得最厉害的股票</span> / <span class="cjk">公司</span></strong><span class="cjk">。</span></li><li><strong>tumble</strong> \ˈtəm-bəl\<span class="cjk">：这里指股价</span><strong><span class="cjk">大跌、猛跌</span></strong><span class="cjk">。</span></li><li><strong>take on debt as part of</strong><span class="cjk">：这里指</span><strong><span class="cjk">为了这笔交易而新增债务</span> / <span class="cjk">背上债务</span></strong><span class="cjk">。</span></li><li><strong>weigh the mountain</strong><span class="cjk">：这里实际是</span> <code>weighed the mountain of new debt</code><span class="cjk">，意思是投资者在</span><strong><span class="cjk">掂量、评估这大堆新增债务的压力</span></strong><span class="cjk">。这里的</span> <code>mountain</code> <span class="cjk">是形象说法，表示</span>“<span class="cjk">很多</span>”<span class="cjk">。</span></li></ul></aside>
+<p>But investors rewarded at least one company for writing a multi-billion dollar check. Intel shares jumped nearly 17% this week after announcing it would spend 14.2 billion to buy out Apollo Global <span class="no-break">Management&#x27;s</span> 49% stake in their Irish chip plant. Executives positioned the move as proof of the <span class="no-break">company&#x27;s</span> stronger balance sheet and more focused corporate strategy.</p>
+<aside class="vocab"><div class="terms"><span class="term">balance sheet</span></div><ul><li><strong>balance sheet</strong> \ˈba-lən(t)s-ˌshēt\<span class="cjk">：这里指公司的</span><strong><span class="cjk">资产负债表</span></strong><span class="cjk">。语境里</span> <code>stronger balance sheet</code> <span class="cjk">是说公司的财务状况更稳、更健康。</span></li></ul></aside>
+<p>Market momentum was good to tech stocks this week. Facebook parent, Meta, and Google parent, Alphabet, both rebounded to finish near the top of the leaderboard, gaining roughly 8 to 9% each. Their rally is somewhat of a return to normal. Both companies led losses last week after courts found their social media platforms liable for failing to protect young people from online danger. Nike was the biggest loser in the S&amp;P 500 for the week. Shares plunged nearly 14% after the sportswear brand warned investors that sales in China, its second-largest market after the US, could fall by as much as 20% this quarter. The company has now experienced sales declines in China for seven straight quarters, and the current one, ending on May 31st, could be even worse.</p>
+<aside class="vocab"><div class="terms"><span class="term">momentum</span><span class="term">rebounded</span><span class="term">top of the leaderboard</span><span class="term">rally</span><span class="term">seven straight quarters</span></div><ul><li><strong>momentum</strong> \mō-ˈmen-təm\<span class="cjk">：这里指市场的</span><strong><span class="cjk">上涨动能、势头</span></strong><span class="cjk">。</span></li><li><strong>rebound</strong> \ri-ˈba<span class="u-dot">u</span>nd\<span class="cjk">：这里指股价</span><strong><span class="cjk">反弹、回升</span></strong><span class="cjk">。</span></li><li><strong>top of the leaderboard</strong><span class="cjk">：这里不是字面</span>“<span class="cjk">排行榜</span>”<span class="cjk">，而是说</span><strong><span class="cjk">涨幅靠前、表现最好的一批</span></strong><span class="cjk">。</span></li><li><strong>rally</strong> \ˈra-lē\<span class="cjk">：这里指股价的</span><strong><span class="cjk">一波上涨、反弹行情</span></strong><span class="cjk">。</span></li><li><strong>seven straight quarters</strong><span class="cjk">：这里指</span><strong><span class="cjk">连续七个季度</span></strong><span class="cjk">。语境里是说</span> Nike <span class="cjk">在中国市场已经连续七个季度销售下滑。</span></li></ul></aside>
+<p>Looking ahead, investors are getting their bids ready for what could be the biggest IPO of all time. Elon <span class="no-break">Musk&#x27;s</span> SpaceX filed confidential paperwork with the Securities and Exchange Commission on Wednesday, setting the stage for an initial public offering that could raise as much as $80 billion. SpaceX, which merged with xAI in February, is the first of three mega IPOs anticipated in 2026.</p>
+<aside class="vocab"><div class="terms"><span class="term">setting the stage for</span></div><ul><li><strong>set the stage for</strong><span class="cjk">：这里指</span><strong><span class="cjk">为</span>……<span class="cjk">铺路、为</span>……<span class="cjk">做好准备</span></strong><span class="cjk">。语境里是说递交文件让这场</span> IPO <span class="cjk">更接近正式启动。</span></li></ul></aside>
+<p>Investors are also eager to claim stakes in AI rivals OpenAI and Anthropic. And now you know <span class="no-break">What&#x27;s</span> News in Markets this week. You can read more about the stocks that moved on the <span class="no-break">week&#x27;s</span> news and our live markets coverage on wsj.com. <span class="no-break">Today&#x27;s</span> show was produced by Alexis Moore and Julie Chang, with supervising producer Melony Roy. <span class="no-break">I&#x27;m</span> Imani Moise. Have a great weekend, and catch you next Saturday.</p>
+<aside class="vocab"><div class="terms"><span class="term">claim stakes</span><span class="term">rivals</span></div><ul><li><strong>claim stakes</strong><span class="cjk">：这里指投资者想要</span><strong><span class="cjk">抢先持有股份、占有投资份额</span></strong><span class="cjk">。</span></li><li><strong>rival</strong> \ˈrī-vəl\<span class="cjk">：这里指</span><strong><span class="cjk">竞争对手</span></strong><span class="cjk">。语境里</span> OpenAI <span class="cjk">和</span> Anthropic <span class="cjk">被说成</span> AI <span class="cjk">领域彼此竞争的公司。</span></li></ul></aside>
+<p>---</p>
+<p>Chinese Version:</p>
+<p><span class="cjk">各位听众大家好，今天是</span>4<span class="cjk">月</span>4<span class="cjk">日，星期六。我是《华尔街日报》的</span> Imani Moise<span class="cjk">，欢迎收听《</span><span class="no-break">What&#x27;s</span> News in Markets<span class="cjk">》。在这里，我们将回顾本周市场中最重要的股票波动以及推动这些波动的新闻。让我们开始吧。由于耶稣受难日（</span>Good Friday<span class="cjk">）假期，本周市场交易时间较短。投资者持续消化有关伊朗冲突的各种复杂信号，导致股市整周震荡起伏。最终，美国三大股指全线上涨。纳斯达克指数表现最佳，截至周四收盘上涨</span>4.4%<span class="cjk">。标普</span>500<span class="cjk">指数和道琼斯工业平均指数本周也分别上涨约</span>3%<span class="cjk">。随着市场对伊朗冲突迅速结束的希望逐渐减弱，国际原油基准</span>——<span class="cjk">布伦特原油价格本周大涨近</span>8%<span class="cjk">，收于每桶</span>109<span class="cjk">美元。然而，商品价格上涨并未带动石油股上涨。能源板块成为标普</span>500<span class="cjk">指数中唯一一个本周收跌的板块，跌幅超过</span>5%<span class="cjk">。投资者担心长期供应问题可能对行业造成影响。</span></p>
+<p><span class="cjk">债券市场本周也提前休市，不过在此之前公布的最新就业报告仍推动债券收益率小幅上升。</span>10<span class="cjk">年期美国国债收益率最新报</span>4.35%<span class="cjk">，高于就业报告公布前的</span>4.32%<span class="cjk">。报告发布后，股指期货则小幅下跌。</span></p>
+<p><span class="cjk">通常来说，市场动荡会抑制企业并购活动，但</span>2026<span class="cjk">年的并购市场却迎来了历史性开局。截至本周结束的第一季度，企业共宣布了</span>22<span class="cjk">宗价值超过</span>100<span class="cjk">亿美元的并购交易。这是有记录以来超级并购交易最强劲的年度开局。这对投行来说无疑是好消息，但股东们似乎并不完全买账。</span></p>
+<p><span class="cjk">一些宣布大型收购案的公司成为本周跌幅最大的股票之一。香料与食品公司</span> McCormick <span class="cjk">本周股价下跌</span>8%<span class="cjk">。此前该公司宣布将承担债务，以完成与联合利华（</span>Unilever<span class="cjk">）食品业务合并的</span>650<span class="cjk">亿美元交易。类似地，食品配送巨头</span> Sysco <span class="cjk">本周股价下跌</span>13%<span class="cjk">。投资者担忧其为收购</span> Jetro Restaurant Depot <span class="cjk">而新增的</span>290<span class="cjk">亿美元债务负担。</span></p>
+<p><span class="cjk">不过，至少有一家企业因为开出数十亿美元支票而获得投资者奖励。英特尔（</span>Intel<span class="cjk">）本周股价上涨近</span>17%<span class="cjk">。公司宣布将斥资</span>142<span class="cjk">亿美元收购</span> Apollo Global Management <span class="cjk">所持有的爱尔兰芯片工厂</span>49%<span class="cjk">的股份。公司高管将此次交易描述为其资产负债表更加稳健、企业战略更加聚焦的证明。</span></p>
+<p><span class="cjk">本周市场上涨动能同样有利于科技股。</span>Meta<span class="cjk">（</span>Facebook<span class="cjk">母公司）和</span> Alphabet<span class="cjk">（</span>Google<span class="cjk">母公司）双双反弹，成为本周表现最好的大型科技股之一，涨幅约为</span>8%<span class="cjk">至</span>9%<span class="cjk">。这在某种程度上属于回归正常状态。上周，两家公司曾领跌市场，因为法院裁定其社交媒体平台未能充分保护青少年免受网络风险侵害，因此需要承担责任。本周标普</span>500<span class="cjk">指数中表现最差的是耐克（</span>Nike<span class="cjk">）。耐克股价暴跌近</span>14%<span class="cjk">。此前该运动品牌警告投资者，其仅次于美国的第二大市场</span>——<span class="cjk">中国市场</span>——<span class="cjk">本季度销售额可能下滑高达</span>20%<span class="cjk">。耐克在中国市场已经连续七个季度出现销售下降，而截至</span>5<span class="cjk">月</span>31<span class="cjk">日结束的当前季度情况可能更加严峻。</span></p>
+<p><span class="cjk">展望未来，投资者正在准备参与一场可能成为史上最大</span>IPO<span class="cjk">的盛宴。埃隆</span>·<span class="cjk">马斯克（</span>Elon Musk<span class="cjk">）旗下</span> SpaceX <span class="cjk">于本周三向美国证券交易委员会（</span>SEC<span class="cjk">）秘密提交上市申请文件，为首次公开募股（</span>IPO<span class="cjk">）铺平道路。此次</span>IPO<span class="cjk">融资规模可能高达</span>800<span class="cjk">亿美元。今年</span>2<span class="cjk">月刚刚与</span> xAI <span class="cjk">合并的</span> SpaceX<span class="cjk">，是市场预计将在</span>2026<span class="cjk">年登场的三家超级</span>IPO<span class="cjk">企业中的第一家。</span></p>
+<p><span class="cjk">投资者同样热切期待获得另外两家人工智能巨头</span>——OpenAI <span class="cjk">与</span> Anthropic——<span class="cjk">的股权机会。以上就是本周《</span><span class="no-break">What&#x27;s</span> News in Markets<span class="cjk">》的全部内容。您可以访问《华尔街日报》网站，阅读更多有关本周股价异动以及实时市场报道的内容。本期节目由</span> Alexis Moore <span class="cjk">和</span> Julie Chang <span class="cjk">制作，</span>Melony Roy <span class="cjk">担任监制。我是</span> Imani Moise<span class="cjk">。祝大家周末愉快，我们下周六再见。</span></p>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const storageKey = "podcastTranscriptBodyText";
+      const fontSelect = document.getElementById("bodyFontSelect");
+      const sizeDown = document.getElementById("bodySizeDown");
+      const sizeUp = document.getElementById("bodySizeUp");
+      const reset = document.getElementById("bodyTextReset");
+      const fontMap = {
+        roboto: 'var(--body-roboto)',
+        sanFrancisco: 'var(--body-san-francisco)',
+        helvetica: 'var(--body-helvetica)',
+        arial: 'var(--body-arial)',
+        times: 'var(--body-serif)',
+      };
+
+      if (!fontSelect || !sizeDown || !sizeUp || !reset) return;
+
+      const firstParagraph = document.querySelector("main p");
+      const defaultSize = firstParagraph
+        ? Math.round(parseFloat(getComputedStyle(firstParagraph).fontSize))
+        : 19;
+      const defaultFont = "roboto";
+      let settings = { font: defaultFont, size: defaultSize };
+
+      try {
+        settings = { ...settings, ...JSON.parse(localStorage.getItem(storageKey) || "{}" ) };
+      } catch (error) {}
+      if (!fontMap[settings.font]) settings.font = defaultFont;
+      if (!Number.isFinite(settings.size)) settings.size = defaultSize;
+
+      function applySettings() {
+        fontSelect.value = settings.font;
+        root.style.setProperty("--reader-body-font", fontMap[settings.font] || fontMap.roboto);
+        root.style.setProperty("--reader-body-size", `${settings.size}px`);
+        localStorage.setItem(storageKey, JSON.stringify(settings));
+      }
+
+      fontSelect.addEventListener("change", () => {
+        settings.font = fontSelect.value;
+        applySettings();
+      });
+
+      sizeDown.addEventListener("click", () => {
+        settings.size = Math.max(15, settings.size - 1);
+        applySettings();
+      });
+
+      sizeUp.addEventListener("click", () => {
+        settings.size = Math.min(24, settings.size + 1);
+        applySettings();
+      });
+
+      reset.addEventListener("click", () => {
+        settings = { font: defaultFont, size: defaultSize };
+        root.style.removeProperty("--reader-body-font");
+        root.style.removeProperty("--reader-body-size");
+        localStorage.removeItem(storageKey);
+        fontSelect.value = defaultFont;
+      });
+
+      applySettings();
+    })();
+  </script>
+</body>
+</html>
